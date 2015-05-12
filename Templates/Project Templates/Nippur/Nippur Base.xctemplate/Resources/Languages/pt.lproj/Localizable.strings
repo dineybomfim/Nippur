@@ -1,0 +1,4 @@
+/*
+ *	Constant strings to be used in texts, labels, alerts and any other font based interfaces
+ */
+"APP_NAME" = "___PROJECTNAME___";

@@ -1,0 +1,974 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		602492C21672579D0030C6B7 /* BUILD ALL */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 602492C31672579D0030C6B7 /* Build configuration list for PBXAggregateTarget "BUILD ALL" */;
+			buildPhases = (
+				602492C6167257A20030C6B7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "BUILD ALL";
+			productName = BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		B5AC24141B01446D0046D26E /* Nippur.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5AC23881B01446D0046D26E /* Nippur.bundle */; };
+		B5AC24151B01446D0046D26E /* NippurAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC238B1B01446D0046D26E /* NippurAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24161B01446D0046D26E /* NPPAction.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC238C1B01446D0046D26E /* NPPAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24171B01446D0046D26E /* NPPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC238D1B01446D0046D26E /* NPPAction.m */; };
+		B5AC24181B01446D0046D26E /* NPPActionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC238E1B01446D0046D26E /* NPPActionBlock.h */; };
+		B5AC24191B01446D0046D26E /* NPPActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC238F1B01446D0046D26E /* NPPActionBlock.m */; };
+		B5AC241A1B01446D0046D26E /* NPPActionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23901B01446D0046D26E /* NPPActionGroup.h */; };
+		B5AC241B1B01446D0046D26E /* NPPActionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23911B01446D0046D26E /* NPPActionGroup.m */; };
+		B5AC241C1B01446D0046D26E /* NPPActionMove.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23921B01446D0046D26E /* NPPActionMove.h */; };
+		B5AC241D1B01446D0046D26E /* NPPActionMove.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23931B01446D0046D26E /* NPPActionMove.m */; };
+		B5AC241E1B01446D0046D26E /* NPPActionRepeat.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23941B01446D0046D26E /* NPPActionRepeat.h */; };
+		B5AC241F1B01446D0046D26E /* NPPActionRepeat.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23951B01446D0046D26E /* NPPActionRepeat.m */; };
+		B5AC24201B01446D0046D26E /* NPPActionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23961B01446D0046D26E /* NPPActionSelector.h */; };
+		B5AC24211B01446D0046D26E /* NPPActionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23971B01446D0046D26E /* NPPActionSelector.m */; };
+		B5AC24221B01446D0046D26E /* NPPActionSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23981B01446D0046D26E /* NPPActionSequence.h */; };
+		B5AC24231B01446D0046D26E /* NPPActionSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23991B01446D0046D26E /* NPPActionSequence.m */; };
+		B5AC24241B01446D0046D26E /* NippurCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC239B1B01446D0046D26E /* NippurCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24251B01446D0046D26E /* NPPArray+NSArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC239C1B01446D0046D26E /* NPPArray+NSArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24261B01446D0046D26E /* NPPArray+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC239D1B01446D0046D26E /* NPPArray+NSArray.m */; };
+		B5AC24271B01446D0046D26E /* NPPBaseGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC239E1B01446D0046D26E /* NPPBaseGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24281B01446D0046D26E /* NPPBaseGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC239F1B01446D0046D26E /* NPPBaseGestureRecognizer.m */; };
+		B5AC24291B01446D0046D26E /* NPPCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A01B01446D0046D26E /* NPPCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC242A1B01446D0046D26E /* NPPCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A11B01446D0046D26E /* NPPCipher.m */; };
+		B5AC242B1B01446D0046D26E /* NPPClockController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A21B01446D0046D26E /* NPPClockController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC242C1B01446D0046D26E /* NPPClockController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A31B01446D0046D26E /* NPPClockController.m */; };
+		B5AC242D1B01446D0046D26E /* NPPConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A41B01446D0046D26E /* NPPConnector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC242E1B01446D0046D26E /* NPPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A51B01446D0046D26E /* NPPConnector.m */; };
+		B5AC242F1B01446D0046D26E /* NPPDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A61B01446D0046D26E /* NPPDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24301B01446D0046D26E /* NPPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A71B01446D0046D26E /* NPPDataManager.m */; };
+		B5AC24311B01446D0046D26E /* NPPDate+NSDate.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A81B01446D0046D26E /* NPPDate+NSDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24321B01446D0046D26E /* NPPDate+NSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A91B01446D0046D26E /* NPPDate+NSDate.m */; };
+		B5AC24331B01446D0046D26E /* NPPFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23AA1B01446D0046D26E /* NPPFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24341B01446D0046D26E /* NPPFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23AB1B01446D0046D26E /* NPPFunctions.m */; };
+		B5AC24351B01446D0046D26E /* NPPJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23AC1B01446D0046D26E /* NPPJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24361B01446D0046D26E /* NPPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23AD1B01446D0046D26E /* NPPJSON.m */; };
+		B5AC24371B01446D0046D26E /* NPPLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23AE1B01446D0046D26E /* NPPLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24381B01446D0046D26E /* NPPLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23AF1B01446D0046D26E /* NPPLogger.m */; };
+		B5AC24391B01446D0046D26E /* NPPModelVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23B01B01446D0046D26E /* NPPModelVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC243A1B01446D0046D26E /* NPPModelVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23B11B01446D0046D26E /* NPPModelVO.m */; };
+		B5AC243B1B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23B21B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC243C1B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23B31B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.m */; };
+		B5AC243D1B01446D0046D26E /* NPPNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23B41B01446D0046D26E /* NPPNumber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC243E1B01446D0046D26E /* NPPNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23B51B01446D0046D26E /* NPPNumber.m */; };
+		B5AC243F1B01446D0046D26E /* NPPRegEx.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23B61B01446D0046D26E /* NPPRegEx.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24401B01446D0046D26E /* NPPRegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23B71B01446D0046D26E /* NPPRegEx.m */; };
+		B5AC24411B01446D0046D26E /* NPPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23B81B01446D0046D26E /* NPPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24421B01446D0046D26E /* NPPString+NSString.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23B91B01446D0046D26E /* NPPString+NSString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24431B01446D0046D26E /* NPPString+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23BA1B01446D0046D26E /* NPPString+NSString.m */; };
+		B5AC24441B01446D0046D26E /* NPPTester.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23BB1B01446D0046D26E /* NPPTester.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24451B01446D0046D26E /* NPPTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23BC1B01446D0046D26E /* NPPTester.m */; };
+		B5AC24461B01446D0046D26E /* NPPThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23BD1B01446D0046D26E /* NPPThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24471B01446D0046D26E /* NPPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23BE1B01446D0046D26E /* NPPThread.m */; };
+		B5AC24481B01446D0046D26E /* NPPTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23BF1B01446D0046D26E /* NPPTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24491B01446D0046D26E /* NPPTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23C01B01446D0046D26E /* NPPTimer.m */; };
+		B5AC244A1B01446D0046D26E /* NippurGeolocation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23C21B01446D0046D26E /* NippurGeolocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC244B1B01446D0046D26E /* NPPGeohash.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23C31B01446D0046D26E /* NPPGeohash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC244C1B01446D0046D26E /* NPPGeohash.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23C41B01446D0046D26E /* NPPGeohash.m */; };
+		B5AC244D1B01446D0046D26E /* NPPGeolocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23C51B01446D0046D26E /* NPPGeolocationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC244E1B01446D0046D26E /* NPPGeolocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23C61B01446D0046D26E /* NPPGeolocationManager.m */; };
+		B5AC244F1B01446D0046D26E /* NPPGeoserver.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23C71B01446D0046D26E /* NPPGeoserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24501B01446D0046D26E /* NPPGeoserverApple.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23C81B01446D0046D26E /* NPPGeoserverApple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24511B01446D0046D26E /* NPPGeoserverApple.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23C91B01446D0046D26E /* NPPGeoserverApple.m */; };
+		B5AC24521B01446D0046D26E /* NPPModelAddressVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23CA1B01446D0046D26E /* NPPModelAddressVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24531B01446D0046D26E /* NPPModelAddressVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23CB1B01446D0046D26E /* NPPModelAddressVO.m */; };
+		B5AC24541B01446D0046D26E /* NPPModelCountryVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23CC1B01446D0046D26E /* NPPModelCountryVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24551B01446D0046D26E /* NPPModelCountryVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23CD1B01446D0046D26E /* NPPModelCountryVO.m */; };
+		B5AC24561B01446D0046D26E /* NPPModelGeolocationVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23CE1B01446D0046D26E /* NPPModelGeolocationVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24571B01446D0046D26E /* NPPModelGeolocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23CF1B01446D0046D26E /* NPPModelGeolocationVO.m */; };
+		B5AC24581B01446D0046D26E /* NPPModelGeoregionVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23D01B01446D0046D26E /* NPPModelGeoregionVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24591B01446D0046D26E /* NPPModelGeoregionVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23D11B01446D0046D26E /* NPPModelGeoregionVO.m */; };
+		B5AC245A1B01446D0046D26E /* NPPModelPlaceVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23D21B01446D0046D26E /* NPPModelPlaceVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC245B1B01446D0046D26E /* NPPModelPlaceVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23D31B01446D0046D26E /* NPPModelPlaceVO.m */; };
+		B5AC245C1B01446D0046D26E /* NPPModelRouteNodeVO.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23D41B01446D0046D26E /* NPPModelRouteNodeVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC245D1B01446D0046D26E /* NPPModelRouteNodeVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23D51B01446D0046D26E /* NPPModelRouteNodeVO.m */; };
+		B5AC245E1B01446D0046D26E /* NippurInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23D71B01446D0046D26E /* NippurInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC245F1B01446D0046D26E /* NPPActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23D81B01446D0046D26E /* NPPActionSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24601B01446D0046D26E /* NPPActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23D91B01446D0046D26E /* NPPActionSheet.m */; };
+		B5AC24611B01446D0046D26E /* NPPAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23DA1B01446D0046D26E /* NPPAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24621B01446D0046D26E /* NPPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23DB1B01446D0046D26E /* NPPAlertView.m */; };
+		B5AC24631B01446D0046D26E /* NPPBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23DC1B01446D0046D26E /* NPPBadgeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24641B01446D0046D26E /* NPPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23DD1B01446D0046D26E /* NPPBadgeView.m */; };
+		B5AC24651B01446D0046D26E /* NPPButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23DE1B01446D0046D26E /* NPPButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24661B01446D0046D26E /* NPPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23DF1B01446D0046D26E /* NPPButton.m */; };
+		B5AC24671B01446D0046D26E /* NPPColor+UIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23E01B01446D0046D26E /* NPPColor+UIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24681B01446D0046D26E /* NPPColor+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23E11B01446D0046D26E /* NPPColor+UIColor.m */; };
+		B5AC24691B01446D0046D26E /* NPPEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23E21B01446D0046D26E /* NPPEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC246A1B01446D0046D26E /* NPPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23E31B01446D0046D26E /* NPPEffects.m */; };
+		B5AC246B1B01446D0046D26E /* NPPFont+UIFont.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23E41B01446D0046D26E /* NPPFont+UIFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC246C1B01446D0046D26E /* NPPFont+UIFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23E51B01446D0046D26E /* NPPFont+UIFont.m */; };
+		B5AC246D1B01446D0046D26E /* NPPImage+UIImage.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23E61B01446D0046D26E /* NPPImage+UIImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC246E1B01446D0046D26E /* NPPImage+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23E71B01446D0046D26E /* NPPImage+UIImage.m */; };
+		B5AC246F1B01446D0046D26E /* NPPImageView+UIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23E81B01446D0046D26E /* NPPImageView+UIImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24701B01446D0046D26E /* NPPImageView+UIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23E91B01446D0046D26E /* NPPImageView+UIImageView.m */; };
+		B5AC24711B01446D0046D26E /* NPPKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23EA1B01446D0046D26E /* NPPKeyboardToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24721B01446D0046D26E /* NPPKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23EB1B01446D0046D26E /* NPPKeyboardToolbar.m */; };
+		B5AC24731B01446D0046D26E /* NPPLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23EC1B01446D0046D26E /* NPPLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24741B01446D0046D26E /* NPPLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23ED1B01446D0046D26E /* NPPLabel.m */; };
+		B5AC24751B01446D0046D26E /* NPPNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23EE1B01446D0046D26E /* NPPNavigator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24761B01446D0046D26E /* NPPNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23EF1B01446D0046D26E /* NPPNavigator.m */; };
+		B5AC24771B01446D0046D26E /* NPPNotificationView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23F01B01446D0046D26E /* NPPNotificationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24781B01446D0046D26E /* NPPNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23F11B01446D0046D26E /* NPPNotificationView.m */; };
+		B5AC24791B01446D0046D26E /* NPPPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23F21B01446D0046D26E /* NPPPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC247A1B01446D0046D26E /* NPPPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23F31B01446D0046D26E /* NPPPickerView.m */; };
+		B5AC247B1B01446D0046D26E /* NPPRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23F41B01446D0046D26E /* NPPRefreshControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC247C1B01446D0046D26E /* NPPRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23F51B01446D0046D26E /* NPPRefreshControl.m */; };
+		B5AC247D1B01446D0046D26E /* NPPScrollLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23F61B01446D0046D26E /* NPPScrollLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC247E1B01446D0046D26E /* NPPScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23F71B01446D0046D26E /* NPPScrollLabel.m */; };
+		B5AC247F1B01446D0046D26E /* NPPStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23F81B01446D0046D26E /* NPPStatusBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24801B01446D0046D26E /* NPPStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23F91B01446D0046D26E /* NPPStatusBar.m */; };
+		B5AC24811B01446D0046D26E /* NPPTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23FA1B01446D0046D26E /* NPPTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24821B01446D0046D26E /* NPPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23FB1B01446D0046D26E /* NPPTableViewCell.m */; };
+		B5AC24831B01446D0046D26E /* NPPTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23FC1B01446D0046D26E /* NPPTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24841B01446D0046D26E /* NPPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23FD1B01446D0046D26E /* NPPTableViewController.m */; };
+		B5AC24851B01446D0046D26E /* NPPTableViewSection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23FE1B01446D0046D26E /* NPPTableViewSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24861B01446D0046D26E /* NPPTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23FF1B01446D0046D26E /* NPPTableViewSection.m */; };
+		B5AC24871B01446D0046D26E /* NPPTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24001B01446D0046D26E /* NPPTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24881B01446D0046D26E /* NPPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24011B01446D0046D26E /* NPPTextField.m */; };
+		B5AC24891B01446D0046D26E /* NPPTextFieldManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24021B01446D0046D26E /* NPPTextFieldManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC248A1B01446D0046D26E /* NPPTextFieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24031B01446D0046D26E /* NPPTextFieldManager.m */; };
+		B5AC248B1B01446D0046D26E /* NPPView+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24041B01446D0046D26E /* NPPView+UIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC248C1B01446D0046D26E /* NPPView+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24051B01446D0046D26E /* NPPView+UIView.m */; };
+		B5AC248D1B01446D0046D26E /* NPPWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24061B01446D0046D26E /* NPPWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC248E1B01446D0046D26E /* NPPWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24071B01446D0046D26E /* NPPWindow.m */; };
+		B5AC248F1B01446D0046D26E /* NPPWindowKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24081B01446D0046D26E /* NPPWindowKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24901B01446D0046D26E /* NPPWindowKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24091B01446D0046D26E /* NPPWindowKeyboard.m */; };
+		B5AC24911B01446D0046D26E /* NPPWindowOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC240A1B01446D0046D26E /* NPPWindowOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24921B01446D0046D26E /* NPPWindowOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC240B1B01446D0046D26E /* NPPWindowOverlay.m */; };
+		B5AC24931B01446D0046D26E /* NippurMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC240D1B01446D0046D26E /* NippurMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24941B01446D0046D26E /* NPPAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC240E1B01446D0046D26E /* NPPAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24951B01446D0046D26E /* NPPAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC240F1B01446D0046D26E /* NPPAudio.m */; };
+		B5AC24961B01446D0046D26E /* NPPCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24101B01446D0046D26E /* NPPCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24971B01446D0046D26E /* NPPCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24111B01446D0046D26E /* NPPCamera.m */; };
+		B5AC24981B01446D0046D26E /* NPPVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24121B01446D0046D26E /* NPPVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC24991B01446D0046D26E /* NPPVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24131B01446D0046D26E /* NPPVideo.m */; };
+		B5AC249C1B014D220046D26E /* NPPInterfaceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC249A1B014D220046D26E /* NPPInterfaceFunctions.h */; };
+		B5AC249D1B014D220046D26E /* NPPInterfaceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC249B1B014D220046D26E /* NPPInterfaceFunctions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		602492191672564F0030C6B7 /* Nippur.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nippur.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		604629AD161EDC2F00B45C82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6081E63616E3F38C003BC656 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		608A0CF0161955810000B37E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		95A9BA97159A5EAC00A46A10 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		95A9BA99159A5EBB00A46A10 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		95D874521585A3FD000A70F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		95D874541585A3FD000A70F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		95D874561585A3FD000A70F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95D8746D1585A4E6000A70F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5AC23881B01446D0046D26E /* Nippur.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Nippur.bundle; sourceTree = "<group>"; };
+		B5AC238B1B01446D0046D26E /* NippurAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurAnimation.h; sourceTree = "<group>"; };
+		B5AC238C1B01446D0046D26E /* NPPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPAction.h; sourceTree = "<group>"; };
+		B5AC238D1B01446D0046D26E /* NPPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPAction.m; sourceTree = "<group>"; };
+		B5AC238E1B01446D0046D26E /* NPPActionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionBlock.h; sourceTree = "<group>"; };
+		B5AC238F1B01446D0046D26E /* NPPActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionBlock.m; sourceTree = "<group>"; };
+		B5AC23901B01446D0046D26E /* NPPActionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionGroup.h; sourceTree = "<group>"; };
+		B5AC23911B01446D0046D26E /* NPPActionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionGroup.m; sourceTree = "<group>"; };
+		B5AC23921B01446D0046D26E /* NPPActionMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionMove.h; sourceTree = "<group>"; };
+		B5AC23931B01446D0046D26E /* NPPActionMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionMove.m; sourceTree = "<group>"; };
+		B5AC23941B01446D0046D26E /* NPPActionRepeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionRepeat.h; sourceTree = "<group>"; };
+		B5AC23951B01446D0046D26E /* NPPActionRepeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionRepeat.m; sourceTree = "<group>"; };
+		B5AC23961B01446D0046D26E /* NPPActionSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionSelector.h; sourceTree = "<group>"; };
+		B5AC23971B01446D0046D26E /* NPPActionSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionSelector.m; sourceTree = "<group>"; };
+		B5AC23981B01446D0046D26E /* NPPActionSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionSequence.h; sourceTree = "<group>"; };
+		B5AC23991B01446D0046D26E /* NPPActionSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionSequence.m; sourceTree = "<group>"; };
+		B5AC239B1B01446D0046D26E /* NippurCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurCore.h; sourceTree = "<group>"; };
+		B5AC239C1B01446D0046D26E /* NPPArray+NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPArray+NSArray.h"; sourceTree = "<group>"; };
+		B5AC239D1B01446D0046D26E /* NPPArray+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPArray+NSArray.m"; sourceTree = "<group>"; };
+		B5AC239E1B01446D0046D26E /* NPPBaseGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPBaseGestureRecognizer.h; sourceTree = "<group>"; };
+		B5AC239F1B01446D0046D26E /* NPPBaseGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPBaseGestureRecognizer.m; sourceTree = "<group>"; };
+		B5AC23A01B01446D0046D26E /* NPPCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPCipher.h; sourceTree = "<group>"; };
+		B5AC23A11B01446D0046D26E /* NPPCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPCipher.m; sourceTree = "<group>"; };
+		B5AC23A21B01446D0046D26E /* NPPClockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPClockController.h; sourceTree = "<group>"; };
+		B5AC23A31B01446D0046D26E /* NPPClockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPClockController.m; sourceTree = "<group>"; };
+		B5AC23A41B01446D0046D26E /* NPPConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPConnector.h; sourceTree = "<group>"; };
+		B5AC23A51B01446D0046D26E /* NPPConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPConnector.m; sourceTree = "<group>"; };
+		B5AC23A61B01446D0046D26E /* NPPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPDataManager.h; sourceTree = "<group>"; };
+		B5AC23A71B01446D0046D26E /* NPPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPDataManager.m; sourceTree = "<group>"; };
+		B5AC23A81B01446D0046D26E /* NPPDate+NSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPDate+NSDate.h"; sourceTree = "<group>"; };
+		B5AC23A91B01446D0046D26E /* NPPDate+NSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPDate+NSDate.m"; sourceTree = "<group>"; };
+		B5AC23AA1B01446D0046D26E /* NPPFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPFunctions.h; sourceTree = "<group>"; };
+		B5AC23AB1B01446D0046D26E /* NPPFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPFunctions.m; sourceTree = "<group>"; };
+		B5AC23AC1B01446D0046D26E /* NPPJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPJSON.h; sourceTree = "<group>"; };
+		B5AC23AD1B01446D0046D26E /* NPPJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPJSON.m; sourceTree = "<group>"; };
+		B5AC23AE1B01446D0046D26E /* NPPLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPLogger.h; sourceTree = "<group>"; };
+		B5AC23AF1B01446D0046D26E /* NPPLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPLogger.m; sourceTree = "<group>"; };
+		B5AC23B01B01446D0046D26E /* NPPModelVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelVO.h; sourceTree = "<group>"; };
+		B5AC23B11B01446D0046D26E /* NPPModelVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelVO.m; sourceTree = "<group>"; };
+		B5AC23B21B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPNotificationCenter+NSNotificationCenter.h"; sourceTree = "<group>"; };
+		B5AC23B31B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPNotificationCenter+NSNotificationCenter.m"; sourceTree = "<group>"; };
+		B5AC23B41B01446D0046D26E /* NPPNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPNumber.h; sourceTree = "<group>"; };
+		B5AC23B51B01446D0046D26E /* NPPNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPNumber.m; sourceTree = "<group>"; };
+		B5AC23B61B01446D0046D26E /* NPPRegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPRegEx.h; sourceTree = "<group>"; };
+		B5AC23B71B01446D0046D26E /* NPPRegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPRegEx.m; sourceTree = "<group>"; };
+		B5AC23B81B01446D0046D26E /* NPPRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPRuntime.h; sourceTree = "<group>"; };
+		B5AC23B91B01446D0046D26E /* NPPString+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPString+NSString.h"; sourceTree = "<group>"; };
+		B5AC23BA1B01446D0046D26E /* NPPString+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPString+NSString.m"; sourceTree = "<group>"; };
+		B5AC23BB1B01446D0046D26E /* NPPTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTester.h; sourceTree = "<group>"; };
+		B5AC23BC1B01446D0046D26E /* NPPTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTester.m; sourceTree = "<group>"; };
+		B5AC23BD1B01446D0046D26E /* NPPThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPThread.h; sourceTree = "<group>"; };
+		B5AC23BE1B01446D0046D26E /* NPPThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPThread.m; sourceTree = "<group>"; };
+		B5AC23BF1B01446D0046D26E /* NPPTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTimer.h; sourceTree = "<group>"; };
+		B5AC23C01B01446D0046D26E /* NPPTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTimer.m; sourceTree = "<group>"; };
+		B5AC23C21B01446D0046D26E /* NippurGeolocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurGeolocation.h; sourceTree = "<group>"; };
+		B5AC23C31B01446D0046D26E /* NPPGeohash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPGeohash.h; sourceTree = "<group>"; };
+		B5AC23C41B01446D0046D26E /* NPPGeohash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPGeohash.m; sourceTree = "<group>"; };
+		B5AC23C51B01446D0046D26E /* NPPGeolocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPGeolocationManager.h; sourceTree = "<group>"; };
+		B5AC23C61B01446D0046D26E /* NPPGeolocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPGeolocationManager.m; sourceTree = "<group>"; };
+		B5AC23C71B01446D0046D26E /* NPPGeoserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPGeoserver.h; sourceTree = "<group>"; };
+		B5AC23C81B01446D0046D26E /* NPPGeoserverApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPGeoserverApple.h; sourceTree = "<group>"; };
+		B5AC23C91B01446D0046D26E /* NPPGeoserverApple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPGeoserverApple.m; sourceTree = "<group>"; };
+		B5AC23CA1B01446D0046D26E /* NPPModelAddressVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelAddressVO.h; sourceTree = "<group>"; };
+		B5AC23CB1B01446D0046D26E /* NPPModelAddressVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelAddressVO.m; sourceTree = "<group>"; };
+		B5AC23CC1B01446D0046D26E /* NPPModelCountryVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelCountryVO.h; sourceTree = "<group>"; };
+		B5AC23CD1B01446D0046D26E /* NPPModelCountryVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelCountryVO.m; sourceTree = "<group>"; };
+		B5AC23CE1B01446D0046D26E /* NPPModelGeolocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelGeolocationVO.h; sourceTree = "<group>"; };
+		B5AC23CF1B01446D0046D26E /* NPPModelGeolocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelGeolocationVO.m; sourceTree = "<group>"; };
+		B5AC23D01B01446D0046D26E /* NPPModelGeoregionVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelGeoregionVO.h; sourceTree = "<group>"; };
+		B5AC23D11B01446D0046D26E /* NPPModelGeoregionVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelGeoregionVO.m; sourceTree = "<group>"; };
+		B5AC23D21B01446D0046D26E /* NPPModelPlaceVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelPlaceVO.h; sourceTree = "<group>"; };
+		B5AC23D31B01446D0046D26E /* NPPModelPlaceVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelPlaceVO.m; sourceTree = "<group>"; };
+		B5AC23D41B01446D0046D26E /* NPPModelRouteNodeVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPModelRouteNodeVO.h; sourceTree = "<group>"; };
+		B5AC23D51B01446D0046D26E /* NPPModelRouteNodeVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPModelRouteNodeVO.m; sourceTree = "<group>"; };
+		B5AC23D71B01446D0046D26E /* NippurInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurInterface.h; sourceTree = "<group>"; };
+		B5AC23D81B01446D0046D26E /* NPPActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPActionSheet.h; sourceTree = "<group>"; };
+		B5AC23D91B01446D0046D26E /* NPPActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPActionSheet.m; sourceTree = "<group>"; };
+		B5AC23DA1B01446D0046D26E /* NPPAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPAlertView.h; sourceTree = "<group>"; };
+		B5AC23DB1B01446D0046D26E /* NPPAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPAlertView.m; sourceTree = "<group>"; };
+		B5AC23DC1B01446D0046D26E /* NPPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPBadgeView.h; sourceTree = "<group>"; };
+		B5AC23DD1B01446D0046D26E /* NPPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPBadgeView.m; sourceTree = "<group>"; };
+		B5AC23DE1B01446D0046D26E /* NPPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPButton.h; sourceTree = "<group>"; };
+		B5AC23DF1B01446D0046D26E /* NPPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPButton.m; sourceTree = "<group>"; };
+		B5AC23E01B01446D0046D26E /* NPPColor+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPColor+UIColor.h"; sourceTree = "<group>"; };
+		B5AC23E11B01446D0046D26E /* NPPColor+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPColor+UIColor.m"; sourceTree = "<group>"; };
+		B5AC23E21B01446D0046D26E /* NPPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPEffects.h; sourceTree = "<group>"; };
+		B5AC23E31B01446D0046D26E /* NPPEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPEffects.m; sourceTree = "<group>"; };
+		B5AC23E41B01446D0046D26E /* NPPFont+UIFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPFont+UIFont.h"; sourceTree = "<group>"; };
+		B5AC23E51B01446D0046D26E /* NPPFont+UIFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPFont+UIFont.m"; sourceTree = "<group>"; };
+		B5AC23E61B01446D0046D26E /* NPPImage+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPImage+UIImage.h"; sourceTree = "<group>"; };
+		B5AC23E71B01446D0046D26E /* NPPImage+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPImage+UIImage.m"; sourceTree = "<group>"; };
+		B5AC23E81B01446D0046D26E /* NPPImageView+UIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPImageView+UIImageView.h"; sourceTree = "<group>"; };
+		B5AC23E91B01446D0046D26E /* NPPImageView+UIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPImageView+UIImageView.m"; sourceTree = "<group>"; };
+		B5AC23EA1B01446D0046D26E /* NPPKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPKeyboardToolbar.h; sourceTree = "<group>"; };
+		B5AC23EB1B01446D0046D26E /* NPPKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPKeyboardToolbar.m; sourceTree = "<group>"; };
+		B5AC23EC1B01446D0046D26E /* NPPLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPLabel.h; sourceTree = "<group>"; };
+		B5AC23ED1B01446D0046D26E /* NPPLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPLabel.m; sourceTree = "<group>"; };
+		B5AC23EE1B01446D0046D26E /* NPPNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPNavigator.h; sourceTree = "<group>"; };
+		B5AC23EF1B01446D0046D26E /* NPPNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPNavigator.m; sourceTree = "<group>"; };
+		B5AC23F01B01446D0046D26E /* NPPNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPNotificationView.h; sourceTree = "<group>"; };
+		B5AC23F11B01446D0046D26E /* NPPNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPNotificationView.m; sourceTree = "<group>"; };
+		B5AC23F21B01446D0046D26E /* NPPPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPPickerView.h; sourceTree = "<group>"; };
+		B5AC23F31B01446D0046D26E /* NPPPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPPickerView.m; sourceTree = "<group>"; };
+		B5AC23F41B01446D0046D26E /* NPPRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPRefreshControl.h; sourceTree = "<group>"; };
+		B5AC23F51B01446D0046D26E /* NPPRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPRefreshControl.m; sourceTree = "<group>"; };
+		B5AC23F61B01446D0046D26E /* NPPScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPScrollLabel.h; sourceTree = "<group>"; };
+		B5AC23F71B01446D0046D26E /* NPPScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPScrollLabel.m; sourceTree = "<group>"; };
+		B5AC23F81B01446D0046D26E /* NPPStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPStatusBar.h; sourceTree = "<group>"; };
+		B5AC23F91B01446D0046D26E /* NPPStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPStatusBar.m; sourceTree = "<group>"; };
+		B5AC23FA1B01446D0046D26E /* NPPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTableViewCell.h; sourceTree = "<group>"; };
+		B5AC23FB1B01446D0046D26E /* NPPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewCell.m; sourceTree = "<group>"; };
+		B5AC23FC1B01446D0046D26E /* NPPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTableViewController.h; sourceTree = "<group>"; };
+		B5AC23FD1B01446D0046D26E /* NPPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewController.m; sourceTree = "<group>"; };
+		B5AC23FE1B01446D0046D26E /* NPPTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTableViewSection.h; sourceTree = "<group>"; };
+		B5AC23FF1B01446D0046D26E /* NPPTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewSection.m; sourceTree = "<group>"; };
+		B5AC24001B01446D0046D26E /* NPPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTextField.h; sourceTree = "<group>"; };
+		B5AC24011B01446D0046D26E /* NPPTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTextField.m; sourceTree = "<group>"; };
+		B5AC24021B01446D0046D26E /* NPPTextFieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPTextFieldManager.h; sourceTree = "<group>"; };
+		B5AC24031B01446D0046D26E /* NPPTextFieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPTextFieldManager.m; sourceTree = "<group>"; };
+		B5AC24041B01446D0046D26E /* NPPView+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPView+UIView.h"; sourceTree = "<group>"; };
+		B5AC24051B01446D0046D26E /* NPPView+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPView+UIView.m"; sourceTree = "<group>"; };
+		B5AC24061B01446D0046D26E /* NPPWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPWindow.h; sourceTree = "<group>"; };
+		B5AC24071B01446D0046D26E /* NPPWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPWindow.m; sourceTree = "<group>"; };
+		B5AC24081B01446D0046D26E /* NPPWindowKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPWindowKeyboard.h; sourceTree = "<group>"; };
+		B5AC24091B01446D0046D26E /* NPPWindowKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPWindowKeyboard.m; sourceTree = "<group>"; };
+		B5AC240A1B01446D0046D26E /* NPPWindowOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPWindowOverlay.h; sourceTree = "<group>"; };
+		B5AC240B1B01446D0046D26E /* NPPWindowOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPWindowOverlay.m; sourceTree = "<group>"; };
+		B5AC240D1B01446D0046D26E /* NippurMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurMedia.h; sourceTree = "<group>"; };
+		B5AC240E1B01446D0046D26E /* NPPAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPAudio.h; sourceTree = "<group>"; };
+		B5AC240F1B01446D0046D26E /* NPPAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPAudio.m; sourceTree = "<group>"; };
+		B5AC24101B01446D0046D26E /* NPPCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPCamera.h; sourceTree = "<group>"; };
+		B5AC24111B01446D0046D26E /* NPPCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPCamera.m; sourceTree = "<group>"; };
+		B5AC24121B01446D0046D26E /* NPPVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPVideo.h; sourceTree = "<group>"; };
+		B5AC24131B01446D0046D26E /* NPPVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPVideo.m; sourceTree = "<group>"; };
+		B5AC249A1B014D220046D26E /* NPPInterfaceFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPInterfaceFunctions.h; sourceTree = "<group>"; };
+		B5AC249B1B014D220046D26E /* NPPInterfaceFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPInterfaceFunctions.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		602492161672564F0030C6B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		608B9E4919A2B3B500A5850D /* Nippur */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC23871B01446D0046D26E /* Resource */,
+				B5AC23891B01446D0046D26E /* Source */,
+			);
+			path = Nippur;
+			sourceTree = "<group>";
+		};
+		95D874431585A3FD000A70F4 = {
+			isa = PBXGroup;
+			children = (
+				95D874511585A3FD000A70F4 /* Frameworks */,
+				608B9E4919A2B3B500A5850D /* Nippur */,
+				95D8744F1585A3FD000A70F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95D8744F1585A3FD000A70F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				602492191672564F0030C6B7 /* Nippur.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95D874511585A3FD000A70F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6081E63616E3F38C003BC656 /* AudioToolbox.framework */,
+				604629AD161EDC2F00B45C82 /* AVFoundation.framework */,
+				95D874561585A3FD000A70F4 /* CoreGraphics.framework */,
+				608A0CF0161955810000B37E /* CoreLocation.framework */,
+				95A9BA97159A5EAC00A46A10 /* CoreMedia.framework */,
+				95A9BA99159A5EBB00A46A10 /* CoreVideo.framework */,
+				95D874541585A3FD000A70F4 /* Foundation.framework */,
+				95D8746D1585A4E6000A70F4 /* QuartzCore.framework */,
+				95D874521585A3FD000A70F4 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5AC23871B01446D0046D26E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC23881B01446D0046D26E /* Nippur.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B5AC23891B01446D0046D26E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC238A1B01446D0046D26E /* Animation */,
+				B5AC239A1B01446D0046D26E /* Core */,
+				B5AC23C11B01446D0046D26E /* Geolocation */,
+				B5AC23D61B01446D0046D26E /* Interface */,
+				B5AC240C1B01446D0046D26E /* Media */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B5AC238A1B01446D0046D26E /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC238B1B01446D0046D26E /* NippurAnimation.h */,
+				B5AC238C1B01446D0046D26E /* NPPAction.h */,
+				B5AC238D1B01446D0046D26E /* NPPAction.m */,
+				B5AC238E1B01446D0046D26E /* NPPActionBlock.h */,
+				B5AC238F1B01446D0046D26E /* NPPActionBlock.m */,
+				B5AC23901B01446D0046D26E /* NPPActionGroup.h */,
+				B5AC23911B01446D0046D26E /* NPPActionGroup.m */,
+				B5AC23921B01446D0046D26E /* NPPActionMove.h */,
+				B5AC23931B01446D0046D26E /* NPPActionMove.m */,
+				B5AC23941B01446D0046D26E /* NPPActionRepeat.h */,
+				B5AC23951B01446D0046D26E /* NPPActionRepeat.m */,
+				B5AC23961B01446D0046D26E /* NPPActionSelector.h */,
+				B5AC23971B01446D0046D26E /* NPPActionSelector.m */,
+				B5AC23981B01446D0046D26E /* NPPActionSequence.h */,
+				B5AC23991B01446D0046D26E /* NPPActionSequence.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		B5AC239A1B01446D0046D26E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC239B1B01446D0046D26E /* NippurCore.h */,
+				B5AC239C1B01446D0046D26E /* NPPArray+NSArray.h */,
+				B5AC239D1B01446D0046D26E /* NPPArray+NSArray.m */,
+				B5AC239E1B01446D0046D26E /* NPPBaseGestureRecognizer.h */,
+				B5AC239F1B01446D0046D26E /* NPPBaseGestureRecognizer.m */,
+				B5AC23A01B01446D0046D26E /* NPPCipher.h */,
+				B5AC23A11B01446D0046D26E /* NPPCipher.m */,
+				B5AC23A21B01446D0046D26E /* NPPClockController.h */,
+				B5AC23A31B01446D0046D26E /* NPPClockController.m */,
+				B5AC23A41B01446D0046D26E /* NPPConnector.h */,
+				B5AC23A51B01446D0046D26E /* NPPConnector.m */,
+				B5AC23A61B01446D0046D26E /* NPPDataManager.h */,
+				B5AC23A71B01446D0046D26E /* NPPDataManager.m */,
+				B5AC23A81B01446D0046D26E /* NPPDate+NSDate.h */,
+				B5AC23A91B01446D0046D26E /* NPPDate+NSDate.m */,
+				B5AC23AA1B01446D0046D26E /* NPPFunctions.h */,
+				B5AC23AB1B01446D0046D26E /* NPPFunctions.m */,
+				B5AC23AC1B01446D0046D26E /* NPPJSON.h */,
+				B5AC23AD1B01446D0046D26E /* NPPJSON.m */,
+				B5AC23AE1B01446D0046D26E /* NPPLogger.h */,
+				B5AC23AF1B01446D0046D26E /* NPPLogger.m */,
+				B5AC23B01B01446D0046D26E /* NPPModelVO.h */,
+				B5AC23B11B01446D0046D26E /* NPPModelVO.m */,
+				B5AC23B21B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.h */,
+				B5AC23B31B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.m */,
+				B5AC23B41B01446D0046D26E /* NPPNumber.h */,
+				B5AC23B51B01446D0046D26E /* NPPNumber.m */,
+				B5AC23B61B01446D0046D26E /* NPPRegEx.h */,
+				B5AC23B71B01446D0046D26E /* NPPRegEx.m */,
+				B5AC23B81B01446D0046D26E /* NPPRuntime.h */,
+				B5AC23B91B01446D0046D26E /* NPPString+NSString.h */,
+				B5AC23BA1B01446D0046D26E /* NPPString+NSString.m */,
+				B5AC23BB1B01446D0046D26E /* NPPTester.h */,
+				B5AC23BC1B01446D0046D26E /* NPPTester.m */,
+				B5AC23BD1B01446D0046D26E /* NPPThread.h */,
+				B5AC23BE1B01446D0046D26E /* NPPThread.m */,
+				B5AC23BF1B01446D0046D26E /* NPPTimer.h */,
+				B5AC23C01B01446D0046D26E /* NPPTimer.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B5AC23C11B01446D0046D26E /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC23C21B01446D0046D26E /* NippurGeolocation.h */,
+				B5AC23C31B01446D0046D26E /* NPPGeohash.h */,
+				B5AC23C41B01446D0046D26E /* NPPGeohash.m */,
+				B5AC23C51B01446D0046D26E /* NPPGeolocationManager.h */,
+				B5AC23C61B01446D0046D26E /* NPPGeolocationManager.m */,
+				B5AC23C71B01446D0046D26E /* NPPGeoserver.h */,
+				B5AC23C81B01446D0046D26E /* NPPGeoserverApple.h */,
+				B5AC23C91B01446D0046D26E /* NPPGeoserverApple.m */,
+				B5AC23CA1B01446D0046D26E /* NPPModelAddressVO.h */,
+				B5AC23CB1B01446D0046D26E /* NPPModelAddressVO.m */,
+				B5AC23CC1B01446D0046D26E /* NPPModelCountryVO.h */,
+				B5AC23CD1B01446D0046D26E /* NPPModelCountryVO.m */,
+				B5AC23CE1B01446D0046D26E /* NPPModelGeolocationVO.h */,
+				B5AC23CF1B01446D0046D26E /* NPPModelGeolocationVO.m */,
+				B5AC23D01B01446D0046D26E /* NPPModelGeoregionVO.h */,
+				B5AC23D11B01446D0046D26E /* NPPModelGeoregionVO.m */,
+				B5AC23D21B01446D0046D26E /* NPPModelPlaceVO.h */,
+				B5AC23D31B01446D0046D26E /* NPPModelPlaceVO.m */,
+				B5AC23D41B01446D0046D26E /* NPPModelRouteNodeVO.h */,
+				B5AC23D51B01446D0046D26E /* NPPModelRouteNodeVO.m */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		B5AC23D61B01446D0046D26E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC23D71B01446D0046D26E /* NippurInterface.h */,
+				B5AC23D81B01446D0046D26E /* NPPActionSheet.h */,
+				B5AC23D91B01446D0046D26E /* NPPActionSheet.m */,
+				B5AC23DA1B01446D0046D26E /* NPPAlertView.h */,
+				B5AC23DB1B01446D0046D26E /* NPPAlertView.m */,
+				B5AC23DC1B01446D0046D26E /* NPPBadgeView.h */,
+				B5AC23DD1B01446D0046D26E /* NPPBadgeView.m */,
+				B5AC23DE1B01446D0046D26E /* NPPButton.h */,
+				B5AC23DF1B01446D0046D26E /* NPPButton.m */,
+				B5AC23E01B01446D0046D26E /* NPPColor+UIColor.h */,
+				B5AC23E11B01446D0046D26E /* NPPColor+UIColor.m */,
+				B5AC23E21B01446D0046D26E /* NPPEffects.h */,
+				B5AC23E31B01446D0046D26E /* NPPEffects.m */,
+				B5AC23E41B01446D0046D26E /* NPPFont+UIFont.h */,
+				B5AC23E51B01446D0046D26E /* NPPFont+UIFont.m */,
+				B5AC23E61B01446D0046D26E /* NPPImage+UIImage.h */,
+				B5AC23E71B01446D0046D26E /* NPPImage+UIImage.m */,
+				B5AC23E81B01446D0046D26E /* NPPImageView+UIImageView.h */,
+				B5AC23E91B01446D0046D26E /* NPPImageView+UIImageView.m */,
+				B5AC249A1B014D220046D26E /* NPPInterfaceFunctions.h */,
+				B5AC249B1B014D220046D26E /* NPPInterfaceFunctions.m */,
+				B5AC23EA1B01446D0046D26E /* NPPKeyboardToolbar.h */,
+				B5AC23EB1B01446D0046D26E /* NPPKeyboardToolbar.m */,
+				B5AC23EC1B01446D0046D26E /* NPPLabel.h */,
+				B5AC23ED1B01446D0046D26E /* NPPLabel.m */,
+				B5AC23EE1B01446D0046D26E /* NPPNavigator.h */,
+				B5AC23EF1B01446D0046D26E /* NPPNavigator.m */,
+				B5AC23F01B01446D0046D26E /* NPPNotificationView.h */,
+				B5AC23F11B01446D0046D26E /* NPPNotificationView.m */,
+				B5AC23F21B01446D0046D26E /* NPPPickerView.h */,
+				B5AC23F31B01446D0046D26E /* NPPPickerView.m */,
+				B5AC23F41B01446D0046D26E /* NPPRefreshControl.h */,
+				B5AC23F51B01446D0046D26E /* NPPRefreshControl.m */,
+				B5AC23F61B01446D0046D26E /* NPPScrollLabel.h */,
+				B5AC23F71B01446D0046D26E /* NPPScrollLabel.m */,
+				B5AC23F81B01446D0046D26E /* NPPStatusBar.h */,
+				B5AC23F91B01446D0046D26E /* NPPStatusBar.m */,
+				B5AC23FA1B01446D0046D26E /* NPPTableViewCell.h */,
+				B5AC23FB1B01446D0046D26E /* NPPTableViewCell.m */,
+				B5AC23FC1B01446D0046D26E /* NPPTableViewController.h */,
+				B5AC23FD1B01446D0046D26E /* NPPTableViewController.m */,
+				B5AC23FE1B01446D0046D26E /* NPPTableViewSection.h */,
+				B5AC23FF1B01446D0046D26E /* NPPTableViewSection.m */,
+				B5AC24001B01446D0046D26E /* NPPTextField.h */,
+				B5AC24011B01446D0046D26E /* NPPTextField.m */,
+				B5AC24021B01446D0046D26E /* NPPTextFieldManager.h */,
+				B5AC24031B01446D0046D26E /* NPPTextFieldManager.m */,
+				B5AC24041B01446D0046D26E /* NPPView+UIView.h */,
+				B5AC24051B01446D0046D26E /* NPPView+UIView.m */,
+				B5AC24061B01446D0046D26E /* NPPWindow.h */,
+				B5AC24071B01446D0046D26E /* NPPWindow.m */,
+				B5AC24081B01446D0046D26E /* NPPWindowKeyboard.h */,
+				B5AC24091B01446D0046D26E /* NPPWindowKeyboard.m */,
+				B5AC240A1B01446D0046D26E /* NPPWindowOverlay.h */,
+				B5AC240B1B01446D0046D26E /* NPPWindowOverlay.m */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		B5AC240C1B01446D0046D26E /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC240D1B01446D0046D26E /* NippurMedia.h */,
+				B5AC240E1B01446D0046D26E /* NPPAudio.h */,
+				B5AC240F1B01446D0046D26E /* NPPAudio.m */,
+				B5AC24101B01446D0046D26E /* NPPCamera.h */,
+				B5AC24111B01446D0046D26E /* NPPCamera.m */,
+				B5AC24121B01446D0046D26E /* NPPVideo.h */,
+				B5AC24131B01446D0046D26E /* NPPVideo.m */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		60249277167257630030C6B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5AC243F1B01446D0046D26E /* NPPRegEx.h in Headers */,
+				B5AC24851B01446D0046D26E /* NPPTableViewSection.h in Headers */,
+				B5AC24631B01446D0046D26E /* NPPBadgeView.h in Headers */,
+				B5AC24241B01446D0046D26E /* NippurCore.h in Headers */,
+				B5AC247D1B01446D0046D26E /* NPPScrollLabel.h in Headers */,
+				B5AC245A1B01446D0046D26E /* NPPModelPlaceVO.h in Headers */,
+				B5AC243B1B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.h in Headers */,
+				B5AC24931B01446D0046D26E /* NippurMedia.h in Headers */,
+				B5AC248D1B01446D0046D26E /* NPPWindow.h in Headers */,
+				B5AC24981B01446D0046D26E /* NPPVideo.h in Headers */,
+				B5AC246D1B01446D0046D26E /* NPPImage+UIImage.h in Headers */,
+				B5AC24151B01446D0046D26E /* NippurAnimation.h in Headers */,
+				B5AC244F1B01446D0046D26E /* NPPGeoserver.h in Headers */,
+				B5AC245F1B01446D0046D26E /* NPPActionSheet.h in Headers */,
+				B5AC24391B01446D0046D26E /* NPPModelVO.h in Headers */,
+				B5AC248B1B01446D0046D26E /* NPPView+UIView.h in Headers */,
+				B5AC24811B01446D0046D26E /* NPPTableViewCell.h in Headers */,
+				B5AC24581B01446D0046D26E /* NPPModelGeoregionVO.h in Headers */,
+				B5AC24331B01446D0046D26E /* NPPFunctions.h in Headers */,
+				B5AC246F1B01446D0046D26E /* NPPImageView+UIImageView.h in Headers */,
+				B5AC24671B01446D0046D26E /* NPPColor+UIColor.h in Headers */,
+				B5AC24521B01446D0046D26E /* NPPModelAddressVO.h in Headers */,
+				B5AC24541B01446D0046D26E /* NPPModelCountryVO.h in Headers */,
+				B5AC24161B01446D0046D26E /* NPPAction.h in Headers */,
+				B5AC24481B01446D0046D26E /* NPPTimer.h in Headers */,
+				B5AC24611B01446D0046D26E /* NPPAlertView.h in Headers */,
+				B5AC244B1B01446D0046D26E /* NPPGeohash.h in Headers */,
+				B5AC24351B01446D0046D26E /* NPPJSON.h in Headers */,
+				B5AC24691B01446D0046D26E /* NPPEffects.h in Headers */,
+				B5AC24251B01446D0046D26E /* NPPArray+NSArray.h in Headers */,
+				B5AC242F1B01446D0046D26E /* NPPDataManager.h in Headers */,
+				B5AC24911B01446D0046D26E /* NPPWindowOverlay.h in Headers */,
+				B5AC24561B01446D0046D26E /* NPPModelGeolocationVO.h in Headers */,
+				B5AC244D1B01446D0046D26E /* NPPGeolocationManager.h in Headers */,
+				B5AC24411B01446D0046D26E /* NPPRuntime.h in Headers */,
+				B5AC248F1B01446D0046D26E /* NPPWindowKeyboard.h in Headers */,
+				B5AC246B1B01446D0046D26E /* NPPFont+UIFont.h in Headers */,
+				B5AC242D1B01446D0046D26E /* NPPConnector.h in Headers */,
+				B5AC24941B01446D0046D26E /* NPPAudio.h in Headers */,
+				B5AC24831B01446D0046D26E /* NPPTableViewController.h in Headers */,
+				B5AC247F1B01446D0046D26E /* NPPStatusBar.h in Headers */,
+				B5AC24961B01446D0046D26E /* NPPCamera.h in Headers */,
+				B5AC24501B01446D0046D26E /* NPPGeoserverApple.h in Headers */,
+				B5AC24271B01446D0046D26E /* NPPBaseGestureRecognizer.h in Headers */,
+				B5AC24891B01446D0046D26E /* NPPTextFieldManager.h in Headers */,
+				B5AC244A1B01446D0046D26E /* NippurGeolocation.h in Headers */,
+				B5AC24871B01446D0046D26E /* NPPTextField.h in Headers */,
+				B5AC24461B01446D0046D26E /* NPPThread.h in Headers */,
+				B5AC245C1B01446D0046D26E /* NPPModelRouteNodeVO.h in Headers */,
+				B5AC247B1B01446D0046D26E /* NPPRefreshControl.h in Headers */,
+				B5AC245E1B01446D0046D26E /* NippurInterface.h in Headers */,
+				B5AC24371B01446D0046D26E /* NPPLogger.h in Headers */,
+				B5AC24751B01446D0046D26E /* NPPNavigator.h in Headers */,
+				B5AC24311B01446D0046D26E /* NPPDate+NSDate.h in Headers */,
+				B5AC24711B01446D0046D26E /* NPPKeyboardToolbar.h in Headers */,
+				B5AC24421B01446D0046D26E /* NPPString+NSString.h in Headers */,
+				B5AC24291B01446D0046D26E /* NPPCipher.h in Headers */,
+				B5AC24441B01446D0046D26E /* NPPTester.h in Headers */,
+				B5AC242B1B01446D0046D26E /* NPPClockController.h in Headers */,
+				B5AC24791B01446D0046D26E /* NPPPickerView.h in Headers */,
+				B5AC24771B01446D0046D26E /* NPPNotificationView.h in Headers */,
+				B5AC243D1B01446D0046D26E /* NPPNumber.h in Headers */,
+				B5AC249C1B014D220046D26E /* NPPInterfaceFunctions.h in Headers */,
+				B5AC24731B01446D0046D26E /* NPPLabel.h in Headers */,
+				B5AC24651B01446D0046D26E /* NPPButton.h in Headers */,
+				B5AC241E1B01446D0046D26E /* NPPActionRepeat.h in Headers */,
+				B5AC241C1B01446D0046D26E /* NPPActionMove.h in Headers */,
+				B5AC24181B01446D0046D26E /* NPPActionBlock.h in Headers */,
+				B5AC24201B01446D0046D26E /* NPPActionSelector.h in Headers */,
+				B5AC24221B01446D0046D26E /* NPPActionSequence.h in Headers */,
+				B5AC241A1B01446D0046D26E /* NPPActionGroup.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		602492181672564F0030C6B7 /* NippurUniversal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 602492231672564F0030C6B7 /* Build configuration list for PBXNativeTarget "NippurUniversal" */;
+			buildPhases = (
+				602492151672564F0030C6B7 /* Sources */,
+				602492161672564F0030C6B7 /* Frameworks */,
+				602492171672564F0030C6B7 /* Resources */,
+				60249277167257630030C6B7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NippurUniversal;
+			productName = Framework;
+			productReference = 602492191672564F0030C6B7 /* Nippur.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95D874451585A3FD000A70F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "db-in";
+			};
+			buildConfigurationList = 95D874481585A3FD000A70F4 /* Build configuration list for PBXProject "Nippur" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				pt,
+			);
+			mainGroup = 95D874431585A3FD000A70F4;
+			productRefGroup = 95D8744F1585A3FD000A70F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				602492C21672579D0030C6B7 /* BUILD ALL */,
+				602492181672564F0030C6B7 /* NippurUniversal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		602492171672564F0030C6B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5AC24141B01446D0046D26E /* Nippur.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		602492C6167257A20030C6B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_TARGET=\"NippurUniversal\"\nFMK_NAME=\"Nippur\"\nFMK_VERSION=\"A\"\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\n#INSTALL_DIR=\"${LOCAL_DEVELOPER_DIR}/Xcode/Templates/Project Templates/${FMK_NAME}/${FMK_NAME} Base.xctemplate/Frameworks/${FMK_NAME}.framework\"\nINSTALL_DIR=\"Templates/Project Templates/${FMK_NAME}/${FMK_NAME} Base.xctemplate/Frameworks/${FMK_NAME}.framework\"\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=\"build\"\nDEVICE_DIR=\"${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\"\nSIMULATOR_DIR=\"${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\"\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_TARGET}\" -sdk iphoneos\nxcodebuild -configuration \"Release\" -target \"${FMK_TARGET}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Removes the binary and header from the resources folder.\nrm -r \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/Headers\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/${FMK_NAME}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7...) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		602492151672564F0030C6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5AC24661B01446D0046D26E /* NPPButton.m in Sources */,
+				B5AC24511B01446D0046D26E /* NPPGeoserverApple.m in Sources */,
+				B5AC24571B01446D0046D26E /* NPPModelGeolocationVO.m in Sources */,
+				B5AC24191B01446D0046D26E /* NPPActionBlock.m in Sources */,
+				B5AC24861B01446D0046D26E /* NPPTableViewSection.m in Sources */,
+				B5AC245D1B01446D0046D26E /* NPPModelRouteNodeVO.m in Sources */,
+				B5AC246A1B01446D0046D26E /* NPPEffects.m in Sources */,
+				B5AC243E1B01446D0046D26E /* NPPNumber.m in Sources */,
+				B5AC24301B01446D0046D26E /* NPPDataManager.m in Sources */,
+				B5AC24531B01446D0046D26E /* NPPModelAddressVO.m in Sources */,
+				B5AC248A1B01446D0046D26E /* NPPTextFieldManager.m in Sources */,
+				B5AC242C1B01446D0046D26E /* NPPClockController.m in Sources */,
+				B5AC24491B01446D0046D26E /* NPPTimer.m in Sources */,
+				B5AC248C1B01446D0046D26E /* NPPView+UIView.m in Sources */,
+				B5AC242E1B01446D0046D26E /* NPPConnector.m in Sources */,
+				B5AC24951B01446D0046D26E /* NPPAudio.m in Sources */,
+				B5AC24841B01446D0046D26E /* NPPTableViewController.m in Sources */,
+				B5AC246C1B01446D0046D26E /* NPPFont+UIFont.m in Sources */,
+				B5AC24551B01446D0046D26E /* NPPModelCountryVO.m in Sources */,
+				B5AC24601B01446D0046D26E /* NPPActionSheet.m in Sources */,
+				B5AC24881B01446D0046D26E /* NPPTextField.m in Sources */,
+				B5AC24641B01446D0046D26E /* NPPBadgeView.m in Sources */,
+				B5AC24401B01446D0046D26E /* NPPRegEx.m in Sources */,
+				B5AC24721B01446D0046D26E /* NPPKeyboardToolbar.m in Sources */,
+				B5AC241D1B01446D0046D26E /* NPPActionMove.m in Sources */,
+				B5AC246E1B01446D0046D26E /* NPPImage+UIImage.m in Sources */,
+				B5AC24921B01446D0046D26E /* NPPWindowOverlay.m in Sources */,
+				B5AC247E1B01446D0046D26E /* NPPScrollLabel.m in Sources */,
+				B5AC24761B01446D0046D26E /* NPPNavigator.m in Sources */,
+				B5AC24321B01446D0046D26E /* NPPDate+NSDate.m in Sources */,
+				B5AC24231B01446D0046D26E /* NPPActionSequence.m in Sources */,
+				B5AC243C1B01446D0046D26E /* NPPNotificationCenter+NSNotificationCenter.m in Sources */,
+				B5AC243A1B01446D0046D26E /* NPPModelVO.m in Sources */,
+				B5AC24451B01446D0046D26E /* NPPTester.m in Sources */,
+				B5AC245B1B01446D0046D26E /* NPPModelPlaceVO.m in Sources */,
+				B5AC241B1B01446D0046D26E /* NPPActionGroup.m in Sources */,
+				B5AC24211B01446D0046D26E /* NPPActionSelector.m in Sources */,
+				B5AC24681B01446D0046D26E /* NPPColor+UIColor.m in Sources */,
+				B5AC24991B01446D0046D26E /* NPPVideo.m in Sources */,
+				B5AC24901B01446D0046D26E /* NPPWindowKeyboard.m in Sources */,
+				B5AC24741B01446D0046D26E /* NPPLabel.m in Sources */,
+				B5AC24591B01446D0046D26E /* NPPModelGeoregionVO.m in Sources */,
+				B5AC249D1B014D220046D26E /* NPPInterfaceFunctions.m in Sources */,
+				B5AC24781B01446D0046D26E /* NPPNotificationView.m in Sources */,
+				B5AC247A1B01446D0046D26E /* NPPPickerView.m in Sources */,
+				B5AC24701B01446D0046D26E /* NPPImageView+UIImageView.m in Sources */,
+				B5AC244E1B01446D0046D26E /* NPPGeolocationManager.m in Sources */,
+				B5AC248E1B01446D0046D26E /* NPPWindow.m in Sources */,
+				B5AC24431B01446D0046D26E /* NPPString+NSString.m in Sources */,
+				B5AC24821B01446D0046D26E /* NPPTableViewCell.m in Sources */,
+				B5AC247C1B01446D0046D26E /* NPPRefreshControl.m in Sources */,
+				B5AC244C1B01446D0046D26E /* NPPGeohash.m in Sources */,
+				B5AC24261B01446D0046D26E /* NPPArray+NSArray.m in Sources */,
+				B5AC24281B01446D0046D26E /* NPPBaseGestureRecognizer.m in Sources */,
+				B5AC24171B01446D0046D26E /* NPPAction.m in Sources */,
+				B5AC24361B01446D0046D26E /* NPPJSON.m in Sources */,
+				B5AC241F1B01446D0046D26E /* NPPActionRepeat.m in Sources */,
+				B5AC24471B01446D0046D26E /* NPPThread.m in Sources */,
+				B5AC24801B01446D0046D26E /* NPPStatusBar.m in Sources */,
+				B5AC24381B01446D0046D26E /* NPPLogger.m in Sources */,
+				B5AC242A1B01446D0046D26E /* NPPCipher.m in Sources */,
+				B5AC24621B01446D0046D26E /* NPPAlertView.m in Sources */,
+				B5AC24341B01446D0046D26E /* NPPFunctions.m in Sources */,
+				B5AC24971B01446D0046D26E /* NPPCamera.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		602492241672564F0030C6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				INFOPLIST_FILE = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = Nippur;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		602492251672564F0030C6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "NPP_RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				INFOPLIST_FILE = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = Nippur;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		602492C41672579D0030C6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		602492C51672579D0030C6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		95D874641585A3FD000A70F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95D874651585A3FD000A70F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		602492231672564F0030C6B7 /* Build configuration list for PBXNativeTarget "NippurUniversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602492241672564F0030C6B7 /* Debug */,
+				602492251672564F0030C6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		602492C31672579D0030C6B7 /* Build configuration list for PBXAggregateTarget "BUILD ALL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602492C41672579D0030C6B7 /* Debug */,
+				602492C51672579D0030C6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95D874481585A3FD000A70F4 /* Build configuration list for PBXProject "Nippur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95D874641585A3FD000A70F4 /* Debug */,
+				95D874651585A3FD000A70F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95D874451585A3FD000A70F4 /* Project object */;
+}

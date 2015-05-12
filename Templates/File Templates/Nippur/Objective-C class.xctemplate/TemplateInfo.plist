@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowedTypes</key>
+	<array>
+		<string>public.objective-c-source</string>
+		<string>public.objective-c-plus-plus-source</string>
+	</array>
+    
+    <key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+    
+    <key>Description</key>
+	<string>An Objective-C class, organized with Xcode Macros and comments. Includes a header file.</string>
+	
+    <key>Kind</key>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+	
+    <key>DefaultCompletionName</key>
+	<string>MyClass</string>
+	
+    <key>MainTemplateFile</key>
+	<string>___FILEBASENAME___.m</string> 
+	
+    <key>Options</key>
+	<array>
+		<dict>
+			<key>Description</key>
+			<string>The name of the class to create</string>
+			<key>Identifier</key>
+			<string>productName</string>
+			<key>Name</key>
+			<string>Class</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>NSObject</string>
+			<key>Description</key>
+			<string>What class to subclass in the new file</string>
+			<key>Identifier</key>
+			<string>cocoaSubclass</string>
+			<key>Name</key>
+			<string>Subclass of</string>
+			<key>Required</key>
+			<string>YES</string>
+			<key>Type</key>
+			<string>combo</string>
+			<key>Values</key>
+			<array>
+				<string>NSObject</string>
+				<string>UIView</string>
+				<string>UIViewController</string>
+				<string>NPPModelVO</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>true</string>
+			<key>Identifier</key>
+			<string>WithXIB</string>
+			<key>Name</key>
+			<string>With XIB for user interface</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>cocoaTouchSubclass</key>
+				<array>
+					<string>UIViewController</string>
+					<string>UITableViewController</string>
+				</array>
+			</dict>
+			<key>Type</key>
+			<string>checkbox</string>
+		</dict>
+	</array>
+	
+    <key>SortOrder</key>
+	<string>1</string>
+	
+    <key>Summary</key>
+	<string>An Objective-C class with a header</string>
+</dict>
+</plist>
