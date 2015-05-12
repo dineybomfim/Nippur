@@ -12,6 +12,8 @@
 	<dict>
 		<key>3A7CA49AB14DFA2F1A880BE4A35DA6D6970602A7</key>
 		<string>https://bitbucket.org/bikedafirma/ios.git</string>
+		<key>3E1E569AFCEABCFAB9CE305F5176C44127A1F688</key>
+		<string>https://github.com/dineybomfim/Nippur.git</string>
 		<key>B55437634D973A9B2D6581C5FE05BA48555DF56B</key>
 		<string>https://bitbucket.org/dineybomfim/nippur.git</string>
 	</dict>
@@ -21,15 +23,17 @@
 	<dict>
 		<key>3A7CA49AB14DFA2F1A880BE4A35DA6D6970602A7</key>
 		<string>../../..</string>
-		<key>B55437634D973A9B2D6581C5FE05BA48555DF56B</key>
+		<key>3E1E569AFCEABCFAB9CE305F5176C44127A1F688</key>
 		<string>../..</string>
+		<key>B55437634D973A9B2D6581C5FE05BA48555DF56B</key>
+		<string>../../../Nippur</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/dineybomfim/nippur.git</string>
+	<string>https://github.com/dineybomfim/Nippur.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B55437634D973A9B2D6581C5FE05BA48555DF56B</string>
+	<string>3E1E569AFCEABCFAB9CE305F5176C44127A1F688</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -47,6 +51,14 @@
 			<string>B55437634D973A9B2D6581C5FE05BA48555DF56B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Nippur</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3E1E569AFCEABCFAB9CE305F5176C44127A1F688</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Xcode</string>
 		</dict>
 	</array>
 </dict>
