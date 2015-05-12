@@ -40,12 +40,10 @@
 		B5AC24241B01446D0046D26E /* NippurCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC239B1B01446D0046D26E /* NippurCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5AC24251B01446D0046D26E /* NPPArray+NSArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC239C1B01446D0046D26E /* NPPArray+NSArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5AC24261B01446D0046D26E /* NPPArray+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC239D1B01446D0046D26E /* NPPArray+NSArray.m */; };
-		B5AC24271B01446D0046D26E /* NPPBaseGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC239E1B01446D0046D26E /* NPPBaseGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5AC24281B01446D0046D26E /* NPPBaseGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC239F1B01446D0046D26E /* NPPBaseGestureRecognizer.m */; };
 		B5AC24291B01446D0046D26E /* NPPCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A01B01446D0046D26E /* NPPCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5AC242A1B01446D0046D26E /* NPPCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A11B01446D0046D26E /* NPPCipher.m */; };
-		B5AC242B1B01446D0046D26E /* NPPClockController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A21B01446D0046D26E /* NPPClockController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5AC242C1B01446D0046D26E /* NPPClockController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A31B01446D0046D26E /* NPPClockController.m */; };
+		B5AC242B1B01446D0046D26E /* NPPClockManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A21B01446D0046D26E /* NPPClockManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5AC242C1B01446D0046D26E /* NPPClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A31B01446D0046D26E /* NPPClockManager.m */; };
 		B5AC242D1B01446D0046D26E /* NPPConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A41B01446D0046D26E /* NPPConnector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5AC242E1B01446D0046D26E /* NPPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC23A51B01446D0046D26E /* NPPConnector.m */; };
 		B5AC242F1B01446D0046D26E /* NPPDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC23A61B01446D0046D26E /* NPPDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -189,12 +187,10 @@
 		B5AC239B1B01446D0046D26E /* NippurCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurCore.h; sourceTree = "<group>"; };
 		B5AC239C1B01446D0046D26E /* NPPArray+NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NPPArray+NSArray.h"; sourceTree = "<group>"; };
 		B5AC239D1B01446D0046D26E /* NPPArray+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NPPArray+NSArray.m"; sourceTree = "<group>"; };
-		B5AC239E1B01446D0046D26E /* NPPBaseGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPBaseGestureRecognizer.h; sourceTree = "<group>"; };
-		B5AC239F1B01446D0046D26E /* NPPBaseGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPBaseGestureRecognizer.m; sourceTree = "<group>"; };
 		B5AC23A01B01446D0046D26E /* NPPCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPCipher.h; sourceTree = "<group>"; };
 		B5AC23A11B01446D0046D26E /* NPPCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPCipher.m; sourceTree = "<group>"; };
-		B5AC23A21B01446D0046D26E /* NPPClockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPClockController.h; sourceTree = "<group>"; };
-		B5AC23A31B01446D0046D26E /* NPPClockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPClockController.m; sourceTree = "<group>"; };
+		B5AC23A21B01446D0046D26E /* NPPClockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPClockManager.h; sourceTree = "<group>"; };
+		B5AC23A31B01446D0046D26E /* NPPClockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPClockManager.m; sourceTree = "<group>"; };
 		B5AC23A41B01446D0046D26E /* NPPConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPConnector.h; sourceTree = "<group>"; };
 		B5AC23A51B01446D0046D26E /* NPPConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPConnector.m; sourceTree = "<group>"; };
 		B5AC23A61B01446D0046D26E /* NPPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPDataManager.h; sourceTree = "<group>"; };
@@ -409,12 +405,10 @@
 				B5AC239B1B01446D0046D26E /* NippurCore.h */,
 				B5AC239C1B01446D0046D26E /* NPPArray+NSArray.h */,
 				B5AC239D1B01446D0046D26E /* NPPArray+NSArray.m */,
-				B5AC239E1B01446D0046D26E /* NPPBaseGestureRecognizer.h */,
-				B5AC239F1B01446D0046D26E /* NPPBaseGestureRecognizer.m */,
 				B5AC23A01B01446D0046D26E /* NPPCipher.h */,
 				B5AC23A11B01446D0046D26E /* NPPCipher.m */,
-				B5AC23A21B01446D0046D26E /* NPPClockController.h */,
-				B5AC23A31B01446D0046D26E /* NPPClockController.m */,
+				B5AC23A21B01446D0046D26E /* NPPClockManager.h */,
+				B5AC23A31B01446D0046D26E /* NPPClockManager.m */,
 				B5AC23A41B01446D0046D26E /* NPPConnector.h */,
 				B5AC23A51B01446D0046D26E /* NPPConnector.m */,
 				B5AC23A61B01446D0046D26E /* NPPDataManager.h */,
@@ -601,7 +595,6 @@
 				B5AC247F1B01446D0046D26E /* NPPStatusBar.h in Headers */,
 				B5AC24961B01446D0046D26E /* NPPCamera.h in Headers */,
 				B5AC24501B01446D0046D26E /* NPPGeoserverApple.h in Headers */,
-				B5AC24271B01446D0046D26E /* NPPBaseGestureRecognizer.h in Headers */,
 				B5AC24891B01446D0046D26E /* NPPTextFieldManager.h in Headers */,
 				B5AC244A1B01446D0046D26E /* NippurGeolocation.h in Headers */,
 				B5AC24871B01446D0046D26E /* NPPTextField.h in Headers */,
@@ -616,7 +609,7 @@
 				B5AC24421B01446D0046D26E /* NPPString+NSString.h in Headers */,
 				B5AC24291B01446D0046D26E /* NPPCipher.h in Headers */,
 				B5AC24441B01446D0046D26E /* NPPTester.h in Headers */,
-				B5AC242B1B01446D0046D26E /* NPPClockController.h in Headers */,
+				B5AC242B1B01446D0046D26E /* NPPClockManager.h in Headers */,
 				B5AC24791B01446D0046D26E /* NPPPickerView.h in Headers */,
 				B5AC24771B01446D0046D26E /* NPPNotificationView.h in Headers */,
 				B5AC243D1B01446D0046D26E /* NPPNumber.h in Headers */,
@@ -725,7 +718,7 @@
 				B5AC24301B01446D0046D26E /* NPPDataManager.m in Sources */,
 				B5AC24531B01446D0046D26E /* NPPModelAddressVO.m in Sources */,
 				B5AC248A1B01446D0046D26E /* NPPTextFieldManager.m in Sources */,
-				B5AC242C1B01446D0046D26E /* NPPClockController.m in Sources */,
+				B5AC242C1B01446D0046D26E /* NPPClockManager.m in Sources */,
 				B5AC24491B01446D0046D26E /* NPPTimer.m in Sources */,
 				B5AC248C1B01446D0046D26E /* NPPView+UIView.m in Sources */,
 				B5AC242E1B01446D0046D26E /* NPPConnector.m in Sources */,
@@ -767,7 +760,6 @@
 				B5AC247C1B01446D0046D26E /* NPPRefreshControl.m in Sources */,
 				B5AC244C1B01446D0046D26E /* NPPGeohash.m in Sources */,
 				B5AC24261B01446D0046D26E /* NPPArray+NSArray.m in Sources */,
-				B5AC24281B01446D0046D26E /* NPPBaseGestureRecognizer.m in Sources */,
 				B5AC24171B01446D0046D26E /* NPPAction.m in Sources */,
 				B5AC24361B01446D0046D26E /* NPPJSON.m in Sources */,
 				B5AC241F1B01446D0046D26E /* NPPActionRepeat.m in Sources */,
