@@ -9,5 +9,4 @@ script:
 #- bundle exec rake specs:ios
 #- bundle exec rake specs:osx
 #- rake test
-- set -o pipefail && xcodebuild test -workspace Example/Nippur.xcworkspace -scheme Nippur-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 - pod lib lint --quick
