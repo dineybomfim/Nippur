@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://db-in.com/nippur"
+  s.homepage         = "https://github.com/dineybomfim/Nippur"
   s.license          = 'MIT'
   s.author           = { "Diney Bomfim" => "diney@db-in.com" }
-  s.source           = { :git => "https://bitbucket.org/dineybomfim/nippur.git", :tag => s.version, :submodules => true }
+  s.source           = { :git => "https://github.com/dineybomfim/Nippur.git", :tag => s.version, :submodules => true }
   s.social_media_url = 'https://twitter.com/dineybomfim'
 
   s.requires_arc = false
