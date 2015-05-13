@@ -32,6 +32,8 @@
 //
 //**********************************************************************************************************
 
+#define NPP_CONN_TIMEOUT			20.0
+
 NSString *const kNPPHTTPMethodGET			= @"GET";
 NSString *const kNPPHTTPMethodHEAD			= @"HEAD";
 NSString *const kNPPHTTPMethodPOST			= @"POST";
@@ -40,10 +42,10 @@ NSString *const kNPPHTTPMethodDELETE		= @"DELETE";
 NSString *const kNPPHTTPMethodTRACE			= @"TRACE";
 NSString *const kNPPHTTPMethodCONNECT		= @"CONNECT";
 
-NSString *const NPPKeyConnectorDidStart		= @"NPPKeyConnectorDidStart";
-NSString *const NPPKeyConnectorDidResponse	= @"NPPKeyConnectorDidResponse";
-NSString *const NPPKeyConnectorDidFinish	= @"NPPKeyConnectorDidFinish";
-NSString *const NPPConnectorErrorDomain		= @"NPPConnectorErrorDomain";
+NSString *const kNPPKeyConnectorDidStart	= @"kNPPKeyConnectorDidStart";
+NSString *const kNPPKeyConnectorDidResponse	= @"kNPPKeyConnectorDidResponse";
+NSString *const kNPPKeyConnectorDidFinish	= @"kNPPKeyConnectorDidFinish";
+NSString *const kNPPConnectorErrorDomain	= @"kNPPConnectorErrorDomain";
 
 #pragma mark -
 #pragma mark Private Interface
@@ -60,7 +62,7 @@ NSString *const NPPConnectorErrorDomain		= @"NPPConnectorErrorDomain";
 //	Private Definitions
 //**************************************************
 
-static double _defaultTimeout = 30.0;
+//static double _defaultTimeout = 30.0;
 
 #pragma mark -
 #pragma mark Private Functions
@@ -103,6 +105,36 @@ static NSString *nppValidateHTTPMethod(NPPHTTPMethod method)
 	return finalMethod;
 }
 
+static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
+{
+	id object = nil;
+	NSArray *keys = nil;
+	NSString *key = nil;
+	NSRange range;
+	
+	// Retries.
+	keys = [dict allKeys];
+	
+	for (key in keys)
+	{
+		range = [url rangeOfString:key];
+		
+		// Searching for any rule.
+		if (range.length > 0 || [key isEqualToString:@"*"])
+		{
+			object = [dict objectForKey:key];
+			
+			// A specific rule is strongest than a global rule.
+			if (range.length > 0)
+			{
+				break;
+			}
+		}
+	}
+	
+	return object;
+}
+
 #pragma mark -
 #pragma mark Private Category
 //**************************************************
@@ -110,8 +142,16 @@ static NSString *nppValidateHTTPMethod(NPPHTTPMethod method)
 //**************************************************
 
 @interface NPPConnector()
+{
+@private
+	NSURLConnection				*_conn;
+	NSURLRequest				*_request;
+	NPPBlockConnector			_block;
+	NSMutableString				*_log;
+}
 
-@property (nonatomic, readonly) NSURLRequest *request;
+@property (nonatomic, NPP_RETAIN) NSURLRequest *request;
+@property (nonatomic, NPP_COPY) NPPBlockConnector block;
 
 // Initializes a new instance.
 - (void) initializing;
@@ -131,112 +171,6 @@ static NSString *nppValidateHTTPMethod(NPPHTTPMethod method)
 @end
 
 #pragma mark -
-#pragma mark Public Functions
-#pragma mark -
-//**********************************************************************************************************
-//
-//	Public Functions
-//
-//**********************************************************************************************************
-
-NSString *nppHTTPParamsToString(NSDictionary *params)
-{
-	NSMutableString *string = [[NSMutableString alloc] init];
-	
-	// Dictionary params will be converted into string.
-	if ([params isKindOfClass:[NSDictionary class]])
-	{
-		NSString *key = nil;
-		NSString *param = nil;
-		NSUInteger i = 0;
-		NSUInteger count = [params count];
-		
-		// Constructs the parameters.
-		for (key in params)
-		{
-			// Fully encode the HTML data.
-			param = [NSString stringWithFormat:@"%@=%@", key, [params objectForKey:key]];
-			[string appendFormat:@"%@%@", [param encodeHTMLFull], (++i < count) ? @"&" : @""];
-		}
-	}
-	
-	return nppAutorelease(string);
-}
-
-NSDictionary *nppHTTPStringToParams(NSString *string)
-{
-	NSMutableString *raw = nil;
-	NSRange range = NPPRangeZero;
-	
-	// Slicing HTTP domain.
-	if ([string hasPrefix:@"http"])
-	{
-		range = [string rangeOfString:@"?"];
-		string = (range.length > 0) ? [string substringFromIndex:range.location + 1] : string;
-	}
-	
-	raw = [NSMutableString stringWithString:string];
-	
-	// Preparing raw string.
-	do
-	{
-		range = [raw rangeOfString:@"="];
-		if (range.length > 0)
-		{
-			[raw replaceCharactersInRange:range withString:@"#::#"];
-		}
-		
-		range = [raw rangeOfString:@"&"];
-		if (range.length > 0)
-		{
-			[raw replaceCharactersInRange:range withString:@"#::#"];
-		}
-	}
-	while (range.length > 0);
-	
-	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-	NSArray *array = [raw componentsSeparatedByString:@"#::#"];
-	NSString *key = nil;
-	NSString *value = nil;
-	NSUInteger i = 0;
-	NSUInteger count = [array count];
-	
-	for (i = 0; i < count; i += 2)
-	{
-		if (i + 1 < count)
-		{
-			key = [[array objectAtIndex:i] decodeHTMLFull];
-			value = [[array objectAtIndex:i + 1] decodeHTMLFull];
-		}
-		else
-		{
-			key = [NSString stringWithFormat:@"param%i", (int)i];
-			value = [[array objectAtIndex:i] decodeHTMLFull];
-		}
-		
-		[params setObject:value forKey:key];
-	}
-	
-	return nppAutorelease(params);
-}
-
-NSData *nppHTTPParamsToData(NSDictionary *params)
-{
-	NSString *string = nppHTTPParamsToString(params);
-	
-	return [string dataUsingEncoding:NSUTF8StringEncoding];
-}
-
-NSDictionary *nppHTTPDataToParams(NSData *data)
-{
-	NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	NSDictionary *params = nppHTTPStringToParams(string);
-	nppRelease(string);
-	
-	return params;
-}
-
-#pragma mark -
 #pragma mark Public Interface
 #pragma mark -
 //**********************************************************************************************************
@@ -244,6 +178,18 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 //	Public Interface
 //
 //**********************************************************************************************************
+
+#pragma mark -
+#pragma mark Public Functions
+//**************************************************
+//	Public Functions
+//**************************************************
+
+#pragma mark -
+#pragma mark Public Class
+//**************************************************
+//	Public Class
+//**************************************************
 
 @implementation NPPConnector
 
@@ -253,7 +199,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 //	Properties
 //**************************************************
 
-@synthesize request = _request;
+@synthesize request = _request, block = _block;
 @synthesize state = _state, statusCode = _statusCode, contentLength = _contentLength,
 			receivedHeader = _receivedHeader, receivedData = _receivedData, error = _error,
 			retries = _retries, logging = _logging;
@@ -269,8 +215,8 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 	if ((self = [self init]))
 	{
 		_state = NPPConnectorStateReady;
-		_block = [block copy];
-		_request = [request copy];
+		self.block = block;
+		self.request = request;
 		
 		[self initializing];
 	}
@@ -286,9 +232,6 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 {
 	if ((self = [self init]))
 	{
-		_state = NPPConnectorStateReady;
-		_block = [block copy];
-		
 		//*************************
 		//	Request
 		//*************************
@@ -307,7 +250,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 		request = [[NSMutableURLRequest alloc] init];
 		[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
 		[request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-		[request setTimeoutInterval:_defaultTimeout];
+		[request setTimeoutInterval:NPP_CONN_TIMEOUT];
 		
 		// Creating POST and GET requests.
 		switch (method)
@@ -322,7 +265,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 				}
 				else
 				{
-					httpData = nppHTTPParamsToString(body);
+					httpData = [NSString stringWithHTTPParams:body];
 					bodyData = [httpData dataUsingEncoding:NSUTF8StringEncoding];
 				}
 				
@@ -335,7 +278,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 			default:
 				components = [fullURL componentsSeparatedByString:@"?"];
 				urlString = [components firstObject];
-				httpData = nppHTTPParamsToString(body);
+				httpData = [NSString stringWithHTTPParams:body];
 				
 				// Appends any previous GET data.
 				if ([components count] > 1)
@@ -368,7 +311,10 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 			[request setValue:[headers objectForKey:field] forHTTPHeaderField:field];
 		}
 		
-		_request = [request copy];
+		_state = NPPConnectorStateReady;
+		self.block = block;
+		self.request = request;
+		
 		nppRelease(request);
 		
 		[self initializing];
@@ -409,52 +355,13 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 	NSString *url = [[_request URL] absoluteString];
 	NSMutableDictionary *retriesDict = nppConnectorRetries();
 	NSMutableDictionary *logsDict = nppConnectorLogs();
-	NSArray *keys = nil;
-	NSString *key = nil;
-	NSRange range;
+	id object = nil;
 	
-	_retries = 0;
-	_logging = YES;
+	object = nppConnectorReadPattern(retriesDict, url);
+	_retries = [object unsignedIntValue];
 	
-	// Retries.
-	keys = [retriesDict allKeys];
-	
-	for (key in keys)
-	{
-		range = [url rangeOfString:key];
-		
-		// Searching for any rule.
-		if (range.length > 0 || [key isEqualToString:@"*"])
-		{
-			_retries = [[retriesDict objectForKey:key] unsignedIntValue];
-			
-			// A specific rule is strongest than a global rule.
-			if (range.length > 0)
-			{
-				break;
-			}
-		}
-	}
-	
-	// Logging.
-	keys = [logsDict allKeys];
-	
-	for (key in keys)
-	{
-		range = [url rangeOfString:key];
-		
-		// Searching for any rule.
-		if (range.length > 0 || [key isEqualToString:@"*"])
-		{
-			_logging = [[logsDict objectForKey:key] unsignedIntValue];
-			
-			// A specific rule is strongest than a global rule.
-			if (range.length > 0)
-			{
-				break;
-			}
-		}
-	}
+	object = nppConnectorReadPattern(logsDict, url);
+	_logging = (object != nil) ? [object boolValue] : YES;
 }
 
 - (void) startConnection
@@ -489,7 +396,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 	// Just send notification for the first attempt and when it's logging.
 	if (_currentRetry == 0 && _logging)
 	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:NPPKeyConnectorDidStart object:self];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidStart object:self];
 		//nppBlockMain();
 	}
 	
@@ -511,7 +418,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 		if ([method isEqualToString:kNPPHTTPMethodPOST] || [method isEqualToString:kNPPHTTPMethodPUT])
 		{
 			//TODO: Set Log limit
-			NSDictionary *params = nppHTTPDataToParams([_request HTTPBody]);
+			NSDictionary *params = [[_request HTTPBody] httpParams];
 			[_log appendFormat:@" BODY: %@", [NPPJSON stringWithObject:params]];
 		}
 		
@@ -535,7 +442,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 	// Just send notification when it's logging.
 	if (_logging)
 	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:NPPKeyConnectorDidFinish object:self];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidFinish object:self];
 		//nppBlockMain();
 	}
 	
@@ -564,7 +471,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 - (void) cancelConnection
 {
 	nppRelease(_error);
-	_error = [[NSError alloc] initWithDomain:NPPConnectorErrorDomain code:ECANCELED userInfo:nil];
+	_error = [[NSError alloc] initWithDomain:kNPPConnectorErrorDomain code:ECANCELED userInfo:nil];
 	_statusCode = 0;
 	_state = NPPConnectorStateCancelled;
 	
@@ -602,7 +509,7 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 	// Just send notification when it's logging.
 	if (_logging)
 	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:NPPKeyConnectorDidResponse object:self];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidResponse object:self];
 		//nppBlockMain();
 	}
 }
@@ -696,21 +603,16 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 
 + (void) defineRetries:(unsigned int)retries forURL:(NSString *)urlPattern
 {
-	NSMutableDictionary *retriesDict = nppConnectorRetries();
+	NSMutableDictionary *dict = nppConnectorRetries();
 	
-	[retriesDict setObject:[NSNumber numberWithUnsignedInt:retries] forKey:urlPattern];
+	[dict setObject:[NSNumber numberWithUnsignedInt:retries] forKey:urlPattern];
 }
 
 + (void) defineLogging:(BOOL)isLogging forURL:(NSString *)urlPattern
 {
-	NSMutableDictionary *retriesDict = nppConnectorLogs();
+	NSMutableDictionary *dict = nppConnectorLogs();
 	
-	[retriesDict setObject:[NSNumber numberWithBool:isLogging] forKey:urlPattern];
-}
-
-+ (void) defineTimeout:(double)timeout
-{
-	_defaultTimeout = MAX(timeout, 1.0);
+	[dict setObject:[NSNumber numberWithBool:isLogging] forKey:urlPattern];
 }
 
 #pragma mark -
@@ -722,12 +624,13 @@ NSDictionary *nppHTTPDataToParams(NSData *data)
 - (void) dealloc
 {
 	nppRelease(_conn);
+	nppRelease(_request);
 	nppRelease(_block);
 	nppRelease(_log);
+	
 	nppRelease(_receivedHeader);
 	nppRelease(_receivedData);
 	nppRelease(_error);
-	nppRelease(_request);
 	
 #ifndef NPP_ARC
 	[super dealloc];

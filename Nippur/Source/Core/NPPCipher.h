@@ -55,6 +55,10 @@
 // Unreversible ciphers.
 - (NSString *) encodeMD5;
 
+// HTTP encodings
++ (NSString *) stringWithHTTPParams:(NSDictionary *)params;
+- (NSDictionary *) httpParams;
+
 @end
 
 /*!
@@ -74,6 +78,10 @@
 
 // Unreversible ciphers.
 - (NSData *) encodeHMACSHA1:(NSData *)secret;
+
+// HTTP encodings.
++ (NSData *) dataWithHTTPParams:(NSDictionary *)params;
+- (NSDictionary *) httpParams;
 
 //- (NSData *) gzippedDataWithCompressionLevel:(float)level;
 //- (NSData *) gzippedData;

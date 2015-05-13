@@ -436,7 +436,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	return [NSString stringWithFormat:@"%@/%@", nppDataManagerPath(folder), named];
 }
 
-+ (void) copyFromPath:(NSString *)fromPath toPath:(NSString *)toPath overriding:(BOOL)override
++ (void) copyFromPath:(NSString *)fromPath toPath:(NSString *)toPath overriding:(BOOL)overriding
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
@@ -444,7 +444,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	if ([fileManager fileExistsAtPath:fromPath])
 	{
 		// Removing the old file.
-		if (override)
+		if (overriding)
 		{
 			[fileManager removeItemAtPath:toPath error:nil];
 		}
@@ -465,12 +465,12 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	[fileManager moveItemAtPath:fromPath toPath:toPath error:nil];
 }
 
-+ (void) copyFromBundleToLocal:(NSString *)named overriding:(BOOL)override
++ (void) copyFromBundleToLocal:(NSString *)named overriding:(BOOL)overriding
 {
-	[self copyFromPath:nppMakePath(named) toPath:nppDataManagerFilePath(named) overriding:override];
+	[self copyFromPath:nppMakePath(named) toPath:nppDataManagerFilePath(named) overriding:overriding];
 }
 
-+ (void) moveFromLocalToUser:(NSString *)named
++ (void) moveFromAppFolderToUserFolder:(NSString *)named
 {
 	NSString *localPath = [nppDataManagerPath(NPPDataFolderApp) stringByAppendingPathComponent:named];
 	NSString *userPath = [nppDataManagerPath(NPPDataFolderUser) stringByAppendingPathComponent:named];
@@ -478,12 +478,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	[self moveFromPath:localPath toPath:userPath];
 }
 
-+ (BOOL) hasLocalNamed:(NSString *)named
-{
-	return [self hasLocalNamed:named folder:NPPDataFolderUser];
-}
-
-+ (BOOL) hasLocalNamed:(NSString *)named folder:(NPPDataFolder)folder
++ (BOOL) hasFileNamed:(NSString *)named folder:(NPPDataFolder)folder
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:named];
@@ -491,12 +486,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	return [fileManager fileExistsAtPath:localPath];
 }
 
-+ (void) deleteLocalNamed:(NSString *)named
-{
-	[self deleteLocalNamed:named folder:NPPDataFolderUser];
-}
-
-+ (void) deleteLocalNamed:(NSString *)named folder:(NPPDataFolder)folder
++ (void) deleteFileNamed:(NSString *)named folder:(NPPDataFolder)folder
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:named];

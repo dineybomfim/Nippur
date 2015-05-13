@@ -25,6 +25,18 @@
 #import "NPPFunctions.h"
 #import "NPPLogger.h"
 
+/*!
+ *					Represents the data type for a file.
+ *
+ *	@var			NPPDataTypeArchive
+ *					Binary file format, accept any object that conforms to #NSCoding#.
+ *
+ *	@var			NPPDataTypeString
+ *					Plain text file format.
+ *
+ *	@var			NPPDataTypePlist
+ *					Key-Value in XML format.
+ */
 typedef enum
 {
 	NPPDataTypeArchive,
@@ -32,6 +44,27 @@ typedef enum
 	NPPDataTypePlist,
 } NPPDataType;
 
+/*!
+ *					Represents a file system path inside the local sandbox.
+ *
+ *	@var			NPPDataFolderUser
+ *					The defined user folder.
+ *
+ *	@var			NPPDataFolderApp
+ *					The defined app folder.
+ *
+ *	@var			NPPDataFolderNippur
+ *					Folder used by the framework.
+ *
+ *	@var			NPPDataFolderDocuments
+ *					Documents folder, used by iTunes.
+ *
+ *	@var			NPPDataFolderLibrary
+ *					The library folder.
+ *
+ *	@var			NPPDataFolderBundle
+ *					The bundle folder, this folder is ready-only on iOS system.
+ */
 typedef enum
 {
 	NPPDataFolderUser,
@@ -39,9 +72,13 @@ typedef enum
 	NPPDataFolderNippur,
 	NPPDataFolderDocuments,
 	NPPDataFolderLibrary,
-	NPPDataFolderBundle,		// Read-only
+	NPPDataFolderBundle,
 } NPPDataFolder;
 
+/*!
+ *					The data manager is responsible for dealing with files, files' data, management on
+ *					file system, saving and loading local files.
+ */
 @interface NPPDataManager : NSObject
 
 // Cross Data API.
@@ -65,14 +102,12 @@ typedef enum
 // File Oprations API.
 + (NSString *) pathForFolder:(NPPDataFolder)folder;
 + (NSString *) pathForFile:(NSString *)named folder:(NPPDataFolder)folder;
-+ (void) copyFromPath:(NSString *)fromPath toPath:(NSString *)toPath overriding:(BOOL)override;
++ (void) copyFromPath:(NSString *)fromPath toPath:(NSString *)toPath overriding:(BOOL)overriding;
 + (void) moveFromPath:(NSString *)fromPath toPath:(NSString *)toPath;
-+ (void) copyFromBundleToLocal:(NSString *)named overriding:(BOOL)override;
-+ (void) moveFromLocalToUser:(NSString *)named;
-+ (BOOL) hasLocalNamed:(NSString *)named;
-+ (BOOL) hasLocalNamed:(NSString *)named folder:(NPPDataFolder)folder;
-+ (void) deleteLocalNamed:(NSString *)named;
-+ (void) deleteLocalNamed:(NSString *)named folder:(NPPDataFolder)folder;
++ (void) copyFromBundleToLocal:(NSString *)named overriding:(BOOL)overriding;
++ (void) moveFromAppFolderToUserFolder:(NSString *)named;
++ (BOOL) hasFileNamed:(NSString *)named folder:(NPPDataFolder)folder;
++ (void) deleteFileNamed:(NSString *)named folder:(NPPDataFolder)folder;
 + (void) deleteFolder:(NPPDataFolder)folder;
 + (void) deleteEverythingBeforeVersion:(NSString *)version build:(NSString *)build;
 + (NSDictionary *) attributesOfFile:(NSString *)named folder:(NPPDataFolder)folder;

@@ -258,7 +258,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 	
 	if ([[attributes objectForKey:NSFileSize] doubleValue] >= _defaultMaxSize)
 	{
-		[NPPDataManager deleteLocalNamed:NPP_FILE_LOG folder:NPPDataFolderNippur];
+		[NPPDataManager deleteFileNamed:NPP_FILE_LOG folder:NPPDataFolderNippur];
 	}
 	
 	// Encrypting the string.
@@ -340,7 +340,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 			{
 				if (connector.statusCode == 200)
 				{
-					[NPPDataManager deleteLocalNamed:NPP_FILE_LOG folder:NPPDataFolderNippur];
+					[NPPDataManager deleteFileNamed:NPP_FILE_LOG folder:NPPDataFolderNippur];
 				}
 				
 				nppBlock(block);

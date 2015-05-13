@@ -602,6 +602,90 @@ static NSString *nppBaseCipher(NSString *original, const char *table, BOOL isEnc
 	return output;
 }
 
+// HTTP encodings
++ (NSString *) stringWithHTTPParams:(NSDictionary *)params
+{
+	NSMutableString *string = [[NSMutableString alloc] init];
+	
+	// Dictionary params will be converted into string.
+	if ([params isKindOfClass:[NSDictionary class]])
+	{
+		NSString *key = nil;
+		NSString *param = nil;
+		NSUInteger i = 0;
+		NSUInteger count = [params count];
+		
+		// Constructs the parameters.
+		for (key in params)
+		{
+			// Fully encode the HTML data.
+			param = [NSString stringWithFormat:@"%@=%@", key, [params objectForKey:key]];
+			[string appendFormat:@"%@%@", [param encodeHTMLFull], (++i < count) ? @"&" : @""];
+		}
+	}
+	
+	return nppAutorelease(string);
+}
+
+- (NSDictionary *) httpParams
+{
+	NSString *pattern = @"(#::#)";
+	NSString *string = self;
+	NSMutableString *raw = nil;
+	NSRange range = NPPRangeZero;
+	
+	// Slicing HTTP domain.
+	if ([string hasPrefix:@"http"])
+	{
+		range = [string rangeOfString:@"?"];
+		string = (range.length > 0) ? [string substringFromIndex:range.location + 1] : string;
+	}
+	
+	raw = [NSMutableString stringWithString:string];
+	
+	// Preparing raw string.
+	do
+	{
+		range = [raw rangeOfString:@"="];
+		if (range.length > 0)
+		{
+			[raw replaceCharactersInRange:range withString:pattern];
+		}
+		
+		range = [raw rangeOfString:@"&"];
+		if (range.length > 0)
+		{
+			[raw replaceCharactersInRange:range withString:pattern];
+		}
+	}
+	while (range.length > 0);
+	
+	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+	NSArray *array = [raw componentsSeparatedByString:pattern];
+	NSString *key = nil;
+	NSString *value = nil;
+	NSUInteger i = 0;
+	NSUInteger count = [array count];
+	
+	for (i = 0; i < count; i += 2)
+	{
+		if (i + 1 < count)
+		{
+			key = [[array objectAtIndex:i] decodeHTMLFull];
+			value = [[array objectAtIndex:i + 1] decodeHTMLFull];
+		}
+		else
+		{
+			key = [NSString stringWithFormat:@"param%i", (int)i];
+			value = [[array objectAtIndex:i] decodeHTMLFull];
+		}
+		
+		[params setObject:value forKey:key];
+	}
+	
+	return nppAutorelease(params);
+}
+
 #pragma mark -
 #pragma mark Override Public Methods
 //**************************************************
@@ -690,6 +774,21 @@ static NSString *nppBaseCipher(NSString *original, const char *table, BOOL isEnc
 	binaryResult = [NSData dataWithBytes:&result length:CC_SHA1_DIGEST_LENGTH];
 	
 	return binaryResult;
+}
+
+// HTTP encodings
++ (NSData *) dataWithHTTPParams:(NSDictionary *)params
+{
+	NSString *string = [NSString stringWithHTTPParams:params];
+	
+	return [string dataUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSDictionary *) httpParams
+{
+	NSString *string = [NSString stringWithData:self encoding:NSUTF8StringEncoding];
+	
+	return [string httpParams];
 }
 
 #pragma mark -

@@ -99,22 +99,22 @@ typedef enum
 /*!
  *					Notification about a connection starting (NPPConnectorStateOpening).
  */
-NPP_API NSString *const NPPKeyConnectorDidStart;
+NPP_API NSString *const kNPPKeyConnectorDidStart;
 
 /*!
  *					Notification about a connection receiving (NPPConnectorStateReceiving).
  */
-NPP_API NSString *const NPPKeyConnectorDidResponse;
+NPP_API NSString *const kNPPKeyConnectorDidResponse;
 
 /*!
  *					Notification about a connection finishing (NPPConnectorStateCompleted).
  */
-NPP_API NSString *const NPPKeyConnectorDidFinish;
+NPP_API NSString *const kNPPKeyConnectorDidFinish;
 
 /*!
  *					Notification about a connection failed (NPPConnectorState{Failed,Cancelled}).
  */
-NPP_API NSString *const NPPConnectorErrorDomain;
+NPP_API NSString *const kNPPConnectorErrorDomain;
 
 @class NPPConnector;
 
@@ -123,21 +123,14 @@ NPP_API NSString *const NPPConnectorErrorDomain;
  */
 typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 
-extern NSString *nppHTTPParamsToString(NSDictionary *params);
-extern NSDictionary *nppHTTPStringToParams(NSString *string);
-extern NSData *nppHTTPParamsToData(NSDictionary *params);
-extern NSDictionary *nppHTTPDataToParams(NSData *data);
-
 /*!
- *					The connector is a main thread free, asynchronously connection to any online service,
- *					endpoint or resource.
+ *					The connector is an asynchronously connection to any online service, endpoint
+ *					or resource using HTTP or FTP protocols. It's built using the URL Loading System:
+ *					https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/URLLoadingSystem
  *
  *					Each instance of this class is capable to deal with one connection. There is no limit
  *					on how many connections you can create with this class, the limitations are imposed
  *					by the platforms and the connection protocol.
- *
- *					This class is also able to deal with streaming connections and keep-alive type. In this
- *					case, the callbacks will assume a special behavior.
  *
  *					Also, it can handle with the log automatically. It generates full logs for debug
  *					purposes, local files for investigation and safe encriptions ciphers and algorithms to
@@ -145,11 +138,6 @@ extern NSDictionary *nppHTTPDataToParams(NSData *data);
  */
 @interface NPPConnector : NSObject <NSURLConnectionDataDelegate>
 {
-@private
-	NSURLConnection				*_conn;
-	NPPBlockConnector			_block;
-	NSMutableString				*_log;
-	
 @protected
 	NPPConnectorState			_state;
 	int							_statusCode;
@@ -163,33 +151,135 @@ extern NSDictionary *nppHTTPDataToParams(NSData *data);
 	BOOL						_logging;
 }
 
-// Returning data.
+/*!
+ *					The current state of this connector.
+ */
 @property (nonatomic, readonly) NPPConnectorState state;
+
+/*!
+ *					The returned HTTP status code. The default value is 0.
+ */
 @property (nonatomic, readonly) int statusCode;
+
+/*!
+ *					The returned HTTP content-length. The default value is 0.
+ */
 @property (nonatomic, readonly) long long contentLength;
+
+/*!
+ *					The returned HTTP header. The default value is nil.
+ */
 @property (nonatomic, readonly) NSDictionary *receivedHeader;
+
+/*!
+ *					The returned HTTP data. The default value is nil.
+ */
 @property (nonatomic, readonly) NSData *receivedData;
+
+/*!
+ *					The returned connection error. The default value is nil. A connection error is not
+ *					the same as HTTP error. A HTTP with status code +400 or +500 is not treat as connection
+ *					error. This error is all about the connection:
+ *						- A lost of WiFi, 4G, 3G, Edge or celular data signal;
+ *						- Connection timeout;
+ *						- Connection interruption (not intentional);
+ */
 @property (nonatomic, readonly) NSError *error;
 
-// Behaviors.
+/*!
+ *					The number of retries. A retry is just made when an connection error is returned.
+ */
 @property (nonatomic, readonly) unsigned int retries;
+
+/*!
+ *					The log will be shown in the console and saved in local file, all accordingly to
+ *					the defined log rules.
+ *
+ *	@see			NPPLogger
+ */
 @property (nonatomic, readonly, getter = isLogging) BOOL logging;
 
-// Starts immediately.
+/*!
+ *					Starts a connection immediately based on the imput parameters.
+ *
+ *	@var			request
+ *					A NSURLRequest defined before.
+ *
+ *	@var			block
+ *					The finish block. It'll be called when the connection ends (successfully or not).
+ */
 + (id) connectorWithRequest:(NSURLRequest *)request completion:(NPPBlockConnector)block;
+
+/*!
+ *					Starts a connection immediately based on the imput parameters.
+ *
+ *	@var			url
+ *					The url string. You can or not include GET parameters in this string. This class
+ *					will wisely handle the #body# to correctly concatenate with this string, if necessary.
+ *
+ *	@var			method
+ *					The HTTP method.
+ *
+ *	@var			headers
+ *					A custom dictionary for connection header.
+ *
+ *	@var			body
+ *					A parameters or body of this request.
+ *
+ *	@var			block
+ *					The finish block. It'll be called when the connection ends (successfully or not).
+ */
 + (id) connectorWithURL:(NSString *)url
 				 method:(NPPHTTPMethod)method
 				headers:(NSDictionary *)headers
 				   body:(id)body
 			 completion:(NPPBlockConnector)block;
 
-// Cancels a connection with a desired URL and returns if it succeed in canceling or not. Accept RegEx.
+/*!
+ *					Cancels one or more connections with the matching URL pattern and returns a BOOL
+ *					indicating if the cancellation had success or not. This pattern is a RegEx.
+ *
+ *	@var			urlPattern
+ *					A pattern using RegEx format. For example, you could use "*" to match all connections
+ *					or "google" to match any connection with "google" in the url.
+ */
 + (BOOL) cancelConnectorWithURL:(NSString *)urlPattern;
+
+/*!
+ *					Cancels one specific connection and returns a BOOL indicating
+ *					if the cancellation had success or not.
+ *
+ *	@var			connector
+ *					The connector instance to be canceled.
+ */
 + (BOOL) cancelConnector:(NPPConnector *)connector;
 
-// Specific rules, that means rules matching the URL is strongest than a global rule (rule using "*").
-+ (void) defineRetries:(unsigned int)retries forURL:(NSString *)urlPattern; // "*" = all, default 0
-+ (void) defineLogging:(BOOL)isLogging forURL:(NSString *)urlPattern; // "*" = all, default YES
-+ (void) defineTimeout:(double)timeout; // Default is 30.0. Minimum is 1.0
+/*!
+ *					Defines the number of retries to any new connection with the matching URL pattern.
+ *					A specific rule will override a global rule (global rule = "*").
+ *					By default, connections have 0 retries defined.
+ *
+ *	@var			retries
+ *					The number of retries to define.
+ *
+ *	@var			urlPattern
+ *					A pattern using RegEx format. For example, you could use "*" to match all connections
+ *					or "google" to match any connection with "google" in the url.
+ */
++ (void) defineRetries:(unsigned int)retries forURL:(NSString *)urlPattern;
+
+/*!
+ *					Defines the log ability to any new connection with the matching URL pattern.
+ *					A specific rule will override a global rule (global rule = "*").
+ *					By default, connections have logging set to YES.
+ *
+ *	@var			isLogging
+ *					A BOOL indicating if it should log or not.
+ *
+ *	@var			urlPattern
+ *					A pattern using RegEx format. For example, you could use "*" to match all connections
+ *					or "google" to match any connection with "google" in the url.
+ */
++ (void) defineLogging:(BOOL)isLogging forURL:(NSString *)urlPattern;
 
 @end
