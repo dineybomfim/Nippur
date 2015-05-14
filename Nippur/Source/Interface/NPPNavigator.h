@@ -61,7 +61,6 @@ typedef enum
 	UINavigationController		*_currentNavigation;
 	NSMutableArray				*_navigations;
 	UIView						*_backgroundView;
-	BOOL						_fullScreen;
 	
 	// *** TabBar
 	NSMutableArray				*_tabbars;
@@ -72,15 +71,11 @@ NPP_SINGLETON_INTERFACE(NPPNavigator);
 @property (nonatomic, readonly) NSString *currentPage;
 @property (nonatomic, readonly) UIViewController *currentController;
 @property (nonatomic, NPP_RETAIN) UIView *backgroundView;
-@property (nonatomic, getter = isFullScreen) BOOL fullScreen;
 
 - (void) navigateBack;
 - (void) navigateToBaseLevel;
 - (void) navigateToTabBarIndex:(NSUInteger)index;
 - (void) navigateTo:(NSString *)pageNamed;
-
-// Full screen will make the entire application goes full screen, that means it will lie behind status bar.
-- (void) setFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
 
 // TabBar routines.
 - (void) defineTabBarPages:(NSArray *)pages;

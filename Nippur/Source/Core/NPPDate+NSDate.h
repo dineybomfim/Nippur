@@ -28,6 +28,10 @@ NPP_API NSString *const kNPPDateFull;
 NPP_API NSString *const kNPPDateShort;
 NPP_API NSString *const kNPPDateTime;
 
+/*!
+ *					This category is a wrapper to the date object. It brings easy methods to deal with
+ *					epoch timestamps, date manipulations and date formats.
+ */
 @interface NSDate(NPPDate)
 
 - (unsigned int) year;

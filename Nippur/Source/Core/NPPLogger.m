@@ -265,7 +265,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 	NSString *log = [NSString stringWithFormat:@"{##%@##}", [_string encodeDoubleColumnar]];
 	
 	// Saves the encrypted log string.
-	[NPPDataManager appendLocal:log name:NPP_FILE_LOG type:NPPDataTypeString folder:NPPDataFolderNippur];
+	[NPPDataManager appendFile:log name:NPP_FILE_LOG type:NPPDataTypeString folder:NPPDataFolderNippur];
 	
 	// Resets the string for safety.
 	[_string setString:@""];
@@ -325,7 +325,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 		
 		if (sendLog)
 		{
-			NSString *localLog = [NPPDataManager loadLocal:NPP_FILE_LOG
+			NSString *localLog = [NPPDataManager loadFile:NPP_FILE_LOG
 													  type:NPPDataTypeString
 													folder:NPPDataFolderNippur];
 			

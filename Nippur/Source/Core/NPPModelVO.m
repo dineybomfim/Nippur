@@ -96,7 +96,7 @@
 + (id) modelFromFile:(NSString *)fileName folder:(NPPDataFolder)folder
 {
 	NPPModelVO *model = nil;
-	id object = [NPPDataManager loadLocal:fileName type:NPPDataTypeArchive folder:folder];
+	id object = [NPPDataManager loadFile:fileName type:NPPDataTypeArchive folder:folder];
 	
 	// Updating the model from the loaded file, if it's valid.
 	if ([object isKindOfClass:self])
@@ -204,12 +204,12 @@
 
 - (void) saveToFile:(NSString *)fileName folder:(NPPDataFolder)folder
 {
-	[NPPDataManager saveLocal:self name:fileName type:NPPDataTypeArchive folder:folder];
+	[NPPDataManager saveFile:self name:fileName type:NPPDataTypeArchive folder:folder];
 }
 
 - (void) loadFromFile:(NSString *)fileName folder:(NPPDataFolder)folder
 {
-	id object = [NPPDataManager loadLocal:fileName type:NPPDataTypeArchive folder:folder];
+	id object = [NPPDataManager loadFile:fileName type:NPPDataTypeArchive folder:folder];
 	
 	// Updating the model from the loaded file, if it's valid.
 	if ([object isKindOfClass:[self class]])

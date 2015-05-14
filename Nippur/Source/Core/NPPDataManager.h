@@ -87,17 +87,9 @@ typedef enum
 + (void) removeObjectForKey:(id)key;
 
 // Local Storage API.
-+ (void) saveLocal:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
-+ (id) loadLocal:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
-+ (void) appendLocal:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
-
-// Local Storage API - User folder | App folder shortcut.
-+ (void) saveLocalArchive:(id)data name:(NSString *)name;
-+ (id) loadLocalArchive:(NSString *)name;
-+ (void) saveLocalString:(NSString *)string name:(NSString *)name;
-+ (NSString *) loadLocalString:(NSString *)name;
-+ (void) saveLocalPlist:(NSDictionary *)string name:(NSString *)name;
-+ (NSDictionary *) loadLocalPlist:(NSString *)name;
++ (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
++ (id) loadFile:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
++ (void) appendFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
 
 // File Oprations API.
 + (NSString *) pathForFolder:(NPPDataFolder)folder;

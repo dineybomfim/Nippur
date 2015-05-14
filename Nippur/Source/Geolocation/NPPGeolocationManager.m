@@ -350,7 +350,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 	if (self == [NPPGeolocationManager class])
 	{
 		_defaultLocationManager = [[NPPGeolocationManager alloc] init];
-		_defaultLocationManager.lastGeolocation = [NPPDataManager loadLocal:NPP_GEO_FILE
+		_defaultLocationManager.lastGeolocation = [NPPDataManager loadFile:NPP_GEO_FILE
 																	   type:NPPDataTypeArchive
 																	 folder:NPPDataFolderNippur];
 	}

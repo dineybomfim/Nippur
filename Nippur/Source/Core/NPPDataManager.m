@@ -294,7 +294,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 //	Local Storage API
 //*************************
 
-+ (void) saveLocal:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
++ (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
 	CFTimeInterval startTime = nppAbsoluteTime();
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
@@ -322,7 +322,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	nppLog(@"\"%@\" saved in:%f", name, (float)(nppAbsoluteTime() - startTime));
 }
 
-+ (id) loadLocal:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
++ (id) loadFile:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
 	CFTimeInterval startTime = nppAbsoluteTime();
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
@@ -355,7 +355,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	return data;
 }
 
-+ (void) appendLocal:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
++ (void) appendFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
 	CFTimeInterval startTime = nppAbsoluteTime();
 	
@@ -365,7 +365,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:localPath])
 	{
-		[self saveLocal:@"1.0" name:name type:type folder:folder];
+		[self saveFile:@"1.0" name:name type:type folder:folder];
 	}
 	
 	// Archiving data.
@@ -388,36 +388,6 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	[fileHandle closeFile];
 	
 	nppLog(@"\"%@\" appended in:%f", name, (float)(nppAbsoluteTime() - startTime));
-}
-
-+ (void) saveLocalArchive:(id)data name:(NSString *)name
-{
-	[self saveLocal:data name:name type:NPPDataTypeArchive folder:NPPDataFolderUser];
-}
-
-+ (id) loadLocalArchive:(NSString *)name
-{
-	return [self loadLocal:name type:NPPDataTypeArchive folder:NPPDataFolderUser];
-}
-
-+ (void) saveLocalString:(NSString *)string name:(NSString *)name
-{
-	[self saveLocal:string name:name type:NPPDataTypeString folder:NPPDataFolderUser];
-}
-
-+ (NSString *) loadLocalString:(NSString *)name
-{
-	return [self loadLocal:name type:NPPDataTypeString folder:NPPDataFolderUser];
-}
-
-+ (void) saveLocalPlist:(NSDictionary *)plist name:(NSString *)name
-{
-	[self saveLocal:plist name:name type:NPPDataTypePlist folder:NPPDataFolderUser];
-}
-
-+ (NSDictionary *) loadLocalPlist:(NSString *)name
-{
-	return [self loadLocal:name type:NPPDataTypePlist folder:NPPDataFolderUser];
 }
 
 #pragma mark -
@@ -557,7 +527,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	
 	[info setObject:folderName forKey:NPPKeyAppFolder];
 	
-	[NPPDataManager saveLocal:info
+	[NPPDataManager saveFile:info
 						 name:NPPDataManagerFile
 						 type:NPPDataTypeArchive
 					   folder:NPPDataFolderNippur];
@@ -580,7 +550,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 		[info removeObjectForKey:NPPKeyUserFolder];
 	}
 	
-	[NPPDataManager saveLocal:info
+	[NPPDataManager saveFile:info
 						 name:NPPDataManagerFile
 						 type:NPPDataTypeArchive
 					   folder:NPPDataFolderNippur];
@@ -608,7 +578,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	// Just save real changes.
 	if (hasChange)
 	{
-		[NPPDataManager saveLocal:info
+		[NPPDataManager saveFile:info
 							 name:NPPDataManagerFile
 							 type:NPPDataTypeArchive
 						   folder:NPPDataFolderNippur];
@@ -627,7 +597,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	{
 		// Loading the persistent Data Manager configurations.
 		NSMutableDictionary *info = getDataManager();
-		NSDictionary *localInfo = [NPPDataManager loadLocal:NPPDataManagerFile
+		NSDictionary *localInfo = [NPPDataManager loadFile:NPPDataManagerFile
 													   type:NPPDataTypeArchive
 													 folder:NPPDataFolderNippur];
 		

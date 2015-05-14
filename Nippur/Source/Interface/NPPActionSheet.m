@@ -386,8 +386,8 @@ static float _defaultSpace = NPP_SHEET_SPACE;
 	NPPWindowOverlay *blockBg = [NPPWindowOverlay instance];
 	[blockBg addView:self];
 	
-	self.y = blockBg.view.height;
-	[self moveProperty:@"y" to:blockBg.view.height - self.height completion:nil];
+	float posY = blockBg.view.height;
+	[self runAction:[NPPAction moveKey:@"y" from:posY to:posY - self.height duration:kNPPAnimTime]];
 	
 	// Dispatching the notification object.
 	[NSNotificationCenter defaultCenterPostMainNotification:kNPPNotificationAlertDidShow];

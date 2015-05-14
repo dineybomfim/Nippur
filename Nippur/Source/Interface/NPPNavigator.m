@@ -103,7 +103,7 @@ NPP_SINGLETON_IMPLEMENTATION(NPPNavigator);
 //	Properties
 //**************************************************
 
-@dynamic currentPage, currentController, backgroundView, fullScreen;
+@dynamic currentPage, currentController, backgroundView;
 
 - (NSString *) currentPage
 {
@@ -130,12 +130,6 @@ NPP_SINGLETON_IMPLEMENTATION(NPPNavigator);
 			[[self view] insertSubview:_backgroundView atIndex:0];
 		}
 	}
-}
-
-- (BOOL) isFullScreen { return _fullScreen; }
-- (void) setFullScreen:(BOOL)value
-{
-	[self setFullScreen:value animated:NO];
 }
 
 #pragma mark -
@@ -540,55 +534,6 @@ NPP_SINGLETON_IMPLEMENTATION(NPPNavigator);
 	}
 }
 
-- (void) setFullScreen:(BOOL)fullScreen animated:(BOOL)animated
-{
-	/*
-	_fullScreen = fullScreen;
-	
-	UIView *selfView = self.view;
-	UIView *masterView = [[[[selfView subviews] firstObject] subviews] firstObject];
-	UINavigationBar *navigationBar = self.navigationBar;
-	float posY = 0.0f;
-	float barY = 0.0f;
-	float barHeight = navigationBar.height;
-	float currentZero = (_fullScreen || nppDeviceOSVersion() >= 7.0f) ? 0.0f : 20.0f;
-	
-	// Trick to avoid the UIKit removes the navigation bar before the custom animation.
-	navigationBar.hidden = NO;
-	[selfView addSubview:navigationBar];
-	
-	// Defining final positions.
-	if (navigationBar.y >= 0.0f)
-	{
-		barY = currentZero;
-		posY = barY + barHeight;
-		
-		navigationBar.y = -barHeight;
-	}
-	else
-	{
-		posY = currentZero;
-		barY = -barHeight;
-		
-		navigationBar.y = currentZero;
-	}
-	
-	// Animating.
-	if (!animated)
-	{
-		navigationBar.y = barY;
-		masterView.y = posY;
-		masterView.height = selfView.height - posY;
-	}
-	else
-	{
-		[navigationBar moveProperty:@"y" to:barY completion:nil];
-		[masterView moveProperty:@"y" to:posY completion:nil];
-		[masterView moveProperty:@"height" to:selfView.height - posY completion:nil];
-	}
-	//*/
-}
-
 // *** TabBar
 - (void) defineTabBarPages:(NSArray *)pages
 {
@@ -661,7 +606,7 @@ NPP_SINGLETON_IMPLEMENTATION(NPPNavigator);
 //	nppLog(@"%@", [super _viewControllersForRotationCallbacks]);
 //	return _navigations;
 //}
-
+/*
 - (void) viewDidLayoutSubviews
 {
 	[self setFullScreen:_fullScreen animated:NO];
@@ -679,7 +624,7 @@ NPP_SINGLETON_IMPLEMENTATION(NPPNavigator);
 	
 	[self setFullScreen:_fullScreen animated:NO];
 }
-
+//*/
 - (void) dealloc
 {
 	_currentNavigation = nil;
