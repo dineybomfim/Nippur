@@ -25,13 +25,13 @@
 #import "NPPFunctions.h"
 #import "NPPLogger.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPTesterUnit)
 {
 	NPPTesterUnitSeconds,			//Default
 	NPPTesterUnitMilliseconds,
 	NPPTesterUnitMicroseconds,
 	NPPTesterUnitNanoseconds,
-} NPPTesterUnit;
+};
 
 @interface NPPTester : NSObject
 {

@@ -34,14 +34,14 @@
  *						- NPPPageModeSimpleModal: Requires at least one modal level.
  *						- NPPPageModeAlwaysModal: Always requires a new modal level.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPPageMode)
 {
 	NPPPageModeNormal,
 	NPPPageModeAlwaysBase,
 	NPPPageModeSimpleModal,
 	NPPPageModeAlwaysModal,
 	NPPPageModeOverlay,
-} NPPPageMode;
+};
 
 /*!
  *					Defines the methods that can be implemented by the ViewControllers to instruct the

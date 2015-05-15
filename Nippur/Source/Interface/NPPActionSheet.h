@@ -30,12 +30,12 @@
 #import "NPPTextField.h"
 #import "NPPWindowOverlay.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPActionSheetStyle)
 {
 	NPPActionSheetStyleDefault,
 	NPPActionSheetStyleList,
 	NPPActionSheetStyleIcons,
-} NPPActionSheetStyle;
+};
 
 @interface NPPActionSheet : UIView
 {

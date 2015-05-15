@@ -65,6 +65,29 @@
 #define NPP_IOS_8_3					8.3f
 
 /*!
+ *					Represents color styles.
+ *
+ *	@var			NPPStyleColorLight
+ *					It represents a light color style.
+ *
+ *	@var			NPPStyleColorDark
+ *					It represents a dark color style.
+ *
+ *	@var			NPPStyleColorConfirm
+ *					It represents a color style intend to elements of confirmation.
+ *
+ *	@var			NPPStyleColorAlert
+ *					It represents a color style intend to elements of alert.
+ */
+typedef NS_OPTIONS(NSUInteger, NPPStyleColor)
+{
+	NPPStyleColorLight,
+	NPPStyleColorDark,
+	NPPStyleColorConfirm,
+	NPPStyleColorAlert,
+};
+
+/*!
  *					Checks if the current device is an iPad or not.
  *
  *	@result			A BOOL indicating if the current device is an iPad.

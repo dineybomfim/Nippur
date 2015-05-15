@@ -37,11 +37,11 @@
  *	@var			NPPRegExFlagGDMI
  *					Represents Global, Dotall, Multiline and Ignore Case.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPRegExFlag)
 {
 	NPPRegExFlagGDM = 1 << 3 | 1 << 4,
 	NPPRegExFlagGDMI = 1 << 0 | 1 << 3 | 1 << 4,
-} NPPRegExFlag;
+};
 
 /*!
  *					Matches a regular expression against a string. If no match found, this function will

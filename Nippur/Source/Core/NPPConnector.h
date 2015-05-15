@@ -54,7 +54,7 @@
  *	@var			NPPHTTPMethodCONNECT
  *					HTTP CONNECT.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPHTTPMethod)
 {
 	NPPHTTPMethodGET,
 	NPPHTTPMethodHEAD,
@@ -63,7 +63,7 @@ typedef enum
 	NPPHTTPMethodDELETE,
 	NPPHTTPMethodTRACE,
 	NPPHTTPMethodCONNECT,
-} NPPHTTPMethod;
+};
 
 /*!
  *					Defines the connection state.
@@ -86,7 +86,7 @@ typedef enum
  *	@var			NPPConnectorStateCancelled
  *					The connection was cancelled manually.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPConnectorState)
 {
 	NPPConnectorStateReady,
 	NPPConnectorStateOpening,
@@ -94,7 +94,7 @@ typedef enum
 	NPPConnectorStateCompleted,
 	NPPConnectorStateFailed,
 	NPPConnectorStateCancelled,
-} NPPConnectorState;
+};
 
 /*!
  *					Notification about a connection starting (NPPConnectorStateOpening).

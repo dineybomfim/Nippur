@@ -41,12 +41,12 @@
  *					the tasks after processing it, instead it will retain any task and execute them again
  *					at every new cycle. In this mode, you must explicit remove a task or remove all.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPThreadType)
 {
 	NPPThreadTypeNormal,
 	NPPThreadTypeAutoExit,
 	NPPThreadTypeContinuous,
-} NPPThreadType;
+};
 
 @class NPPThread;
 

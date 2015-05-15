@@ -27,11 +27,11 @@
 #import <CoreMedia/CoreMedia.h>
 #import <CoreVideo/CoreVideo.h>
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPCameraSource)
 {
 	NPPCameraSourceBack,
 	NPPCameraSourceFront,
-} NPPCameraSource;
+};
 
 @interface NPPCamera : NSObject
 

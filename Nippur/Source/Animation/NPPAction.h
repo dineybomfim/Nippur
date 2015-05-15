@@ -45,7 +45,7 @@
  *	@var			NPPActionEaseBackOut
  *	@var			NPPActionEaseBackInOut
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPActionEase)
 {
 	NPPActionEaseLinear,
 	NPPActionEaseSmoothIn,
@@ -63,7 +63,7 @@ typedef enum
 	NPPActionEaseBackIn,
 	NPPActionEaseBackOut,
 	NPPActionEaseBackInOut,
-} NPPActionEase;
+};
 
 /*!
  *					This block is called by the Action API over time, accordingly to the ease function.

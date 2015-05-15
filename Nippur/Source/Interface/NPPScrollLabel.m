@@ -115,7 +115,7 @@ static void nppLabelPerformOnArray(NSArray *objects, void (^block)(id object))
 {
 	_fadeLength = value;
 	[self refreshLabels];
-	[self fadeAlphaAt:NPPPositionLeft startAt:0.0f endAt:_fadeLength mirror:YES];
+	[self fadeAlphaAt:NPPDirectionLeft startAt:0.0f endAt:_fadeLength mirror:YES];
 }
 
 - (NSString *) text { return self.mainLabel.text; }
@@ -386,7 +386,7 @@ static void nppLabelPerformOnArray(NSArray *objects, void (^block)(id object))
 		
 		NPP_LABEL(hidden, NO);
 		
-		[self fadeAlphaAt:NPPPositionLeft startAt:0.0f endAt:_fadeLength mirror:YES];
+		[self fadeAlphaAt:NPPDirectionLeft startAt:0.0f endAt:_fadeLength mirror:YES];
 		
 		[self scrollLabelIfNeeded];
 	}
@@ -400,7 +400,7 @@ static void nppLabelPerformOnArray(NSArray *objects, void (^block)(id object))
 		self.mainLabel.frame = self.bounds;
 		self.mainLabel.hidden = NO;
 		
-		[self fadeAlphaAt:NPPPositionLeft startAt:0.0f endAt:0.0f mirror:YES];
+		[self fadeAlphaAt:NPPDirectionLeft startAt:0.0f endAt:0.0f mirror:YES];
 	}
 }
 
@@ -413,7 +413,7 @@ static void nppLabelPerformOnArray(NSArray *objects, void (^block)(id object))
 - (void) setFrame:(CGRect)frame
 {
 	[super setFrame:frame];
-	[self fadeAlphaAt:NPPPositionLeft startAt:0.0f endAt:_fadeLength mirror:YES];
+	[self fadeAlphaAt:NPPDirectionLeft startAt:0.0f endAt:_fadeLength mirror:YES];
 }
 
 - (void) dealloc

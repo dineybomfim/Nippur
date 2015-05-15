@@ -26,11 +26,11 @@
 
 #import "NPPView+UIView.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPRefreshControlType)
 {
 	NPPRefreshControlTypeTop,
 	NPPRefreshControlTypeBottom,
-} NPPRefreshControlType;
+};
 
 @protocol NPPRefreshControlDelegate <NSObject>
 

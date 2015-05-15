@@ -38,21 +38,21 @@
  *	@var			NPPLogModeAlways
  *					Prints on the console everywhere.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPLogMode)
 {
 	NPPLogModeDebugMacro,			// Default - Only for Open Source version, otherwise it does not print.
 	NPPLogModeBETA,
 	NPPLogModeAlways,
-} NPPLogMode;
+};
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPLogInfo)
 {
 	NPPLogInfoNone					= 0,
 	NPPLogInfoThread				= 1 << 0,
 	NPPLogInfoFunction				= 1 << 1,
 	NPPLogInfoClass					= 1 << 2,
 	NPPLogInfoFull					= NPPLogInfoThread | NPPLogInfoFunction | NPPLogInfoClass,
-} NPPLogInfo;
+};
 
 typedef void (^NPPBlockLogs)(NPP_ARC_UNSAFE NSArray *logs);
 

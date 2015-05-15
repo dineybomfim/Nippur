@@ -108,7 +108,7 @@ NPP_SINGLETON_IMPLEMENTATION(NPPAudio);
 	if (named != nil)
 	{
 		NSMutableDictionary *sounds = nppSoundsLibrary();
-		NSData *data = nppDataFromFile(named);
+		NSData *data = [NSData dataWithContentsOfFile:nppMakePath(named)];
 		AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithData:data error:nil];
 		
 		player.delegate = self;

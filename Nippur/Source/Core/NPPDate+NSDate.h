@@ -23,44 +23,162 @@
 
 #import "NPPRuntime.h"
 
-NPP_API NSString *const kNPPDateUniversalNumbers;
-NPP_API NSString *const kNPPDateFull;
-NPP_API NSString *const kNPPDateShort;
-NPP_API NSString *const kNPPDateTime;
-
 /*!
  *					This category is a wrapper to the date object. It brings easy methods to deal with
  *					epoch timestamps, date manipulations and date formats.
  */
 @interface NSDate(NPPDate)
 
-- (unsigned int) year;
-- (unsigned int) month;
-- (unsigned int) day;
-- (unsigned int) weekDay; // 1 = Sunday, 7 = Saturday
-- (unsigned int) hour;
-- (unsigned int) minute;
-- (unsigned int) second;
+/*!
+ *					The full year of this date with all digits.
+ */
+@property (nonatomic, readonly) NSUInteger year;
 
-- (NSDate *) dateByAddingHours:(int)hours days:(int)days months:(int)months years:(int)years;
+/*!
+ *					The month of this date with 2 digits.
+ */
+@property (nonatomic, readonly) NSUInteger month;
+
+/*!
+ *					The month of this date with 2 digits.
+ */
+@property (nonatomic, readonly) NSUInteger day;
+
+/*!
+ *					The month of this date with 1 digits, where 1 = Sunday and 7 = Saturday.
+ */
+@property (nonatomic, readonly) NSUInteger weekDay;
+
+/*!
+ *					The hour of this date with 2 digits.
+ */
+@property (nonatomic, readonly) NSUInteger hour;
+
+/*!
+ *					The minutes of this date with 2 digits.
+ */
+@property (nonatomic, readonly) NSUInteger minute;
+
+/*!
+ *					The seconds of this date with 2 digits.
+ */
+@property (nonatomic, readonly) NSUInteger second;
+
+/*!
+ *					Returns a new date with 1 minute from this date.
+ *
+ *	@result			A new autoreleased date.
+ */
+- (NSDate *) nextMinute;
+
+/*!
+ *					Returns a new date with 1 hour from this date.
+ *
+ *	@result			A new autoreleased date.
+ */
 - (NSDate *) nextHour;
+
+/*!
+ *					Returns a new date with 1 day from this date.
+ *
+ *	@result			A new autoreleased date.
+ */
 - (NSDate *) nextDay;
+
+/*!
+ *					Returns a new date with 1 month from this date.
+ *
+ *	@result			A new autoreleased date.
+ */
 - (NSDate *) nextMonth;
+
+/*!
+ *					Returns a new date with 1 year from this date.
+ *
+ *	@result			A new autoreleased date.
+ */
 - (NSDate *) nextYear;
 
-// UTC timezone.
-- (NSString *) stringWithFormat:(NSString *)format;
-+ (NSString *) stringFromDate:(NSDate *)date withFormat:(NSString *)format;
-+ (NSDate *) dateFromString:(NSString *)string withFormat:(NSString *)format;
+/*!
+ *					Returns a new date with variable minutes, hours, days, months and years from this date.
+ *
+ *	@see			minutes
+ *					The minutes from this date.
+ *
+ *	@see			hours
+ *					The hours from this date.
+ *
+ *	@see			days
+ *					The days from this date.
+ *
+ *	@see			months
+ *					The months from this date.
+ *
+ *	@see			years
+ *					The years from this date.
+ *
+ *	@result			A new autoreleased date.
+ */
+- (NSDate *) dateByAddingMinutes:(int)minutes
+						   hours:(int)hours
+							days:(int)days
+						  months:(int)months
+						   years:(int)years;
 
-// Localized methods (using user's callendar).
-+ (NSString *) stringFromEpoch:(NSTimeInterval)epoch
-					 timeStyle:(NSDateFormatterStyle)timeStyle
-					 dateStyle:(NSDateFormatterStyle)dateStyle;
-+ (NSString *) stringFromDate:(NSDate *)date
-					timeStyle:(NSDateFormatterStyle)timeStyle
-					dateStyle:(NSDateFormatterStyle)dateStyle;
-+ (NSDate *) dateFromString:(NSString *)string
+/*!
+ *					Generates a string from this date with a specific format.
+ *
+ *	@see			format
+ *					The format you want, following the format patterns Unicode Technical Standard #35:
+ *					http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
+ *
+ *	@result			A new autoreleased string.
+ */
+- (NSString *) stringWithFormat:(NSString *)format;
+
+/*!
+ *					Generates a string from this date with the user's current callendar settings.
+ *
+ *	@see			timeStyle
+ *					The format of the time component.
+ *
+ *	@see			dateStyle
+ *					The format of the date component.
+ *
+ *	@result			A new autoreleased string.
+ */
+- (NSString *) stringWithTimeStyle:(NSDateFormatterStyle)timeStyle
+						 dateStyle:(NSDateFormatterStyle)dateStyle;
+
+/*!
+ *					Generates a new date from a string with a specific format.
+ *
+ *	@see			string
+ *					The string containing the date.
+ *
+ *	@see			format
+ *					The format you want, following the format patterns Unicode Technical Standard #35:
+ *					http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
+ *
+ *	@result			A new autoreleased date.
+ */
++ (NSDate *) dateWithString:(NSString *)string withFormat:(NSString *)format;
+
+/*!
+ *					Generates a new date from a string with the user's current callendar settings.
+ *
+ *	@see			string
+ *					The string containing the date.
+ *
+ *	@see			timeStyle
+ *					The format of the time component.
+ *
+ *	@see			dateStyle
+ *					The format of the date component.
+ *
+ *	@result			A new autoreleased string.
+ */
++ (NSDate *) dateWithString:(NSString *)string
 				  timeStyle:(NSDateFormatterStyle)timeStyle
 				  dateStyle:(NSDateFormatterStyle)dateStyle;
 

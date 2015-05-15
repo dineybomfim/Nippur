@@ -32,11 +32,6 @@
 //
 //**********************************************************************************************************
 
-NSString *const kNPPDateUniversalNumbers = @"yyyyMMddHHmm";
-NSString *const kNPPDateFull = @"dd/MM/yyyy HH:mm";
-NSString *const kNPPDateShort = @"dd/MM/yyyy";
-NSString *const kNPPDateTime = @"HH:mm";
-
 #pragma mark -
 #pragma mark Private Interface
 #pragma mark -
@@ -97,15 +92,9 @@ NSString *const kNPPDateTime = @"HH:mm";
 @implementation NSDate (NPPView)
 
 #pragma mark -
-#pragma mark Private Methods
+#pragma mark Properties
 //**************************************************
-//	Private Methods
-//**************************************************
-
-#pragma mark -
-#pragma mark Self Public Methods
-//**************************************************
-//	Self Public Methods
+//	Properties
 //**************************************************
 
 - (unsigned int) year
@@ -173,12 +162,54 @@ NSString *const kNPPDateTime = @"HH:mm";
 	return (unsigned int)[components second];
 }
 
-- (NSDate *) dateByAddingHours:(int)hours days:(int)days months:(int)months years:(int)years
+#pragma mark -
+#pragma mark Private Methods
+//**************************************************
+//	Private Methods
+//**************************************************
+
+#pragma mark -
+#pragma mark Self Public Methods
+//**************************************************
+//	Self Public Methods
+//**************************************************
+
+- (NSDate *) nextMinute
+{
+	return [self dateByAddingMinutes:1 hours:0 days:0 months:0 years:0];
+}
+
+- (NSDate *) nextHour
+{
+	return [self dateByAddingMinutes:0 hours:1 days:0 months:0 years:0];
+}
+
+- (NSDate *) nextDay
+{
+	return [self dateByAddingMinutes:0 hours:0 days:1 months:0 years:0];
+}
+
+- (NSDate *) nextMonth
+{
+	return [self dateByAddingMinutes:0 hours:0 days:0 months:1 years:0];
+}
+
+- (NSDate *) nextYear
+{
+	return [self dateByAddingMinutes:0 hours:0 days:0 months:0 years:1];
+}
+
+- (NSDate *) dateByAddingMinutes:(int)minutes
+						   hours:(int)hours
+							days:(int)days
+						  months:(int)months
+						   years:(int)years
 {
 	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
 	NSCalendar *calendar = [NSCalendar currentCalendar];
 	NSDate *newDate = nil;
 	
+	dateComponents.minute = minutes;
 	dateComponents.hour = hours;
 	dateComponents.day = days;
 	dateComponents.month = months;
@@ -189,26 +220,6 @@ NSString *const kNPPDateTime = @"HH:mm";
 	nppRelease(dateComponents);
 	
 	return newDate;
-}
-
-- (NSDate *) nextHour
-{
-	return [self dateByAddingHours:1 days:0 months:0 years:0];
-}
-
-- (NSDate *) nextDay
-{
-	return [self dateByAddingHours:0 days:1 months:0 years:0];
-}
-
-- (NSDate *) nextMonth
-{
-	return [self dateByAddingHours:0 days:0 months:1 years:0];
-}
-
-- (NSDate *) nextYear
-{
-	return [self dateByAddingHours:0 days:0 months:0 years:1];
 }
 
 - (NSString *) stringWithFormat:(NSString *)format
@@ -228,12 +239,22 @@ NSString *const kNPPDateTime = @"HH:mm";
 	return string;
 }
 
-+ (NSString *) stringFromDate:(NSDate *)date withFormat:(NSString *)format
+- (NSString *) stringWithTimeStyle:(NSDateFormatterStyle)timeStyle
+						 dateStyle:(NSDateFormatterStyle)dateStyle
 {
-	return [date stringWithFormat:format];
+	NSString *string = nil;
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	
+	dateFormatter.timeStyle = timeStyle;
+	dateFormatter.dateStyle = dateStyle;
+	string = [dateFormatter stringFromDate:self];
+	
+	nppRelease(dateFormatter);
+	
+	return string;
 }
 
-+ (NSDate *) dateFromString:(NSString *)string withFormat:(NSString *)format
++ (NSDate *) dateWithString:(NSString *)string withFormat:(NSString *)format
 {
 	NSDate *date = nil;
 	
@@ -250,44 +271,7 @@ NSString *const kNPPDateTime = @"HH:mm";
 	return date;
 }
 
-+ (NSString *) stringFromEpoch:(NSTimeInterval)epoch
-					 timeStyle:(NSDateFormatterStyle)timeStyle
-					 dateStyle:(NSDateFormatterStyle)dateStyle
-{
-	NSString *finalString = nil;
-	NSDate *date = [NSDate dateWithTimeIntervalSince1970:epoch];
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	
-	//dateFormatter.timeZone = [NSTimeZone systemTimeZone];
-	//dateFormatter.locale = [NSLocale currentLocale];
-	dateFormatter.timeStyle = timeStyle;
-	dateFormatter.dateStyle = dateStyle;
-	
-	finalString = [dateFormatter stringFromDate:date];
-	
-	nppRelease(dateFormatter);
-	
-	return finalString;
-}
-
-+ (NSString *) stringFromDate:(NSDate *)date
-					timeStyle:(NSDateFormatterStyle)timeStyle
-					dateStyle:(NSDateFormatterStyle)dateStyle
-{
-	NSString *finalString = nil;
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	
-	dateFormatter.timeStyle = timeStyle;
-	dateFormatter.dateStyle = dateStyle;
-	
-	finalString = [dateFormatter stringFromDate:date];
-	
-	nppRelease(dateFormatter);
-	
-	return finalString;
-}
-
-+ (NSDate *) dateFromString:(NSString *)string
++ (NSDate *) dateWithString:(NSString *)string
 				  timeStyle:(NSDateFormatterStyle)timeStyle
 				  dateStyle:(NSDateFormatterStyle)dateStyle
 {
@@ -296,7 +280,6 @@ NSString *const kNPPDateTime = @"HH:mm";
 	
 	dateFormatter.timeStyle = timeStyle;
 	dateFormatter.dateStyle = dateStyle;
-	
 	date = [dateFormatter dateFromString:string];
 	
 	nppRelease(dateFormatter);

@@ -29,7 +29,7 @@
  *					Represents the data type for a file.
  *
  *	@var			NPPDataTypeArchive
- *					Binary file format, accept any object that conforms to #NSCoding#.
+ *					Binary file format, it uses the secure dynamic Nippur cipher as it's encription.
  *
  *	@var			NPPDataTypeString
  *					Plain text file format.
@@ -37,12 +37,12 @@
  *	@var			NPPDataTypePlist
  *					Key-Value in XML format.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPDataType)
 {
 	NPPDataTypeArchive,
 	NPPDataTypeString,
 	NPPDataTypePlist,
-} NPPDataType;
+};
 
 /*!
  *					Represents a file system path inside the local sandbox.
@@ -65,7 +65,7 @@ typedef enum
  *	@var			NPPDataFolderBundle
  *					The bundle folder, this folder is ready-only on iOS system.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 {
 	NPPDataFolderUser,
 	NPPDataFolderApp,
@@ -73,7 +73,7 @@ typedef enum
 	NPPDataFolderDocuments,
 	NPPDataFolderLibrary,
 	NPPDataFolderBundle,
-} NPPDataFolder;
+};
 
 /*!
  *					The data manager is responsible for dealing with files, files' data, management on
@@ -81,14 +81,106 @@ typedef enum
  */
 @interface NPPDataManager : NSObject
 
-// Cross Data API.
+//*************************
+//	Transient Storage API
+//*************************
+
+/*!
+ *					Retrieves an object previously set using the NPPDataManager's Transient Storage API.
+ *
+ *	@var			key
+ *					The key previously set for an object.
+ *
+ *	@see			setObject:forKey:
+ *	@see			removeObjectForKey:
+ */
 + (id) objectForKey:(id)key;
+
+/*!
+ *					This method sets a object in the NPPDataManager's Transient Storage API.
+ *					It uses the heap memory, that means you're the responsible for any object you set
+ *					this way.
+ *
+ *	@var			object
+ *					The object you want to put in the heap. This object will be retained internally.
+ *
+ *	@var			key
+ *					The key for this object, it will be copied internally, so it must conforms to
+ *					NSCopying protocol.
+ *
+ *	@see			objectForKey:
+ *	@see			removeObjectForKey:
+ */
 + (void) setObject:(id)object forKey:(id)key;
+
+/*!
+ *					Removes an object previously set using the NPPDataManager's Transient Storage API.
+ *
+ *	@var			key
+ *					The key previously set for an object.
+ *
+ *	@see			objectForKey:
+ *	@see			setObject:forKey:
+ */
 + (void) removeObjectForKey:(id)key;
 
-// Local Storage API.
-+ (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
+//*************************
+//	Persistent Storage API
+//*************************
+
+/*!
+ *					Loads a data from a file using the NPPDataManager's Persistent Storage API.
+ *
+ *	@var			name
+ *					The file's name.
+ *
+ *	@var			type
+ *					The file's type.
+ *
+ *	@var			folder
+ *					The folder in which the file will be saved.
+ *
+ *	@result			The loaded file content. It can be nil if the file is invalid or not found.
+ */
 + (id) loadFile:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
+
+/*!
+ *					Saves a data into a file using the NPPDataManager's Persistent Storage API.
+ *
+ *	@var			data
+ *					The data to save. It must be an object conforming to NSCoding protocol.
+ *
+ *	@var			name
+ *					The file's name.
+ *
+ *	@var			type
+ *					The file's type.
+ *
+ *	@var			folder
+ *					The folder in which the file will be saved.
+ */
++ (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
+
+/*!
+ *					Appends a data into a file using the NPPDataManager's Persistent Storage API.
+ *					This method is intend to be used to append data into at the end of large files,
+ *					it's faster because it doesn't loads the entire file into the memory, it just writes
+ *					the new data at the end of the file.
+ *
+ *					This method will create a new file in case you try to append data to a file
+ *					that doesn't exist yet.
+ *
+ *	@var			name
+ *					The file's name.
+ *
+ *	@var			type
+ *					The file's type.
+ *
+ *	@var			folder
+ *					The folder in which the file will be saved.
+ *
+ *	@result			The loaded file content. It can be nil if the file is invalid or not found.
+ */
 + (void) appendFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
 
 // File Oprations API.

@@ -79,8 +79,9 @@ static NSArray *nppCountryGet(NSString *isoCode)
 	//	Localizing Names
 	//*************************
 	
+	NSData *data = [NSData dataWithContentsOfFile:nppMakePath(NPP_COUNTRY_DATA)];
 	NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:nppGetLanguage()];
-	NSArray *countriesData = [NPPJSON objectWithData:nppDataFromFile(NPP_COUNTRY_DATA)];
+	NSArray *countriesData = [NPPJSON objectWithData:data];
 	NSMutableArray *countries = [NSMutableArray array];
 	NSMutableDictionary *country = nil;
 	NSString *name = nil;
@@ -147,8 +148,9 @@ static NSArray *nppCountryGet(NSString *isoCode)
 
 static void nppCountryFillCodes(NPPModelCountryVO *countryVO)
 {
+	NSData *data = [NSData dataWithContentsOfFile:nppMakePath(NPP_COUNTRY_DATA)];
 	NSString *isoCode = countryVO.isoCode;
-	NSArray *countries = [NPPJSON objectWithData:nppDataFromFile(NPP_COUNTRY_DATA)];
+	NSArray *countries = [NPPJSON objectWithData:data];
 	NSMutableDictionary *country = nil;
 	NSArray *latlng = nil;
 	double latitude = 0.0;

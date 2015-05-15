@@ -218,7 +218,7 @@
 	nppRelease(_item);
 	
 	// Allocating the new item.
-	asset = [AVURLAsset URLAssetWithURL:nppMakeURL(named) options:nil];
+	asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:nppMakePath(named)] options:nil];
 	_item = [[AVPlayerItem alloc] initWithAsset:asset];
 	
 	if ([_item error] == nil && [_item status] != AVPlayerItemStatusFailed)
