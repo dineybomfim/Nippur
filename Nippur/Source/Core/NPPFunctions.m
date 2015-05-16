@@ -72,7 +72,7 @@ static int				_defaultBetaCheck		= -1;
 //	Private Functions
 //**************************************************
 
-static NSBundle *nppGetBundle(void)
+static NSBundle *nppGetFrameworkBundle(void)
 {
 	static NSBundle *_nppBundle = nil;
 	
@@ -83,18 +83,6 @@ static NSBundle *nppGetBundle(void)
 	}
 	
 	return _nppBundle;
-}
-
-static NSMutableString *nppGetLocalized(void)
-{
-	static NSMutableString *_nppLocalized = nil;
-	
-	if (_nppLocalized == nil)
-	{
-		_nppLocalized = [[NSMutableString alloc] initWithString:NPP_LOCALIZED];
-	}
-	
-	return _nppLocalized;
 }
 
 #pragma mark -
@@ -112,6 +100,12 @@ static NSMutableString *nppGetLocalized(void)
 //	Public Functions
 //**************************************************
 
+#pragma mark -
+#pragma mark Math Functions
+//*************************
+//	Math Functions
+//*************************
+
 float nppRandomf(float min, float max)
 {
 	return min + ((double)arc4random() / NPP_ARC4RANDOM_MAX) * (max - min);
@@ -123,16 +117,19 @@ int nppRandomi(int min, int max)
 	return min + random;
 }
 
-NSString *nppS(NSString *string)
+float nppPointsDistance(CGPoint pointA, CGPoint pointB)
 {
-	return [[NSBundle mainBundle] localizedStringForKey:string value:@"" table:nppGetLocalized()];
+	double xDistace = fabs(pointA.x - pointB.x);
+	double yDistance = fabs(pointA.y - pointB.y);
+	
+	return sqrtf(xDistace * xDistace + yDistance * yDistance);
 }
 
-void nppSetS(NSString *localizedName)
-{
-	NSMutableString *localized = nppGetLocalized();
-	[localized setString:localizedName];
-}
+#pragma mark -
+#pragma mark Path Functions
+//*************************
+//	Path Functions
+//*************************
 
 NSString *nppGetFile(NSString *named)
 {
@@ -215,8 +212,8 @@ NSString *nppMakePath(NSString *named)
 	}
 	else if (named != nil)
 	{
-		// Default bundle.
-		path = [[nppGetBundle() bundlePath] stringByAppendingPathComponent:named];
+		// Framework bundle.
+		path = [[nppGetFrameworkBundle() bundlePath] stringByAppendingPathComponent:named];
 		
 		// Application main bundle.
 		if (![fileManager fileExistsAtPath:path])
@@ -228,169 +225,7 @@ NSString *nppMakePath(NSString *named)
 	return path;
 }
 
-NSURL *nppMakeURL(NSString *named)
-{
-	NSURL *url = nil;
-	NSRange range = [named rangeOfString:@"://"];
-	
-	if (range.length > 0)
-	{
-		url = [NSURL URLWithString:nppMakePath(named)];
-	}
-	
-	if (url == nil)
-	{
-		url = [[NSBundle mainBundle] URLForResource:nppGetFileName(named)
-									  withExtension:nppGetFileExtension(named)];
-	}
-	
-	return url;
-}
-
-NSString *nppStringFromFile(NSString *named)
-{
-	return [NSString stringWithContentsOfFile:nppMakePath(named) encoding:NSUTF8StringEncoding error:nil];
-}
-
-NSData *nppDataFromFile(NSString *named)
-{
-	return [NSData dataWithContentsOfFile:nppMakePath(named)];
-}
-
 id nppItemFromXIB(NSString *name)
-{
-	id returningItem = nil;
-	id item;
-	Class classObject = NSClassFromString(name);
-	
-	if (nppFileExists([name stringByAppendingString:NPP_STR_NIB]))
-	{
-		NSArray *array = [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil];
-		
-		for (item in array)
-		{
-			if ([item isKindOfClass:classObject])
-			{
-				returningItem = item;
-				break;
-			}
-		}
-	}
-	
-	return returningItem;
-}
-
-BOOL nppFileExists(NSString *named)
-{
-	return [[NSFileManager defaultManager] fileExistsAtPath:nppMakePath(named)];
-}
-
-float nppPointsDistance(CGPoint pointA, CGPoint pointB)
-{
-	double xDistace = fabs(pointA.x - pointB.x);
-	double yDistance = fabs(pointA.y - pointB.y);
-	
-	return sqrtf(xDistace * xDistace + yDistance * yDistance);
-}
-
-//#define NPPLineSlope(p1,p2)			(((p2).y - (p1).y) / ((p2).x - (p1).x))
-//#define NPPLineIntercept(p,slope)	((p).y - (slope) * (p).x)
-//
-//static void nppRoutePoint()
-//{
-//	CGPoint p1 = { 1, 1 };
-//	CGPoint p2 = { 5, 25 };
-//	CGPoint point = { 3, 7 };
-//	
-//	double slope = NPPLineSlope(p1, p2);
-//	double intercept = NPPLineIntercept(p1, slope);
-//	
-//	double verify = slope * point.x + intercept;
-//	double distance = fabsf(verify - point.y);
-//	
-//	if (verify > (point.y - 0.01) && verify < (point.y + 0.01))
-//    {
-//		printf("Given point lies on the line\n");
-//    }
-//}
-
-void nppPerformAction(id target, SEL action)
-{
-	if ([target respondsToSelector:action])
-	{
-		// Starting at Xcode 4.4, the compiler still showing warnings when using "performSelector"
-		// with ARC without declaring its relationship with its holder.
-		((id (*)(id, SEL))objc_msgSend)(target, action);
-	}
-}
-
-NSString *nppGetApplicationVersion(void)
-{
-	static NSString *_default = nil;
-	
-	if (_default == nil)
-	{
-		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_VERSION];
-		nppRetain(_default);
-	}
-	
-	return _default;
-}
-
-NSString *nppGetApplicationBuild(void)
-{
-	static NSString *_default = nil;
-	
-	if (_default == nil)
-	{
-		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_BUILD];
-		nppRetain(_default);
-	}
-	
-	return _default;
-}
-
-NSString *nppGetApplicationName(void)
-{
-	static NSString *_default = nil;
-	
-	if (_default == nil)
-	{
-		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_NAME];
-		_default = _default ? : [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_DISPLAY];
-		nppRetain(_default);
-	}
-	
-	return _default;
-}
-
-NSString *nppGetApplicationBundleID(void)
-{
-	static NSString *_default = nil;
-	
-	if (_default == nil)
-	{
-		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_IDENTIFIER];
-		nppRetain(_default);
-	}
-	
-	return _default;
-}
-
-NSString *nppGetLanguage(void)
-{
-	NSString *language = [[NSLocale preferredLanguages] firstObject];
-	NSString *languageCountry = [[NSLocale autoupdatingCurrentLocale] objectForKey:NSLocaleCountryCode];
-	
-	if (!nppRegExMatch(language, kNPPREGEX_DASH, NPPRegExFlagGDMI))
-	{
-		language = [language stringByAppendingFormat:@"-%@", languageCountry];
-	}
-	
-	return language;
-}
-
-id nppGetBundleObject(NSString *name)
 {
 	id object = nil;
 	Class classObject = NSClassFromString(name);
@@ -411,6 +246,110 @@ id nppGetBundleObject(NSString *name)
 	}
 	
 	return nppAutorelease(object);
+}
+
+BOOL nppFileExists(NSString *named)
+{
+	return [[NSFileManager defaultManager] fileExistsAtPath:nppMakePath(named)];
+}
+
+#pragma mark -
+#pragma mark Bundle Functions
+//*************************
+//	Bundle Functions
+//*************************
+
+NSString *nppGetBundleVersion(void)
+{
+	static NSString *_default = nil;
+	
+	if (_default == nil)
+	{
+		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_VERSION];
+		nppRetain(_default);
+	}
+	
+	return _default;
+}
+
+NSString *nppGetBundleBuild(void)
+{
+	static NSString *_default = nil;
+	
+	if (_default == nil)
+	{
+		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_BUILD];
+		nppRetain(_default);
+	}
+	
+	return _default;
+}
+
+NSString *nppGetBundleName(void)
+{
+	static NSString *_default = nil;
+	
+	if (_default == nil)
+	{
+		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_NAME];
+		_default = _default ? : [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_DISPLAY];
+		nppRetain(_default);
+	}
+	
+	return _default;
+}
+
+NSString *nppGetBundleID(void)
+{
+	static NSString *_default = nil;
+	
+	if (_default == nil)
+	{
+		_default = [[NSBundle mainBundle] objectForInfoDictionaryKey:NPP_BUNDLE_IDENTIFIER];
+		nppRetain(_default);
+	}
+	
+	return _default;
+}
+
+#pragma mark -
+#pragma mark Localized Functions
+//*************************
+//	Localized Functions
+//*************************
+
+NSString *nppS(NSString *string)
+{
+	return [[NSBundle mainBundle] localizedStringForKey:string value:@"" table:NPP_LOCALIZED];
+}
+
+NSString *nppGetLanguage(void)
+{
+	NSString *language = [[NSLocale preferredLanguages] firstObject];
+	NSString *languageCountry = [[NSLocale autoupdatingCurrentLocale] objectForKey:NSLocaleCountryCode];
+	
+	if (!nppRegExMatch(language, kNPPREGEX_DASH, NPPRegExFlagGDMI))
+	{
+		language = [language stringByAppendingFormat:@"-%@", languageCountry];
+	}
+	
+	return language;
+}
+
+#pragma mark -
+#pragma mark Utils Functions
+//*************************
+//	Utils Functions
+//*************************
+
+void nppPerformAction(id target, SEL action)
+{
+	if ([target respondsToSelector:action])
+	{
+		// Starting at Xcode 4.4, the compiler still showing warnings when using "performSelector"
+		// with ARC without declaring its relationship with its holder.
+		((id (*)(id, SEL))objc_msgSend)(target, action);
+	}
 }
 
 NSString *nppGenerateHash(unsigned int size, BOOL canRepeat, BOOL canUpperCase)
@@ -472,13 +411,19 @@ void nppSwizzle(Class aClass, SEL old, SEL newer)
 	}
 }
 
+#pragma mark -
+#pragma mark Beta API
+//*************************
+//	Beta API
+//*************************
+
 BOOL nppBetaCheck(void)
 {
 	// Look at the bundle identifier once, since it can't change during the fly anyway.
 	if (_defaultBetaCheck == -1)
 	{
 		NSString *betaString = (_defaultBetaString != nil) ? _defaultBetaString : NPP_STR_BETA;
-		NSString *identifier = nppGetApplicationBundleID();
+		NSString *identifier = nppGetBundleID();
 		NSRange range = [[identifier lowercaseString] rangeOfString:betaString];
 		_defaultBetaCheck = (range.length > 0);
 	}

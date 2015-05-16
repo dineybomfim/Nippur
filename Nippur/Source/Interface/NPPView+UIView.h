@@ -184,9 +184,9 @@ NPP_API void nppClockMaskLayer(UIView *view, float percentage, NPPDirection star
 - (float) shadowAlpha;
 - (void) setShadowAlpha:(float)value;
 
-- (void) shadowAt:(NPPPosition)position offset:(float)offset;
+- (void) shadowAt:(NPPDirection)direction offset:(float)offset;
 
-- (void) fadeAlphaAt:(NPPPosition)position startAt:(float)start endAt:(float)end mirror:(BOOL)mirror;
+- (void) fadeAlphaAt:(NPPDirection)direction startAt:(float)start endAt:(float)end mirror:(BOOL)mirror;
 
 + (void) screenFlash;
 

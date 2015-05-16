@@ -513,24 +513,24 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 	self.layer.shadowOpacity = value;
 }
 
-- (void) shadowAt:(NPPPosition)position offset:(float)offset
+- (void) shadowAt:(NPPDirection)direction offset:(float)offset
 {
 	CALayer *layer = self.layer;
 	CGSize size = self.frame.size;
 	CGRect rect;
 	
-	switch (position)
+	switch (direction)
 	{
-		case NPPPositionRight:
+		case NPPDirectionRight:
 			rect = CGRectMake(size.width, 0.0f, offset, size.height);
 			break;
-		case NPPPositionBottom:
+		case NPPDirectionDown:
 			rect = CGRectMake(0.0f, size.height, size.width, offset);
 			break;
-		case NPPPositionLeft:
+		case NPPDirectionLeft:
 			rect = CGRectMake(0.0f, 0.0f, -offset, size.height);
 			break;
-		case NPPPositionTop:
+		case NPPDirectionUp:
 		default:
 			rect = CGRectMake(0.0f, 0.0f, size.width, -offset);
 			break;
@@ -542,7 +542,7 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 	layer.shadowColor = [[UIColor blackColor] CGColor];
 }
 
-- (void) fadeAlphaAt:(NPPPosition)position startAt:(float)start endAt:(float)end mirror:(BOOL)mirror
+- (void) fadeAlphaAt:(NPPDirection)direction startAt:(float)start endAt:(float)end mirror:(BOOL)mirror
 {
 	// Aboiding the zero size layer.
 	CGRect bounds = self.bounds;
@@ -577,27 +577,27 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 	
 	// Constructing the fading area.
 	/*
-	switch (position)
+	switch (direction)
 	{
-		case NPPPositionRight:
+		case NPPDirectionRight:
 			start /= bounds.size.width;
 			end /= bounds.size.width;
 			layer.startPoint = CGPointMake(1.0f - start, 1.0f);
 			layer.endPoint = CGPointMake(1.0f - end, 1.0f);
 			break;
-		case NPPPositionBottom:
+		case NPPDirectionDown:
 			start /= bounds.size.height;
 			end /= bounds.size.height;
 			layer.startPoint = CGPointMake(1.0f, 1.0f - start);
 			layer.endPoint = CGPointMake(1.0f, 1.0f - end);
 			break;
-		case NPPPositionLeft:
+		case NPPDirectionLeft:
 			start /= bounds.size.width;
 			end /= bounds.size.width;
 			layer.startPoint = CGPointMake(start, 1.0f);
 			layer.endPoint = CGPointMake(end, 1.0f);
 			break;
-		case NPPPositionTop:
+		case NPPDirectionUp:
 		default:
 			start /= bounds.size.height;
 			end /= bounds.size.height;
@@ -606,27 +606,27 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 			break;
 	}
 	/*/
-	switch (position)
+	switch (direction)
 	{
-		case NPPPositionRight:
+		case NPPDirectionRight:
 			start /= bounds.size.width;
 			end /= bounds.size.width;
 			layer.startPoint = CGPointMake(1.0f, 1.0f);
 			layer.endPoint = CGPointMake(0.0f, 1.0f);
 			break;
-		case NPPPositionBottom:
+		case NPPDirectionDown:
 			start /= bounds.size.height;
 			end /= bounds.size.height;
 			layer.startPoint = CGPointMake(1.0f, 1.0f);
 			layer.endPoint = CGPointMake(1.0f, 0.0f);
 			break;
-		case NPPPositionLeft:
+		case NPPDirectionLeft:
 			start /= bounds.size.width;
 			end /= bounds.size.width;
 			layer.startPoint = CGPointMake(0.0f, 1.0f);
 			layer.endPoint = CGPointMake(1.0f, 1.0f);
 			break;
-		case NPPPositionTop:
+		case NPPDirectionUp:
 		default:
 			start /= bounds.size.height;
 			end /= bounds.size.height;

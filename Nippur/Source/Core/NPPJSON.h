@@ -39,15 +39,53 @@
 
 @end
 
+/*!
+ *					This JSON class is capable of encode and decode JSON format strings and data objects.
+ *					
+ *					It can deal with any kind of object that implements the #NPPJSONSource# protocol.
+ */
 @interface NPPJSON : NSObject
 
-// JSON strings.
+/*!
+ *					Decodes a string with JSON format, returning a native objects.
+ *
+ *	@param			string
+ *					A string with JSON format.
+ *
+ *	@result			One of the Obj-C basic objects representing the data. Can be NSArray or NSDictionary.
+ */
 + (id) objectWithString:(NSString *)string;
-+ (NSString *) stringWithObject:(id)value;
 
-// NSData with UTF-8 encode.
+/*!
+ *					Encodes a native object (NSArray or NSDictionary), returning a string with JSON format.
+ *
+ *	@param			object
+ *					A native object to encode into JSON format. Can be NSArray or NSDictionary.
+ *
+ *	@result			A string encoded in JSON format.
+ */
++ (NSString *) stringWithObject:(id)object;
+
+/*!
+ *					Decodes a data with JSON format using UTF-8, returning a native objects.
+ *
+ *	@param			string
+ *					A string with JSON format.
+ *
+ *	@result			One of the Obj-C basic objects representing the data. Can be NSArray or NSDictionary.
+ */
 + (id) objectWithData:(NSData *)data;
-+ (NSData *) dataWithObject:(id)value;
+
+/*!
+ *					Encodes a native object (NSArray or NSDictionary), returning a data with JSON format
+ *					using UTF-8.
+ *
+ *	@param			object
+ *					A native object to encode into JSON format. Can be NSArray or NSDictionary.
+ *
+ *	@result			A data encoded in JSON format with UTF-8.
+ */
++ (NSData *) dataWithObject:(id)object;
 
 /*!
  *					This method defines if the JSON will be generated considering the null values

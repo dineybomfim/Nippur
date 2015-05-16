@@ -167,7 +167,7 @@ static NSString *nppDataManagerPath(NPPDataFolder folder)
 	// Create the full path to the App's folder.
 	NSArray *fileSystem = NSSearchPathForDirectoriesInDomains(directory, domainMask, YES);
 	NSString *path = ([fileSystem count] > 0) ? [fileSystem objectAtIndex:0] : nil;
-	NSString *local = (appFolder != nil) ? appFolder : nppGetApplicationName();
+	NSString *local = (appFolder != nil) ? appFolder : nppGetBundleName();
 	
 	// Appends the user folder to the local path.
 	if (folder == NPPDataFolderUser && userFolder != nil)
@@ -289,38 +289,10 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 }
 
 #pragma mark -
-#pragma mark Local Storage API
+#pragma mark Persistent Storage API
 //*************************
-//	Local Storage API
+//	Persistent Storage API
 //*************************
-
-+ (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
-{
-	CFTimeInterval startTime = nppAbsoluteTime();
-	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
-	
-	// Archiving data.
-	if (type == NPPDataTypeArchive)
-	{
-		NSMutableData *store = [NSMutableData data];
-		NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:store];
-		[archiver encodeObject:data forKey:name];
-		[archiver finishEncoding];
-		nppRelease(archiver);
-		
-		[[store AES256EncryptWithKey:NPPModelCipherKey] writeToFile:localPath atomically:YES];
-	}
-	else if (type == NPPDataTypeString)
-	{
-		[data writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-	}
-	else if (type == NPPDataTypePlist)
-	{
-		[data writeToFile:localPath atomically:YES];
-	}
-	
-	nppLog(@"\"%@\" saved in:%f", name, (float)(nppAbsoluteTime() - startTime));
-}
 
 + (id) loadFile:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
@@ -355,6 +327,34 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	return data;
 }
 
++ (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
+{
+	CFTimeInterval startTime = nppAbsoluteTime();
+	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
+	
+	// Archiving data.
+	if (type == NPPDataTypeArchive)
+	{
+		NSMutableData *store = [NSMutableData data];
+		NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:store];
+		[archiver encodeObject:data forKey:name];
+		[archiver finishEncoding];
+		nppRelease(archiver);
+		
+		[[store AES256EncryptWithKey:NPPModelCipherKey] writeToFile:localPath atomically:YES];
+	}
+	else if (type == NPPDataTypeString)
+	{
+		[data writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+	}
+	else if (type == NPPDataTypePlist)
+	{
+		[data writeToFile:localPath atomically:YES];
+	}
+	
+	nppLog(@"\"%@\" saved in:%f", name, (float)(nppAbsoluteTime() - startTime));
+}
+
 + (void) appendFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
 	CFTimeInterval startTime = nppAbsoluteTime();
@@ -363,9 +363,10 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:localPath];
 	[fileHandle seekToEndOfFile];
 	
+	// Creating a new file if needed.
 	if (![[NSFileManager defaultManager] fileExistsAtPath:localPath])
 	{
-		[self saveFile:@"1.0" name:name type:type folder:folder];
+		[self saveFile:@"" name:name type:type folder:folder];
 	}
 	
 	// Archiving data.
@@ -389,12 +390,6 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	
 	nppLog(@"\"%@\" appended in:%f", name, (float)(nppAbsoluteTime() - startTime));
 }
-
-#pragma mark -
-#pragma mark File Oprations API
-//*************************
-//	File Oprations API
-//*************************
 
 + (NSString *) pathForFolder:(NPPDataFolder)folder
 {

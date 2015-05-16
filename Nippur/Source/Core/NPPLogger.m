@@ -404,7 +404,9 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 
 + (void) logLocalDecode:(NSString *)file completion:(NPPBlockLogs)block
 {
-	NSString *log = [NSString stringWithData:nppDataFromFile(file) encoding:NSUTF8StringEncoding];
+	NSData *data = [NSData dataWithContentsOfFile:nppMakePath(file)];
+	NSString *log = [NSString stringWithData:data encoding:NSUTF8StringEncoding];
+	
 	nppBlock(block, nppGetLogFromString(log));
 }
 
