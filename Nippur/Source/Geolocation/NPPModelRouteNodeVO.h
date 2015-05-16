@@ -25,14 +25,14 @@
 
 #import "NPPModelGeolocationVO.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPRouteMode)
 {
 	NPPRouteModeUndefined			= 0,
 	NPPRouteModeFoot				= 1,
 	NPPRouteModeCar					= 2,
 	NPPRouteModeBycicle				= 3,
 	NPPRouteModePublicTransport		= 4,
-} NPPRouteMode;
+};
 
 typedef struct
 {

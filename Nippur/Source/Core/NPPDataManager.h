@@ -37,12 +37,12 @@
  *	@var			NPPDataTypePlist
  *					Key-Value in XML format.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPDataType)
 {
 	NPPDataTypeArchive,
 	NPPDataTypeString,
 	NPPDataTypePlist,
-} NPPDataType;
+};
 
 /*!
  *					Represents a file system path inside the local sandbox.
@@ -65,7 +65,7 @@ typedef enum
  *	@var			NPPDataFolderBundle
  *					The bundle folder, this folder is ready-only on iOS system.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 {
 	NPPDataFolderUser,
 	NPPDataFolderApp,
@@ -73,7 +73,7 @@ typedef enum
 	NPPDataFolderDocuments,
 	NPPDataFolderLibrary,
 	NPPDataFolderBundle,
-} NPPDataFolder;
+};
 
 /*!
  *					The data manager is responsible for dealing with files, files' data, management on

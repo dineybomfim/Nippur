@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		602492C21672579D0030C6B7 /* BUILD ALL */ = {
+		602492C21672579D0030C6B7 /* Build All */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 602492C31672579D0030C6B7 /* Build configuration list for PBXAggregateTarget "BUILD ALL" */;
+			buildConfigurationList = 602492C31672579D0030C6B7 /* Build configuration list for PBXAggregateTarget "Build All" */;
 			buildPhases = (
 				602492C6167257A20030C6B7 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "BUILD ALL";
+			name = "Build All";
 			productName = BUILD;
+		};
+		6059142D1B05662600C7A2B1 /* Build Docs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 605914301B05662600C7A2B1 /* Build configuration list for PBXAggregateTarget "Build Docs" */;
+			buildPhases = (
+				605914311B05664100C7A2B1 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build Docs";
+			productName = "Build Docs";
 		};
 /* End PBXAggregateTarget section */
 
@@ -654,6 +665,11 @@
 			attributes = {
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "db-in";
+				TargetAttributes = {
+					6059142D1B05662600C7A2B1 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
 			};
 			buildConfigurationList = 95D874481585A3FD000A70F4 /* Build configuration list for PBXProject "Nippur" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -669,8 +685,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				602492C21672579D0030C6B7 /* BUILD ALL */,
 				602492181672564F0030C6B7 /* NippurUniversal */,
+				602492C21672579D0030C6B7 /* Build All */,
+				6059142D1B05662600C7A2B1 /* Build Docs */,
 			);
 		};
 /* End PBXProject section */
@@ -699,6 +716,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Sets the target folders and the final framework product.\nFMK_TARGET=\"NippurUniversal\"\nFMK_NAME=\"Nippur\"\nFMK_VERSION=\"A\"\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\n#INSTALL_DIR=\"${LOCAL_DEVELOPER_DIR}/Xcode/Templates/Project Templates/${FMK_NAME}/${FMK_NAME} Base.xctemplate/Frameworks/${FMK_NAME}.framework\"\nINSTALL_DIR=\"Templates/Project Templates/${FMK_NAME}/${FMK_NAME} Base.xctemplate/Frameworks/${FMK_NAME}.framework\"\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=\"build\"\nDEVICE_DIR=\"${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\"\nSIMULATOR_DIR=\"${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\"\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_TARGET}\" -sdk iphoneos\nxcodebuild -configuration \"Release\" -target \"${FMK_TARGET}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Removes the binary and header from the resources folder.\nrm -r \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/Headers\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/${FMK_NAME}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7...) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
+		};
+		605914311B05664100C7A2B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"/Works/Libs/Code/Objective-C/DOC/appledoc_3/appledoc\" \\\n--templates \"/Works/Libs/Code/Objective-C/DOC/appledoc_3/Templates\" \\\n--output \"${PROJECT_DIR}/../Docs\" \\\n--docset-feed-url \"http://db-in.com/nippur/src/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://db-in.com/nippur/src/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://db-in.com/nippur/docs/\" \\\n--project-name \"Nippur\" \\\n--project-company \"db-in\" \\\n--project-version \"1.0.3\" \\\n--company-id \"com.db-in\" \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--exit-threshold 2 \\\n--ignore .m \\\n--ignore \"Animation/NPPActionBlock.h\" \\\n--ignore \"Animation/NPPActionGroup.h\" \\\n--ignore \"Animation/NPPActionMove.h\" \\\n--ignore \"Animation/NPPActionRepeat.h\" \\\n--ignore \"Animation/NPPActionSelector.h\" \\\n--ignore \"Animation/NPPActionSequence.h\" \\\n--ignore UnitTest \\\n--keep-intermediate-files \\\n--publish-docset \\\n--crossref-format \"#%@#\" \\\n\"${PROJECT_DIR}/Nippur/Source\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -852,6 +882,20 @@
 			};
 			name = Release;
 		};
+		6059142E1B05662600C7A2B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6059142F1B05662600C7A2B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		95D874641585A3FD000A70F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -942,7 +986,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		602492C31672579D0030C6B7 /* Build configuration list for PBXAggregateTarget "BUILD ALL" */ = {
+		602492C31672579D0030C6B7 /* Build configuration list for PBXAggregateTarget "Build All" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				602492C41672579D0030C6B7 /* Debug */,
@@ -950,6 +994,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		605914301B05662600C7A2B1 /* Build configuration list for PBXAggregateTarget "Build Docs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6059142E1B05662600C7A2B1 /* Debug */,
+				6059142F1B05662600C7A2B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		95D874481585A3FD000A70F4 /* Build configuration list for PBXProject "Nippur" */ = {
 			isa = XCConfigurationList;

@@ -28,12 +28,12 @@
 #import "NPPButton.h"
 #import "NPPWindowKeyboard.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPKeyboardAction)
 {
 	NPPKeyboardActionSet		= 1,
 	NPPKeyboardActionPrevious	= 2,
 	NPPKeyboardActionNext		= 3,
-} NPPKeyboardAction;
+};
 
 // UIKit Keyboard protocol.
 @protocol NPPKeyboardDelegate <NSObject>

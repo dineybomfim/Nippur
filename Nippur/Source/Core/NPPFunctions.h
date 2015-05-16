@@ -39,29 +39,29 @@
  *	@var			NPPDirectionLeft
  *					Animation goes to left side of the screen.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPDirection)
 {
 	NPPDirectionUp,
 	NPPDirectionRight,
 	NPPDirectionDown,
 	NPPDirectionLeft,
-} NPPDirection;
+};
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPStyleColor)
 {
 	NPPStyleColorLight,
 	NPPStyleColorDark,
 	NPPStyleColorConfirm,
 	NPPStyleColorAlert,
-} NPPStyleColor;
+};
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPPosition)
 {
 	NPPPositionTop,
 	NPPPositionRight,
 	NPPPositionBottom,
 	NPPPositionLeft,
-} NPPPosition;
+};
 
 typedef void (^NPPBlockVoid)(void);
 typedef void (^NPPBlockInfo)(NPP_ARC_UNSAFE NSDictionary *info);

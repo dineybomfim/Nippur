@@ -29,11 +29,11 @@
 #import "NPPEffects.h"
 #import "NPPWindow.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPNotificationType)
 {
 	NPPNotificationTypeInteractive,	// Default
 	NPPNotificationTypeStatic,
-} NPPNotificationType;
+};
 
 NPP_API UIImage *nppNotificationMark(CGRect frame, NPPDirection direction);
 

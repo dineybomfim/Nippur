@@ -28,12 +28,12 @@
 #import "NPPImage+UIImage.h"
 #import "NPPFont+UIFont.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPTextFieldState)
 {
 	NPPTextFieldStateNone,
 	NPPTextFieldStateValid,
 	NPPTextFieldStateInvalid,
-} NPPTextFieldState;
+};
 
 @interface NPPTextField : UITextField
 {

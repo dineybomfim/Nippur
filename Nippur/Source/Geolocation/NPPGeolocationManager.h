@@ -27,18 +27,18 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPGeolocationStatus)
 {
 	NPPGeolocationStatusPending,
 	NPPGeolocationStatusGranted,
 	NPPGeolocationStatusDenied,
-} NPPGeolocationStatus;
+};
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPGeolocationMode)
 {
 	NPPGeolocationModeGPS,			// + Accurate, + Power consuming
 	NPPGeolocationModeCellTower,	// - Accurate, - Power consuming, - Frequent
-} NPPGeolocationMode;
+};
 
 // When using the update methods it will return only one item in the "locations" array.
 // The continuous indicates if the process should run again.

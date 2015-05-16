@@ -36,7 +36,7 @@
 	#define NPP_VIEW				NSView
 #endif
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPAutoresizing)
 {
 	NPPAutoresizingTopLeft		= UIViewAutoresizingFlexibleBottomMargin |
 								  UIViewAutoresizingFlexibleRightMargin,
@@ -53,7 +53,7 @@ typedef enum
 	NPPAutoresizingSizes		= UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight,
 	NPPAutoresizingAllMargins	= NPPAutoresizingHorizontal | NPPAutoresizingVertical,
 	NPPAutoresizingAll			= NPPAutoresizingAllMargins | NPPAutoresizingSizes,
-} NPPAutoresizing;
+};
 
 NPP_API void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting);
 

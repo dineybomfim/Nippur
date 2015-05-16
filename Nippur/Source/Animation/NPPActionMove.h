@@ -23,13 +23,13 @@
 
 #import "NPPAction.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPMoveType)
 {
 	NPPMoveTypeBy,
 	NPPMoveTypeTo,
 	NPPMoveTypeFrom,
 	NPPMoveTypeFromTo,
-} NPPMoveType;
+};
 
 typedef float (*NPPEase)(float begin, float change, float time, float duration);
 

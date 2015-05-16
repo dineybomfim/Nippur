@@ -51,15 +51,15 @@
 #define kNPPTableHeight				@"height"
 #define kNPPTableProperties			@"properties"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPGesture)
 {
 	NPPGestureNone				= 0,
 	NPPGestureSwipe				= 1 << 0,
 	NPPGestureLongPress			= 1 << 1,
 	NPPGestureDoubleTap			= 1 << 2,
-} NPPGesture;
+};
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPGestureKind)
 {
 	NPPGestureKindUnknown,
 	NPPGestureKindDefault,
@@ -67,7 +67,7 @@ typedef enum
 	NPPGestureKindRight,
 	NPPGestureKindUp,
 	NPPGestureKindDown,
-} NPPGestureKind;
+};
 
 @protocol NPPTableViewItem <NSObject>
 

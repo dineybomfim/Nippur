@@ -29,14 +29,14 @@
 #import "NPPFont+UIFont.h"
 #import "NPPImage+UIImage.h"
 
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPButtonType)
 {
 	NPPButtonTypeBase,
 	NPPButtonTypeKey,
 	NPPButtonTypeKeyLeft,		// Shares the same image.
 	NPPButtonTypeKeyRight,		// Shares the same image.
 	NPPButtonTypeKeyMiddle,		// Shares the same image.
-} NPPButtonType;
+};
 
 @interface NPPButton : UIButton
 {
