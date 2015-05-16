@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Nippur"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "Nippur is a framework for daily work. To make it easier and reliable."
   s.description      = <<-DESC
                        Nippur is a framework made with several years of daily work, reusing the most common and most complexes part of the code.
@@ -10,7 +10,9 @@ Pod::Spec.new do |s|
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/dineybomfim/Nippur"
+  s.homepage         = "http://db-in.com/nippur/"
+  s.documentation_url = "http://db-in.com/nippur/docs/"
+  s.screenshots      = ["http://db-in.com/nippur/images/press1.png" ]
   s.license          = 'MIT'
   s.author           = { "Diney Bomfim" => "diney@db-in.com" }
   s.source           = { :git => "https://github.com/dineybomfim/Nippur.git", :tag => s.version, :submodules => true }
