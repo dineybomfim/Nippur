@@ -26,7 +26,7 @@
 #import "NPPCipher.h"
 
 /*!
- *					Defines the debug mode for #nppLog# function.
+ *					Represents the log rule for #nppLog# function.
  *
  *	@var			NPPLogModeDebugMacro
  *					Only prints on console when running under DEBUG macro. By default, Xcode use this
@@ -45,6 +45,24 @@ typedef NS_OPTIONS(NSUInteger, NPPLogMode)
 	NPPLogModeAlways,
 };
 
+/*!
+ *					Represents the log info for #nppLog# function.
+ *
+ *	@var			NPPLogInfoNone
+ *					No extra info.
+ *
+ *	@var			NPPLogInfoThread
+ *					The thread info will be appended.
+ *
+ *	@var			NPPLogInfoFunction
+ *					The function/method info will be appended.
+ *
+ *	@var			NPPLogInfoClass
+ *					The class info will be appended.
+ *
+ *	@var			NPPLogInfoFull
+ *					All the infos above will be appended.
+ */
 typedef NS_OPTIONS(NSUInteger, NPPLogInfo)
 {
 	NPPLogInfoNone					= 0,
@@ -54,38 +72,114 @@ typedef NS_OPTIONS(NSUInteger, NPPLogInfo)
 	NPPLogInfoFull					= NPPLogInfoThread | NPPLogInfoFunction | NPPLogInfoClass,
 };
 
-typedef void (^NPPBlockLogs)(NPP_ARC_UNSAFE NSArray *logs);
-
-// The default value is NPPLogModeDebugMacro and NPPLogInfoNone
+/*!
+ *					This function checks if the log is currently available.
+ *
+ *	@result			A BOOL indicating if the log is available or not.
+ */
 NPP_API BOOL nppLogCheck(void);
+
+/*!
+ *					This function sets the log mode and info.
+ *
+ *					By default, the values are NPPLogModeDebugMacro and NPPLogInfoNone.
+ *
+ *	@param			mode
+ *					The class info will be appended.
+ *
+ *	@param			info
+ *					All the infos above will be appended.
+ */
 NPP_API void nppLogSetMode(NPPLogMode mode, NPPLogInfo info);
+
+/*!
+ *					The real log is made by this function. This function doesn't consider the log mode,
+ *					this means you can call this function manually if you want to force a log anyway.
+ *
+ *	@param			function
+ *					The function/methods' name that is generating the log.
+ *
+ *	@param			file
+ *					The file name that is generating the log.
+ *
+ *	@param			format
+ *					The log format string.
+ *
+ *	@param			...
+ *					All the parameters/objects that are used by the format string.
+ */
 NPP_API void nppLogFull(const char *function, const char *file, NSString *format, ...);
 
+/*!
+ *					The log function. Call "nppLog" instead of "NSLog". It accept the very same inputs.
+ *
+ *	@param			format
+ *					The log format string.
+ *
+ *	@param			...
+ *					All the parameters/objects that are used by the format string.
+ */
 #define nppLog(format, ...) \
 ({ if (nppLogCheck()) { nppLogFull(__PRETTY_FUNCTION__, __FILE__, (format), ##__VA_ARGS__); } })
 
+/*!
+ *					The logger is a class intend for debug. It can save, load, write and read logs.
+ *					Despite the instances of this class, the log file is only one and will be managed
+ *					once per operation.
+ *
+ *					This class can also send and load the log from a server. This means you can remotely
+ *					manage the logs from your application running on production.
+ *
+ *					It can also deal with the file's size. You can set a size limit to the log file,
+ *					this means the older logs will be deleted when trying to save new logs.
+ */
 @interface NPPLogger : NSObject
-{
-@private
-	
-}
 
-// Log string manipulation.
-- (void) appendString:(NSString *)aString;
-- (void) setString:(NSString *)aString;
+/*!
+ *					Appends a string to this instance.
+ *
+ *	@param			string
+ *					A string with the log.
+ */
+- (void) appendString:(NSString *)string;
 
-// Saves the local log, appending it to the file. When it's saved, for security, the string is reset.
+/*!
+ *					Sets a string to this instance.
+ *
+ *	@param			string
+ *					A string with the log.
+ */
+- (void) setString:(NSString *)string;
+
+/*!
+ *					Saves the string on this instance. That means, the string in this instance will be
+ *					appended to the log file. After saving is done, the string on this instance is be reset.
+ */
 - (void) saveLogFile;
-+ (void) saveLogString:(NSString *)aString;
+
+/*!
+ *					Directly saves a string to the log file. That means, the string will be appended
+ *					to the log file.
+ *
+ *	@param			string
+ *					A string with the log.
+ */
++ (void) saveLogString:(NSString *)string;
 
 + (void) logRemoteSend:(NSString *)user device:(NSString *)device completion:(NPPBlockVoid)block;
 + (void) logRemoteRequest:(NSString *)user device:(NSString *)device completion:(NPPBlockVoid)block;
-+ (void) logRemoteDecode:(NSString *)remoteId completion:(NPPBlockLogs)block;
-
-+ (void) logLocalDecode:(NSString *)file completion:(NPPBlockLogs)block;
++ (void) logRemoteDecode:(NSString *)remoteId completion:(NPPBlockArray)block;
++ (void) logLocalDecode:(NSString *)file completion:(NPPBlockArray)block;
 
 + (void) defineLogRemoteURL:(NSString *)url;
 + (void) defineLogRemoteBase:(NSString *)base;
+
+/*!
+ *					Defines the file's size limit to the log file.
+ *
+ *	@param			bytes
+ *					The size limit in bytes.
+ */
 + (void) defineLogSizeLimit:(double)bytes;
 
 @end

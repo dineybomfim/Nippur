@@ -41,6 +41,9 @@
 #define NPP_STR_USER_AGENT			@"navigator.userAgent"
 #define NPP_BUNDLE_BACKGROUND		@"UIBackgroundModes"
 
+NSString *const kNPPNotificationAlertDidShow		= @"kNPPNotificationAlertDidShow";
+NSString *const kNPPNotificationAlertDidHide		= @"kNPPNotificationAlertDidHide";
+
 #pragma mark -
 #pragma mark Private Interface
 #pragma mark -

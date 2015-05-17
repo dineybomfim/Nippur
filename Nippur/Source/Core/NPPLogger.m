@@ -241,14 +241,14 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 //	Self Public Methods
 //**************************************************
 
-- (void) appendString:(NSString *)aString
+- (void) appendString:(NSString *)string
 {
-	[_string appendString:aString];
+	[_string appendString:string];
 }
 
-- (void) setString:(NSString *)aString
+- (void) setString:(NSString *)string
 {
-	[_string setString:aString];
+	[_string setString:string];
 }
 
 - (void) saveLogFile
@@ -271,11 +271,11 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 	[_string setString:@""];
 }
 
-+ (void) saveLogString:(NSString *)aString
++ (void) saveLogString:(NSString *)string
 {
 	NPPLogger *logFile = [[self alloc] init];
 	
-	[logFile setString:aString];
+	[logFile setString:string];
 	[logFile saveLogFile];
 	
 	nppRelease(logFile);
@@ -390,7 +390,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 						completion:sentBlock];
 }
 
-+ (void) logRemoteDecode:(NSString *)remoteId completion:(NPPBlockLogs)block
++ (void) logRemoteDecode:(NSString *)remoteId completion:(NPPBlockArray)block
 {
 	NPPBlockConnector callBlock = ^(NPPConnector *connector)
 	{
@@ -402,7 +402,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 	[NPPConnector connectorWithURL:url method:NPPHTTPMethodPOST headers:nil body:nil completion:callBlock];
 }
 
-+ (void) logLocalDecode:(NSString *)file completion:(NPPBlockLogs)block
++ (void) logLocalDecode:(NSString *)file completion:(NPPBlockArray)block
 {
 	NSData *data = [NSData dataWithContentsOfFile:nppMakePath(file)];
 	NSString *log = [NSString stringWithData:data encoding:NSUTF8StringEncoding];

@@ -26,6 +26,8 @@
 
 @interface NSString(NPPString)
 
++ (NSString *) stringWithData:(NSData *)data encoding:(NSStringEncoding)encoding;
+
 - (NSString *) stringCamelCase;
 - (NSString *) stringInverseCamelCase;
 - (NSString *) stringWithoutAccents;
@@ -38,7 +40,5 @@
 				minSize:(CGFloat)size
 			   forWidth:(CGFloat)width
 			  lineBreak:(NSLineBreakMode)lineBreak;
-
-+ (NSString *) stringWithData:(NSData *)data encoding:(NSStringEncoding)encoding;
 
 @end

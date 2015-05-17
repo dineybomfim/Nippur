@@ -90,6 +90,15 @@
 //	Private Category
 //**************************************************
 
+@interface NPPNumber()
+{
+@private
+	char					_format;
+	double					_value;
+}
+
+@end
+
 #pragma mark -
 #pragma mark Public Interface
 #pragma mark -
@@ -344,157 +353,7 @@
 //**************************************************
 //	Self Public Methods
 //**************************************************
-/*
-- (id) initWithChar:(char)value
-{
-	if ((self = [super init]))
-	{
-		self.charValue = value;
-	}
-	
-	return self;
-}
 
-- (id) initWithUnsignedChar:(unsigned char)value
-{
-	if ((self = [super init]))
-	{
-		self.unsignedCharValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithShort:(short)value
-{
-	if ((self = [super init]))
-	{
-		self.shortValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithUnsignedShort:(unsigned short)value
-{
-	if ((self = [super init]))
-	{
-		self.unsignedShortValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithInt:(int)value
-{
-	if ((self = [super init]))
-	{
-		self.intValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithUnsignedInt:(unsigned int)value
-{
-	if ((self = [super init]))
-	{
-		self.unsignedIntValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithLong:(long)value
-{
-	if ((self = [super init]))
-	{
-		self.longValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithUnsignedLong:(unsigned long)value
-{
-	if ((self = [super init]))
-	{
-		self.unsignedLongValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithLongLong:(long long)value
-{
-	if ((self = [super init]))
-	{
-		self.longLongValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithUnsignedLongLong:(unsigned long long)value
-{
-	if ((self = [super init]))
-	{
-		self.unsignedLongLongValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithFloat:(float)value
-{
-	if ((self = [super init]))
-	{
-		self.floatValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithDouble:(double)value
-{
-	if ((self = [super init]))
-	{
-		self.doubleValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithBool:(BOOL)value
-{
-	if ((self = [super init]))
-	{
-		self.boolValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithInteger:(NSInteger)value
-{
-	if ((self = [super init]))
-	{
-		self.integerValue = value;
-	}
-	
-	return self;
-}
-
-- (id) initWithUnsignedInteger:(NSUInteger)value
-{
-	if ((self = [super init]))
-	{
-		self.unsignedIntegerValue = value;
-	}
-	
-	return self;
-}
-//*/
 + (id) numberWithChar:(char)value
 {
 	NPPNumber *number = [[NPPNumber alloc] init];

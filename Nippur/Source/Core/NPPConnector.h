@@ -202,10 +202,10 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 /*!
  *					Starts a connection immediately based on the imput parameters.
  *
- *	@var			request
+ *	@param			request
  *					A NSURLRequest defined before.
  *
- *	@var			block
+ *	@param			block
  *					The finish block. It'll be called when the connection ends (successfully or not).
  */
 + (id) connectorWithRequest:(NSURLRequest *)request completion:(NPPBlockConnector)block;
@@ -213,20 +213,20 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 /*!
  *					Starts a connection immediately based on the imput parameters.
  *
- *	@var			url
+ *	@param			url
  *					The url string. You can or not include GET parameters in this string. This class
  *					will wisely handle the #body# to correctly concatenate with this string, if necessary.
  *
- *	@var			method
+ *	@param			method
  *					The HTTP method.
  *
- *	@var			headers
+ *	@param			headers
  *					A custom dictionary for connection header.
  *
- *	@var			body
+ *	@param			body
  *					A parameters or body of this request.
  *
- *	@var			block
+ *	@param			block
  *					The finish block. It'll be called when the connection ends (successfully or not).
  */
 + (id) connectorWithURL:(NSString *)url
@@ -239,7 +239,7 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
  *					Cancels one or more connections with the matching URL pattern and returns a BOOL
  *					indicating if the cancellation had success or not. This pattern is a RegEx.
  *
- *	@var			urlPattern
+ *	@param			urlPattern
  *					A pattern using RegEx format. For example, you could use "*" to match all connections
  *					or "google" to match any connection with "google" in the url.
  */
@@ -249,7 +249,7 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
  *					Cancels one specific connection and returns a BOOL indicating
  *					if the cancellation had success or not.
  *
- *	@var			connector
+ *	@param			connector
  *					The connector instance to be canceled.
  */
 + (BOOL) cancelConnector:(NPPConnector *)connector;
@@ -259,10 +259,10 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
  *					A specific rule will override a global rule (global rule = "*").
  *					By default, connections have 0 retries defined.
  *
- *	@var			retries
+ *	@param			retries
  *					The number of retries to define.
  *
- *	@var			urlPattern
+ *	@param			urlPattern
  *					A pattern using RegEx format. For example, you could use "*" to match all connections
  *					or "google" to match any connection with "google" in the url.
  */

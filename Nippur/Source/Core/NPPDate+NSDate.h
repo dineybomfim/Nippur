@@ -102,19 +102,19 @@
 /*!
  *					Returns a new date with variable minutes, hours, days, months and years from this date.
  *
- *	@see			minutes
+ *	@param			minutes
  *					The minutes from this date.
  *
- *	@see			hours
+ *	@param			hours
  *					The hours from this date.
  *
- *	@see			days
+ *	@param			days
  *					The days from this date.
  *
- *	@see			months
+ *	@param			months
  *					The months from this date.
  *
- *	@see			years
+ *	@param			years
  *					The years from this date.
  *
  *	@result			A new autoreleased date.
@@ -128,7 +128,7 @@
 /*!
  *					Generates a string from this date with a specific format.
  *
- *	@see			format
+ *	@param			format
  *					The format you want, following the format patterns Unicode Technical Standard #35:
  *					http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
  *
@@ -139,10 +139,10 @@
 /*!
  *					Generates a string from this date with the user's current callendar settings.
  *
- *	@see			timeStyle
+ *	@param			timeStyle
  *					The format of the time component.
  *
- *	@see			dateStyle
+ *	@param			dateStyle
  *					The format of the date component.
  *
  *	@result			A new autoreleased string.
@@ -153,10 +153,10 @@
 /*!
  *					Generates a new date from a string with a specific format.
  *
- *	@see			string
+ *	@param			string
  *					The string containing the date.
  *
- *	@see			format
+ *	@param			format
  *					The format you want, following the format patterns Unicode Technical Standard #35:
  *					http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
  *
@@ -167,13 +167,13 @@
 /*!
  *					Generates a new date from a string with the user's current callendar settings.
  *
- *	@see			string
+ *	@param			string
  *					The string containing the date.
  *
- *	@see			timeStyle
+ *	@param			timeStyle
  *					The format of the time component.
  *
- *	@see			dateStyle
+ *	@param			dateStyle
  *					The format of the date component.
  *
  *	@result			A new autoreleased string.

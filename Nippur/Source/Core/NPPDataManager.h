@@ -88,7 +88,7 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 /*!
  *					Retrieves an object previously set using the NPPDataManager's Transient Storage API.
  *
- *	@var			key
+ *	@param			key
  *					The key previously set for an object.
  *
  *	@see			setObject:forKey:
@@ -101,10 +101,10 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
  *					It uses the heap memory, that means you're the responsible for any object you set
  *					this way.
  *
- *	@var			object
+ *	@param			object
  *					The object you want to put in the heap. This object will be retained internally.
  *
- *	@var			key
+ *	@param			key
  *					The key for this object, it will be copied internally, so it must conforms to
  *					NSCopying protocol.
  *
@@ -116,7 +116,7 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 /*!
  *					Removes an object previously set using the NPPDataManager's Transient Storage API.
  *
- *	@var			key
+ *	@param			key
  *					The key previously set for an object.
  *
  *	@see			objectForKey:
@@ -131,13 +131,13 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 /*!
  *					Loads a data from a file using the NPPDataManager's Persistent Storage API.
  *
- *	@var			name
+ *	@param			name
  *					The file's name.
  *
- *	@var			type
+ *	@param			type
  *					The file's type.
  *
- *	@var			folder
+ *	@param			folder
  *					The folder in which the file will be saved.
  *
  *	@result			The loaded file content. It can be nil if the file is invalid or not found.
@@ -147,16 +147,16 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 /*!
  *					Saves a data into a file using the NPPDataManager's Persistent Storage API.
  *
- *	@var			data
+ *	@param			data
  *					The data to save. It must be an object conforming to NSCoding protocol.
  *
- *	@var			name
+ *	@param			name
  *					The file's name.
  *
- *	@var			type
+ *	@param			type
  *					The file's type.
  *
- *	@var			folder
+ *	@param			folder
  *					The folder in which the file will be saved.
  */
 + (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder;
@@ -170,13 +170,13 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
  *					This method will create a new file in case you try to append data to a file
  *					that doesn't exist yet.
  *
- *	@var			name
+ *	@param			name
  *					The file's name.
  *
- *	@var			type
+ *	@param			type
  *					The file's type.
  *
- *	@var			folder
+ *	@param			folder
  *					The folder in which the file will be saved.
  *
  *	@result			The loaded file content. It can be nil if the file is invalid or not found.

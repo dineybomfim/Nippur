@@ -1,14 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = "Nippur"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "Nippur is a framework for daily work. To make it easier and reliable."
   s.description      = <<-DESC
                        Nippur is a framework made with several years of daily work, reusing the most common and most complexes part of the code.
                        It is separated in parts (similar to packages) that allows you to import only the necessary parts to your project,
                        since there are codes for many situations inside it.
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
                        DESC
   s.homepage         = "http://db-in.com/nippur/"
   s.documentation_url = "http://db-in.com/nippur/docs/"

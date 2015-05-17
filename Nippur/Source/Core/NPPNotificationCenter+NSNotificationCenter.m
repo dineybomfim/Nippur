@@ -32,11 +32,6 @@
 //
 //**********************************************************************************************************
 
-NSString *const kNPPNotificationAlertDidShow		= @"kNPPNotificationAlertDidShow";
-NSString *const kNPPNotificationAlertDidHide		= @"kNPPNotificationAlertDidHide";
-NSString *const kNPPNotificationActionSheetDidShow	= @"kNPPNotificationActionSheetDidShow";
-NSString *const kNPPNotificationActionSheetDidHide	= @"kNPPNotificationActionSheetDidHide";
-
 #pragma mark -
 #pragma mark Private Interface
 #pragma mark -

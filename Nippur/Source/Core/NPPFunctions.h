@@ -55,7 +55,12 @@ typedef void (^NPPBlockVoid)(void);
 /*!
  *					Definition of a block with one non-retained dictionary as argument.
  */
-typedef void (^NPPBlockInfo)(NPP_ARC_UNSAFE NSDictionary *info);
+typedef void (^NPPBlockDictionary)(NPP_ARC_UNSAFE NSDictionary *dict);
+
+/*!
+ *					Definition of a block with one non-retained array as argument.
+ */
+typedef void (^NPPBlockArray)(NPP_ARC_UNSAFE NSArray *array);
 
 /*!
  *					Definition of the range with zero values.

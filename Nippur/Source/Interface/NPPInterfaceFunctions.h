@@ -88,6 +88,16 @@ typedef NS_OPTIONS(NSUInteger, NPPStyleColor)
 };
 
 /*!
+ *					Notification dispatched when an alert appears.
+ */
+NPP_API NSString *const kNPPNotificationAlertDidShow;
+
+/*!
+ *					Notification dispatched when an alert disappears.
+ */
+NPP_API NSString *const kNPPNotificationAlertDidHide;
+
+/*!
  *					Checks if the current device is an iPad or not.
  *
  *	@result			A BOOL indicating if the current device is an iPad.

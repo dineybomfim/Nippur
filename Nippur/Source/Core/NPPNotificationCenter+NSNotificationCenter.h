@@ -24,18 +24,50 @@
 #import "NPPRuntime.h"
 #import "NPPFunctions.h"
 
-NPP_API NSString *const kNPPNotificationAlertDidShow;
-NPP_API NSString *const kNPPNotificationAlertDidHide;
-NPP_API NSString *const kNPPNotificationActionSheetDidShow;
-NPP_API NSString *const kNPPNotificationActionSheetDidHide;
+/*!
+ *					Here are shortcut methods just to safe typing. This category does not create new
+ *					logics nor work, just shortcuts.
+ */
+@interface NSNotificationCenter(NPPNotificationCenter)
 
-@interface NSNotificationCenter (NPPNotificationCenter)
-
+/*!
+ *					Force posting a notification on main thread. By default the notifications are
+ *					dispatched in the same thread as the dispatcher.
+ *
+ *	@param			name
+ *					The notification's name.
+ *
+ *	@param			obj
+ *					The notification's object.
+ *
+ *	@param			info
+ *					The notification's info.
+ */
 - (void) postMainNotification:(NSString *)name
 					   object:(id)obj
 					 userInfo:(NSDictionary *)info;
 
+
+/*!
+ *					Force posting a notification on main thread using the default notification center.
+ *
+ *	@param			name
+ *					The notification's name.
+ */
 + (void) defaultCenterPostMainNotification:(NSString *)name;
+
+/*!
+ *					Force posting a notification on main thread using the default notification center.
+ *
+ *	@param			name
+ *					The notification's name.
+ *
+ *	@param			obj
+ *					The notification's object.
+ *
+ *	@param			info
+ *					The notification's info.
+ */
 + (void) defaultCenterPostMainNotification:(NSString *)name
 									object:(id)obj
 								  userInfo:(NSDictionary *)info;

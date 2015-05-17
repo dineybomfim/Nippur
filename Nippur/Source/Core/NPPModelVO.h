@@ -25,15 +25,22 @@
 #import "NPPJSON.h"
 #import "NPPDataManager.h"
 
+/*!
+ *					The base model class for MVC format. This abstract model defines very important and
+ *					key methods for saving and loading models directly to binary files with the secure
+ *					framework encription.
+ *
+ *					Besides, this class can work with JSON formats for server side inputs and outputs.
+ */
 @interface NPPModelVO : NSObject <NPPJSONSource, NSCoding, NSCopying>
 
 /*!
  *					Creates a new model using the same format as dataForJSON. This method will
  *					make a call to #updateWithData:#
  *
- *	@see			updateWithData:
- *
  *	@result			An instance of this model.
+ *
+ *	@see			updateWithData:
  */
 - (id) initWithData:(id)data;
 
@@ -41,9 +48,9 @@
  *					Creates a new model using the same format as dataForJSON. This method will
  *					make a call to #updateWithData:#
  *
- *	@see			updateWithData:
- *
  *	@result			An autoreleased instance of this model.
+ *
+ *	@see			updateWithData:
  */
 + (id) modelWithData:(id)data;
 
@@ -51,9 +58,9 @@
  *					Creates a new model using a local file priviously saved using the
  *					#saveToFile:folder:# method.
  *
- *	@see			saveToFile:folder:
- *
  *	@result			An autoreleased instance of this model.
+ *
+ *	@see			saveToFile:folder:
  */
 + (id) modelFromFile:(NSString *)fileName folder:(NPPDataFolder)folder;
 
