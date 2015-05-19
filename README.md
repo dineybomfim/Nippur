@@ -3,8 +3,8 @@
 [![Version](https://img.shields.io/cocoapods/v/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![License](https://img.shields.io/cocoapods/l/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![Platform](https://img.shields.io/cocoapods/p/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
-[![CI Status](http://img.shields.io/travis/Diney Bomfim/Nippur.svg?style=flat)](https://travis-ci.org/Diney Bomfim/Nippur)
-[![Coverage Status](https://coveralls.io/repos/dineybomfim/Nippur/badge.svg?style=flat)](https://coveralls.io/r/dineybomfim/Nippur)
+[![CI Status](https://img.shields.io/travis/dineybomfim/Nippur.svg?style=flat)](https://travis-ci.org/dineybomfim/Nippur)
+[![Coverage Status](https://img.shields.io/coveralls/dineybomfim/Nippur.svg?style=flat)](https://coveralls.io/r/dineybomfim/Nippur)
 
 ## Usage
 

@@ -2,6 +2,10 @@ include FileUtils::Verbose
 
 namespace :test do
 
+  task :prepare do
+    
+  end
+
   desc "Run the TDD for iOS"
   task :ios => :prepare do
     run_tests('TDD iOS', 'iphonesimulator')
