@@ -1,0 +1,35 @@
+PODS:
+  - Expecta (1.0.0)
+  - Nippur (1.0.3):
+    - Nippur/Animation (= 1.0.3)
+    - Nippur/Core (= 1.0.3)
+    - Nippur/Geolocation (= 1.0.3)
+    - Nippur/Interface (= 1.0.3)
+    - Nippur/Media (= 1.0.3)
+  - Nippur/Animation (1.0.3):
+    - Nippur/Core
+  - Nippur/Core (1.0.3)
+  - Nippur/Geolocation (1.0.3):
+    - Nippur/Core
+  - Nippur/Interface (1.0.3):
+    - Nippur/Animation
+    - Nippur/Core
+  - Nippur/Media (1.0.3):
+    - Nippur/Core
+  - Specta (1.0.0)
+
+DEPENDENCIES:
+  - Expecta
+  - Nippur (from `../`)
+  - Specta
+
+EXTERNAL SOURCES:
+  Nippur:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  Nippur: d4a4d55b5594fd725d7180397f224e4c9e0e4506
+  Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
+
+COCOAPODS: 0.36.4

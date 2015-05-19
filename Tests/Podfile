@@ -1,0 +1,22 @@
+source 'https://github.com/CocoaPods/Specs'
+
+xcodeproj 'Nippur Tests'
+workspace '../Nippur'
+
+def import_pods
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'Nippur', :path => '../'
+end
+
+target :ios do
+  platform :ios, '6.0'
+  link_with 'TDD iOS'
+  import_pods
+end
+
+target :osx do
+  platform :osx, '10.9'
+  link_with 'TDD OSX'
+  import_pods
+end

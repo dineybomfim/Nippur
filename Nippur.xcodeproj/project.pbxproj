@@ -169,7 +169,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		602492191672564F0030C6B7 /* Nippur.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Nippur.framework; path = "/Works/Clients/db-in/Frameworks/Nippur/Xcode/build/Debug-iphoneos/Nippur.framework"; sourceTree = "<absolute>"; };
+		605243691B0B0A3200B6EA97 /* Nippur.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nippur.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5AC23881B01446D0046D26E /* Nippur.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Nippur.bundle; sourceTree = "<group>"; };
 		B5AC238B1B01446D0046D26E /* NippurAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NippurAnimation.h; sourceTree = "<group>"; };
 		B5AC238C1B01446D0046D26E /* NPPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPAction.h; sourceTree = "<group>"; };
@@ -317,6 +317,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6052436A1B0B0A3E00B6EA97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				605243691B0B0A3200B6EA97 /* Nippur.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		608B9E4919A2B3B500A5850D /* Nippur */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				608B9E4919A2B3B500A5850D /* Nippur */,
+				6052436A1B0B0A3E00B6EA97 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -619,7 +628,7 @@
 			);
 			name = "Nippur Universal";
 			productName = Framework;
-			productReference = 602492191672564F0030C6B7 /* Nippur.framework */;
+			productReference = 605243691B0B0A3200B6EA97 /* Nippur.framework */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */

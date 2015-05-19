@@ -1,12 +1,6 @@
 language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
 before_install:
-- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-install:
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+	- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+	- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-#- bundle exec rake specs:ios
-#- bundle exec rake specs:osx
-#- rake test
-- pod lib lint --quick
+	- rake test
