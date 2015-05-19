@@ -2,8 +2,6 @@ language: objective-c
 before_install:
 - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-- gem i slather --no-rdoc
 script:
 - pod lib lint --quick
 - rake test
-after_success: slather

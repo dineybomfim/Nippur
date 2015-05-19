@@ -12,14 +12,7 @@ end
 
 desc "Run all Tests"
 task :test do
-  #Rake::Task['test:ios'].invoke
-  ENV['GHUNIT_CLI'] = "1"
-  if system("xctool -workspace Nippur.xcworkspace -scheme 'TDD iOS'")
-    puts "\033[0;32m** All tests executed successfully"
-  else
-    puts "\033[0;31m! Unit tests failed"
-    exit(-1)
-  end
+  Rake::Task['test:ios'].invoke
 end
 
 task :default => 'test'
