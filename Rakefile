@@ -2,21 +2,24 @@ include FileUtils::Verbose
 
 namespace :test do
 
-  task :prepare do
-    
-  end
-
   desc "Run the TDD for iOS"
-  task :ios => :prepare do
+  task :ios do
     run_tests('TDD iOS', 'iphonesimulator')
     tests_failed('iOS') unless $?.success?
   end
 
 end
 
-desc "Run the TDD for iOS & Mac OS X"
+desc "Run all Tests"
 task :test do
-  Rake::Task['test:ios'].invoke
+  #Rake::Task['test:ios'].invoke
+  ENV['GHUNIT_CLI'] = "1"
+  if system("xctool -workspace Nippur.xcworkspace -scheme TDD iOS")
+    puts "\033[0;32m** All tests executed successfully"
+  else
+    puts "\033[0;31m! Unit tests failed"
+    exit(-1)
+  end
 end
 
 task :default => 'test'
@@ -34,7 +37,7 @@ def is_mavericks_or_above
 end
 
 def tests_failed(platform)
-  puts red("#{platform} unit tests failed")
+  puts red("#{platform} tests failed")
   exit $?.exitstatus
 end
 
