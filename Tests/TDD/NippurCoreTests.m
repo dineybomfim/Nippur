@@ -23,8 +23,29 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "Expecta.h"
 
 #import "NippurCore.h"
+
+#pragma mark -
+#pragma mark Constants
+#pragma mark -
+//**********************************************************************************************************
+//
+//	Constants
+//
+//**********************************************************************************************************
+
+NSString *const kNPPHTTPBin	= @"https://httpbin.org";
+
+#pragma mark -
+#pragma mark Private Interface
+#pragma mark -
+//**********************************************************************************************************
+//
+//	Private Interface
+//
+//**********************************************************************************************************
 
 @interface NippurCoreTests : XCTestCase
 
@@ -32,10 +53,43 @@
 
 @implementation NippurCoreTests
 
-- (void) testExample
+- (void) testConnector
 {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
+	__block int count = 0;
+	
+	NPPBlockConnector block = ^(NPPConnector *__unsafe_unretained connector)
+	{
+		NSString *link = connector.request.URL.absoluteString;
+		nppLog(@"%@ - Received Bytes:%lli", link, connector.receivedData.length);
+		
+		if (++count >= 6)
+		{
+			[expectation fulfill];
+		}
+	};
+	
+	NSString *url = nil;
+	
+	url = [kNPPHTTPBin stringByAppendingString:@"/get"];
+	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
+	
+	url = [kNPPHTTPBin stringByAppendingString:@"/post"];
+	[NPPConnector connectorWithURL:url method:NPPHTTPMethodPOST headers:nil body:nil completion:block];
+	
+	url = [kNPPHTTPBin stringByAppendingString:@"/put"];
+	[NPPConnector connectorWithURL:url method:NPPHTTPMethodPUT headers:nil body:nil completion:block];
+	
+	url = [kNPPHTTPBin stringByAppendingString:@"/gzip"];
+	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
+	
+	url = [kNPPHTTPBin stringByAppendingString:@"/stream/100"];
+	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
+	
+	url = [kNPPHTTPBin stringByAppendingString:@"/image/png"];
+	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
+	
+	[self waitForExpectationsWithTimeout:15.0 handler:nil];
 }
 
 @end

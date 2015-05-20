@@ -2,7 +2,6 @@ include FileUtils::Verbose
 
 namespace :test do
 
-  desc "Run the TDD for iOS"
   task :ios do
     run_tests('TDD iOS', 'iphonesimulator')
     tests_failed('iOS') unless $?.success?
@@ -10,18 +9,27 @@ namespace :test do
 
 end
 
-desc "Run all Tests"
+task :install do
+  sh 'sudo easy_install cpp-coveralls'
+end
+
 task :test do
   Rake::Task['test:ios'].invoke
 end
 
-task :default => 'test'
+task :report do
+  sh "coveralls.sh"
+end
 
+#task :default => 'test'
+
+#"-configuration", "Debug",
+#"-arch", "i386"
 
 private
 
 def run_tests(scheme, sdk)
-  sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
+  sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
 end
 
 def is_mavericks_or_above

@@ -187,6 +187,11 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 @property (nonatomic, readonly) NSError *error;
 
 /*!
+ *					The NSURLRequest for this connector.
+ */
+@property (nonatomic, readonly) NSURLRequest *request;
+
+/*!
  *					The number of retries. A retry is just made when an connection error is returned.
  */
 @property (nonatomic, readonly) unsigned int retries;
