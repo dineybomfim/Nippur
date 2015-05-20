@@ -14,7 +14,7 @@ declare -r xctoolVars=$(xctool -showBuildSettings | egrep '(BUILT_PRODUCTS_DIR)|
 while read line; do
 	declare key=$(echo "${line}" | cut -d "=" -f1)
 	declare value=$(echo "${line}" | cut -d "=" -f2)
-	printf -v "`trim ${key}`" "`trim ${value}`" # https://sites.google.com/a/tatsuo.jp/programming/Home/bash/hentai-bunpou-saisoku-masuta
+	printf -v "`trim ${key}`" "`trim ${value}`"
 done < <( echo "${xctoolVars}" )
 
 declare -r gcov_dir="${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}/"
