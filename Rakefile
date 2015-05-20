@@ -18,7 +18,7 @@ task :test do
 end
 
 task :report do
-  sh "coveralls.sh"
+  sh "./coveralls.sh"
 end
 
 #task :default => 'test'
