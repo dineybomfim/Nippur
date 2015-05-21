@@ -23,15 +23,17 @@ end
 
 #task :default => 'test'
 
-#"-configuration", "Debug",
-#"-arch", "i386"
-#xcodebuild
-#xctool
+#  "-workspace", "Nippur.xcworkspace",
+#  "-scheme", "TDD iOS",
+#  "-configuration", "Debug",
+#  "-sdk", "iphonesimulator",
+#  "-arch", "i386"
+
 private
 
 def run_tests(scheme, sdk)
-  sh "xctool test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES"
   sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
+  sh "xctool -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Debug -arch i386 test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES"
 end
 
 def is_mavericks_or_above
