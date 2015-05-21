@@ -6,12 +6,6 @@
 // project.
 
 
-// Expecta
-#define COCOAPODS_POD_AVAILABLE_Expecta
-#define COCOAPODS_VERSION_MAJOR_Expecta 1
-#define COCOAPODS_VERSION_MINOR_Expecta 0
-#define COCOAPODS_VERSION_PATCH_Expecta 0
-
 // Nippur
 #define COCOAPODS_POD_AVAILABLE_Nippur
 #define COCOAPODS_VERSION_MAJOR_Nippur 1
@@ -47,10 +41,4 @@
 #define COCOAPODS_VERSION_MAJOR_Nippur_Media 1
 #define COCOAPODS_VERSION_MINOR_Nippur_Media 0
 #define COCOAPODS_VERSION_PATCH_Nippur_Media 3
-
-// Specta
-#define COCOAPODS_POD_AVAILABLE_Specta
-#define COCOAPODS_VERSION_MAJOR_Specta 1
-#define COCOAPODS_VERSION_MINOR_Specta 0
-#define COCOAPODS_VERSION_PATCH_Specta 0
 

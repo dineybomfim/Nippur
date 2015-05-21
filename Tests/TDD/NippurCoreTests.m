@@ -23,7 +23,6 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "Expecta.h"
 
 #import "NippurCore.h"
 
