@@ -1,6 +1,6 @@
 /*
  *	NippurCoreTests.m
- *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com
+ *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -87,6 +87,9 @@ NSString *const kNPPHTTPBin	= @"https://httpbin.org";
 	
 	url = [kNPPHTTPBin stringByAppendingString:@"/image/png"];
 	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
+	
+	[NPPConnector defineRetries:2 forURL:@"*"];
+	[NPPConnector defineLogging:NO forURL:@"*"];
 	
 	[self waitForExpectationsWithTimeout:15.0 handler:nil];
 }

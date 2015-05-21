@@ -1,6 +1,6 @@
 /*
  *	NPPTextField.h
- *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com
+ *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *	
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
