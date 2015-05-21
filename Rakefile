@@ -4,7 +4,7 @@ namespace :test do
 
   task :ios do
     run_tests('TDD iOS', 'iphonesimulator')
-    tests_failed('iOS') unless $?.success?
+    puts_failed('iOS failed') unless $?.success?
   end
 
 end
@@ -32,21 +32,17 @@ end
 private
 
 def run_tests(scheme, sdk)
-  sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
+  puts_green("=== Running '#{scheme}' at '#{sdk}' ===")
+  sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration 'Release' clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
   sh("xctool test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ; exit ${PIPESTATUS[0]}") rescue nil
+  puts_green("=== Done '#{scheme}' at '#{sdk}' ===")
 end
 
-def is_mavericks_or_above
-  osx_version = `sw_vers -productVersion`.chomp
-  Gem::Version.new(osx_version) >= Gem::Version.new('10.9')
-end
-
-def tests_failed(platform)
-  puts red("#{platform} tests failed")
+def puts_failed(string)
+  puts "\033[0;31m! #{string} \033[0m"
   exit $?.exitstatus
 end
 
-def red(string)
- "\033[0;31m! #{string}"
+def puts_green(string)
+  puts "\033[32;01m #{string} \033[0m"
 end
-

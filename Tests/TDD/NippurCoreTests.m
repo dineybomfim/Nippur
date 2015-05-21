@@ -89,8 +89,6 @@ NSString *const kNPPHTTPBin	= @"https://httpbin.org";
 	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
 	
 	[self waitForExpectationsWithTimeout:15.0 handler:nil];
-	
-	//__gcov_flush();
 }
 
 @end
