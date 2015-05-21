@@ -33,7 +33,7 @@ private
 
 def run_tests(scheme, sdk)
   sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
-  sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration Release clean build ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ; exit ${PIPESTATUS[0]}") rescue nil
+  sh("xctool test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ; exit ${PIPESTATUS[0]}") rescue nil
 end
 
 def is_mavericks_or_above
