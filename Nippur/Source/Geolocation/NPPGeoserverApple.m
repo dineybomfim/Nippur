@@ -53,7 +53,7 @@
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(nppGetCLGeocoder, CLGeocoder);
+NPP_STATIC_READONLY(CLGeocoder, nppGetCLGeocoder);
 
 static NPPModelAddressVO *nppAddressFromPlacemark(CLPlacemark *placemark)
 {

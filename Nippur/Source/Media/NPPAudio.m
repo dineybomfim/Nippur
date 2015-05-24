@@ -53,7 +53,7 @@
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(nppSoundsLibrary, NSMutableDictionary);
+NPP_STATIC_READONLY(NSMutableDictionary, nppSoundsLibrary);
 
 #pragma mark -
 #pragma mark Private Category

@@ -133,9 +133,9 @@
 	NSString *radius = (_radius != 0.0) ? [NSString stringWithFormat:@"%.16g", _radius] : nil;
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
-	nppDictionaryAdd(_name, @"name", dict);
-	nppDictionaryAdd(_center, @"center", dict);
-	nppDictionaryAdd(radius, @"radius", dict);
+	[dict setObjectSafely:_name forKey:@"name"];
+	[dict setObjectSafely:_center forKey:@"center"];
+	[dict setObjectSafely:radius forKey:@"radius"];
 	
 	return dict;
 }

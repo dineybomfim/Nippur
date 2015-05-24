@@ -24,8 +24,8 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPView+UIView.h"
-#import "NPPImage+UIImage.h"
+#import "NPPPluginView.h"
+#import "NPPPluginImage.h"
 
 @interface NPPBackdropView : UIView
 

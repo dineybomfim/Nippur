@@ -414,13 +414,13 @@ static void nppRouteDecodePolyline(NSString *encodedString, NPPRoutePolyline *po
 	NPPModelGeolocationVO *ending = self.ending;
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
-	nppDictionaryAdd([NSNumber numberWithInt:_mode], @"mode", dict);
-	nppDictionaryAdd([NSNumber numberWithInt:self.distance], @"distance", dict);
-	nppDictionaryAdd([NSNumber numberWithInt:self.duration], @"duration", dict);
-	nppDictionaryAdd(_encodedPolyline, @"polyline", dict);
-	nppDictionaryAdd(starting, @"starting", dict);
-	nppDictionaryAdd(ending, @"ending", dict);
-	nppDictionaryAdd(_nodes, @"nodes", dict);
+	[dict setObjectSafely:[NSNumber numberWithInt:_mode] forKey:@"mode"];
+	[dict setObjectSafely:[NSNumber numberWithInt:self.distance] forKey:@"distance"];
+	[dict setObjectSafely:[NSNumber numberWithInt:self.duration] forKey:@"duration"];
+	[dict setObjectSafely:_encodedPolyline forKey:@"polyline"];
+	[dict setObjectSafely:starting forKey:@"starting"];
+	[dict setObjectSafely:ending forKey:@"ending"];
+	[dict setObjectSafely:_nodes forKey:@"nodes"];
 	
 	return dict;
 }

@@ -32,7 +32,19 @@
 //
 //**********************************************************************************************************
 
-//#define LENGTH_OF_DEGREE	111100				// meters
+// At the Equator Line, 0.00001 degress is ~1.019m.
+#define kNPP_GEO_METER				0.00001
+#define kNPP_GEO_30METER			0.00030
+#define kNPP_GEO_60METER			0.00059
+#define kNPP_GEO_100METER			0.00098
+#define kNPP_GEO_1KILOMETER			0.00981
+#define kNPP_GEO_2KILOMETER			0.01963
+#define kNPP_GEO_3KILOMETER			0.02944
+#define kNPP_SPACE_METER_UNIT		1.01900
+#define kNPP_SPACE_METER_FACTOR		100000
+#define kNPP_SPACE_METER_DELTA		100000.01900
+#define NPPMetersToGeoDegress(x)	((x) / kNPP_SPACE_METER_DELTA)
+#define NPPGeoDegressToMeters(x)	((x) * kNPP_SPACE_METER_DELTA)
 
 #pragma mark -
 #pragma mark Private Interface
@@ -272,14 +284,14 @@ BOOL nppGeohashesContainsHash(NSArray *geohashes, NSString *hash)
 	NSNumber *time = (_timestamp > 0.0) ? [NSNumber numberWithLongLong:_timestamp] : nil;
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
-	nppDictionaryAdd(latitude, @"lat", dict);
-	nppDictionaryAdd(longitude, @"lng", dict);
-	nppDictionaryAdd(haccuracy, @"haccuracy", dict);
-	nppDictionaryAdd(altitude, @"altitude", dict);
-	nppDictionaryAdd(vaccuracy, @"vaccuracy", dict);
-	nppDictionaryAdd(speed, @"speed", dict);
-	nppDictionaryAdd(course, @"angle", dict);
-	nppDictionaryAdd(time, @"timestamp", dict);
+	[dict setObjectSafely:latitude forKey:@"lat"];
+	[dict setObjectSafely:longitude forKey:@"lng"];
+	[dict setObjectSafely:haccuracy forKey:@"haccuracy"];
+	[dict setObjectSafely:altitude forKey:@"altitude"];
+	[dict setObjectSafely:vaccuracy forKey:@"vaccuracy"];
+	[dict setObjectSafely:speed forKey:@"speed"];
+	[dict setObjectSafely:course forKey:@"angle"];
+	[dict setObjectSafely:time forKey:@"timestamp"];
 	
 	return dict;
 }

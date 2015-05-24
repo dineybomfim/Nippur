@@ -23,9 +23,9 @@
 
 #import "NPPRuntime.h"
 #import "NPPFunctions.h"
-#import "NPPString+NSString.h"
-#import "NPPArray+NSArray.h"
-#import "NPPDate+NSDate.h"
+#import "NPPPluginString.h"
+#import "NPPPluginArray.h"
+#import "NPPPluginDate.h"
 #import "NPPJSON.h"
 #import "NPPDataManager.h"
 #import "NPPLogger.h"

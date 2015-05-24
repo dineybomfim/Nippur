@@ -68,7 +68,7 @@
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(nppButtonDefaults, NSMutableDictionary);
+NPP_STATIC_READONLY(NSMutableDictionary, nppButtonDefaults);
 
 static UIColor *nppUIColorConstrasting(NPPStyleColor style)
 {

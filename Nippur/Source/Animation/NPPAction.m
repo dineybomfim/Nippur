@@ -553,7 +553,7 @@ static NPPActionEase _defaultEase = NPPActionEaseLinear;
 //	Properties
 //**************************************************
 
-NPP_CATEGORY_PROPERTY_READONLY(OBJC_ASSOCIATION_RETAIN_NONATOMIC, NSMutableDictionary *, nppActions);
+NPP_CATEGORY_PROPERTY_READONLY(NSMutableDictionary, nppActions);
 
 #pragma mark -
 #pragma mark Constructors

@@ -24,7 +24,7 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPView+UIView.h"
+#import "NPPPluginView.h"
 #import "NPPEffects.h"
 
 @interface NPPScrollLabel : UIView <UIScrollViewDelegate>

@@ -24,9 +24,9 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPView+UIView.h"
-#import "NPPImage+UIImage.h"
-#import "NPPFont+UIFont.h"
+#import "NPPPluginView.h"
+#import "NPPPluginImage.h"
+#import "NPPPluginFont.h"
 
 typedef NS_OPTIONS(NSUInteger, NPPTextFieldState)
 {

@@ -104,7 +104,7 @@
 //**************************************************
 
 // The threads single access point.
-NPP_STATIC_READONLY(nppGetThreads, NSMutableDictionary);
+NPP_STATIC_READONLY(NSMutableDictionary, nppGetThreads);
 
 #pragma mark -
 #pragma mark Private Category

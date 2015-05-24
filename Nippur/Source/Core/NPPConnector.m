@@ -70,9 +70,9 @@ NSString *const kNPPConnectorErrorDomain	= @"kNPPConnectorErrorDomain";
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(nppConnectorRetries, NSMutableDictionary);
-NPP_STATIC_READONLY(nppConnectorLogs, NSMutableDictionary);
-NPP_STATIC_READONLY(nppGetConnectors, NSMutableArray);
+NPP_STATIC_READONLY(NSMutableDictionary, nppConnectorRetries);
+NPP_STATIC_READONLY(NSMutableDictionary, nppConnectorLogs);
+NPP_STATIC_READONLY(NSMutableArray, nppGetConnectors);
 
 static NSString *nppValidateHTTPMethod(NPPHTTPMethod method)
 {

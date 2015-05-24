@@ -701,7 +701,7 @@ shouldChangeTextInRange:(NSRange)range
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(getToolbar, NPPToolbar);
+NPP_STATIC_READONLY(NPPToolbar, getToolbar);
 
 #pragma mark -
 #pragma mark Public Interface

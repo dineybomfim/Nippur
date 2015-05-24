@@ -58,7 +58,7 @@
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(nppDefaultNotification, NPPNotificationView);
+NPP_STATIC_READONLY(NPPNotificationView, nppDefaultNotification);
 
 #pragma mark -
 #pragma mark Private Category

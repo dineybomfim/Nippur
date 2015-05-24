@@ -35,7 +35,28 @@
 //
 //**********************************************************************************************************
 
-NSString *const kNPPHTTPBin	= @"https://httpbin.org";
+#pragma mark -
+#pragma mark Private Interface
+#pragma mark -
+//**********************************************************************************************************
+//
+//	Private Interface
+//
+//**********************************************************************************************************
+
+#pragma mark -
+#pragma mark Private Definitions
+//**************************************************
+//	Private Definitions
+//**************************************************
+
+#pragma mark -
+#pragma mark Private Functions
+//**************************************************
+//	Private Functions
+//**************************************************
+
+NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 
 #pragma mark -
 #pragma mark Private Interface
@@ -52,6 +73,34 @@ NSString *const kNPPHTTPBin	= @"https://httpbin.org";
 
 @implementation NippurCoreTests
 
+- (void) testMacros
+{
+	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
+	__block int count = 0;
+	
+	NPPBlockDictionary block = ^(NSDictionary *info)
+	{
+		nppLog(@"%@", info);
+		
+		if (++count >= 4)
+		{
+			[expectation fulfill];
+		}
+	};
+	
+	// Blocks
+	nppBlock(block, @{@"test":@"nppBlock"});
+	nppBlockMain(block, @{@"test":@"nppBlockMain"});
+	nppBlockBG(block, @{@"test":@"nppBlockBG"});
+	nppBlockAfter(2.0, block, @{@"test":@"nppBlockAfter"});
+	
+	// Static functions
+	NSMutableDictionary *dict = nppTestStatic();
+	XCTAssertNotNil(dict, @"NPP_STATIC_READONLY");
+	
+	[self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
 - (void) testConnector
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
@@ -62,13 +111,14 @@ NSString *const kNPPHTTPBin	= @"https://httpbin.org";
 		NSString *link = connector.request.URL.absoluteString;
 		nppLog(@"%@ - Received Bytes:%lli", link, connector.receivedData.length);
 		
-		if (++count >= 6)
+		if (++count >= 7)
 		{
 			[expectation fulfill];
 		}
 	};
 	
 	NSString *url = nil;
+	NSString *const kNPPHTTPBin	= @"https://httpbin.org";
 	
 	url = [kNPPHTTPBin stringByAppendingString:@"/get"];
 	[NPPConnector connectorWithURL:url method:NPPHTTPMethodGET headers:nil body:nil completion:block];
@@ -90,6 +140,17 @@ NSString *const kNPPHTTPBin	= @"https://httpbin.org";
 	
 	[NPPConnector defineRetries:2 forURL:@"*"];
 	[NPPConnector defineLogging:NO forURL:@"*"];
+	
+	NPPConnector *cancelConn = nil;
+	url = [kNPPHTTPBin stringByAppendingString:@"/delay/15"];
+	cancelConn = [NPPConnector connectorWithURL:url
+										 method:NPPHTTPMethodGET
+										headers:nil
+										   body:nil
+									 completion:block];
+	
+	[NPPConnector cancelConnector:cancelConn];
+	
 	
 	[self waitForExpectationsWithTimeout:15.0 handler:nil];
 }

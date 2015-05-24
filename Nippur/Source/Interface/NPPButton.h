@@ -24,10 +24,10 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPView+UIView.h"
+#import "NPPPluginView.h"
 #import "NPPLabel.h"
-#import "NPPFont+UIFont.h"
-#import "NPPImage+UIImage.h"
+#import "NPPPluginFont.h"
+#import "NPPPluginImage.h"
 
 typedef NS_OPTIONS(NSUInteger, NPPButtonType)
 {

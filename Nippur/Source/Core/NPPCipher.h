@@ -23,7 +23,7 @@
 
 #import "NPPRuntime.h"
 #import "NPPFunctions.h"
-#import "NPPString+NSString.h"
+#import "NPPPluginString.h"
 
 /*!
  *					This category provides a set of cipher and encriptions to a basic string object.

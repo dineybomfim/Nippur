@@ -146,8 +146,8 @@ static NSString *_localPath = nil;
 //**************************************************
 
 // Global dictionary.
-NPP_STATIC_READONLY(getCrossData, NSMutableDictionary);
-NPP_STATIC_READONLY(getDataManager, NSMutableDictionary);
+NPP_STATIC_READONLY(NSMutableDictionary, getCrossData);
+NPP_STATIC_READONLY(NSMutableDictionary, getDataManager);
 
 // Global path to the local folder.
 static NSString *nppDataManagerPath(NPPDataFolder folder)

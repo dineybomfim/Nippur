@@ -1,0 +1,1 @@
+../../../../../Nippur/Source/Interface/NPPPluginImage.h

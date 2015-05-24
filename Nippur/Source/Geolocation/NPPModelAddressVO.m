@@ -288,7 +288,7 @@ static NSString *_defaultPoliticalFormat = nil;
 
 - (BOOL) isNearToAddress:(NPPModelAddressVO *)address withRay:(double)meters
 {
-	return ([_geolocation distanceToGeolocation:address.geolocation] < NPPMetersToGeoDegress(meters));
+	return ([_geolocation distanceToGeolocation:address.geolocation] < meters);
 }
 
 - (BOOL) hasGeolocation
@@ -361,19 +361,19 @@ static NSString *_defaultPoliticalFormat = nil;
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
-	nppDictionaryAdd([NSNumber numberWithInt:_tag], @"tag", dict);
-	nppDictionaryAdd([NSNumber numberWithInt:_mode], @"mode", dict);
-	nppDictionaryAdd(_date, @"date", dict);
-	nppDictionaryAdd(_identifier, @"id", dict);
-	nppDictionaryAdd(_name, @"name", dict);
-	nppDictionaryAdd(_postalCode, @"postal_code", dict);
-	nppDictionaryAdd(_line1, @"line1", dict);
-	nppDictionaryAdd(_line2, @"line2", dict);
-	nppDictionaryAdd(_neighborhood, @"neighborhood", dict);
-	nppDictionaryAdd(_city, @"city", dict);
-	nppDictionaryAdd(_state, @"state", dict);
-	nppDictionaryAdd(_country, @"country", dict);
-	nppDictionaryAdd(_geolocation, @"geolocation", dict);
+	[dict setObjectSafely:[NSNumber numberWithInt:_tag] forKey:@"tag"];
+	[dict setObjectSafely:[NSNumber numberWithInt:_mode] forKey:@"mode"];
+	[dict setObjectSafely:_date forKey:@"date"];
+	[dict setObjectSafely:_identifier forKey:@"id"];
+	[dict setObjectSafely:_name forKey:@"name"];
+	[dict setObjectSafely:_postalCode forKey:@"postal_code"];
+	[dict setObjectSafely:_line1 forKey:@"line1"];
+	[dict setObjectSafely:_line2 forKey:@"line2"];
+	[dict setObjectSafely:_neighborhood forKey:@"neighborhood"];
+	[dict setObjectSafely:_city forKey:@"city"];
+	[dict setObjectSafely:_state forKey:@"state"];
+	[dict setObjectSafely:_country forKey:@"country"];
+	[dict setObjectSafely:_geolocation forKey:@"geolocation"];
 	
 	return dict;
 }

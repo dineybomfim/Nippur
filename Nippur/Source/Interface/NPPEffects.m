@@ -111,7 +111,7 @@ static NPPImage *nppSnapshot(UIView *view, CGRect rect, float scale)
 //
 //**********************************************************************************************************
 
-//NPP_STATIC_READONLY(nppGetBackdrops, NSMutableArray);
+//NPP_STATIC_READONLY(NSMutableArray, nppGetBackdrops);
 
 @interface NPPBackdropEffect : NSObject
 {
@@ -568,7 +568,7 @@ static void nppUnhiddenViews(NSArray *array)
 //	Properties
 //**************************************************
 
-//NPP_CATEGORY_PROPERTY_READONLY(OBJC_ASSOCIATION_RETAIN_NONATOMIC, CALayer *, efxLayer);
+//NPP_CATEGORY_PROPERTY_READONLY(CALayer, efxLayer);
 
 #pragma mark -
 #pragma mark Self Private Methods

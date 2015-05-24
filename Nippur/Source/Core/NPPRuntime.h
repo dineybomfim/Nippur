@@ -54,11 +54,11 @@
 //	iOS Definitions
 //**************************************************
 
-// Checks for iOS 4 or above.
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
+// Checks for iOS version.
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
 
-	// Prevents compiling for iOS 3.x or earlier.
-	#error This project only works with iOS 5.0 and later.
+	// Prevents compiling for unsupported versions.
+	#error This project only works with iOS 6.0 and later.
 
 #endif
 
@@ -157,57 +157,6 @@
 #endif
 
 #pragma mark -
-#pragma mark External Frameworks
-//**************************************************
-//	External Frameworks
-//**************************************************
-
-// AVFoundation
-// Identifies the Apple AVFoundation framework.
-#if defined(AVF_EXPORT)
-
-	// Defines the presence.
-	#define NPP_FMK_AVF				1
-
-#endif
-
-// AudioToolbox
-// Identifies the Apple AudioToolbox framework.
-#if defined(AUDIO_TOOLBOX_VERSION) && defined(__AudioToolbox_H)
-
-	// Defines the presence.
-	#define NPP_FMK_ATO				1
-
-#endif
-
-// CoreLocation
-// Identifies the Apple CoreLocation framework.
-#if defined(__CORELOCATION__) && defined(__CL_INDIRECT__)
-
-	// Defines the presence.
-	#define NPP_FMK_CLO				1
-
-#endif
-
-// CoreMedia
-// Identifies the Apple CoreMedia framework.
-#if defined(CMBASE_H)
-
-	// Defines the presence.
-	#define NPP_FMK_CME				1
-
-#endif
-
-// CoreVideo
-// Identifies the Apple CoreVideo framework.
-#if defined(__COREVIDEO_CVBASE_H__)
-
-	// Defines the presence.
-	#define NPP_FMK_CVI				1
-
-#endif
-
-#pragma mark -
 #pragma mark Data Type Definitions
 #pragma mark -
 //**********************************************************************************************************
@@ -284,21 +233,6 @@
 
 #define NPPClamp(x,min,max)			((x) < (min) ? (min) : ((x) > (max) ? (max) : (x)))
 #define NPPClampFull(x,cA,cB)		(NPPClamp(x, MIN(cA, cB), MAX(cA, cB)))
-
-// Geospace.
-// In degress 0.00001 is equivalent to 1.019m in real world.
-#define kNPP_GEO_METER				0.00001
-#define kNPP_GEO_30METER			0.00030
-#define kNPP_GEO_60METER			0.00059
-#define kNPP_GEO_100METER			0.00098
-#define kNPP_GEO_1KILOMETER			0.00981
-#define kNPP_GEO_2KILOMETER			0.01963
-#define kNPP_GEO_3KILOMETER			0.02944
-#define kNPP_SPACE_METER_UNIT		1.01900
-#define kNPP_SPACE_METER_FACTOR		100000
-#define kNPP_SPACE_METER_DELTA		100000.01900
-#define NPPMetersToGeoDegress(x)	((x) / kNPP_SPACE_METER_DELTA)
-#define NPPGeoDegressToMeters(x)	((x) * kNPP_SPACE_METER_DELTA)
 
 // Times.
 #define kNPPAnimTime				0.3f
@@ -400,26 +334,27 @@
  *	@param			block
  *					The block to try the exectution.
  */
-#define nppBlockBG(block)			({ if ((block) != nil) \
+#define nppBlockBG(block, ...)			({ if ((block) != nil) \
 { \
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), (block)); \
+	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0); \
+	dispatch_async(queue, ^(void){ (block)(__VA_ARGS__); }); \
 } })
 
 /*!
  *					Safe way to call a block on the main thread, avoiding nil or invalid instance.
  *					Dispatch a block after a delayed time. The dispatch occurs on the current queue.
  *
- *	@param			s
- *					The seconds to delay.
+ *	@param			n
+ *					The number of seconds to delay.
  *
  *	@param			block
  *					The block to try the exectution.
  */
-#define nppBlockAfter(s, block)		({ if ((block) != nil) \
+#define nppBlockAfter(n, block, ...)	({ if ((block) != nil) \
 { \
-	double delayInSeconds = (s); \
+	double delayInSeconds = (n); \
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC); \
-	dispatch_after(popTime, dispatch_get_main_queue(), (block)); \
+	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){ (block)(__VA_ARGS__); }); \
 } })
 //dispatch_get_current_queue
 
@@ -511,14 +446,14 @@
  *					Generate a static point of access to a Obj-C object. Calling the function will always
  *					return an initialized object.
  *
- *	@param			name
- *					The function's name.
- *
  *	@param			class
- *					The data type. If it's an Obj-C class, use the pointer (NSMutableArray *).
+ *					The data type. Must be an Obj-C class, use only the class (e.g. NSMutableArray).
+ *
+ *	@param			getter
+ *					The getter's name.
  */
-#define NPP_STATIC_READONLY(name, class) \
-static class *name(void) \
+#define NPP_STATIC_READONLY(class, getter) \
+static class *getter(void) \
 { \
 	static class *_default = nil; \
 	\
@@ -537,46 +472,17 @@ static class *name(void) \
  *
  *					Example:
  *					<pre>
- *						NPP_CATEGORY_PROPERTY(OBJC_ASSOCIATION_ASSIGN, int, foo, setFoo);
+ *						NPP_CATEGORY_PROPERTY(OBJC_ASSOCIATION_ASSIGN, NSString, foo, setFoo);
  *					</pre>
  *
- *	@param			assoc
- *					The association type. It can be one of the 5 following options:
- *
- *						- OBJC_ASSOCIATION_ASSIGN: Simple assign.
- *						- OBJC_ASSOCIATION_RETAIN_NONATOMIC: Nonatomic retain, it recives a release
- *							message on deallocation.
- *						- OBJC_ASSOCIATION_COPY_NONATOMIC: Nonatomic copy, it recives a release message
- *							on deallocation.
- *						- OBJC_ASSOCIATION_RETAIN: Atomic retain, it recives a release
- *							message on deallocation.
- *						- OBJC_ASSOCIATION_COPY: Atomic copy, it recives a release message
- *							on deallocation.
- *
  *	@param			class
- *					The data type. If it's an Obj-C class, use the pointer (NSMutableArray *).
+ *					The data type. Must be an Obj-C class, use only the class (e.g. NSMutableArray).
  *
  *	@param			getter
  *					The getter's name.
  *
  *	@param			setter
  *					The setter's name.
- */
-#define NPP_CATEGORY_PROPERTY(assoc, class, getter, setter) \
-static char k##getter; \
-- (class) getter { return objc_getAssociatedObject(self, &k##getter); } \
-- (void) setter:(class)value \
-{ \
-	objc_setAssociatedObject(self, &k##getter, value, assoc); \
-}
-
-/*!
- *					Generates an auto-initialized persistent readonly property into a category.
- *
- *					Example:
- *					<pre>
- *						NPP_CATEGORY_PROPERTY(OBJC_ASSOCIATION_ASSIGN, NSString *, foo);
- *					</pre>
  *
  *	@param			assoc
  *					The association type. It can be one of the 5 following options:
@@ -590,44 +496,41 @@ static char k##getter; \
  *							message on deallocation.
  *						- OBJC_ASSOCIATION_COPY: Atomic copy, it recives a release message
  *							on deallocation.
+ */
+#define NPP_CATEGORY_PROPERTY(class, getter, setter, assoc) \
+static char k##getter; \
+- (class *) getter { return objc_getAssociatedObject(self, &k##getter); } \
+- (void) setter:(class *)value \
+{ \
+	objc_setAssociatedObject(self, &k##getter, value, assoc); \
+}
+
+/*!
+ *					Generates an auto-initialized persistent readonly property into a category. This
+ *					method generates a strong association that will be released only on deallocation.
+ *
+ *					Example:
+ *					<pre>
+ *						NPP_CATEGORY_PROPERTY(OBJC_ASSOCIATION_ASSIGN, NSMutableArray, foo);
+ *					</pre>
  *
  *	@param			class
- *					The data type of the property. If it's an Obj-C class, use the pointer, for example,
- *					"NSMutableArray *".
+ *					The data type. Must be an Obj-C class, use only the class (e.g. NSMutableArray).
  *
  *	@param			getter
  *					The getter's name.
  */
-#define NPP_CATEGORY_PROPERTY_READONLY(assoc, class, getter) \
+#define NPP_CATEGORY_PROPERTY_READONLY(class, getter) \
 static char k##getter; \
-- (class) getter \
+- (class *) getter \
 { \
-	class object = objc_getAssociatedObject(self, &k##getter); \
+	class *object = objc_getAssociatedObject(self, &k##getter); \
 	\
 	if (object == nil) \
 	{ \
-		NSString *className = (NSString *)CFSTR(#class); \
-		className = [className stringByReplacingOccurrencesOfString:@" " withString:@""]; \
-		className = [className stringByReplacingOccurrencesOfString:@"*" withString:@""]; \
-		Class aClass = NSClassFromString(className); \
-		object = nppAutorelease([[aClass alloc] init]); \
-		objc_setAssociatedObject(self, &k##getter, object, assoc); \
+		object = nppAutorelease([[class alloc] init]); \
+		objc_setAssociatedObject(self, &k##getter, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC); \
 	} \
 	\
 	return object; \
-} \
-
-/*!
- *					Avoid processing the code after this more than once.
- *
- *					...
- *					nppOnceToken();
- *					// The following lines will happen once.
- *					...
- */
-#define nppOnceToken()				({ static BOOL _once = NO; if (_once) { return; } _once = YES; })
-
-/*!
- *					Adds objects safely to NSMutableDictionary.
- */
-#define nppDictionaryAdd(o, k, d)	({ if((o) != nil) { [(d) setObject:(o) forKey:(k)]; } })
+}

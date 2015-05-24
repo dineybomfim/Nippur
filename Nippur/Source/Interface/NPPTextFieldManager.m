@@ -50,9 +50,8 @@
 //	Private Functions
 //**************************************************
 
-NPP_STATIC_READONLY(getManager, NPPTextFieldManager);
-
-NPP_STATIC_READONLY(getTexts, NSMutableDictionary);
+NPP_STATIC_READONLY(NPPTextFieldManager, getManager);
+NPP_STATIC_READONLY(NSMutableDictionary, getTexts);
 
 #pragma mark -
 #pragma mark Public Interface

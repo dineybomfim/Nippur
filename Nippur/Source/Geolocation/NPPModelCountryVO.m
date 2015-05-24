@@ -341,16 +341,16 @@ static void nppCountryFillCodes(NPPModelCountryVO *countryVO)
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
-	nppDictionaryAdd(_name, @"name", dict);
-	nppDictionaryAdd(_isoCode, @"code", dict);
-	nppDictionaryAdd(_dialCode, @"dial_code", dict);
-	nppDictionaryAdd(_languageCode, @"lang", dict);
-	nppDictionaryAdd(_currencyCode, @"c_code", dict);
-	nppDictionaryAdd(_currencySymbol, @"c_symbol", dict);
-	nppDictionaryAdd(_geolocation, @"geolocation", dict);
-	nppDictionaryAdd(_groupingSeparator, @"grouping_separator", dict);
-	nppDictionaryAdd(_decimalSeparator, @"decimal_separator", dict);
-	nppDictionaryAdd([NSNumber numberWithBool:_decimal], @"decimal", dict);
+	[dict setObjectSafely:_name forKey:@"name"];
+	[dict setObjectSafely:_isoCode forKey:@"code"];
+	[dict setObjectSafely:_dialCode forKey:@"dial_code"];
+	[dict setObjectSafely:_languageCode forKey:@"lang"];
+	[dict setObjectSafely:_currencyCode forKey:@"c_code"];
+	[dict setObjectSafely:_currencySymbol forKey:@"c_symbol"];
+	[dict setObjectSafely:_geolocation forKey:@"geolocation"];
+	[dict setObjectSafely:_groupingSeparator forKey:@"grouping_separator"];
+	[dict setObjectSafely:_decimalSeparator forKey:@"decimal_separator"];
+	[dict setObjectSafely:[NSNumber numberWithBool:_decimal] forKey:@"decimal"];
 	
 	return dict;
 }

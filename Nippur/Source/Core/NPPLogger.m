@@ -25,7 +25,7 @@
 #import "NPPFunctions.h"
 
 #import "NPPConnector.h"
-#import "NPPString+NSString.h"
+#import "NPPPluginString.h"
 #import "NPPJSON.h"
 #import "NPPDataManager.h"
 

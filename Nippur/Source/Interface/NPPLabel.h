@@ -24,8 +24,8 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPView+UIView.h"
-#import "NPPFont+UIFont.h"
+#import "NPPPluginView.h"
+#import "NPPPluginFont.h"
 
 @interface NPPLabel : UILabel
 {
