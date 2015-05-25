@@ -155,4 +155,42 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	[self waitForExpectationsWithTimeout:15.0 handler:nil];
 }
 
+- (void) testJSON
+{
+	NSString *jsonString = @"{ \"paramA\":\"value A\", \"paramB\":45, \"paramC\":true }";
+	id object = nil;
+	NSData *data = nil;
+	
+	object = [NPPJSON objectWithString:jsonString];
+	XCTAssertNotNil(object, @"NPPJSON objectWithString");
+	
+	data = [NPPJSON dataWithObject:object];
+	XCTAssertNotNil(data, @"NPPJSON dataWithObject");
+	
+	object = [NPPJSON objectWithData:data];
+	XCTAssertNotNil(data, @"NPPJSON objectWithData");
+	
+	nppLog(@"%@", object);
+}
+
+- (void) testDataManager
+{
+	NSString *jsonString = @"A string to save";
+	[NPPDataManager saveFile:jsonString name:@"Test" type:NPPDataTypeArchive folder:NPPDataFolderApp];
+	
+	NSString *string = [NPPDataManager loadFile:@"Test" type:NPPDataTypeArchive folder:NPPDataFolderApp];
+	XCTAssertNotNil(string, @"NPPDataManager loadFile");
+	
+	nppLog(@"%@", string);
+}
+
+- (void) testClock
+{
+	NPPClockManager *clock = [[NPPClockManager alloc] initWithTotalTime:1.0];
+	
+	[clock start];
+	[clock stop];
+	[clock reset];
+}
+
 @end
