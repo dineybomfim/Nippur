@@ -297,38 +297,232 @@ static inline void nppSetCArrayString(NSString *string, void *array)
 @end
 
 /*!
- *					This category give #NPPAction# the ability to be a class cluster and generate instances
- *					using a factory method.
+ *					This category gives #NPPAction# the ability to be a class cluster, generating instances
+ *					using abstract factory design pattern.
  */
 @interface NPPAction(NPPActions)
 
-// Move (KVC)
+/*!
+ *					Interpolation action, by using a constant value in N seconds.
+ *
+ *	@param			key
+ *					The keypath (using KVC) for the property value you want to animate.
+ *
+ *	@param			byValue
+ *					The constant value that will be used in every cycle.
+ *
+ *	@param			seconds
+ *					The time of the animation in seconds.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) moveKey:(NSString *)key by:(float)byValue duration:(float)seconds;
+
+/*!
+ *					Interpolation action, to a final value in N seconds.
+ *
+ *	@param			key
+ *					The keypath (using KVC) for the property value you want to animate.
+ *
+ *	@param			byValue
+ *					The constant value that will be used in every cycle.
+ *
+ *	@param			seconds
+ *					The time of the animation in seconds.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) moveKey:(NSString *)key to:(float)toValue duration:(float)seconds;
+
+/*!
+ *					Interpolation action, from a value to the current value in N seconds.
+ *
+ *	@param			key
+ *					The keypath (using KVC) for the property value you want to animate.
+ *
+ *	@param			byValue
+ *					The constant value that will be used in every cycle.
+ *
+ *	@param			seconds
+ *					The time of the animation in seconds.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) moveKey:(NSString *)key from:(float)fromValue duration:(float)seconds;
+
+/*!
+ *					Interpolation action, from a value to a specified value in N seconds.
+ *
+ *	@param			key
+ *					The keypath (using KVC) for the property value you want to animate.
+ *
+ *	@param			byValue
+ *					The constant value that will be used in every cycle.
+ *
+ *	@param			seconds
+ *					The time of the animation in seconds.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) moveKey:(NSString *)key from:(float)fromValue to:(float)toValue duration:(float)seconds;
 
-// Utils
+/*!
+ *					Utils action, it makes a fade-in (alpha property to 1.0).
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) fadeIn;
+
+/*!
+ *					Utils action, it makes a fade-in (alpha property to 1.0) and
+ *					sets the hidden property to NO.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) fadeInUnhiding;
+
+/*!
+ *					Utils action, it makes a fade-out (alpha property to 0.0).
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) fadeOut;
+
+/*!
+ *					Utils action, it makes a fade-out (alpha property to 0.0) and
+ *					sets the hidden property to YES.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) fadeOutHiding;
+
+/*!
+ *					Utils action, it makes a fade-out (alpha property to 0.0) and
+ *					removes the object from its superview (safely, if it's a view).
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) fadeOutRemoving;
+
+/*!
+ *					Utils action, it just waits for N seconds.
+ *
+ *	@param			seconds
+ *					The time to wait in seconds.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) waitForDuration:(float)seconds;
+
+/*!
+ *					Utils action, it removes the object from its superview (safely, if it's a view).
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) removeFromSuperview;
+
+/*!
+ *					Utils action, it hides or unhides a view.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) toggleHidden;
+
+/*!
+ *					Utils action, it hides a view.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) hide;
+
+/*!
+ *					Utils action, it unhides a view.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) unhide;
+
+/*!
+ *					Utils action, it runs a block.
+ *
+ *	@param			block
+ *					The block to be executed in this action.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) runBlock:(NPPBlockVoid)block;
+
+/*!
+ *					Utils action, it performs a selector on a target.
+ *
+ *	@param			selector
+ *					The selector to be performed.
+ *
+ *	@param			target
+ *					The target in which the selector will be performed.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) performSelector:(SEL)selector onTarget:(id)target;
 
-// Compounds
+/*!
+ *					Compound action, this action can repeat another action X times.
+ *
+ *	@param			action
+ *					An #NPPAction# to be repeated.
+ *
+ *	@param			count
+ *					The number of times that this action will repeat.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) repeatAction:(NPPAction *)action count:(unsigned int)count;
+
+/*!
+ *					Compound action, this action can repeat another action forever.
+ *
+ *	@param			action
+ *					An #NPPAction# to be repeated forever.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) repeatActionForever:(NPPAction *)action;
+
+/*!
+ *					Compound action, it encapsulates other actions in sequence,
+ *					respecting their #finalDuration#.
+ *
+ *	@param			actions
+ *					An array with the actions in sequence.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) sequence:(NSArray *)actions;
+
+/*!
+ *					Compound action, it encapsulates other actions in group, executing all of them at the
+ *					same time.
+ *
+ *	@param			actions
+ *					An array with the actions to be a group.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) group:(NSArray *)actions;
 
-// Custom
+/*!
+ *					Custom action, you can create your own action if none of the pre-sets fits for you.
+ *					In order to do that, just create a #NPPBlockAction#. This block will be called at
+ *					every animation cycle (by default 60 fps).
+ *
+ *	@param			seconds
+ *					The duration of your custom action.
+ *
+ *	@param			block
+ *					The events, commands or anything that your custom action does in a single cycle.
+ *
+ *	@result			An autoreleased action.
+ */
 + (NPPAction *) customActionWithDuration:(float)seconds actionBlock:(NPPBlockAction)block;
 
 @end
@@ -341,17 +535,73 @@ static inline void nppSetCArrayString(NSString *string, void *array)
  */
 @interface NSObject(NPPActions)
 
+/*!
+ *					Runs an action.
+ */
 - (void) runAction:(NPPAction *)action;
+
+/*!
+ *					Runs an action and performs a block and the action ends.
+ *
+ *	@param			block
+ *					A block to be performed at the end of the action.
+ */
 - (void) runAction:(NPPAction *)action completion:(NPPBlockVoid)block;
+
+/*!
+ *					Runs an action and sets a key for it.
+ *
+ *	@param			key
+ *					A string as the key for the action.
+ */
 - (void) runAction:(NPPAction *)action withKey:(NSString *)key;
+
+/*!
+ *					Runs an action with a delay in seconds.
+ *
+ *	@param			seconds
+ *					The delay in seconds.
+ */
 - (void) runAction:(NPPAction *)action withDelay:(float)seconds;
+
+/*!
+ *					Execute an action once in its last stage.
+ *
+ *	@param			action
+ *					The action to be executed.
+ */
 - (void) executeAction:(NPPAction *)action;
 
+/*!
+ *					Checks if this object contains any on going action.
+ *
+ *	@result			A Bool value indicating if there is actions inside.
+ */
 - (BOOL) hasActions;
+
+/*!
+ *					Retrieves an action with a specified key.
+ *
+ *	@param			key
+ *					A string as the key for the action.
+ *
+ *	@result			An action for the specified key.
+ */
 - (NPPAction *) actionForKey:(NSString *)key;
 
-// Removing does not call completion blocks.
+/*!
+ *					Removes an action with a specified key. Removing an action immediately interrupts the
+ *					action and does not call the completion blocks.
+ *
+ *	@param			key
+ *					A string as the key for the action.
+ */
 - (void) removeActionForKey:(NSString *)key;
+
+/*!
+ *					Removes all actions. Removing an action immediately interrupts the
+ *					action and does not call the completion blocks.
+ */
 - (void) removeAllActions;
 
 @end

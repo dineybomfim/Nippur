@@ -25,8 +25,8 @@
 #import "NPPFunctions.h"
 
 /*!
- *					Here are shortcut methods just to safe typing. This category does not create new
- *					logics nor work, just shortcuts.
+ *					This category defines shortcut methods just to safe typing.
+ *					This category does not create new logics nor work, just shortcuts.
  */
 @interface NSNotificationCenter(NPPNotificationCenter)
 

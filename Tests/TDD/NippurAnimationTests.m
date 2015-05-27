@@ -38,13 +38,15 @@
 	
 	NPPAction *wait1 = [NPPAction waitForDuration:1.0f];
 	NPPAction *group = [NPPAction group:@[ wait1 ]];
-	NPPAction *sequence = [NPPAction sequence:@[ wait1, group ]];
+	NPPAction *block = [NPPAction runBlock:^{ nppLog(@"Action running a Block"); }];
+	NPPAction *sequence = [NPPAction sequence:@[ wait1, group, block ]];
 	
 	[sequence saveToFile:@"ActionTest"];
 	[sequence runAction:sequence completion:^(void)
 	{
+		nppLog(@"An action has run successfully");
 		NPPAction *loadedAction = [NPPAction actionFromFile:@"ActionTest"];
-		nppLog(@"An action was run successfully\n%@", loadedAction);
+		XCTAssertNotNil(loadedAction, @"NPPAction actionFromFile");
 		
 		[expectation fulfill];
 	}];
