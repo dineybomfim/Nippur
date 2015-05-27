@@ -115,7 +115,8 @@ NPP_API void nppThreadExit(NSString *name);
 NPP_API void nppThreadExitAll(void);
 
 /*!
- *					The
+ *					This class is a wrapper and a plugin for the default NSThread. It helps to manage
+ *					a thread and to perform multiple tasks in that thread.
  */
 @interface NPPThread : NSObject
 {

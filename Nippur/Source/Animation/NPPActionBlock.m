@@ -97,10 +97,12 @@
 - (void) setBlock:(NPPBlockVoid)block
 {
 	NPPBlockAction actionBlock = nil;
+	__block NPPBlockVoid safeBlock = [block copy];
 	
 	actionBlock = ^(id currentTarget, float elapsedTime, double token)
 	{
-		nppBlock(block);
+		nppBlock(safeBlock);
+		nppRelease(safeBlock);
 	};
 	
 	self.actionBlock = actionBlock;

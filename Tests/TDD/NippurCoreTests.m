@@ -193,4 +193,16 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	[clock reset];
 }
 
+- (void) testTester
+{
+	NPPBlockVoid block = ^(void)
+	{
+		int a = 2;
+		int b = 3;
+		int c = sqrt(pow(a, 2) + pow(b, 2));
+	};
+	
+	[NPPTester testerStress:@"Stress A" unit:NPPTesterUnitMilliseconds iterations:1000 block:block];
+}
+
 @end

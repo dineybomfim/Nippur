@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "602492181672564F0030C6B7"
                BuildableName = "Nippur.framework"
-               BlueprintName = "NippurUniversal"
+               BlueprintName = "Nippur Universal"
                ReferencedContainer = "container:Nippur.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "602492181672564F0030C6B7"
             BuildableName = "Nippur.framework"
-            BlueprintName = "NippurUniversal"
+            BlueprintName = "Nippur Universal"
             ReferencedContainer = "container:Nippur.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,7 +62,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "602492181672564F0030C6B7"
             BuildableName = "Nippur.framework"
-            BlueprintName = "NippurUniversal"
+            BlueprintName = "Nippur Universal"
             ReferencedContainer = "container:Nippur.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

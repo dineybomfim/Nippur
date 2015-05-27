@@ -25,6 +25,21 @@
 #import "NPPFunctions.h"
 #import "NPPLogger.h"
 
+/*!
+ *					Represents a unit of measure.
+ *
+ *	@var			NPPTesterUnitSeconds
+ *					It represents the time in seconds.
+ *
+ *	@var			NPPTesterUnitMilliseconds
+ *					It represents the time in milli seconds (seconds/1000).
+ *
+ *	@var			NPPTesterUnitMicroseconds
+ *					It represents the time in micro seconds (seconds/1000000).
+ *
+ *	@var			NPPTesterUnitNanoseconds
+ *					It represents the time in nano seconds (seconds/1000000000).
+ */
 typedef NS_OPTIONS(NSUInteger, NPPTesterUnit)
 {
 	NPPTesterUnitSeconds,			//Default
@@ -33,12 +48,36 @@ typedef NS_OPTIONS(NSUInteger, NPPTesterUnit)
 	NPPTesterUnitNanoseconds,
 };
 
+/*!
+ *					This class was made to make tests. It can have and support any kind of TDD, including
+ *					performance tests, stress tests, etc.
+ *
+ *					IMPORTANT: This class has no safe locks to avoid you publishing tests on your
+ *					production enviroment, so try to use it only on your tests build, not inside your
+ *					app code.
+ */
 @interface NPPTester : NSObject
-{
-@private
-	
-}
 
+/*!
+ *					Runs a stress test on a block. You can define how many iterations the block will
+ *					have, that means, how many times it'll be executed over and over. This methods
+ *					outputs its results on the console.
+ *
+ *					The results include the total time, the average time of iterations, the fastest one and
+ *					the slowest one.
+ *
+ *	@param			name
+ *					The name for this test.
+ *
+ *	@param			unit
+ *					The unit measure to show on the output.
+ *
+ *	@param			loops
+ *					The number of iterations that this test will run (usually 1000-1000000 is enough).
+ *
+ *	@param			block
+ *					The testing block it self.
+ */
 + (void) testerStress:(NSString *)name
 				 unit:(NPPTesterUnit)unit
 		   iterations:(unsigned int)loops

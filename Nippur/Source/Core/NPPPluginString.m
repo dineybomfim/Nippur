@@ -110,11 +110,6 @@
 	return [self stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:locale];
 }
 
-- (NSString *) stringWithoutAccentsLower
-{
-	return [[self lowercaseString] stringWithoutAccents];
-}
-
 - (CGSize) sizeWithFont:(UIFont *)font
 			constrained:(CGSize)constrained
 			  lineBreak:(NSLineBreakMode)lineBreak

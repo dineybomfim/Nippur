@@ -24,18 +24,81 @@
 #import "NPPRuntime.h"
 #import "NPPFunctions.h"
 
+/*!
+ *					This category imbue NSString with a bit more power, converting string content and
+ *					providing backward compatibility for deprecated methods.
+ */
 @interface NSString(NPPString)
 
+/*!
+ *					A shortcut to create autoreleased strings. Acts exactly like initWithData:encoding:
+ *
+ *	@param			data
+ *					A NSData object containing the plain text format for a specified encoding.
+ *
+ *	@param			encoding
+ *					The encoding used by data.
+ */
 + (NSString *) stringWithData:(NSData *)data encoding:(NSStringEncoding)encoding;
 
+/*!
+ *					Returns a string in camelCaseFormat (first lower case).
+ *
+ *	@result			An autoreleased string with the format.
+ */
 - (NSString *) stringCamelCase;
-- (NSString *) stringInverseCamelCase;
-- (NSString *) stringWithoutAccents;
-- (NSString *) stringWithoutAccentsLower;
 
+/*!
+ *					Returns a string in InverseCamelCaseFormat (first upper case).
+ *
+ *	@result			An autoreleased string with the format.
+ */
+- (NSString *) stringInverseCamelCase;
+
+/*!
+ *					Returns a string without any accents, that means: àáâã = a, ñ = n, etc.
+ *
+ *	@result			An autoreleased string with the format.
+ */
+- (NSString *) stringWithoutAccents;
+
+/*!
+ *					Backward compatibility method. Calculates the necessary size to render a string.
+ *					Act as the old sizeWithFont:constrainedToSize:lineBreakMode:
+ *
+ *	@param			font
+ *					The font object to be used.
+ *
+ *	@param			size
+ *					The max size of the label to have.
+ *
+ *	@param			lineBreak
+ *					The line break mode.
+ *
+ *	@result			The size to render this string.
+ */
 - (CGSize) sizeWithFont:(UIFont *)font
 			constrained:(CGSize)size
 			  lineBreak:(NSLineBreakMode)lineBreak;
+
+/*!
+ *					Backward compatibility method. Calculates the necessary size to render a string.
+ *					Act as the old sizeWithFont:fontminFontSize:actualFontSize:forWidth:lineBreakMode:
+ *
+ *	@param			font
+ *					The font object to be used.
+ *
+ *	@param			size
+ *					The size of the font in points.
+ *
+ *	@param			width
+ *					The max width to have.
+ *
+ *	@param			lineBreak
+ *					The line break mode.
+ *
+ *	@result			The size to render this string.
+ */
 - (CGSize) sizeWithFont:(UIFont *)font
 				minSize:(CGFloat)size
 			   forWidth:(CGFloat)width
