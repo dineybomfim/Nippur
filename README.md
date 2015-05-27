@@ -16,20 +16,13 @@ it, simply add the following line to your Podfile:
 pod "Nippur"
 ```
 
+<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100">
+<img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100">
+<img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100">
+<img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100">
+<img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100">
+
 Nippur is made by 5 packages (modules), which you can import and use individually.
-
-<style>
-ul.icons { cursor: default; list-style: none; padding-left: 0; text-align: center; }
-ul.icons li { display: inline-block; padding: 0 1em 0 0; }
-</style>
-<ul class="icons">
-<li><img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"><p>Core</p></li>
-<li><img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"><p>Animation</p></li>
-<li><img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100"><p>Interface</p></li>
-<li><img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"><p>Geolocation</p></li>
-<li><img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"><p>Media</p></li>
-</ul>
-
 You can pick one or more using CocoaPods subspec:
 
 ```ruby
@@ -39,15 +32,26 @@ pod "Nippur/Interface"
 pod "Nippur/Geolocation"
 pod "Nippur/Media"
 ```
-
 ## Core
-
-## Animation
-
-The Nippur Actions (NPPAction) is responsible for animating everything in Nippur.
+The Core is ready to the daily needs like connections, JSON, easy creation of blocks, models, singletons, logs, timers, loops and more.
 
 ```objc
-[Nippur action]
+[NPPConnector connectorWithURL:@"https://httpbin.org/post" method:NPPHTTPMethodPOST headers:nil body:nil completion:^(NPPConnector *connector)
+{
+	nppLog(@"%@", [NPPJSON objectWithData:connector.receivedData]);
+}];
+```
+
+## Animation
+The Nippur Actions (NPPAction) can animating everything.
+
+```objc
+NPPAction *move = [NPPAction moveKey:@"transform.translation.x" by:2 duration:1.0];
+NPPAction *rotate = [NPPAction moveKey:@"transform.rotation.x" to:2.0 duration:1.0];
+NPPAction *group = [NPPAction group:@[ move, rotate ]];
+move.ease = NPPActionEaseElasticOut;
+
+[myView runAction:group];
 ```
 
 ## Interface
