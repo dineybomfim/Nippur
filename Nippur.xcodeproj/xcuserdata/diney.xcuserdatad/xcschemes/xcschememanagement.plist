@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Build Docs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>NippurUniversal.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>602492C21672579D0030C6B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6059142D1B05662600C7A2B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

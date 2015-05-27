@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "602492C21672579D0030C6B7"
-               BuildableName = "BUILD ALL"
-               BlueprintName = "BUILD ALL"
+               BuildableName = "Build Universal"
+               BlueprintName = "Build Universal"
                ReferencedContainer = "container:Nippur.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "602492C21672579D0030C6B7"
-            BuildableName = "BUILD ALL"
-            BlueprintName = "BUILD ALL"
+            BuildableName = "Build Universal"
+            BlueprintName = "Build Universal"
             ReferencedContainer = "container:Nippur.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "602492C21672579D0030C6B7"
-            BuildableName = "BUILD ALL"
-            BlueprintName = "BUILD ALL"
+            BuildableName = "Build Universal"
+            BlueprintName = "Build Universal"
             ReferencedContainer = "container:Nippur.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
