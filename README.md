@@ -8,6 +8,7 @@
 
 ## Installation
 
+Nippur is compatible with iOS 6 or later.
 Nippur is available through [CocoaPods](http://cocoapods.org/pods/Nippur). To install
 it, simply add the following line to your Podfile:
 
@@ -15,15 +16,45 @@ it, simply add the following line to your Podfile:
 pod "Nippur"
 ```
 
-Now run on terminal:
+Nippur is made by 5 packages (modules), which you can import and use individually.
+
+<style>
+ul.icons { cursor: default; list-style: none; padding-left: 0; text-align: center; }
+ul.icons li { display: inline-block; padding: 0 1em 0 0; }
+</style>
+<ul class="icons">
+<li><img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"><p>Core</p></li>
+<li><img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"><p>Animation</p></li>
+<li><img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100"><p>Interface</p></li>
+<li><img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"><p>Geolocation</p></li>
+<li><img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"><p>Media</p></li>
+</ul>
+
+You can pick one or more using CocoaPods subspec:
 
 ```ruby
-pod install
+pod "Nippur/Core"
+pod "Nippur/Animation"
+pod "Nippur/Interface"
+pod "Nippur/Geolocation"
+pod "Nippur/Media"
 ```
 
-## Requirements
+## Core
 
-Nippur is compatible with iOS 6 or later.
+## Animation
+
+The Nippur Actions (NPPAction) is responsible for animating everything in Nippur.
+
+```objc
+[Nippur action]
+```
+
+## Interface
+
+## Geolocation
+
+## Media
 
 ## Author
 
