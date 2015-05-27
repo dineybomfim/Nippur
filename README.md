@@ -16,14 +16,25 @@ it, simply add the following line to your Podfile:
 pod "Nippur"
 ```
 
-<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100">
-<img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100">
-<img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100">
-<img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100">
-<img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100">
+<table style="text-align=center;">
+	<tr>
+		<td><img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></td>
+		<td><img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"></td>
+		<td><img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100"></td>
+		<td><img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"></td>
+		<td><img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"></td>
+	</tr>
+	<tr>
+		<td>Core</td>
+		<td>Animation</td>
+		<td>Interface</td>
+		<td>Geolocation</td>
+		<td>Media</td>
+	</tr>
+</table>
 
 Nippur is made by 5 packages (modules), which you can import and use individually.
-You can pick one or more using CocoaPods subspec:
+You can pick one or more using the subspecs:
 
 ```ruby
 pod "Nippur/Core"
@@ -32,14 +43,19 @@ pod "Nippur/Interface"
 pod "Nippur/Geolocation"
 pod "Nippur/Media"
 ```
+
 ## Core
 The Core is ready to the daily needs like connections, JSON, easy creation of blocks, models, singletons, logs, timers, loops and more.
 
 ```objc
-[NPPConnector connectorWithURL:@"https://httpbin.org/post" method:NPPHTTPMethodPOST headers:nil body:nil completion:^(NPPConnector *connector)
-{
-	nppLog(@"%@", [NPPJSON objectWithData:connector.receivedData]);
-}];
+[NPPConnector connectorWithURL:@"https://httpbin.org/post"
+							method:NPPHTTPMethodPOST
+						   headers:nil
+							  body:nil
+						completion:^(NPPConnector *connector)
+	{
+		nppLog(@"%@", [NPPJSON objectWithData:connector.receivedData]);
+	}];
 ```
 
 ## Animation
