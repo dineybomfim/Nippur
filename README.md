@@ -16,7 +16,9 @@ it, simply add the following line to your Podfile:
 pod "Nippur"
 ```
 
-<table style="text-align=center;">
+---
+
+<table border="0" style="text-align=center;">
 	<tr>
 		<td><img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></td>
 		<td><img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"></td>
