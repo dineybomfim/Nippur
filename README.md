@@ -16,22 +16,9 @@ it, simply add the following line to your Podfile:
 pod "Nippur"
 ```
 
-<table border="0">
-	<tr>
-		<td><img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></td>
-		<td><img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"></td>
-		<td><img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100"></td>
-		<td><img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"></td>
-		<td><img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"></td>
-	</tr>
-	<tr style="text-align=center;">
-		<td>Core</td>
-		<td>Animation</td>
-		<td>Interface</td>
-		<td>Geolocation</td>
-		<td>Media</td>
-	</tr>
-</table>
+|<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100">|<img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100">|<img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100">|<img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100">|<img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100">|
+|:--:|:-------:|:-------:|:---------:|:---:|
+|Core|Animation|Interface|Geolocation|Media|
 
 Nippur is made by 5 packages (modules), which you can import and use individually.
 You can pick one or more using the subspecs:
