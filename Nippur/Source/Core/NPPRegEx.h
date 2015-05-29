@@ -178,13 +178,3 @@ NPP_API NSString *nppRegExReplaceInRange(NSString *original,
  *	@result			A BOOL data type indicating if the email is valid or not.
  */
 NPP_API BOOL nppValidateEmail(NSString *email);
-
-/*!
- *					Validates a CPF string.
- *	
- *	@param			cpf
- *					The CPF string to validate. It can be in any format, containing dots and dashes or not.
- *
- *	@result			A BOOL data type indicating if the CPF is valid or not.
- */
-NPP_API BOOL nppValidateCPF(NSString *cpf);

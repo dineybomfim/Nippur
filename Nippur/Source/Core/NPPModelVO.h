@@ -38,6 +38,9 @@
  *					Creates a new model using the same format as dataForJSON. This method will
  *					make a call to #updateWithData:#
  *
+ *	@param			data
+ *					The data in a format that is acceptable by this model.
+ *
  *	@result			An instance of this model.
  *
  *	@see			updateWithData:
@@ -47,6 +50,9 @@
 /*!
  *					Creates a new model using the same format as dataForJSON. This method will
  *					make a call to #updateWithData:#
+ *
+ *	@param			data
+ *					The data in a format that is acceptable by this model.
  *
  *	@result			An autoreleased instance of this model.
  *
@@ -75,7 +81,7 @@
  *	@param			data
  *					It can be NSString, NSNumber, NSArray or NSDictionary.
  *
- *	@see			dataForJSON
+ *	@see			NPPJSONSource::dataForJSON
  */
 - (void) updateWithData:(id)data;
 

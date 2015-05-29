@@ -51,19 +51,66 @@
 @protocol NPPClocking <NSObject>
 
 @optional
+
+/*!
+ *					Reverse the clocking direction (forward or reward).
+ */
 @property (nonatomic) BOOL reverse;
+
+/*!
+ *					The total time for this clock.
+ */
 @property (nonatomic) NSTimeInterval totalTime;
+
+/*!
+ *					The current time for this clock.
+ */
 @property (nonatomic) NSTimeInterval currentTime;
+
+/*!
+ *					The current percentage for this clock.
+ */
 @property (nonatomic) float currentPercentage;
+
+/*!
+ *					The delegate, which will receive the clock update.
+ */
 @property (nonatomic, NPP_ASSIGN) id <NPPClockingDelegate> delegate;
 
+/*!
+ *					Inits a new instance with the total time.
+ *
+ *	@param			time
+ *					The total time.
+ */
 - (id) initWithTotalTime:(NSTimeInterval)time;
 
+/*!
+ *					Sets the current time and the total time.
+ *
+ *	@param			current
+ *					The current time.
+ *
+ *	@param			time
+ *					The total time.
+ */
 - (void) setCurrentTime:(NSTimeInterval)current totalTime:(NSTimeInterval)total;
 
 @required
+
+/*!
+ *					Starts the clock.
+ */
 - (void) start;
+
+/*!
+ *					Stops the clock in the current time.
+ */
 - (void) stop;
+
+/*!
+ *					Resets the clock to its initial state.
+ */
 - (void) reset;
 
 @end
