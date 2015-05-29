@@ -55,6 +55,11 @@ NPPAction *group = [NPPAction group:@[ move, rotate ]];
 move.ease = NPPActionEaseElasticOut;
 
 [myView runAction:group];
+
+// Any numerical property can be interpolated
+AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithData:mySoundData error:nil];
+[player runAction:[NPPAction moveKey:@"volume" from:0.0 to:1.0 duration:3.0f]];
+[player play];
 ```
 
 ## Interface
