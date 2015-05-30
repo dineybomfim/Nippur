@@ -56,6 +56,70 @@
 //**************************************************
 
 NPP_STATIC_READONLY(NSMutableDictionary, nppImageViewProperties);
+//NPP_STATIC_READONLY(nppImageViewCache, NSMutableDictionary);
+static NSMutableDictionary *nppImageViewCache(void)
+{
+	static NSMutableDictionary *_default = nil;
+	
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^(void)
+				  {
+					  _default = [[NSMutableDictionary alloc] init];
+					  [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidReceiveMemoryWarningNotification
+																		object:nil
+																		 queue:[NSOperationQueue mainQueue]
+																	usingBlock:^(NSNotification *notification)
+					   {
+						   [_default removeAllObjects];
+					   }];
+				  });
+	
+	return _default;
+}
+
+static NSString *nppImageKey(NSURLRequest *request)
+{
+	// Best performance with Base64 routine.
+	return [[[request URL] absoluteString] encodeBase64];
+}
+/*
+ static UIImage *nppImageLoadCache(NSString *imageKey)
+ {
+	NSMutableDictionary *cache = nppImageViewCache();
+	
+	return [cache objectForKey:imageKey];
+ }
+ 
+ static void nppImageSaveCache(NSString *imageKey, UIImage *image)
+ {
+	NSMutableDictionary *cache = nppImageViewCache();
+	
+	[cache setObject:image forKey:imageKey];
+ }
+ /*/
+static UIImage *nppImageLoadCache(NSString *imageKey)
+{
+	NSMutableDictionary *cache = nppImageViewCache();
+	UIImage *image = [cache objectForKey:imageKey];
+	
+	if (image == nil)
+	{
+		image = [NPPDataManager loadFile:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+		
+		if (image != nil)
+		{
+			[cache setObject:image forKey:imageKey];
+		}
+	}
+	
+	return image;
+}
+
+static void nppImageSaveCache(NSString *imageKey, UIImage *image)
+{
+	[NPPDataManager saveFile:image name:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+}
+//*/
 
 #pragma mark -
 #pragma mark Private Category
@@ -137,53 +201,58 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppImageViewProperties);
 //	Self Public Methods
 //**************************************************
 
-- (void) loadURL:(NSString *)url completion:(NPPBlockImage)block
+- (void) loadURL:(NSString *)url
 {
 	NSMutableDictionary *info = nppImageViewProperties();
-	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] loading:nil completion:block];
+	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] completion:nil];
 }
 
-- (void) loadURL:(NSString *)url
-	 placeholder:(UIImage *)placeholder
-		 loading:(UIView *)loading
-	  completion:(NPPBlockImage)block
+- (void) loadURL:(NSString *)url placeholder:(UIImage *)placeholder completion:(NPPBlockImage)block
 {
-	//TODO LOCAL CACHE
-	
-	UIImage *image = nppImageFromFile(url);
-	image = (image != nil) ? image : placeholder;
+	UIImage *image = nil;
 	
 	if ([url hasPrefix:@"http"])
 	{
-		self.image = image;
-		//TODO CHECK IF is within update interval
+		self.image = placeholder;
 		
-		// IF NOT
-		//TODO local cache
+		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+		[request setHTTPShouldHandleCookies:YES];
+		[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+		[request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
 		
-		// IF SO
-		//TODO loading view
-		//*
-		[NPPConnector connectorWithURL:url
-								method:NPPHTTPMethodGET
-							   headers:nil
-								  body:nil
-							completion:^(NPPConnector *connector)
+		NSString *key = nppImageKey(request);
+		UIImage *image = nppImageLoadCache(key);
+		
+		if (image != nil)
 		{
-			//TODO remove loading
-		
-			UIImage *image = [UIImage imageWithData:connector.receivedData];
-			image = (image != nil) ? image : placeholder;
-			
-			//LOCAL CACHE
 			self.image = image;
 			//nppBlock(block, [image NPPImage]);
-		}];
-		/*/
-		//*/
+		}
+		else
+		{
+			NPPBlockVoid bgBlock = ^(void)
+			{
+				[NPPConnector connectorWithRequest:request completion:^(NPPConnector *connector)
+				 {
+					 UIImage *image = [UIImage imageWithData:connector.receivedData];
+					 
+					 if (image != nil)
+					 {
+						 nppImageSaveCache(key, image);
+						 nppBlockMain(^(void){ self.image = image; });
+						 //nppBlock(block, [image NPPImage]);
+					 }
+				 }];
+			};
+			
+			nppBlockBG(bgBlock);
+		}
 	}
 	else
 	{
+		UIImage *image = nppImageFromFile(url);
+		image = (image != nil) ? image : placeholder;
+		
 		self.image = image;
 		//nppBlock(block, [image NPPImage]);
 	}

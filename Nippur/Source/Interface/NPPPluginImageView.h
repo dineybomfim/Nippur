@@ -38,7 +38,7 @@ typedef void (^NPPBlockImage)(NPP_ARC_UNSAFE NPPImage *image);
 
 @interface UIImageView (NPPImageView)
 
-- (void) loadURL:(NSString *)url completion:(NPPBlockImage)block;
+- (void) loadURL:(NSString *)url;
 
 /*!
  *					Loads image asynchronously from online URL or local path.
@@ -49,10 +49,7 @@ typedef void (^NPPBlockImage)(NPP_ARC_UNSAFE NPPImage *image);
  *					when a final result is found, that means, 1) local cache within the minimum update
  *					interval or 2) a loaded imagem. It can return nil if it fails loading an image.
  */
-- (void) loadURL:(NSString *)url
-	 placeholder:(UIImage *)placeholder
-		 loading:(UIView *)loading
-	  completion:(NPPBlockImage)block;
+- (void) loadURL:(NSString *)url placeholder:(UIImage *)placeholder completion:(NPPBlockImage)block;
 
 + (void) definePlaceholder:(NSString *)fileNamed;
 
