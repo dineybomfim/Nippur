@@ -12,6 +12,8 @@ Nippur is compatible with iOS 6 or later.
 Nippur is available through [CocoaPods](http://cocoapods.org/pods/Nippur). To install
 it, simply add the following line to your Podfile:
 
+<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></img>
+
 ```ruby
 pod "Nippur"
 ```
@@ -25,7 +27,7 @@ import "Nippur.h"
 Nippur is made by 5 packages (modules), which you can import and use individually.
 You can pick one or more using the subspecs:
 
-<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></img>
+<img src="http://db-in.com/nippur/images/logo_core_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_interface_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"></img>
