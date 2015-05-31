@@ -1,63 +1,75 @@
 /*
  *	NPPFunctions.h
- *	Nippur
- *	v1.0
+ *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *	
- *	Created by Diney Bomfim on 8/15/12.
- *	Copyright 2012 db-in. All rights reserved.
+ *	Permission is hereby granted, free of charge, to any person obtaining a copy
+ *	of this software and associated documentation files (the "Software"), to deal
+ *	in the Software without restriction, including without limitation the rights
+ *	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *	copies of the Software, and to permit persons to whom the Software is
+ *	furnished to do so, subject to the following conditions:
+ *
+ *	The above copyright notice and this permission notice shall be included in
+ *	all copies or substantial portions of the Software.
+ *
+ *	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *	THE SOFTWARE.
  */
 
 #import "NPPRuntime.h"
 #import "NPPRegEx.h"
 
 /*!
- *					Defines the direction of the transition.
+ *					Represents a direction.
  *
  *	@var			NPPDirectionUp
- *					Animation goes to up side of the screen.
+ *					It represents the up side.
  *
  *	@var			NPPDirectionRight
- *					Animation goes to right side of the screen.
+ *					It represents the right side.
  *
  *	@var			NPPDirectionDown
- *					Animation goes to down side of the screen.
+ *					It represents the down side.
  *
  *	@var			NPPDirectionLeft
- *					Animation goes to left side of the screen.
+ *					It represents the left side.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPDirection)
 {
 	NPPDirectionUp,
 	NPPDirectionRight,
 	NPPDirectionDown,
 	NPPDirectionLeft,
-} NPPDirection;
+};
 
-typedef enum
-{
-	NPPStyleColorLight,
-	NPPStyleColorDark,
-	NPPStyleColorConfirm,
-	NPPStyleColorAlert,
-} NPPStyleColor;
-
-typedef enum
-{
-	NPPPositionTop,
-	NPPPositionRight,
-	NPPPositionBottom,
-	NPPPositionLeft,
-} NPPPosition;
-
-typedef struct
-{
-	NPP_ARC_UNSAFE id target;
-	SEL action;
-} NPPTargetAction;
-
+/*!
+ *					Definition of a block with no arguments.
+ */
 typedef void (^NPPBlockVoid)(void);
-typedef void (^NPPBlockInfo)(NPP_ARC_UNSAFE NSDictionary *info);
+
+/*!
+ *					Definition of a block with one non-retained dictionary as argument.
+ */
+typedef void (^NPPBlockDictionary)(NPP_ARC_UNSAFE NSDictionary *dict);
+
+/*!
+ *					Definition of a block with one non-retained array as argument.
+ */
+typedef void (^NPPBlockArray)(NPP_ARC_UNSAFE NSArray *array);
+
+/*!
+ *					Definition of the range with zero values.
+ */
 static const NSRange NPPRangeZero = { NSNotFound, 0 };
+
+//*************************
+//	Math Functions
+//*************************
 
 /*!
  *					Returns a random float value within the min and max values.
@@ -86,136 +98,150 @@ NPP_API float nppRandomf(float min, float max);
 NPP_API int nppRandomi(int min, int max);
 
 /*!
- *					Checks if the current device is an iPad or not.
+ *					Returns the modular distance between two points.
  *
- *	@result			A BOOL indicating if the current device is an iPad.
- */
-NPP_API BOOL nppDeviceIsPad(void);
-
-/*!
- *					Checks if the current device is an iPhone or not.
+ *	@param			pointA
+ *					The first point.
  *
- *	@result			A BOOL indicating if the current device is an iPhone.
- */
-NPP_API BOOL nppDeviceIsPhone(void);
-
-/*!
- *					Checks if the current device is an iPod or not.
+ *	@param			max
+ *					The second point.
  *
- *	@result			A BOOL indicating if the current device is an iPod.
+ *	@result			The modular distance between points. It is always positive.
  */
-NPP_API BOOL nppDeviceIsPod(void);
+NPP_API float nppPointsDistance(CGPoint pointA, CGPoint pointB);
 
-/*!
- *					Checks if the current device is the simulator or not.
- *
- *	@result			A BOOL indicating if the current device is the simulator.
- */
-NPP_API BOOL nppDeviceIsSimulator(void);
-
-/*!
- *					Checks if the current device orientation is a valid one. Invalid orientations are:
- *					Unkown, FaceUp and FaceDown. All the other orientations are valid.
- *
- *	@result			A BOOL indicating if the current device orientation is valid.
- */
-NPP_API BOOL nppDeviceOrientationIsValid(void);
-
-/*!
- *					Checks if the current device orientation is a valid one. Invalid orientations are:
- *					Unkown, FaceUp and FaceDown. All the other orientations are valid.
- *
- *	@result			A BOOL indicating if the current device orientation is valid.
- */
-NPP_API BOOL nppDeviceOrientationIsPortrait(void);
-
-/*!
- *					Checks if the current device orientation is a valid one. Invalid orientations are:
- *					Unkown, FaceUp and FaceDown. All the other orientations are valid.
- *
- *	@result			A BOOL indicating if the current device orientation is valid.
- */
-NPP_API BOOL nppDeviceOrientationIsLandscape(void);
-
-/*!
- *					Returns the current version of the running OS. The result should be compared to
- *					a NPP_IOS_X_X definition.
- *
- *	@result			A float with the version of the running OS.
- */
-NPP_API float nppSystemVersion(void);
-
-/*!
- *					Checks if the running OS is Pad(iPad) interface.
- *
- *	@result			A BOOL indicating if the current system is Pad version.
- */
-NPP_API BOOL nppSystemIsPadIdiom(void);
-
-/*!
- *					Checks if the running OS is Phone(iPhone and iPod) interface.
- *
- *	@result			A BOOL indicating if the current system is Phone version.
- */
-NPP_API BOOL nppSystemIsPhoneIdiom(void);
-NPP_API BOOL nppSystemSupportsBlur(void);
-
-NPP_API float nppKeyboardHeight(UIInterfaceOrientation orientation);
-
-/*!
- *					Gets the localized string according to the Localized User Settings in the device.
- */
-NPP_API NSString *nppS(NSString *string);
+//*************************
+//	Path Functions
+//*************************
 
 NPP_API NSString *nppGetFile(NSString *named);
 NPP_API NSString *nppGetFileExtension(NSString *named);
 NPP_API NSString *nppGetFileName(NSString *named);
 NPP_API NSString *nppGetPath(NSString *named);
 NPP_API NSString *nppMakePath(NSString *named);
-NPP_API NSURL *nppMakeURL(NSString *named);
-
-NPP_API NSString *nppStringFromFile(NSString *named);
-NPP_API NSData *nppDataFromFile(NSString *named);
-NPP_API UIImage *nppImageFromFile(NSString *named);
-NPP_API NSArray *nppImagesFromFiles(NSString *namePattern);
-
-// Single name or numeric # pattern. Starting at #1.
-NPP_API UIImageView *nppImageViewFromFile(NSString *namePattern);
-
-// XIB file must has the same name/class as the item.
-NPP_API id nppItemFromXIB(NSString *name);
-
 NPP_API BOOL nppFileExists(NSString *named);
+NPP_API id nppItemFromXIB(NSString *name); // XIB file must has the same name/class as the item.
 
-NPP_API float nppPointsDistance(CGPoint pointA, CGPoint pointB);
-NPP_API CGRect nppGetScreenRectOriented(BOOL oriented);
+//*************************
+//	Bundle Functions
+//*************************
 
-NPP_API void nppPerformAction(id target, SEL action);
-NPP_API NPPTargetAction nppGetTargetActionFromGesture(UIGestureRecognizer *gesture);
+// Bundle functions are optimized to run once per run, because it can't change during run time.
+NPP_API NSString *nppGetBundleVersion(void);
+NPP_API NSString *nppGetBundleBuild(void);
+NPP_API NSString *nppGetBundleName(void);
+NPP_API NSString *nppGetBundleID(void);
 
-// Application level are retrieved once per run, because it can't change during run time.
-NPP_API NSString *nppGetApplicationVersion(void);
-NPP_API NSString *nppGetApplicationBuild(void);
-NPP_API NSString *nppGetApplicationName(void);
-NPP_API NSString *nppGetApplicationBundleID(void);
-NPP_API NSString *nppGetApplicationWebUserAgent(void);
-NPP_API BOOL nppApplicationHasBackgroundMode(NSString *backgroundMode);
-NPP_API BOOL nppApplicationHasAnyBackgroundMode(void);
-NPP_API BOOL nppApplicationIsInBackground(void);
+//*************************
+//	Localized Functions
+//*************************
 
+/*!
+ *					Gets the localized string according to the Localized User Settings in the device.
+ *
+ *	@param			string
+ *					The string constant in the text file.
+ *
+ *	@result			An autoreleased string with the localized text for the informed constant.
+ */
+NPP_API NSString *nppS(NSString *string);
+
+/*!
+ *					Gets the preferred user language, including the country code based on User Settings.
+ *
+ *	@result			An autoreleased string with the language code.
+ */
 NPP_API NSString *nppGetLanguage(void);
 
-// The file's name and the object must be the same, similar to ViewController approach.
-NPP_API id nppGetBundleObject(NSString *name);
+//*************************
+//	Utils Functions
+//*************************
 
+/*!
+ *					This function performs an action on a target safely.
+ *
+ *	@param			target
+ *					The object in which the action will be performed.
+ *
+ *	@param			action
+ *					The selector to perform.
+ */
+NPP_API void nppPerformAction(id target, SEL action);
+
+/*!
+ *					Gets the localized string according to the Localized User Settings in the device.
+ *
+ *	@param			size
+ *					The number of characters to generate (length).
+ *
+ *	@param			canRepeat
+ *					It defines if the characters can repeat or not.
+ *
+ *	@param			canUpperCase
+ *					It defines if the characters can be in upper case of if it'll be all lower case.
+ *
+ *	@result			An autoreleased string with the generated hash.
+ */
 NPP_API NSString *nppGenerateHash(unsigned int size, BOOL canRepeat, BOOL canUpperCase);
-NPP_API NSString *nppGenerateUUID(void); // Universal Unique Identifier (UUID).
 
+/*!
+ *					Generates a hash in the Universal Unique Identifier (UUID) format:
+ *						- (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+ *
+ *	@result			An autoreleased string with the generated hash.
+ */
+NPP_API NSString *nppGenerateUUID(void);
+
+/*!
+ *					This function swizzles two methods of a class. Use this function wisely.
+ *					It's reversible, but once you made a change, you must remember that the methods
+ *					are already swapped.
+ *
+ *	@param			class
+ *					The target class that will swizzle methods.
+ *
+ *	@param			old
+ *					The old selector.
+ *
+ *	@param			new
+ *					The new selector.
+ */
 NPP_API void nppSwizzle(Class aClass, SEL old, SEL newer);
 
-// Indicates if the context was created. Must call UIGraphicsEndImageContext(); to finish the context.
-NPP_API BOOL nppGraphicsBeginImageContext(CGSize size, BOOL opaque, float scale);
+//*************************
+//	Beta API
+//*************************
 
-// By default, it'll check for "beta". This function is always case insensitive.
+/*!
+ *					This function is part of the Beta Control API is very useful to control many
+ *					things on your application safely.
+ *
+ *					It is in a safe way to set conditional things bound to the application certificate,
+ *					more specifically to your application Bundle Identifier. To avoid uploading
+ *					"BETA" stuff to the stores, you can define a special portion to your Bundle ID,
+ *					like: com.mycompany.MyApp-Beta.
+ *
+ *					By default, this API assumes "beta" (case insensitive) as the Beta String.
+ *
+ *					Why is this API good?
+ *						- You're not bound to a provisioning profile;
+ *						- You're not bound to arch (simulator or device);
+ *						- You have full control over all the variables in this way;
+ *						- You don't need to worry about releasing a "BETA" stuff by mistake;
+ *						- You can change it any time during the runtime.
+ *
+ *	@result			A BOOL indicating if the BETA is active or not.
+ */
 NPP_API BOOL nppBetaCheck(void);
+
+/*!
+ *					This function is part of the Beta Control API is very useful to control many
+ *					things on your application safely.
+ *
+ *					Here you can define the Beta String, which is a portion of the application Bundle ID
+ *					that will be used to consider it a "BETA".
+ *
+ *	@param			betaString
+ *					The string which will be considered the "BETA" portion.
+ */
 NPP_API void nppBetaSetString(NSString *betaString);

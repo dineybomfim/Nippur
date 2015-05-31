@@ -1,22 +1,45 @@
 /*
- *	NPPImage+UIImage.h
- *	Nippur
- *	v1.0
+ *	NPPPluginImage.h
+ *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *	
- *	Created by Diney Bomfim on 8/17/12.
- *	Copyright 2012 db-in. All rights reserved.
+ *	Permission is hereby granted, free of charge, to any person obtaining a copy
+ *	of this software and associated documentation files (the "Software"), to deal
+ *	in the Software without restriction, including without limitation the rights
+ *	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *	copies of the Software, and to permit persons to whom the Software is
+ *	furnished to do so, subject to the following conditions:
+ *
+ *	The above copyright notice and this permission notice shall be included in
+ *	all copies or substantial portions of the Software.
+ *
+ *	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *	THE SOFTWARE.
  */
 
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPColor+UIColor.h"
+#import "NPPInterfaceFunctions.h"
+#import "NPPPluginColor.h"
 
+#import <UIKit/UIKit.h>
+
+//TODO
 #if NPP_IOS
 	#define NPP_IMAGE				UIImage
 #else
 	#define NPP_IMAGE				NSImage
 #endif
+
+// Single name or numeric # pattern. Starting at #1.
+NPP_API UIImage *nppImageFromFile(NSString *named);
+NPP_API NSArray *nppImagesFromFiles(NSString *namePattern);
+NPP_API UIImageView *nppImageViewFromFile(NSString *namePattern);
 
 @interface NPPImage : NPP_IMAGE
 {

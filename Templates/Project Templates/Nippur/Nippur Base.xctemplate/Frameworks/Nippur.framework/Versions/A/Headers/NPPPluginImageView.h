@@ -1,7 +1,7 @@
 /*
- *	NPPPickerView.h
+ *	NPPPluginImageView.h
  *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
- *	
+ *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
  *	in the Software without restriction, including without limitation the rights
@@ -25,31 +25,32 @@
 #import "NippurAnimation.h"
 
 #import "NPPPluginView.h"
-#import "NPPWindowKeyboard.h"
+#import "NPPPluginImage.h"
 
-@interface NPPPickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate>
+//TODO
+#if NPP_IOS
+	#define NPP_IMAGE_VIEW			UIImageView
+#else
+	#define NPP_IMAGE_VIEW			NSImageView
+#endif
 
-+ (void) setPickerDelegate:(id <UIPickerViewDelegate>)target;
+typedef void (^NPPBlockImage)(NPP_ARC_UNSAFE NPPImage *image);
 
-+ (void) setDataFromDict:(NSDictionary *)dict sortData:(BOOL)sorting;
-+ (void) setDataFromFile:(NSString *)fileNamed sortData:(BOOL)sorting;
+@interface UIImageView (NPPImageView)
 
-+ (NSString *) selectedTextAtColumn:(NSUInteger)column;
-+ (NSInteger) selectedRowAtColumn:(NSUInteger)column;
+- (void) loadURL:(NSString *)url;
 
-+ (void) selectText:(NSString *)text atColumn:(NSUInteger)column;
-+ (void) selectRow:(NSUInteger)row atColumn:(NSUInteger)column;
+/*!
+ *					Loads image asynchronously from online URL or local path.
+ *					This method first attempts to load a local cache and then, based on a minimum
+ *					update interval it will try to reload/update the online URL if necessary.
+ *
+ *					The completion block will notify about the loaded image. This block is dispatched once
+ *					when a final result is found, that means, 1) local cache within the minimum update
+ *					interval or 2) a loaded imagem. It can return nil if it fails loading an image.
+ */
+- (void) loadURL:(NSString *)url placeholder:(UIImage *)placeholder completion:(NPPBlockImage)block;
 
-+ (void) showPickerView;
-+ (void) hidePickerView;
-+ (void) movePickerViewToY:(float)toY;
-
-+ (NPPPickerView *) instance;
-
-@end
-
-@interface NPPDataManager(NPPPickerData)
-
-+ (NSDictionary *) pickerDataWithArray:(NSArray *)array;
++ (void) definePlaceholder:(NSString *)fileNamed;
 
 @end

@@ -1,5 +1,5 @@
 /*
- *	NPPPickerView.h
+ *	NPPPluginArray.h
  *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *	
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,35 +21,52 @@
  *	THE SOFTWARE.
  */
 
-#import "NippurCore.h"
-#import "NippurAnimation.h"
+#import "NPPRuntime.h"
+#import "NPPFunctions.h"
 
-#import "NPPPluginView.h"
-#import "NPPWindowKeyboard.h"
+/*!
+ *					Utils package to the basic array object.
+ */
+@interface NSArray(NPPArray)
 
-@interface NPPPickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate>
 
-+ (void) setPickerDelegate:(id <UIPickerViewDelegate>)target;
+/*!
+ *					Performs a selector in all items.
+ *
+ *	@param			selector
+ *					The selector to be performed.
+ */
+- (void) performSelectorInAllItems:(SEL)selector;
 
-+ (void) setDataFromDict:(NSDictionary *)dict sortData:(BOOL)sorting;
-+ (void) setDataFromFile:(NSString *)fileNamed sortData:(BOOL)sorting;
-
-+ (NSString *) selectedTextAtColumn:(NSUInteger)column;
-+ (NSInteger) selectedRowAtColumn:(NSUInteger)column;
-
-+ (void) selectText:(NSString *)text atColumn:(NSUInteger)column;
-+ (void) selectRow:(NSUInteger)row atColumn:(NSUInteger)column;
-
-+ (void) showPickerView;
-+ (void) hidePickerView;
-+ (void) movePickerViewToY:(float)toY;
-
-+ (NPPPickerView *) instance;
+/*!
+ *					Returns the most repeated item in this collection. If two or more items have the same
+ *					repeat count, only the first one will be returned.
+ *
+ *	@result			The item it self.
+ */
+- (id) mostRepeatedItem;
 
 @end
 
-@interface NPPDataManager(NPPPickerData)
+/*!
+ *					Utils package to the mutable array object.
+ */
+@interface NSMutableArray(NPPArray)
 
-+ (NSDictionary *) pickerDataWithArray:(NSArray *)array;
+/*!
+ *					Adds an object once. This method uses #isEqual:# method to compare two items.
+ *
+ *	@param			anObject
+ *					The object to add once.
+ */
+- (void) addObjectOnce:(id)anObject;
+
+/*!
+ *					Acts as the #addObjectOnce:#, but looping on an array.
+ *
+ *	@param			otherArray
+ *					An array with items to add once.
+ */
+- (void) addObjectsOnceFromArray:(NSArray *)otherArray;
 
 @end

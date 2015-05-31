@@ -1,5 +1,5 @@
 /*
- *	NPPPickerView.h
+ *	NPPPluginFont.h
  *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *	
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,32 +24,23 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
-#import "NPPPluginView.h"
-#import "NPPWindowKeyboard.h"
+//TODO
+#if NPP_IOS
+	#define NPP_FONT				UIFont
+#else
+	#define NPP_FONT				NSFont
+#endif
 
-@interface NPPPickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface UIFont(NPPFont)
 
-+ (void) setPickerDelegate:(id <UIPickerViewDelegate>)target;
+// Main fonts.
+- (UIFont *) nppFont;
+- (UIFont *) nppFontWithSize:(CGFloat)pointSize;
++ (UIFont *) nppFontRegularWithSize:(CGFloat)pointSize;
++ (UIFont *) nppFontBoldWithSize:(CGFloat)pointSize;
++ (UIFont *) nppFontItalicWithSize:(CGFloat)pointSize;
 
-+ (void) setDataFromDict:(NSDictionary *)dict sortData:(BOOL)sorting;
-+ (void) setDataFromFile:(NSString *)fileNamed sortData:(BOOL)sorting;
-
-+ (NSString *) selectedTextAtColumn:(NSUInteger)column;
-+ (NSInteger) selectedRowAtColumn:(NSUInteger)column;
-
-+ (void) selectText:(NSString *)text atColumn:(NSUInteger)column;
-+ (void) selectRow:(NSUInteger)row atColumn:(NSUInteger)column;
-
-+ (void) showPickerView;
-+ (void) hidePickerView;
-+ (void) movePickerViewToY:(float)toY;
-
-+ (NPPPickerView *) instance;
-
-@end
-
-@interface NPPDataManager(NPPPickerData)
-
-+ (NSDictionary *) pickerDataWithArray:(NSArray *)array;
++ (void) defineFontRegular:(NSString *)regular bold:(NSString *)bold italic:(NSString *)italic;
++ (void) defineFontAscender:(NSString *)fontName value:(CGFloat)value;
 
 @end

@@ -1,10 +1,24 @@
 /*
  *	NPPThread.h
- *	Nippur
- *	v1.0
+ *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
+ *	
+ *	Permission is hereby granted, free of charge, to any person obtaining a copy
+ *	of this software and associated documentation files (the "Software"), to deal
+ *	in the Software without restriction, including without limitation the rights
+ *	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *	copies of the Software, and to permit persons to whom the Software is
+ *	furnished to do so, subject to the following conditions:
  *
- *	Created by Diney Bomfim on 08/19/13.
- *	Copyright 2012 db-in. All rights reserved.
+ *	The above copyright notice and this permission notice shall be included in
+ *	all copies or substantial portions of the Software.
+ *
+ *	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *	THE SOFTWARE.
  */
 
 #import "NPPRuntime.h"
@@ -27,12 +41,12 @@
  *					the tasks after processing it, instead it will retain any task and execute them again
  *					at every new cycle. In this mode, you must explicit remove a task or remove all.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, NPPThreadType)
 {
 	NPPThreadTypeNormal,
 	NPPThreadTypeAutoExit,
 	NPPThreadTypeContinuous,
-} NPPThreadType;
+};
 
 @class NPPThread;
 
@@ -101,7 +115,8 @@ NPP_API void nppThreadExit(NSString *name);
 NPP_API void nppThreadExitAll(void);
 
 /*!
- *					The
+ *					This class is a wrapper and a plugin for the default NSThread. It helps to manage
+ *					a thread and to perform multiple tasks in that thread.
  */
 @interface NPPThread : NSObject
 {

@@ -1,25 +1,49 @@
 /*
  *	NPPModelVO.h
- *	Nippur
- *	v1.0
+ *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *	
- *	Created by Diney Bomfim on 4/6/13.
- *	Copyright 2013 db-in. All rights reserved.
+ *	Permission is hereby granted, free of charge, to any person obtaining a copy
+ *	of this software and associated documentation files (the "Software"), to deal
+ *	in the Software without restriction, including without limitation the rights
+ *	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *	copies of the Software, and to permit persons to whom the Software is
+ *	furnished to do so, subject to the following conditions:
+ *
+ *	The above copyright notice and this permission notice shall be included in
+ *	all copies or substantial portions of the Software.
+ *
+ *	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *	THE SOFTWARE.
  */
 
 #import "NPPRuntime.h"
 #import "NPPJSON.h"
 #import "NPPDataManager.h"
 
+/*!
+ *					The base model class for MVC format. This abstract model defines very important and
+ *					key methods for saving and loading models directly to binary files with the secure
+ *					framework encription.
+ *
+ *					Besides, this class can work with JSON formats for server side inputs and outputs.
+ */
 @interface NPPModelVO : NSObject <NPPJSONSource, NSCoding, NSCopying>
 
 /*!
  *					Creates a new model using the same format as dataForJSON. This method will
  *					make a call to #updateWithData:#
  *
- *	@see			updateWithData:
+ *	@param			data
+ *					The data in a format that is acceptable by this model.
  *
  *	@result			An instance of this model.
+ *
+ *	@see			updateWithData:
  */
 - (id) initWithData:(id)data;
 
@@ -27,9 +51,12 @@
  *					Creates a new model using the same format as dataForJSON. This method will
  *					make a call to #updateWithData:#
  *
- *	@see			updateWithData:
+ *	@param			data
+ *					The data in a format that is acceptable by this model.
  *
  *	@result			An autoreleased instance of this model.
+ *
+ *	@see			updateWithData:
  */
 + (id) modelWithData:(id)data;
 
@@ -37,9 +64,9 @@
  *					Creates a new model using a local file priviously saved using the
  *					#saveToFile:folder:# method.
  *
- *	@see			saveToFile:folder:
- *
  *	@result			An autoreleased instance of this model.
+ *
+ *	@see			saveToFile:folder:
  */
 + (id) modelFromFile:(NSString *)fileName folder:(NPPDataFolder)folder;
 
@@ -54,7 +81,7 @@
  *	@param			data
  *					It can be NSString, NSNumber, NSArray or NSDictionary.
  *
- *	@see			dataForJSON
+ *	@see			NPPJSONSource::dataForJSON
  */
 - (void) updateWithData:(id)data;
 
