@@ -1,10 +1,10 @@
-# Nippur
-
 [![Version](https://img.shields.io/cocoapods/v/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![License](https://img.shields.io/cocoapods/l/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![Platform](https://img.shields.io/cocoapods/p/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![CI Status](https://img.shields.io/travis/dineybomfim/Nippur.svg?style=flat)](https://travis-ci.org/dineybomfim/Nippur)
 [![Coverage Status](https://img.shields.io/coveralls/dineybomfim/Nippur.svg?style=flat)](https://coveralls.io/r/dineybomfim/Nippur)
+
+[![Nippur](http://db-in.com/nippur/images/nippur.png)]
 
 ## Installation
 
