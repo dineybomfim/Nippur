@@ -13,16 +13,14 @@ Nippur is compatible with iOS 6 or later.
 <img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></img>
 
 Nippur is available through [CocoaPods](http://cocoapods.org/pods/Nippur). To install
-it, simply add the following line to your Podfile:
+it, simply add the following line to your Podfile and Prefix Header (.pch):
 
 ```ruby
 pod "Nippur"
 ```
 
-On you prefix header (.pch)
-
 ```objc
-import "Nippur.h"
+#import "Nippur.h"
 ```
 
 Nippur is made by 5 packages (modules), which you can import and use individually.
@@ -33,7 +31,7 @@ Nippur is made by 5 packages (modules), which you can import and use individuall
 <img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"></img>
 
-You can pick one or more using the subspecs:
+You can pick one or more using the subspecs, use the following lines on your Podfile and Prefix Header (.pch):
 
 ```ruby
 pod "Nippur/Core"
@@ -43,14 +41,12 @@ pod "Nippur/Geolocation"
 pod "Nippur/Media"
 ```
 
-On you prefix header (.pch)
-
 ```objc
-import "NippurCore.h"
-import "NippurAnimation.h"
-import "NippurInterface.h"
-import "NippurGeolocation.h"
-import "NippurMedia.h"
+#import "NippurCore.h"
+#import "NippurAnimation.h"
+#import "NippurInterface.h"
+#import "NippurGeolocation.h"
+#import "NippurMedia.h"
 ```
 
 ## Core
