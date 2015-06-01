@@ -64,12 +64,21 @@
  *
  *	@param			obj
  *					The notification's object.
+ */
++ (void) defaultCenterPostMainNotification:(NSString *)name object:(id)obj;
+
+/*!
+ *					Force posting a notification on main thread using the default notification center.
+ *
+ *	@param			name
+ *					The notification's name.
+ *
+ *	@param			obj
+ *					The notification's object.
  *
  *	@param			info
  *					The notification's info.
  */
-+ (void) defaultCenterPostMainNotification:(NSString *)name
-									object:(id)obj
-								  userInfo:(NSDictionary *)info;
++ (void) defaultCenterPostMainNotification:(NSString *)name object:(id)obj userInfo:(NSDictionary *)info;
 
 @end

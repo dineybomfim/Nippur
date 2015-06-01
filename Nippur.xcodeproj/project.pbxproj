@@ -32,7 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		60C932C01B1237E100C17196 /* NPPPluginDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 60C932BE1B1237E100C17196 /* NPPPluginDictionary.h */; };
+		60C932C01B1237E100C17196 /* NPPPluginDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 60C932BE1B1237E100C17196 /* NPPPluginDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60C932C11B1237E100C17196 /* NPPPluginDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C932BF1B1237E100C17196 /* NPPPluginDictionary.m */; };
 		B5AC24141B01446D0046D26E /* Nippur.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5AC23881B01446D0046D26E /* Nippur.bundle */; };
 		B5AC24151B01446D0046D26E /* NippurAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC238B1B01446D0046D26E /* NippurAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -166,7 +166,7 @@
 		B5AC24971B01446D0046D26E /* NPPCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24111B01446D0046D26E /* NPPCamera.m */; };
 		B5AC24981B01446D0046D26E /* NPPVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC24121B01446D0046D26E /* NPPVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5AC24991B01446D0046D26E /* NPPVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC24131B01446D0046D26E /* NPPVideo.m */; };
-		B5AC249C1B014D220046D26E /* NPPInterfaceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC249A1B014D220046D26E /* NPPInterfaceFunctions.h */; };
+		B5AC249C1B014D220046D26E /* NPPInterfaceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = B5AC249A1B014D220046D26E /* NPPInterfaceFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5AC249D1B014D220046D26E /* NPPInterfaceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AC249B1B014D220046D26E /* NPPInterfaceFunctions.m */; };
 /* End PBXBuildFile section */
 
@@ -576,7 +576,6 @@
 				B5AC242F1B01446D0046D26E /* NPPDataManager.h in Headers */,
 				B5AC24911B01446D0046D26E /* NPPWindowOverlay.h in Headers */,
 				B5AC24561B01446D0046D26E /* NPPModelGeolocationVO.h in Headers */,
-				60C932C01B1237E100C17196 /* NPPPluginDictionary.h in Headers */,
 				B5AC244D1B01446D0046D26E /* NPPGeolocationManager.h in Headers */,
 				B5AC24411B01446D0046D26E /* NPPRuntime.h in Headers */,
 				B5AC248F1B01446D0046D26E /* NPPWindowKeyboard.h in Headers */,
@@ -605,8 +604,9 @@
 				B5AC24791B01446D0046D26E /* NPPPickerView.h in Headers */,
 				B5AC24771B01446D0046D26E /* NPPNotificationView.h in Headers */,
 				B5AC243D1B01446D0046D26E /* NPPNumber.h in Headers */,
-				B5AC249C1B014D220046D26E /* NPPInterfaceFunctions.h in Headers */,
+				60C932C01B1237E100C17196 /* NPPPluginDictionary.h in Headers */,
 				B5AC24731B01446D0046D26E /* NPPLabel.h in Headers */,
+				B5AC249C1B014D220046D26E /* NPPInterfaceFunctions.h in Headers */,
 				B5AC24651B01446D0046D26E /* NPPButton.h in Headers */,
 				B5AC241E1B01446D0046D26E /* NPPActionRepeat.h in Headers */,
 				B5AC241C1B01446D0046D26E /* NPPActionMove.h in Headers */,

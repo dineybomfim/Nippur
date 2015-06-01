@@ -168,6 +168,8 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 - (void) closeConnection;
 - (void) cancelConnection;
 
+- (void) parseResponse:(NSURLResponse *)response;
+
 @end
 
 #pragma mark -
@@ -381,24 +383,54 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	//*************************
 	//	Connector
 	//*************************
-	
+	//*
 	// Creates the connection.
 	nppRelease(_conn);
 	nppRelease(_receivedData);
 	_receivedData = [[NSMutableData alloc] init];
-	_conn = [[NSURLConnection alloc] initWithRequest:_request delegate:self startImmediately:YES];
+	_conn = [[NSURLConnection alloc] initWithRequest:_request delegate:self startImmediately:NO];
+	[_conn scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+	[_conn start];
 	
 	if (_conn == nil)
 	{
 		[self closeConnection];
 	}
-	
-	// Just send notification for the first attempt and when it's logging.
-	if (_currentRetry == 0 && _logging)
+	/*/
+	void (^block)(NSData *, NSURLResponse *, NSError *) = ^(NSData *d, NSURLResponse *r, NSError *e)
 	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidStart object:self];
-		//nppBlockMain();
-	}
+		[self parseResponse:r];
+		
+		nppRelease(_receivedData);
+		_receivedData = [d copy];
+		
+		nppRelease(_error);
+		_error = [e copy];
+		
+		if (_error == nil)
+		{
+			_state = NPPConnectorStateCompleted;
+			[self closeConnection];
+		}
+		else
+		{
+			if (_currentRetry < _retries)
+			{
+				++_currentRetry;
+				[self startConnection];
+			}
+			else
+			{
+				_state = NPPConnectorStateFailed;
+				[self closeConnection];
+			}
+		}
+	};
+	NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+	NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+	NSURLSessionDataTask *task = [session dataTaskWithRequest:_request completionHandler:block];
+	[task resume];
+	//*/
 	
 	//*************************
 	//	Log
@@ -407,13 +439,18 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	if (_logging)
 	{
 		NSString *method = [_request HTTPMethod];
+		NSDictionary *headers = [_request allHTTPHeaderFields];
 		
 		// Starting the log.
 		nppRelease(_log);
 		_log = [[NSMutableString alloc] init];
 		[_log appendFormat:@"%@", [[NSDate date] stringWithFormat:@"yyyy-MM-dd HH:mm:ss:SSS"]];
 		[_log appendFormat:@" REQUEST: %@ %@", method, [[_request URL] absoluteString]];
-		[_log appendFormat:@" HEADER: %@", [NPPJSON stringWithObject:[_request allHTTPHeaderFields]]];
+		
+		if (headers != nil)
+		{
+			[_log appendFormat:@" HEADER: %@", [NPPJSON stringWithObject:headers]];
+		}
 		
 		if ([method isEqualToString:kNPPHTTPMethodPOST] || [method isEqualToString:kNPPHTTPMethodPUT])
 		{
@@ -425,29 +462,30 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 		// Log in console.
 		nppLog(@"%@", [_log stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""]);
 	}
+	
+	//*************************
+	//	Notification
+	//*************************
+	
+	// Just send notification for the first attempt and when it's logging.
+	//if (_currentRetry == 0 && _logging)
+	if (_currentRetry == 0)
+	{
+		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidStart object:self];
+	}
 }
 
 - (void) closeConnection
 {
-	// Callback block.
-	nppBlock(_block, self);
-	
-	// Closing the connection.
-	[_conn cancel];
-	
-	// Cleaning up the connectors.
-	NSMutableArray *connectors = nppGetConnectors();
-	[connectors removeObjectIdenticalTo:self];
+	//*************************
+	//	Notification
+	//*************************
 	
 	// Just send notification when it's logging.
-	if (_logging)
+	//if (_logging)
 	{
 		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidFinish object:self];
-		//nppBlockMain();
 	}
-	
-	// Resets the number of retries.
-	_currentRetry = 0;
 	
 	//*************************
 	//	Log
@@ -466,6 +504,24 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	}
 	
 	nppRelease(_log);
+	
+	//*************************
+	//	Closing
+	//*************************
+	
+	// Callback block.
+	nppBlock(_block, self);
+	nppRelease(_block);
+	
+	// Closing the connection.
+	[_conn cancel];
+	
+	// Cleaning up the connectors.
+	NSMutableArray *connectors = nppGetConnectors();
+	[connectors removeObjectIdenticalTo:self];
+	
+	// Resets the number of retries.
+	_currentRetry = 0;
 }
 
 - (void) cancelConnection
@@ -476,6 +532,22 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	_state = NPPConnectorStateCancelled;
 	
 	[self closeConnection];
+}
+
+- (void) parseResponse:(NSURLResponse *)response
+{
+	if ([response respondsToSelector:@selector(statusCode)])
+	{
+		_statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
+	}
+	
+	if ([response respondsToSelector:@selector(allHeaderFields)])
+	{
+		nppRelease(_receivedHeader);
+		_receivedHeader = nppRetain([(NSHTTPURLResponse *)response allHeaderFields]);
+	}
+	
+	_contentLength = [response expectedContentLength];
 }
 
 #pragma mark -
@@ -492,40 +564,23 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-	if ([response respondsToSelector:@selector(statusCode)])
-	{
-		_statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
-	}
-	
-	if ([response respondsToSelector:@selector(allHeaderFields)])
-	{
-		nppRelease(_receivedHeader);
-		_receivedHeader = nppRetain([(NSHTTPURLResponse *)response allHeaderFields]);
-	}
-	
-	_contentLength = [response expectedContentLength];
 	_state = NPPConnectorStateReceiving;
+	[self parseResponse:response];
+	
+	//*************************
+	//	Notification
+	//*************************
 	
 	// Just send notification when it's logging.
-	if (_logging)
+	//if (_logging)
 	{
 		[[NSNotificationCenter defaultCenter] postNotificationName:kNPPKeyConnectorDidResponse object:self];
-		//nppBlockMain();
 	}
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	[_receivedData appendData:data];
-	
-	//TODO another subclass.
-	/*
-	 if (_isStreaming)
-	 {
-	 nppBlock(_block, self);
-	 [_receivedData setData:nil];
-	 }
-	 //*/
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection

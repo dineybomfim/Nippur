@@ -56,70 +56,61 @@
 //**************************************************
 
 NPP_STATIC_READONLY(NSMutableDictionary, nppImageViewProperties);
-//NPP_STATIC_READONLY(nppImageViewCache, NSMutableDictionary);
-static NSMutableDictionary *nppImageViewCache(void)
+static NSCache *nppImageViewCache(void)
 {
-	static NSMutableDictionary *_default = nil;
+	static NSCache *_default = nil;
 	
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^(void)
-				  {
-					  _default = [[NSMutableDictionary alloc] init];
-					  [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidReceiveMemoryWarningNotification
-																		object:nil
-																		 queue:[NSOperationQueue mainQueue]
-																	usingBlock:^(NSNotification *notification)
-					   {
-						   [_default removeAllObjects];
-					   }];
-				  });
+	{
+		_default = [[NSCache alloc] init];
+		_default.countLimit = 1000;
+		
+		NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+		[center addObserverForName:UIApplicationDidReceiveMemoryWarningNotification
+							object:nil
+							 queue:[NSOperationQueue mainQueue]
+						usingBlock:^(NSNotification *notification)
+		{
+			[_default removeAllObjects];
+		}];
+	});
 	
 	return _default;
 }
 
 static NSString *nppImageKey(NSURLRequest *request)
 {
-	// Best performance with Base64 routine.
-	return [[[request URL] absoluteString] encodeBase64];
+	NSString *key = nil;
+	
+	switch (request.cachePolicy)
+	{
+		case NSURLRequestReloadIgnoringLocalCacheData:
+		case NSURLRequestReloadIgnoringLocalAndRemoteCacheData:
+			break;
+		default:
+			// Best performance with Base64 routine.
+			key = [[[request URL] absoluteString] encodeBase64];
+			break;
+	}
+	
+	return key;
 }
-/*
- static UIImage *nppImageLoadCache(NSString *imageKey)
- {
-	NSMutableDictionary *cache = nppImageViewCache();
-	
-	return [cache objectForKey:imageKey];
- }
- 
- static void nppImageSaveCache(NSString *imageKey, UIImage *image)
- {
-	NSMutableDictionary *cache = nppImageViewCache();
-	
-	[cache setObject:image forKey:imageKey];
- }
- /*/
+
 static UIImage *nppImageLoadCache(NSString *imageKey)
 {
-	NSMutableDictionary *cache = nppImageViewCache();
+	NSCache *cache = nppImageViewCache();
 	UIImage *image = [cache objectForKey:imageKey];
-	
-	if (image == nil)
-	{
-		image = [NPPDataManager loadFile:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
-		
-		if (image != nil)
-		{
-			[cache setObject:image forKey:imageKey];
-		}
-	}
 	
 	return image;
 }
 
 static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 {
-	[NPPDataManager saveFile:image name:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+	NSCache *cache = nppImageViewCache();
+	
+	[cache setObject:image forKey:imageKey];
 }
-//*/
 
 #pragma mark -
 #pragma mark Private Category
@@ -175,13 +166,15 @@ static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 //
 //**********************************************************************************************************
 
-@implementation UIImageView (NPPImageView)
+@implementation UIImageView(NPPImageView)
 
 #pragma mark -
 #pragma mark Properties
 //**************************************************
 //	Properties
 //**************************************************
+
+NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_RETAIN);
 
 #pragma mark -
 #pragma mark Constructors
@@ -204,57 +197,59 @@ static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 - (void) loadURL:(NSString *)url
 {
 	NSMutableDictionary *info = nppImageViewProperties();
-	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] completion:nil];
+	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] override:YES];
 }
 
-- (void) loadURL:(NSString *)url placeholder:(UIImage *)placeholder completion:(NPPBlockImage)block
+- (void) loadURL:(NSString *)url placeholder:(UIImage *)image override:(BOOL)overriding
 {
-	UIImage *image = nil;
+	// Cancelling previous loadings.
+	if (overriding)
+	{
+		[NPPConnector cancelConnector:[self connector]];
+	}
 	
 	if ([url hasPrefix:@"http"])
 	{
-		self.image = placeholder;
-		
 		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
 		[request setHTTPShouldHandleCookies:YES];
 		[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-		[request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
 		
 		NSString *key = nppImageKey(request);
-		UIImage *image = nppImageLoadCache(key);
+		UIImage *cache = nppImageLoadCache(key);
 		
-		if (image != nil)
+		if (cache != nil)
 		{
-			self.image = image;
-			//nppBlock(block, [image NPPImage]);
+			self.image = cache;
 		}
 		else
 		{
-			NPPBlockVoid bgBlock = ^(void)
-			{
-				[NPPConnector connectorWithRequest:request completion:^(NPPConnector *connector)
-				 {
-					 UIImage *image = [UIImage imageWithData:connector.receivedData];
-					 
-					 if (image != nil)
-					 {
-						 nppImageSaveCache(key, image);
-						 nppBlockMain(^(void){ self.image = image; });
-						 //nppBlock(block, [image NPPImage]);
-					 }
-				 }];
-			};
+			self.image = image;
 			
-			nppBlockBG(bgBlock);
+			NPPConnector *conn = nil;
+			conn = [NPPConnector connectorWithRequest:request completion:^(NPPConnector *connector)
+			{
+				UIImage *newImage = [UIImage imageWithData:connector.receivedData];
+				
+				if (newImage != nil)
+				{
+					nppImageSaveCache(key, newImage);
+					
+					//TODO Prevents older loadings to override new loadings.
+					self.image = newImage;
+				}
+				
+				[self setConnector:nil];
+			 }];
+			
+			[self setConnector:conn];
 		}
 	}
 	else
 	{
-		UIImage *image = nppImageFromFile(url);
-		image = (image != nil) ? image : placeholder;
+		UIImage *localImage = nppImageFromFile(url);
+		localImage = (localImage != nil) ? localImage : image;
 		
-		self.image = image;
-		//nppBlock(block, [image NPPImage]);
+		self.image = localImage;
 	}
 }
 

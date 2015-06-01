@@ -7,896 +7,897 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02025607D2FFAD80C0520705 /* NPPGeohash.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A980466D2AC5432565B9E4 /* NPPGeohash.h */; };
-		03CFEB6BFFEDA23128DDD4AB /* NPPWindowOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C3A65EE6D81175B9BA2CF /* NPPWindowOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0407FA2417842DBC30AE5437 /* NPPActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5FF9F1950BFC73882EE58 /* NPPActionBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0514C0EB88776B3E8B22EF0C /* NPPModelGeolocationVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9C08CF677A4D5B88CBBBD8 /* NPPModelGeolocationVO.h */; };
-		06187A2B142BE33B5B499DDD /* NPPPluginString.h in Headers */ = {isa = PBXBuildFile; fileRef = 2406D240AB99DD963FD74259 /* NPPPluginString.h */; };
-		06E069B48C3452324835C5BF /* NPPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A4A9B46D100480FF5C1989 /* NPPEffects.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0835E11B01EF20972D34F4B9 /* NPPModelPlaceVO.h in Headers */ = {isa = PBXBuildFile; fileRef = BA54BF74AFAB476002281A96 /* NPPModelPlaceVO.h */; };
-		0937A341501DF3A117248097 /* NPPNotificationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2189CA4EB2A66C59DF746B1F /* NPPNotificationView.h */; };
-		0BC7AFD86F682DB841325A83 /* NPPModelRouteNodeVO.h in Headers */ = {isa = PBXBuildFile; fileRef = A122AE6F9EBFF09336399F9E /* NPPModelRouteNodeVO.h */; };
-		0C9D5260ACD7600C31E8F1B6 /* NPPPluginColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A213437A3E0F8666EF34F9C3 /* NPPPluginColor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0D4F5E813B131A20C0251577 /* NPPDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 528D3D43CCB4BD39F4DDF18D /* NPPDataManager.h */; };
-		122FBDECB69F4DF678B7D748 /* NPPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C14F6C8C56415F79D857CAEE /* NPPRuntime.h */; };
-		153BA47218537BE88F20C835 /* NPPActionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC21093452CFBD19639507 /* NPPActionSelector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		191A88BA061080181AC7AEC4 /* NippurCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E15BC6D7E298B639FE2200 /* NippurCore.h */; };
-		1AFBB43C770827340A58C423 /* NPPActionSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C31C08C94E7C6C0FD5381CC /* NPPActionSequence.h */; };
-		1B33F4E73EB6B971F4C82A78 /* NPPWindowOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 05E894A0C70462EEBAA76AC5 /* NPPWindowOverlay.h */; };
-		1E113220215209288A3FF337 /* NPPTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 595E9B3493493DDEBC20ED3E /* NPPTableViewCell.h */; };
-		1F2E2278C7025063DB093A33 /* NPPStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 110BAF6DDDBB6B2FCBE59BAE /* NPPStatusBar.h */; };
-		203249EAF09BBE8DFF9BBF01 /* NPPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F40C360DBCCBE31A10A5AAF1 /* NPPJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		22A6D9F0F2F400D70852D35D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC1A25685EC306E8800C324 /* AudioToolbox.framework */; };
-		2422C8C3C84A041D63C6C525 /* NPPStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3621452EC2F89DACA54D3C /* NPPStatusBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2492A9D4D99B9183259F9961 /* NPPTextFieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563CA54CA19A04D73AA9DFE3 /* NPPTextFieldManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		28E4DD777BFB2510A5BB94AC /* NPPVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 24816072CB243994A74851B9 /* NPPVideo.h */; };
-		2953AB64978FCF4354143B62 /* NPPModelGeoregionVO.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAF69E5EA5FA3F4F3548FEB /* NPPModelGeoregionVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2BDDCA0EE70879DAAD0B962F /* NPPLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = A83744BEA6C45A73893427D0 /* NPPLabel.h */; };
-		2C725E1966E752F60925B717 /* NippurAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 97FE455B08197B5F2D1D2C21 /* NippurAnimation.h */; };
-		2C81A77E17091D5E24DFB424 /* NPPModelGeoregionVO.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D2972167083FDEAF8877F1 /* NPPModelGeoregionVO.h */; };
-		2CEC7E2F83ED43FDEE16B20C /* NPPPluginColor.h in Headers */ = {isa = PBXBuildFile; fileRef = BFD52C4C73F7855AF50B237F /* NPPPluginColor.h */; };
-		2E32CA6E4D9A6F8F43791D8F /* NPPPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DFF115DDCFEBD9AB63E7A2 /* NPPPickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		304C457E89DF6FF7BA508263 /* NPPTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C244C695D948301E0952EC /* NPPTableViewSection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		30FBCCCFF3D17BCC603FB6D2 /* Pods-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2583BE040A46950E0D003 /* Pods-ios-dummy.m */; };
-		3122CB2B67CE2C4A789A4995 /* NPPModelRouteNodeVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 219386ADB9E0DF80AC4F129C /* NPPModelRouteNodeVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		32043070981F6F8A0FAFBF6C /* NPPPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F431B8A0ACE0391F099A4D3C /* NPPPluginView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		32D7EB4EB5D901E4A8A9C479 /* NPPTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = E6B76825CBCE63372FDE4BBF /* NPPTextField.h */; };
-		332FAC057276990E3BF61FBA /* NPPNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = E830C545FB4BB516AC3D5897 /* NPPNumber.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3351ACB5F9DBAA97721542C5 /* NPPWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = C2F48B6A9DCFAB20868440BF /* NPPWindow.h */; };
-		34F14C0BE28E5846F38820AF /* NPPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B46BBC5E8BA613F7C30908 /* NPPTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		3591E9F1BCFD82336F65789D /* NPPAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 11DD40A5BDAE30C7716E7643 /* NPPAlertView.h */; };
-		362A251F355DAE50795FC04B /* NPPPluginImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA8D05744E8207C2DF55F3B /* NPPPluginImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		36C1D7030E9D751D51A07170 /* NPPThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 652C908989F856F7C7C204E4 /* NPPThread.h */; };
-		3F68CEAF889DC0D87F3C9DD6 /* NPPPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = C432760CF672015B910E48F2 /* NPPPickerView.h */; };
-		40781F9114C1CEEFDA929132 /* NPPModelAddressVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BB9DEF7DC9CB57A5E5C9BC /* NPPModelAddressVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		45FECD655FB6850E2640B54B /* NPPTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B5FBAD5532A006DDBF565B /* NPPTimer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		476858743B45B095B088A1BE /* NPPConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 68419E504A9B539275BD6503 /* NPPConnector.h */; };
-		48430BF6336F8E7287BBD58A /* NPPGeoserverApple.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1837D6D0264DF61EB0B2EB /* NPPGeoserverApple.h */; };
-		4A65F608FC6194B94040DFEE /* NPPTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 72D48D04C4F02FD5FE54DCC5 /* NPPTableViewController.h */; };
-		4D1F0AFF38F1126383840CC7 /* Nippur.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94E813E52A7C883C360A0D44 /* Nippur.bundle */; };
-		4DDEEA1C78EEE6E8D04DB137 /* NPPActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 05C01E76AC627C55E08D6432 /* NPPActionSheet.h */; };
-		4E46EE4A70F1B721B4B0DA26 /* NippurInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 32139C6EC0293DFE59A1E5BF /* NippurInterface.h */; };
-		502B24AB4025C0D3D350F1C4 /* NPPPluginFont.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2A346F20132EC11EC77B9A /* NPPPluginFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		596048D930136E675363F9B8 /* NPPTester.m in Sources */ = {isa = PBXBuildFile; fileRef = F02D8E664F5CBB39CD748650 /* NPPTester.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		59AF7A3C7120A120363FCCEA /* NPPPluginString.m in Sources */ = {isa = PBXBuildFile; fileRef = B75383A80712D0623D4A0C1E /* NPPPluginString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5B8D7932F097AAD66F2B2E6D /* NPPModelVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B0604BC90DC7832DEB79A9 /* NPPModelVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		60626ACF07A26340213176B3 /* NPPCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A3E64A80D7AA42E8039A2E /* NPPCipher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		633FC69F692FEDE51EA5F4D7 /* NPPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E8BC69B8E1621909B63E7 /* NPPThread.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		65FBBDDD6ED03903F650F652 /* NPPLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E63A573D7862AA5BCB1472 /* NPPLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		670B7FCCA56C6AF296E75207 /* NPPPluginNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE605527E8FFD0CA03D1C5 /* NPPPluginNotificationCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		688E9CA33B445E1566C2DB12 /* NPPCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 30CB7FA481932C2AC3F4EA3D /* NPPCipher.h */; };
-		6A25078BAB19F110F2EFDFF4 /* NPPPluginNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 35B7374276E6DE5CDB3E8F13 /* NPPPluginNotificationCenter.h */; };
-		6A4EC3C86180EA2CEFAA196B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33F00CAA88B34ED83A43E4F /* CoreVideo.framework */; };
-		6B05666821913C940CEF85D1 /* NPPWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A6544AE97361B36F1879AA /* NPPWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6B80B0C9465A05A409AEFB78 /* NPPGeoserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F30249C197FF84F83D3686 /* NPPGeoserver.h */; };
-		6C023E29A1FE5F6A6AF29F0E /* NPPVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D720CE6CB55EBACD1651C3 /* NPPVideo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6E5B81195AD8B4AFE6447566 /* NPPActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C567062EE8475E652B5A21 /* NPPActionSheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7362A8D234304DE7BFEDD97E /* NPPPluginFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 11F22C99505AB47698473F98 /* NPPPluginFont.h */; };
-		7538FE1B40EC7DDE2B1911D2 /* NPPActionMove.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0760ACFDE4481585C37F02 /* NPPActionMove.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		75AF55593AB33FC4CE465CF2 /* NPPNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E308C6D98690007E7A288C /* NPPNotificationView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7615AF3C0F5B3699C6762AD1 /* NPPFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B7640DF3F664D04F9013A /* NPPFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		79A0D941BEE985D4589F8A0A /* NPPModelVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 46C903E18DA3C230BFE94DFC /* NPPModelVO.h */; };
-		7A9647C139015520DEE343D0 /* NPPGeoserverApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 931C7A482892CAE8407B49F2 /* NPPGeoserverApple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7FB07CFA5A193D85BB04E7F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C4FA0112C54C757B33E85A /* UIKit.framework */; };
-		828AC5FA68322668923A1133 /* NPPPluginArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE57FDC3339537B3ADFED27 /* NPPPluginArray.h */; };
-		84CA3A1A27D4E56FDA81A45D /* NPPCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 94630E9222832F4A7F6D0FCF /* NPPCamera.h */; };
-		8824104012775A7A4026093E /* NPPNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBB448C663FF6BD042417C3 /* NPPNumber.h */; };
-		89058D7DAABEF1ED71B1EFEC /* NPPPluginDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A2F9B93280C3A8565D394C /* NPPPluginDictionary.h */; };
-		8CD23A4A1935E2B913DDE85E /* NPPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B469FFD0BFDC19ACC54D932 /* NPPTextField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8F513D9F8F30E246F2FFBD2C /* NPPActionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD3D6CE589E08F456BF7208 /* NPPActionGroup.h */; };
-		9094D659FAB2F2BC60D3256A /* NPPModelGeolocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E9525B250DFEE1D183EEA /* NPPModelGeolocationVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		91C9C59A995DB3990F4CD238 /* Pods-ios-Nippur-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FEEFD09A8A92C233D1BC4 /* Pods-ios-Nippur-dummy.m */; };
-		93C1A7924D5C39EF48B723E9 /* NPPLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 784DA13E78D648288C5186CF /* NPPLogger.h */; };
-		95E0FC0ADF4467E0F9E53622 /* NPPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E44B65CADAC3848F621985 /* NPPAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		966E778B9B7C2673A0CD38B6 /* NPPModelAddressVO.h in Headers */ = {isa = PBXBuildFile; fileRef = E4E95B70ED05AE2ED3FB19F6 /* NPPModelAddressVO.h */; };
-		968415ECA13500D1470D4B97 /* NPPInterfaceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F41D4EBB74CBEE45F95C4D2 /* NPPInterfaceFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		968C0206AE40A10C98133530 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AAA034BE25158F5A14FD09 /* CoreLocation.framework */; };
-		99FFCBC53DE6523FF09C0231 /* NPPTester.h in Headers */ = {isa = PBXBuildFile; fileRef = CC88876D0E0B4FB4498599EB /* NPPTester.h */; };
-		9AE82BE80332C7AEA8848696 /* NPPModelCountryVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC722FEA07ADED2ACC1714D /* NPPModelCountryVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9D621554A2F4D753520D8A37 /* NPPWindowKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = A39637956100BB662F7B514D /* NPPWindowKeyboard.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9F00D704A58DBF5BE0FAA7A8 /* NPPEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = A8FFE74522118A16C3430429 /* NPPEffects.h */; };
-		A1E4EAECD126745B058C588A /* NPPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = CA014BD1DDAD1FEFE6B4C0F3 /* NPPConnector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A34F832CC397E00F862BBDB1 /* NPPNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = B91CDA66C149F81E90FF9BFA /* NPPNavigator.h */; };
-		A7F010DC951ECAE69AD99EA6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546204B3D722DCB05843BC05 /* Foundation.framework */; };
-		AA48290D9D1E2B88AD2D4DB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546204B3D722DCB05843BC05 /* Foundation.framework */; };
-		AAC593B55CB23F8A5B4F1777 /* NPPActionRepeat.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E8B41320F72BF9DD243773 /* NPPActionRepeat.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AAEDB827E0BEAF4DEDE4F7BA /* NPPPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DD662F95DD26A1679185013 /* NPPPluginView.h */; };
-		ABE86F75F4868A7E4205505A /* NPPKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 93043E970E6DC9D235238FE9 /* NPPKeyboardToolbar.h */; };
-		AC2B6AC4DE50754E528F4040 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1106193BD5F78DB207BA9AC0 /* AVFoundation.framework */; };
-		AC60AA511ECAAE2F639B3523 /* NippurMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 03ED84F0C3F49BEFBE92660B /* NippurMedia.h */; };
-		AFD7B9B825F464DDAD2E6538 /* NPPTextFieldManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA3CB372E2832A1AB8BDC29 /* NPPTextFieldManager.h */; };
-		B108A020BDF783DAB6C0971B /* NPPRegEx.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0A7491AD6B40618E157A32 /* NPPRegEx.h */; };
-		B1867D609C738F8734E133D5 /* NPPFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5153F3F59E9C4668ED723F00 /* NPPFunctions.h */; };
-		B58A3E2D5BDB431B02E1A36E /* NPPScrollLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDA56508D61624C98AC0830 /* NPPScrollLabel.h */; };
-		B665E758700375E30072A628 /* NPPGeolocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7457630F6E2CFF2362B569 /* NPPGeolocationManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B67CBC06936CACC66D2A1B41 /* NPPInterfaceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = A9D1D1D188812D3CFE0CC82F /* NPPInterfaceFunctions.h */; };
-		BCA41045BCC6C00E9849AF29 /* NPPPluginImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = D295011F98F03688DAEC1B98 /* NPPPluginImageView.h */; };
-		BEC53A74A5AD76FA7B7D55CA /* NippurGeolocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A00A3C6E47EE787E2041822 /* NippurGeolocation.h */; };
-		C0728742E7FF58241797457E /* NPPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 177452FD26143470E8F78374 /* NPPDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C6797CD3469C437817658A6A /* NPPPluginArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8879294261CCDE88E94686 /* NPPPluginArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C9DEAEA2D27E70FE3C2F100C /* NPPNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 88111B627BF7744187704E61 /* NPPNavigator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CA534076CF1114B57992DAD4 /* NPPRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = FFD03394A304343440FF3974 /* NPPRefreshControl.h */; };
-		CB2087F75F0F29260E1EBBE9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DE3430A33D1F6D5FAFAB86 /* QuartzCore.framework */; };
-		CC81DE9F6BA109FA4EB022FD /* NPPCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E86F42D17519D7288DF4E3B /* NPPCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CCF67A78818FC3029F2716A8 /* NPPModelPlaceVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FB72553400825C8290C720 /* NPPModelPlaceVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CD4AA30F96A4DEE300F9EA16 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42046982DD3DC791EE862E18 /* CoreMedia.framework */; };
-		CE550D3FD26B6E6D1D8ABAE5 /* NPPPluginDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5FAA0D7660EADF469C51B /* NPPPluginDate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CF2DC635FE2CCAE0ABA91A38 /* NPPClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ECE5A2E4AFBC8AA624BBAF /* NPPClockManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CF963C304E89240655D039DF /* NPPJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 79E5DEE5755A7F62F6A84A53 /* NPPJSON.h */; };
-		D10077CA087F9AD1D3F1408A /* NPPActionSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F21D42FA0E1CA0B54C9FF /* NPPActionSequence.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D2648A85E3754685C1177008 /* NPPBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = F1829F28F314565D42B2A805 /* NPPBadgeView.h */; };
-		D3743B6298CC6614CA4392D9 /* NPPWindowKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0DC9251D928C2E6C807E23 /* NPPWindowKeyboard.h */; };
-		D3DA491F238AF8B450794E16 /* NPPPluginImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBF4ED482380FEEBDD440C4 /* NPPPluginImage.h */; };
-		D780B410F2D6E7891F9E073A /* NPPGeohash.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1059DC8377E60ADFE91623 /* NPPGeohash.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DB35E79A1991A97190F4E528 /* NPPActionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 917B596B30FDA1E838D4A1C2 /* NPPActionSelector.h */; };
-		DC80364A564736D3344468D5 /* NPPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3023A4FD6D4D01B7680004E0 /* NPPButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DF2527881F885AF6E1D55D58 /* NPPPluginDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C4DA0A80B44ED9D6F6F86B /* NPPPluginDictionary.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DFAFEE3A4C0C0C33F18B38A0 /* NPPPluginImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B2CE914E46475A4F2AF21B /* NPPPluginImage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E14D1C34772E289093737513 /* NPPButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EC2CFEF7F4BB7CAA12F5EB /* NPPButton.h */; };
-		E22D0884BB4BA0DED6ABAD3D /* NPPModelCountryVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 8467091746E64E8EA1846FB6 /* NPPModelCountryVO.h */; };
-		E73063087B1D56E4C2C1512A /* NPPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 430B8B009C3797D0D5115FDD /* NPPTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E926960AA987410C73F417D0 /* NPPGeolocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D41B36B28D46C9F0A45C02 /* NPPGeolocationManager.h */; };
-		E9BC8BC45133DC73E8CE78DF /* NPPActionMove.h in Headers */ = {isa = PBXBuildFile; fileRef = 67B9C8D6E59D879B3436B6CD /* NPPActionMove.h */; };
-		EB9492E741C6829FBC7A6143 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C803FB9233D7ACEC26F4657 /* CoreGraphics.framework */; };
-		EC6CA5EAA5E58DB6CF3C931A /* NPPAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 55630759FEA3C5EB08BAD5CB /* NPPAudio.h */; };
-		ECC72C761E588EA3E38E3A3E /* NPPRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7011AD05BE1E01027D3DE0C0 /* NPPRefreshControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		ED36A51D7CAC4D391C84810A /* NPPScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA35A719941240AC1ABAEBF0 /* NPPScrollLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		ED650B41D069A83116F364E1 /* NPPPluginDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE29DB001B0B088E7D0BB0F /* NPPPluginDate.h */; };
-		EEAF5E8F247DA46AF6477AD3 /* NPPKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D613BDE2F26BA29F5E7ABA /* NPPKeyboardToolbar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EFC4578CEADD0418A0729A58 /* NPPClockManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BF8F3D1D9B656CDDA9A537A8 /* NPPClockManager.h */; };
-		EFDA33A3FFDFF0BA2386A1E3 /* NPPActionRepeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3512229F205C4B1198CA2DB3 /* NPPActionRepeat.h */; };
-		F0A87E45ABEC98456E432EAB /* NPPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC4DB080A3120A2BFF76FE /* NPPBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F1263160D23B16E138264B9C /* NPPTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB86D1C3931BE1B7809E997 /* NPPTimer.h */; };
-		F2914F572586A7102043D2AD /* NPPActionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 06BF0DE3829704C6138B376C /* NPPActionBlock.h */; };
-		F5AADD6AD6A7384350EEA2DE /* NPPAction.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F6E530322FB1EF43F36DD1 /* NPPAction.h */; };
-		F5E9E6ECA2697CB20B03FEC7 /* NPPActionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D30E4A5977AF1F88A8DC53 /* NPPActionGroup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F710AAAD3004BAED33F89B5B /* NPPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC81521670187C676D4ECA71 /* NPPAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F966E33BF985ADA8883A63A1 /* NPPTableViewSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 82846F613525F943D2C8091B /* NPPTableViewSection.h */; };
-		F9C846061A24FBCE1231AFC1 /* NPPLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875C8D1EB3D5E49B8F95D54 /* NPPLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FA81E9C4402F4F85CE27BF88 /* NPPRegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4F1316C65C90C85042A0EF /* NPPRegEx.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FCF810FE397F77D929AF0A1C /* NPPAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EC6E49F87C18021D14288F /* NPPAudio.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00F1197E4473DBCB1EFE98E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E33FD3356281DD0C0A7EE0 /* AVFoundation.framework */; };
+		00FDACB9C4861787CB233527 /* NPPPluginImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 291A35479AAD8669736EC66E /* NPPPluginImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		023473DEF4823DFCED86FE3C /* NPPThread.h in Headers */ = {isa = PBXBuildFile; fileRef = E5A3111468DC1C4294761FE4 /* NPPThread.h */; };
+		052150AF7A9E728F2D26F580 /* NPPPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DB8D089CA0797EFF49D42E84 /* NPPPickerView.h */; };
+		052E41152E5DA97DB9406FA9 /* NPPPluginFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 418F88A12B687EDC1FACF35C /* NPPPluginFont.h */; };
+		07DEBB5702B73C9D27B9E4BD /* NPPPluginDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 539C11DF330C559E09C37121 /* NPPPluginDate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		085619CC12B2AE40CC71C447 /* NPPPluginArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A6D12CC94E454CD014FA65 /* NPPPluginArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0A2E4786EA08DD7BA5D99247 /* NPPActionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD781D787075B2CE70A240C /* NPPActionSelector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0CFAB983F6981B9641A98C38 /* NPPStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D3FFAA5897AC092745E222 /* NPPStatusBar.h */; };
+		0DFC3EEA31C6C889219118EC /* NPPPluginColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19780599311AEF6E7008A0B9 /* NPPPluginColor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		10506F8F00205097560E50A3 /* NPPGeoserverApple.h in Headers */ = {isa = PBXBuildFile; fileRef = 79F7B05D407E2AAE4F77AA89 /* NPPGeoserverApple.h */; };
+		162C072AF66B27CDE3E7DC69 /* NPPPluginImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = A76816438F119A611C3DDB73 /* NPPPluginImageView.h */; };
+		17126B5465AC201DCA64A7BE /* NPPEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F82C1D68B800AF6204B0D56 /* NPPEffects.h */; };
+		17B1490BE76D4A4D54C02B13 /* NPPActionSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EE878B74DA6324AC83EA88 /* NPPActionSequence.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18BA288DE71CBBD29E8D52AC /* NPPWindowOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D744E53C94F4C277560A16 /* NPPWindowOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FB8BFBE9BF428A8B1A7767 /* NPPNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = 30680A7E4890F849FC7B59C0 /* NPPNumber.h */; };
+		1B6C43158C9ABCE5770ACFBC /* NPPScrollLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA5695465F4B5FD77DF0473 /* NPPScrollLabel.h */; };
+		1C403E9D3CCE0CD9A5B2B6A7 /* NPPFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E6C291CB42242F09224580 /* NPPFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C93D5244AE9305DD8854D72 /* NPPGeolocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F2D00E14E09B4E53B16E /* NPPGeolocationManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1E110FEC80A4E01A428CD57D /* NPPBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = A58E7834F5EF507BB510CF7E /* NPPBadgeView.h */; };
+		1F322B31EC18D902014A2162 /* NPPCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B3F3EF7D95CB5044042AC6 /* NPPCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		21C59D69BBB21D2BED57DB31 /* NPPGeohash.m in Sources */ = {isa = PBXBuildFile; fileRef = 7527249F5894C37140576EDC /* NPPGeohash.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		27D6F6D9B72B791D763CCE0C /* NippurInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B12ADEB257365C9DB2C5B6AC /* NippurInterface.h */; };
+		288EBC7BFF14A0B700009645 /* NPPAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 500AD5321CDA406BE12588D5 /* NPPAlertView.h */; };
+		28C063830FF377D465D2F23B /* NPPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = BBDC4E57EC5967D97BC80820 /* NPPRuntime.h */; };
+		2B9C8310873867C9DCACF7C1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481816041D0FB6F4B1424440 /* CoreMedia.framework */; };
+		2E8F451B817F7804DB896160 /* NPPPluginString.m in Sources */ = {isa = PBXBuildFile; fileRef = CC946EC99D82F3CE7BA58E98 /* NPPPluginString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		314858ECDF4C98F28D0717DC /* NPPModelCountryVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F25D8CC4A51E720D84D0F7B /* NPPModelCountryVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3148DB1708C710339C80BEFD /* NPPActionSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = C6CD6192699BFC0183014CD4 /* NPPActionSequence.h */; };
+		31871519B7B84E24435C231A /* NPPWindowKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 999B57E8D78C304D9A4CEB0F /* NPPWindowKeyboard.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		320EE6D3F7644AD288FF2880 /* NippurAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = FC89D721D1D4CDDE8B4108BB /* NippurAnimation.h */; };
+		35285C97C50DA4956F4FB398 /* NPPPluginArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 38FCF86DE89227253E56062C /* NPPPluginArray.h */; };
+		38AF91534B986072D7411501 /* NPPCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 180E0FAC06C263EE5743CE48 /* NPPCipher.h */; };
+		39294A280DE05B0ADE8E6FF5 /* NPPModelRouteNodeVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 2296F18177A4EC5EA75CBBF5 /* NPPModelRouteNodeVO.h */; };
+		39CE99D2F9B0D3BD60179E54 /* NPPPluginNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD76CCE5D3E35229353A860 /* NPPPluginNotificationCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3DA4E8CE6CEA7E973402B445 /* NPPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD8D4960378A626AEC6D37 /* NPPEffects.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3E83C5C9BBA94CC562FCCC05 /* NPPPluginNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 993FA61795B201A0364EFB7E /* NPPPluginNotificationCenter.h */; };
+		3FE9985BF51D10D45D6064F3 /* NPPPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAC2B4E0001EFE45F21A2C /* NPPPickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		41E4130C0D68C476AC4409CF /* NPPRegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE361B5D04A7C081FB66754 /* NPPRegEx.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4228587B3ED13FF441BEA35F /* NPPModelCountryVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B60E09BFD6AFD0B405B09CA /* NPPModelCountryVO.h */; };
+		4328DD8558B11480D0287A3E /* NPPNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E080070CC62C2B1A45B48A1 /* NPPNumber.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4464789997E6E6A067CE5452 /* NPPRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = D4FD94CC674E594F9A2E8C47 /* NPPRefreshControl.h */; };
+		44ADB9178B2C1F0BD75F9085 /* NPPTextFieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE213DD4CD51694E5FC7E9F0 /* NPPTextFieldManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4533275D9ECB81BFCFE53D77 /* NPPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E45650AE25ECA493540A4854 /* NPPJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		455559A248B2925B6E58AD45 /* NPPActionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3129AD6E369EA5E2C49C6 /* NPPActionGroup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		482A79D8B7E3E34F2F6DFFDA /* NPPCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C69A5EDC403FEE36A9BDFE9A /* NPPCipher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		49B9FAD0EC16DCA6CC34C58B /* NPPVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 54DF0197BE06A651DA1943E8 /* NPPVideo.h */; };
+		4CF991D50774E54B598FD4A8 /* NPPLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F67199F31B6BCD27E4EF43 /* NPPLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4F3AC836A6A5D3FBE8341D73 /* NPPModelGeoregionVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 85DF36709B88D4603CD5CA62 /* NPPModelGeoregionVO.h */; };
+		4F4D4ED3D00D035F3DD4DA09 /* NippurMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A9838F7412CD594A4FE27D /* NippurMedia.h */; };
+		511D2D9795E4FBE595122B89 /* NPPPluginDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 79660F4752B05A33646A5E29 /* NPPPluginDictionary.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		52A98A2B315DD8EE90EDC191 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D0AA51775D43A106035EE /* CoreGraphics.framework */; };
+		5357993A3F874E619BAEC69F /* NPPTextFieldManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1FC703EEBD36ED40A21157 /* NPPTextFieldManager.h */; };
+		554BB1E5EF332F34C1616AEF /* NPPTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 5478FE81D79A331DBA60E9DA /* NPPTextField.h */; };
+		57D3D2900C7B50970F6C4304 /* NPPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E82081E8186B0E2486BA902 /* NPPTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5802045E6A3E521CB9B0DCAB /* NPPModelAddressVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 0345E3C3738C2520F5FA1E15 /* NPPModelAddressVO.h */; };
+		58441A1574DBD0038BE62522 /* NPPTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D75D658FE576D1583172D97 /* NPPTimer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5899BFEE77EEF156A472C260 /* NPPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC13D4DF8B33B2BE49FFB05 /* NPPConnector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E9D27ECFD32247860A16EE5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A519ABBBBD2C6D7A088D1F /* CoreVideo.framework */; };
+		613BFE756204B3B8B026D90F /* NPPGeoserver.h in Headers */ = {isa = PBXBuildFile; fileRef = A4866D5980F1A60FF19E6F80 /* NPPGeoserver.h */; };
+		61FC756828D8C5E65A780210 /* NPPJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 5130B09B2ABDFE406A63129B /* NPPJSON.h */; };
+		62207C10C93AB2A354FAC255 /* NPPDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C045E32B8B42C2B10E0DAA /* NPPDataManager.h */; };
+		62A009595060038DBA20B70D /* NippurCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BABC4BBE98C338583718016F /* NippurCore.h */; };
+		6830E58EDF42A00269C01043 /* NPPScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B840506FFC374F87D08CA929 /* NPPScrollLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6865CE1B1E4376D149C3671F /* NPPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 572305F6391CC21D710EFEA1 /* NPPDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		694B0450AA90BF3609F54F93 /* NPPActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = D5FCFEF35B8E19388654F89A /* NPPActionSheet.h */; };
+		6A50E64CC5E6A67F51ABE0FD /* NPPWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D188CF3413CB35C77306C04 /* NPPWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6AE832E662E36D9777C54421 /* NPPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 054717929E495ED7CDBDDBE7 /* NPPAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6B986B045FBDCC3E2D2DEE2C /* NPPWindowOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7DA6350C4B2C25AFE9FB98 /* NPPWindowOverlay.h */; };
+		6C059A463958A5A1777B95C4 /* Pods-ios-Nippur-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC94E6A9A04DA1AA43C5E73 /* Pods-ios-Nippur-dummy.m */; };
+		6C1383C1D9ADFB9C61D19D7B /* NPPTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCC37EF87C4FB613335FC94 /* NPPTableViewCell.h */; };
+		6C851671EC130766AEE81668 /* NPPModelRouteNodeVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B57AE56B7AD06F41EB7E44BC /* NPPModelRouteNodeVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6C87E8F5318F15B907117A8E /* NPPActionSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 22125E2BB2A834EE4849EA5E /* NPPActionSelector.h */; };
+		6C929691741E3767D6FF4D8A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EBCB29A204941FF4D0EFAE /* QuartzCore.framework */; };
+		701EA87D841759EE51D30E2C /* NPPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8143EECA68425954175260A2 /* NPPTextField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7375675D2F27007143A0C0BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F960515FFC5D9784178D41D /* UIKit.framework */; };
+		7388DBD5F59F5353305BB7D4 /* NippurGeolocation.h in Headers */ = {isa = PBXBuildFile; fileRef = F3114750289E7F49951BB522 /* NippurGeolocation.h */; };
+		76A57351955AC49E9D562A9B /* NPPInterfaceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 668517DA4016312FF05C13DB /* NPPInterfaceFunctions.h */; };
+		7782B84535E10136D483DDB2 /* Pods-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 693D1878F4355208685A9C17 /* Pods-ios-dummy.m */; };
+		77BAE5917C8D60D7816A6612 /* NPPModelGeolocationVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E89CD9C8E83004E82675EE /* NPPModelGeolocationVO.h */; };
+		77BE29980D27E6B294AE0693 /* NPPActionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 193D09AD6681433272D666B2 /* NPPActionBlock.h */; };
+		788F628BDE596A758FDF071F /* NPPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 52440A38C6CB0ED538E54804 /* NPPThread.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7B3E19C42E3498AF6F0CD9E6 /* NPPNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1765E45D1507249A1D3EC78 /* NPPNotificationView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1ABAC56F40EC3B931CBFB4 /* NPPAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 60686D894A2C9396B55BB45D /* NPPAudio.h */; };
+		7CBA4E0E93DCC245EA811A70 /* NPPTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8288DB48C66804473FF68054 /* NPPTimer.h */; };
+		7D2A739924E87B3B2431D6F1 /* NPPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8584798D3197E50BFBED1D9 /* NPPAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E39BDFB8A3B895D848BF3C8 /* NPPLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = CF8D5A328CC9488001A903AA /* NPPLogger.h */; };
+		80AC796065764D9B45E33A1A /* NPPModelPlaceVO.m in Sources */ = {isa = PBXBuildFile; fileRef = B27FC08601A3038181952E3C /* NPPModelPlaceVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		819445BBBC0A067C5C7E6DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66393672B5564F99288CE1D8 /* Foundation.framework */; };
+		82EC720F725C734940AB8B51 /* NPPClockManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E502CF132555DD008E8B8C /* NPPClockManager.h */; };
+		84A10B5901EFE0408CDC96B1 /* NPPActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BEBA7B19F27DA6475E16A9 /* NPPActionBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8551ABBF3EE905DBE48AE0BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66393672B5564F99288CE1D8 /* Foundation.framework */; };
+		89AF49E684EEEAEDED1C7A46 /* NPPNotificationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 209843EB4CC7B93A31D6A76E /* NPPNotificationView.h */; };
+		8A96026A4C7ECB07B9B23A38 /* NPPModelVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E29FEDC3AA1378D003B4EF6 /* NPPModelVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8D447D71DF167C2FE066C9CB /* NPPGeohash.h in Headers */ = {isa = PBXBuildFile; fileRef = 921B18ED11C5BFCB903891D5 /* NPPGeohash.h */; };
+		8DF2F484DEE81D389BBCBEB2 /* NPPButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 95ED0BE3F598BA56010D84A6 /* NPPButton.h */; };
+		8E4B68BC81AF40B9DB532F8B /* NPPFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC367510983C01259FE7623 /* NPPFunctions.h */; };
+		8F45FA15AEAD544E8CD0C5AA /* NPPActionMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 80053233B084A8C89BB7FB12 /* NPPActionMove.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8F4E0EC515CD7EB497C1AC0E /* NPPModelGeolocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8159C498B83B2A7FE7EA67 /* NPPModelGeolocationVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		904C73F35AC8935C42C4CB47 /* Nippur.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24408DFFDECF116CFBFD0586 /* Nippur.bundle */; };
+		91F77F56A9422092C6DFFE37 /* NPPModelAddressVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4A2548C84607107A6BADD2 /* NPPModelAddressVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		92E38D7080265763296A466F /* NPPRegEx.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE377417BC33DCD7D692136 /* NPPRegEx.h */; };
+		93739F0057E32FBCD323AA3E /* NPPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1078FEEF50452177B06DEDD /* NPPButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		939511AAEA3F802569A76BA8 /* NPPRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 566358A4C6DC9142181151BB /* NPPRefreshControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		981B65B6C08266CE87A24DCF /* NPPActionRepeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3020511FBCE7EA0D3CCEA801 /* NPPActionRepeat.h */; };
+		9B96B1D0F0D28B415BE1EFB0 /* NPPTableViewSection.h in Headers */ = {isa = PBXBuildFile; fileRef = F7457C32D214F82D5C9BB6C6 /* NPPTableViewSection.h */; };
+		9CE8883A39681A2F886FEC9E /* NPPGeolocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 88E077EA13C956A0990EB0FE /* NPPGeolocationManager.h */; };
+		9FCFF22AE1807A57EA68CF2D /* NPPTester.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735EAFFB062E13AF7AF6D37 /* NPPTester.h */; };
+		A63ED61E956C82DEAA71A67D /* NPPActionMove.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B08B534D5396A6CE9995338 /* NPPActionMove.h */; };
+		AA4AA7265495378D52A1E51F /* NPPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAC932109B46B70C4056C6 /* NPPTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AA5D1A39F35C95A6AF6F5F4D /* NPPAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A5AB85B75A76DE40A4FD66 /* NPPAction.h */; };
+		AC84CB6EE3B261815B4C7946 /* NPPActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A727535D60FC6E7224790EC /* NPPActionSheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE905F061BA7E66EA98688A7 /* NPPLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 177D0FA92BF8E1E22B445D0F /* NPPLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEE324195A47F6D27B4AE6C1 /* NPPModelPlaceVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 7671A4DB6A9D2FD6820958EE /* NPPModelPlaceVO.h */; };
+		AF4E52CC15874F9B3062997D /* NPPWindowKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D43604CF5A220283988D256 /* NPPWindowKeyboard.h */; };
+		B1ECB81631FE285EF46B3DCE /* NPPPluginColor.h in Headers */ = {isa = PBXBuildFile; fileRef = AFAFF2CF649E00968769195A /* NPPPluginColor.h */; };
+		B8E8F322FF6FE7B232D5EE22 /* NPPInterfaceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 367796719B841577FCA44376 /* NPPInterfaceFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BAAAAA09F08F048FE687684D /* NPPKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC13B08380A56CD0C5194A /* NPPKeyboardToolbar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BACF41E592BF27BD3F258F96 /* NPPTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1202FEA12FEC9571555FE288 /* NPPTableViewController.h */; };
+		BD5821FB1898B3B1723AFA73 /* NPPKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 7591281EB0B62C17F2BA836D /* NPPKeyboardToolbar.h */; };
+		BF6F430B53EE88E413D590E1 /* NPPAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E26DC979D4AC78D8BCA4806 /* NPPAudio.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C089155D00BD921A76713EDE /* NPPClockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CA946FA0A993E5B3895460 /* NPPClockManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C445EDB76B304F4EBC81E194 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345A2237B2FCBC16DDC60C81 /* CoreLocation.framework */; };
+		C45977625337A2A9DA66B09D /* NPPPluginImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DC84E66E41EA2F491413BE /* NPPPluginImage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CD3A53F6C57029F67229A7A5 /* NPPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD5BD66F2239D30F92B852D /* NPPBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D190FB4FBC59C80FDA25F8EF /* NPPTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4E8D20B520B0FE3093E5C /* NPPTableViewSection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2FC40E500369FAEBBB85200 /* NPPPluginString.h in Headers */ = {isa = PBXBuildFile; fileRef = 65E809615D8052DE0DDFC7FC /* NPPPluginString.h */; };
+		D429D580219623D6918ADCF2 /* NPPStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 997407502E3D7EF82FD08B06 /* NPPStatusBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D6E56FD99B46752189FD98DB /* NPPNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B77F077A66459B0BDFF84C7 /* NPPNavigator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D93846B4DF4B68029B31260F /* NPPConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 71F4D2445422E43A48DEE633 /* NPPConnector.h */; };
+		E106B69D624847C56B7E31C9 /* NPPCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7B86762F03A7AC152EF066 /* NPPCamera.h */; };
+		E1C9EB47E5D099952D7F13B5 /* NPPActionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 73297901759BCBF71A7B7A47 /* NPPActionGroup.h */; };
+		E1E932E1665703076D0F0BF3 /* NPPNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = D5F89D2BF50A87DD8DC488A9 /* NPPNavigator.h */; };
+		E1F53D17379CD829D6AFDBFD /* NPPGeoserverApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE88F3F2A29F5D80D95643 /* NPPGeoserverApple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E720C3D165475782E773DC0F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BF94ED0C874A27F2290679 /* AudioToolbox.framework */; };
+		E8C4D920221073059D27193E /* NPPWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 487205806C6C344B67974AB4 /* NPPWindow.h */; };
+		E8DF9C9380C21C1264A8A44C /* NPPModelVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 09DA1E68529B7735EF31C06F /* NPPModelVO.h */; };
+		EB34F6CA28D456E592EDB386 /* NPPPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 665B3074A6A9935F1DA19564 /* NPPPluginView.h */; };
+		EB36AC9E066F8056C10C824F /* NPPPluginDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E670C8EA369B69AE568BF7 /* NPPPluginDate.h */; };
+		EB66DCF84051E32F5B77F037 /* NPPLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = A81008DC58600244CA671FDC /* NPPLabel.h */; };
+		EC889AE3BE76A5208A291CC0 /* NPPPluginFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5246AABDA1426725EDC7D9 /* NPPPluginFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EF36D6C750AFC70BDC4C81E8 /* NPPVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D995AB7A862EF9BFE49726 /* NPPVideo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F3EB6DD118CCF1F960442C8B /* NPPTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 6690495A54A2C6254AA85103 /* NPPTester.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F81EF715BE1C409A91A59B92 /* NPPPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C8615A60764307DB44A284 /* NPPPluginView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FACEBD0123C0538115AEA54D /* NPPModelGeoregionVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE086166533EAA840711B1A /* NPPModelGeoregionVO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FCCD6E4FAF355DDB2DDA8C8A /* NPPPluginImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 974B5DB6A49AC95D64C0CFD3 /* NPPPluginImage.h */; };
+		FE3AC7B7D599F64634CAEF9D /* NPPActionRepeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A4F5EAFBA20E128F02B6C4 /* NPPActionRepeat.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF5EBF762E9ED5148E687AB2 /* NPPPluginDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C9BF1AD7BB6F498FB4BF302 /* NPPPluginDictionary.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0514BB77726944808A6163A9 /* PBXContainerItemProxy */ = {
+		4550D21EBC3B54B609D87DB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F2153D46000E4B01D5A98EBE /* Project object */;
+			containerPortal = 975EDF4B9F54DD31833ED7B7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3AD73EE4F0AD70CCDA30CCF3;
-			remoteInfo = "Pods-ios-Nippur-Nippur";
-		};
-		BE142F3B9F890C2EFA5ABB8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2153D46000E4B01D5A98EBE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C105AAEE67FC5D975B3BD3CB;
+			remoteGlobalIDString = 9AD48CC9079F6903F15A114E;
 			remoteInfo = "Pods-ios-Nippur";
+		};
+		A70A3832C0771DEC19837A97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 975EDF4B9F54DD31833ED7B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4C653F745CD030432EB9B1A;
+			remoteInfo = "Pods-ios-Nippur-Nippur";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00BB9DEF7DC9CB57A5E5C9BC /* NPPModelAddressVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelAddressVO.m; sourceTree = "<group>"; };
-		02ECE5A2E4AFBC8AA624BBAF /* NPPClockManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPClockManager.m; sourceTree = "<group>"; };
-		03ED84F0C3F49BEFBE92660B /* NippurMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurMedia.h; sourceTree = "<group>"; };
-		05C01E76AC627C55E08D6432 /* NPPActionSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionSheet.h; sourceTree = "<group>"; };
-		05E894A0C70462EEBAA76AC5 /* NPPWindowOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPWindowOverlay.h; sourceTree = "<group>"; };
-		06BF0DE3829704C6138B376C /* NPPActionBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionBlock.h; sourceTree = "<group>"; };
-		0CD2583BE040A46950E0D003 /* Pods-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios-dummy.m"; sourceTree = "<group>"; };
-		0DBB448C663FF6BD042417C3 /* NPPNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPNumber.h; sourceTree = "<group>"; };
-		0E1E9525B250DFEE1D183EEA /* NPPModelGeolocationVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelGeolocationVO.m; sourceTree = "<group>"; };
-		0E86F42D17519D7288DF4E3B /* NPPCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPCamera.m; sourceTree = "<group>"; };
-		1106193BD5F78DB207BA9AC0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		110BAF6DDDBB6B2FCBE59BAE /* NPPStatusBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPStatusBar.h; sourceTree = "<group>"; };
-		11DD40A5BDAE30C7716E7643 /* NPPAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPAlertView.h; sourceTree = "<group>"; };
-		11F22C99505AB47698473F98 /* NPPPluginFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginFont.h; sourceTree = "<group>"; };
-		13C4DA0A80B44ED9D6F6F86B /* NPPPluginDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginDictionary.m; sourceTree = "<group>"; };
-		15BE8DCCCD92B0F25B932C3A /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
-		16E44B65CADAC3848F621985 /* NPPAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPAction.m; sourceTree = "<group>"; };
-		177452FD26143470E8F78374 /* NPPDataManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPDataManager.m; sourceTree = "<group>"; };
-		1875C8D1EB3D5E49B8F95D54 /* NPPLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPLabel.m; sourceTree = "<group>"; };
-		1AE29DB001B0B088E7D0BB0F /* NPPPluginDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginDate.h; sourceTree = "<group>"; };
-		1BBF4ED482380FEEBDD440C4 /* NPPPluginImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginImage.h; sourceTree = "<group>"; };
-		1C452F7BA02579118346C478 /* Pods-ios-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ios-acknowledgements.plist"; sourceTree = "<group>"; };
-		1F3621452EC2F89DACA54D3C /* NPPStatusBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPStatusBar.m; sourceTree = "<group>"; };
-		1F9C08CF677A4D5B88CBBBD8 /* NPPModelGeolocationVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelGeolocationVO.h; sourceTree = "<group>"; };
-		20A4A9B46D100480FF5C1989 /* NPPEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPEffects.m; sourceTree = "<group>"; };
-		2189CA4EB2A66C59DF746B1F /* NPPNotificationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPNotificationView.h; sourceTree = "<group>"; };
-		219386ADB9E0DF80AC4F129C /* NPPModelRouteNodeVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelRouteNodeVO.m; sourceTree = "<group>"; };
-		22EC6E49F87C18021D14288F /* NPPAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPAudio.m; sourceTree = "<group>"; };
-		2406D240AB99DD963FD74259 /* NPPPluginString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginString.h; sourceTree = "<group>"; };
-		24816072CB243994A74851B9 /* NPPVideo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPVideo.h; sourceTree = "<group>"; };
-		24D720CE6CB55EBACD1651C3 /* NPPVideo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPVideo.m; sourceTree = "<group>"; };
-		25C567062EE8475E652B5A21 /* NPPActionSheet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionSheet.m; sourceTree = "<group>"; };
-		27BE605527E8FFD0CA03D1C5 /* NPPPluginNotificationCenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginNotificationCenter.m; sourceTree = "<group>"; };
-		2F41D4EBB74CBEE45F95C4D2 /* NPPInterfaceFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPInterfaceFunctions.m; sourceTree = "<group>"; };
-		2FDA56508D61624C98AC0830 /* NPPScrollLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPScrollLabel.h; sourceTree = "<group>"; };
-		3023A4FD6D4D01B7680004E0 /* NPPButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPButton.m; sourceTree = "<group>"; };
-		30CB7FA481932C2AC3F4EA3D /* NPPCipher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPCipher.h; sourceTree = "<group>"; };
-		32139C6EC0293DFE59A1E5BF /* NippurInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurInterface.h; sourceTree = "<group>"; };
-		3512229F205C4B1198CA2DB3 /* NPPActionRepeat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionRepeat.h; sourceTree = "<group>"; };
-		35B7374276E6DE5CDB3E8F13 /* NPPPluginNotificationCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginNotificationCenter.h; sourceTree = "<group>"; };
-		3A1837D6D0264DF61EB0B2EB /* NPPGeoserverApple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeoserverApple.h; sourceTree = "<group>"; };
-		3B2B7640DF3F664D04F9013A /* NPPFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPFunctions.m; sourceTree = "<group>"; };
-		3B8879294261CCDE88E94686 /* NPPPluginArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginArray.m; sourceTree = "<group>"; };
-		3FD3D6CE589E08F456BF7208 /* NPPActionGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionGroup.h; sourceTree = "<group>"; };
-		42046982DD3DC791EE862E18 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
-		430B8B009C3797D0D5115FDD /* NPPTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewCell.m; sourceTree = "<group>"; };
-		43E308C6D98690007E7A288C /* NPPNotificationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPNotificationView.m; sourceTree = "<group>"; };
-		46C903E18DA3C230BFE94DFC /* NPPModelVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelVO.h; sourceTree = "<group>"; };
-		46D30E4A5977AF1F88A8DC53 /* NPPActionGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionGroup.m; sourceTree = "<group>"; };
-		46F30249C197FF84F83D3686 /* NPPGeoserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeoserver.h; sourceTree = "<group>"; };
-		47C244C695D948301E0952EC /* NPPTableViewSection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewSection.m; sourceTree = "<group>"; };
-		4C31C08C94E7C6C0FD5381CC /* NPPActionSequence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionSequence.h; sourceTree = "<group>"; };
-		4CEC4DB080A3120A2BFF76FE /* NPPBadgeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPBadgeView.m; sourceTree = "<group>"; };
-		4DDFAFEEF45B4E4542254E01 /* Nippur.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nippur.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DFC21093452CFBD19639507 /* NPPActionSelector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionSelector.m; sourceTree = "<group>"; };
-		50A3E64A80D7AA42E8039A2E /* NPPCipher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPCipher.m; sourceTree = "<group>"; };
-		5153F3F59E9C4668ED723F00 /* NPPFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPFunctions.h; sourceTree = "<group>"; };
-		51C4FA0112C54C757B33E85A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		528D3D43CCB4BD39F4DDF18D /* NPPDataManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPDataManager.h; sourceTree = "<group>"; };
-		529F21D42FA0E1CA0B54C9FF /* NPPActionSequence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionSequence.m; sourceTree = "<group>"; };
-		5394E2F34B28C102969B3ACF /* libPods-ios-Nippur.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-Nippur.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		546204B3D722DCB05843BC05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		55630759FEA3C5EB08BAD5CB /* NPPAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPAudio.h; sourceTree = "<group>"; };
-		563CA54CA19A04D73AA9DFE3 /* NPPTextFieldManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTextFieldManager.m; sourceTree = "<group>"; };
-		595E9B3493493DDEBC20ED3E /* NPPTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTableViewCell.h; sourceTree = "<group>"; };
-		59A2F9B93280C3A8565D394C /* NPPPluginDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginDictionary.h; sourceTree = "<group>"; };
-		5AC1A25685EC306E8800C324 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
-		652C908989F856F7C7C204E4 /* NPPThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPThread.h; sourceTree = "<group>"; };
-		657040C3BC118C3C1A46C3F6 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		65EC2CFEF7F4BB7CAA12F5EB /* NPPButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPButton.h; sourceTree = "<group>"; };
-		65FB72553400825C8290C720 /* NPPModelPlaceVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelPlaceVO.m; sourceTree = "<group>"; };
-		66AAA034BE25158F5A14FD09 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		67B9C8D6E59D879B3436B6CD /* NPPActionMove.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionMove.h; sourceTree = "<group>"; };
-		68419E504A9B539275BD6503 /* NPPConnector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPConnector.h; sourceTree = "<group>"; };
-		68B5FF9F1950BFC73882EE58 /* NPPActionBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionBlock.m; sourceTree = "<group>"; };
-		7011AD05BE1E01027D3DE0C0 /* NPPRefreshControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPRefreshControl.m; sourceTree = "<group>"; };
-		72D48D04C4F02FD5FE54DCC5 /* NPPTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTableViewController.h; sourceTree = "<group>"; };
-		77A980466D2AC5432565B9E4 /* NPPGeohash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeohash.h; sourceTree = "<group>"; };
-		784DA13E78D648288C5186CF /* NPPLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPLogger.h; sourceTree = "<group>"; };
-		79E5DEE5755A7F62F6A84A53 /* NPPJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPJSON.h; sourceTree = "<group>"; };
-		7A00A3C6E47EE787E2041822 /* NippurGeolocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurGeolocation.h; sourceTree = "<group>"; };
-		7B0A7491AD6B40618E157A32 /* NPPRegEx.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPRegEx.h; sourceTree = "<group>"; };
-		7DB86D1C3931BE1B7809E997 /* NPPTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTimer.h; sourceTree = "<group>"; };
-		7DC722FEA07ADED2ACC1714D /* NPPModelCountryVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelCountryVO.m; sourceTree = "<group>"; };
-		7DD662F95DD26A1679185013 /* NPPPluginView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginView.h; sourceTree = "<group>"; };
-		82846F613525F943D2C8091B /* NPPTableViewSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTableViewSection.h; sourceTree = "<group>"; };
-		840B1039A50867CBC521E90E /* Pods-ios-Nippur.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-Nippur.xcconfig"; sourceTree = "<group>"; };
-		8467091746E64E8EA1846FB6 /* NPPModelCountryVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelCountryVO.h; sourceTree = "<group>"; };
-		88111B627BF7744187704E61 /* NPPNavigator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPNavigator.m; sourceTree = "<group>"; };
-		8AF2F6CBABFB0F1DCD0EAFC6 /* Pods-ios-Nippur-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-Nippur-Private.xcconfig"; sourceTree = "<group>"; };
-		8B5119DA8B10FCDA0CE9B3B4 /* Pods-ios-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ios-environment.h"; sourceTree = "<group>"; };
-		8C52BBB5820218965661EFF2 /* Pods-ios-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ios-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8C803FB9233D7ACEC26F4657 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		8D5E8BC69B8E1621909B63E7 /* NPPThread.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPThread.m; sourceTree = "<group>"; };
-		917B596B30FDA1E838D4A1C2 /* NPPActionSelector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionSelector.h; sourceTree = "<group>"; };
-		93043E970E6DC9D235238FE9 /* NPPKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPKeyboardToolbar.h; sourceTree = "<group>"; };
-		931C7A482892CAE8407B49F2 /* NPPGeoserverApple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPGeoserverApple.m; sourceTree = "<group>"; };
-		94630E9222832F4A7F6D0FCF /* NPPCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPCamera.h; sourceTree = "<group>"; };
-		94E813E52A7C883C360A0D44 /* Nippur.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = Nippur.bundle; sourceTree = "<group>"; };
-		97FE455B08197B5F2D1D2C21 /* NippurAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurAnimation.h; sourceTree = "<group>"; };
-		98A6544AE97361B36F1879AA /* NPPWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPWindow.m; sourceTree = "<group>"; };
-		9A0DC9251D928C2E6C807E23 /* NPPWindowKeyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPWindowKeyboard.h; sourceTree = "<group>"; };
-		9B469FFD0BFDC19ACC54D932 /* NPPTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTextField.m; sourceTree = "<group>"; };
-		A122AE6F9EBFF09336399F9E /* NPPModelRouteNodeVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelRouteNodeVO.h; sourceTree = "<group>"; };
-		A213437A3E0F8666EF34F9C3 /* NPPPluginColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginColor.m; sourceTree = "<group>"; };
-		A33F00CAA88B34ED83A43E4F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
-		A39637956100BB662F7B514D /* NPPWindowKeyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPWindowKeyboard.m; sourceTree = "<group>"; };
-		A6B46BBC5E8BA613F7C30908 /* NPPTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewController.m; sourceTree = "<group>"; };
-		A83744BEA6C45A73893427D0 /* NPPLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPLabel.h; sourceTree = "<group>"; };
-		A8FFE74522118A16C3430429 /* NPPEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPEffects.h; sourceTree = "<group>"; };
-		A9D1D1D188812D3CFE0CC82F /* NPPInterfaceFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPInterfaceFunctions.h; sourceTree = "<group>"; };
-		AA7457630F6E2CFF2362B569 /* NPPGeolocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPGeolocationManager.m; sourceTree = "<group>"; };
-		AC4F1316C65C90C85042A0EF /* NPPRegEx.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPRegEx.m; sourceTree = "<group>"; };
-		AC81521670187C676D4ECA71 /* NPPAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPAlertView.m; sourceTree = "<group>"; };
-		AD8C3A65EE6D81175B9BA2CF /* NPPWindowOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPWindowOverlay.m; sourceTree = "<group>"; };
-		AFA3CB372E2832A1AB8BDC29 /* NPPTextFieldManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTextFieldManager.h; sourceTree = "<group>"; };
-		B3E5FAA0D7660EADF469C51B /* NPPPluginDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginDate.m; sourceTree = "<group>"; };
-		B4D41B36B28D46C9F0A45C02 /* NPPGeolocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeolocationManager.h; sourceTree = "<group>"; };
-		B75383A80712D0623D4A0C1E /* NPPPluginString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginString.m; sourceTree = "<group>"; };
-		B91CDA66C149F81E90FF9BFA /* NPPNavigator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPNavigator.h; sourceTree = "<group>"; };
-		BA35A719941240AC1ABAEBF0 /* NPPScrollLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPScrollLabel.m; sourceTree = "<group>"; };
-		BA54BF74AFAB476002281A96 /* NPPModelPlaceVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelPlaceVO.h; sourceTree = "<group>"; };
-		BF13EE27CB7309FF4B067EE2 /* Pods-ios-Nippur-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ios-Nippur-prefix.pch"; sourceTree = "<group>"; };
-		BF8F3D1D9B656CDDA9A537A8 /* NPPClockManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPClockManager.h; sourceTree = "<group>"; };
-		BFD52C4C73F7855AF50B237F /* NPPPluginColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginColor.h; sourceTree = "<group>"; };
-		C0ABE89BE61F2A4A369C62CB /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C14F6C8C56415F79D857CAEE /* NPPRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPRuntime.h; sourceTree = "<group>"; };
-		C1DE3430A33D1F6D5FAFAB86 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		C2F48B6A9DCFAB20868440BF /* NPPWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPWindow.h; sourceTree = "<group>"; };
-		C432760CF672015B910E48F2 /* NPPPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPickerView.h; sourceTree = "<group>"; };
-		C5E63A573D7862AA5BCB1472 /* NPPLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPLogger.m; sourceTree = "<group>"; };
-		C6E8B41320F72BF9DD243773 /* NPPActionRepeat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionRepeat.m; sourceTree = "<group>"; };
-		C8D2972167083FDEAF8877F1 /* NPPModelGeoregionVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelGeoregionVO.h; sourceTree = "<group>"; };
-		CA014BD1DDAD1FEFE6B4C0F3 /* NPPConnector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPConnector.m; sourceTree = "<group>"; };
-		CA2A346F20132EC11EC77B9A /* NPPPluginFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginFont.m; sourceTree = "<group>"; };
-		CC88876D0E0B4FB4498599EB /* NPPTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTester.h; sourceTree = "<group>"; };
-		CDAF69E5EA5FA3F4F3548FEB /* NPPModelGeoregionVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelGeoregionVO.m; sourceTree = "<group>"; };
-		CE1059DC8377E60ADFE91623 /* NPPGeohash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPGeohash.m; sourceTree = "<group>"; };
-		D0B0604BC90DC7832DEB79A9 /* NPPModelVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelVO.m; sourceTree = "<group>"; };
-		D295011F98F03688DAEC1B98 /* NPPPluginImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginImageView.h; sourceTree = "<group>"; };
-		D2D613BDE2F26BA29F5E7ABA /* NPPKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPKeyboardToolbar.m; sourceTree = "<group>"; };
-		D80278D281A889E85ED61D62 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		DDA8D05744E8207C2DF55F3B /* NPPPluginImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginImageView.m; sourceTree = "<group>"; };
-		E2B2CE914E46475A4F2AF21B /* NPPPluginImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginImage.m; sourceTree = "<group>"; };
-		E3B5FBAD5532A006DDBF565B /* NPPTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTimer.m; sourceTree = "<group>"; };
-		E4E95B70ED05AE2ED3FB19F6 /* NPPModelAddressVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelAddressVO.h; sourceTree = "<group>"; };
-		E6B76825CBCE63372FDE4BBF /* NPPTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTextField.h; sourceTree = "<group>"; };
-		E7E15BC6D7E298B639FE2200 /* NippurCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurCore.h; sourceTree = "<group>"; };
-		E830C545FB4BB516AC3D5897 /* NPPNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPNumber.m; sourceTree = "<group>"; };
-		EAE57FDC3339537B3ADFED27 /* NPPPluginArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginArray.h; sourceTree = "<group>"; };
-		F02D8E664F5CBB39CD748650 /* NPPTester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTester.m; sourceTree = "<group>"; };
-		F1829F28F314565D42B2A805 /* NPPBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPBadgeView.h; sourceTree = "<group>"; };
-		F1F6E530322FB1EF43F36DD1 /* NPPAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPAction.h; sourceTree = "<group>"; };
-		F40C360DBCCBE31A10A5AAF1 /* NPPJSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPJSON.m; sourceTree = "<group>"; };
-		F431B8A0ACE0391F099A4D3C /* NPPPluginView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginView.m; sourceTree = "<group>"; };
-		F9DFF115DDCFEBD9AB63E7A2 /* NPPPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPickerView.m; sourceTree = "<group>"; };
-		FD0760ACFDE4481585C37F02 /* NPPActionMove.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionMove.m; sourceTree = "<group>"; };
-		FD4FEEFD09A8A92C233D1BC4 /* Pods-ios-Nippur-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios-Nippur-dummy.m"; sourceTree = "<group>"; };
-		FF3FD8BCFFA2A387AE9F9289 /* Pods-ios-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios-resources.sh"; sourceTree = "<group>"; };
-		FFD03394A304343440FF3974 /* NPPRefreshControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPRefreshControl.h; sourceTree = "<group>"; };
+		01C045E32B8B42C2B10E0DAA /* NPPDataManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPDataManager.h; sourceTree = "<group>"; };
+		0345E3C3738C2520F5FA1E15 /* NPPModelAddressVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelAddressVO.h; sourceTree = "<group>"; };
+		054717929E495ED7CDBDDBE7 /* NPPAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPAction.m; sourceTree = "<group>"; };
+		09DA1E68529B7735EF31C06F /* NPPModelVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelVO.h; sourceTree = "<group>"; };
+		0A727535D60FC6E7224790EC /* NPPActionSheet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionSheet.m; sourceTree = "<group>"; };
+		0AB3129AD6E369EA5E2C49C6 /* NPPActionGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionGroup.m; sourceTree = "<group>"; };
+		0F25D8CC4A51E720D84D0F7B /* NPPModelCountryVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelCountryVO.m; sourceTree = "<group>"; };
+		1202FEA12FEC9571555FE288 /* NPPTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTableViewController.h; sourceTree = "<group>"; };
+		1735EAFFB062E13AF7AF6D37 /* NPPTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTester.h; sourceTree = "<group>"; };
+		177D0FA92BF8E1E22B445D0F /* NPPLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPLabel.m; sourceTree = "<group>"; };
+		180E0FAC06C263EE5743CE48 /* NPPCipher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPCipher.h; sourceTree = "<group>"; };
+		193D09AD6681433272D666B2 /* NPPActionBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionBlock.h; sourceTree = "<group>"; };
+		19780599311AEF6E7008A0B9 /* NPPPluginColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginColor.m; sourceTree = "<group>"; };
+		19CF281E3AADBE09384A9C01 /* Pods-ios-Nippur-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ios-Nippur-prefix.pch"; sourceTree = "<group>"; };
+		1BC367510983C01259FE7623 /* NPPFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPFunctions.h; sourceTree = "<group>"; };
+		1CD5BD66F2239D30F92B852D /* NPPBadgeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPBadgeView.m; sourceTree = "<group>"; };
+		1D75D658FE576D1583172D97 /* NPPTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTimer.m; sourceTree = "<group>"; };
+		1F82C1D68B800AF6204B0D56 /* NPPEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPEffects.h; sourceTree = "<group>"; };
+		1FCC37EF87C4FB613335FC94 /* NPPTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTableViewCell.h; sourceTree = "<group>"; };
+		209843EB4CC7B93A31D6A76E /* NPPNotificationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPNotificationView.h; sourceTree = "<group>"; };
+		21660038EB956F2B243CFF58 /* Nippur.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nippur.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		22125E2BB2A834EE4849EA5E /* NPPActionSelector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionSelector.h; sourceTree = "<group>"; };
+		2296F18177A4EC5EA75CBBF5 /* NPPModelRouteNodeVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelRouteNodeVO.h; sourceTree = "<group>"; };
+		22E670C8EA369B69AE568BF7 /* NPPPluginDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginDate.h; sourceTree = "<group>"; };
+		24408DFFDECF116CFBFD0586 /* Nippur.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = Nippur.bundle; sourceTree = "<group>"; };
+		2802F2D00E14E09B4E53B16E /* NPPGeolocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPGeolocationManager.m; sourceTree = "<group>"; };
+		28A4F5EAFBA20E128F02B6C4 /* NPPActionRepeat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionRepeat.m; sourceTree = "<group>"; };
+		28A9838F7412CD594A4FE27D /* NippurMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurMedia.h; sourceTree = "<group>"; };
+		291A35479AAD8669736EC66E /* NPPPluginImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginImageView.m; sourceTree = "<group>"; };
+		2E26DC979D4AC78D8BCA4806 /* NPPAudio.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPAudio.m; sourceTree = "<group>"; };
+		3020511FBCE7EA0D3CCEA801 /* NPPActionRepeat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionRepeat.h; sourceTree = "<group>"; };
+		30680A7E4890F849FC7B59C0 /* NPPNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPNumber.h; sourceTree = "<group>"; };
+		30D995AB7A862EF9BFE49726 /* NPPVideo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPVideo.m; sourceTree = "<group>"; };
+		345A2237B2FCBC16DDC60C81 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		362D0AA51775D43A106035EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		367796719B841577FCA44376 /* NPPInterfaceFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPInterfaceFunctions.m; sourceTree = "<group>"; };
+		38FCF86DE89227253E56062C /* NPPPluginArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginArray.h; sourceTree = "<group>"; };
+		3A5246AABDA1426725EDC7D9 /* NPPPluginFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginFont.m; sourceTree = "<group>"; };
+		3D188CF3413CB35C77306C04 /* NPPWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPWindow.m; sourceTree = "<group>"; };
+		3D43604CF5A220283988D256 /* NPPWindowKeyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPWindowKeyboard.h; sourceTree = "<group>"; };
+		3DEAC932109B46B70C4056C6 /* NPPTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewController.m; sourceTree = "<group>"; };
+		3E080070CC62C2B1A45B48A1 /* NPPNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPNumber.m; sourceTree = "<group>"; };
+		3E82081E8186B0E2486BA902 /* NPPTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewCell.m; sourceTree = "<group>"; };
+		4039EDEE66B992A6C4D84B38 /* Pods-ios-Nippur.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-Nippur.xcconfig"; sourceTree = "<group>"; };
+		410B47D03D0B1E62AB34B19D /* Pods-ios-Nippur-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-Nippur-Private.xcconfig"; sourceTree = "<group>"; };
+		418F88A12B687EDC1FACF35C /* NPPPluginFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginFont.h; sourceTree = "<group>"; };
+		41BC13B08380A56CD0C5194A /* NPPKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPKeyboardToolbar.m; sourceTree = "<group>"; };
+		41E6C291CB42242F09224580 /* NPPFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPFunctions.m; sourceTree = "<group>"; };
+		43C866E355182B5D7EC2FACF /* Pods-ios-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ios-environment.h"; sourceTree = "<group>"; };
+		481816041D0FB6F4B1424440 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		487205806C6C344B67974AB4 /* NPPWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPWindow.h; sourceTree = "<group>"; };
+		4DA5695465F4B5FD77DF0473 /* NPPScrollLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPScrollLabel.h; sourceTree = "<group>"; };
+		4F960515FFC5D9784178D41D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		500AD5321CDA406BE12588D5 /* NPPAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPAlertView.h; sourceTree = "<group>"; };
+		5130B09B2ABDFE406A63129B /* NPPJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPJSON.h; sourceTree = "<group>"; };
+		52440A38C6CB0ED538E54804 /* NPPThread.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPThread.m; sourceTree = "<group>"; };
+		539C11DF330C559E09C37121 /* NPPPluginDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginDate.m; sourceTree = "<group>"; };
+		5478FE81D79A331DBA60E9DA /* NPPTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTextField.h; sourceTree = "<group>"; };
+		54DF0197BE06A651DA1943E8 /* NPPVideo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPVideo.h; sourceTree = "<group>"; };
+		55AD8D4960378A626AEC6D37 /* NPPEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPEffects.m; sourceTree = "<group>"; };
+		55C8615A60764307DB44A284 /* NPPPluginView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginView.m; sourceTree = "<group>"; };
+		566358A4C6DC9142181151BB /* NPPRefreshControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPRefreshControl.m; sourceTree = "<group>"; };
+		572305F6391CC21D710EFEA1 /* NPPDataManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPDataManager.m; sourceTree = "<group>"; };
+		58B5307F0A4DC39A8FB79F11 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		59E89CD9C8E83004E82675EE /* NPPModelGeolocationVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelGeolocationVO.h; sourceTree = "<group>"; };
+		5B60E09BFD6AFD0B405B09CA /* NPPModelCountryVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelCountryVO.h; sourceTree = "<group>"; };
+		5CBE88F3F2A29F5D80D95643 /* NPPGeoserverApple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPGeoserverApple.m; sourceTree = "<group>"; };
+		60686D894A2C9396B55BB45D /* NPPAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPAudio.h; sourceTree = "<group>"; };
+		63E33FD3356281DD0C0A7EE0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		65E809615D8052DE0DDFC7FC /* NPPPluginString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginString.h; sourceTree = "<group>"; };
+		66393672B5564F99288CE1D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		665B3074A6A9935F1DA19564 /* NPPPluginView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginView.h; sourceTree = "<group>"; };
+		668517DA4016312FF05C13DB /* NPPInterfaceFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPInterfaceFunctions.h; sourceTree = "<group>"; };
+		6690495A54A2C6254AA85103 /* NPPTester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTester.m; sourceTree = "<group>"; };
+		66BEBA7B19F27DA6475E16A9 /* NPPActionBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionBlock.m; sourceTree = "<group>"; };
+		67EE878B74DA6324AC83EA88 /* NPPActionSequence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionSequence.m; sourceTree = "<group>"; };
+		68BF94ED0C874A27F2290679 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		693D1878F4355208685A9C17 /* Pods-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios-dummy.m"; sourceTree = "<group>"; };
+		6B77F077A66459B0BDFF84C7 /* NPPNavigator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPNavigator.m; sourceTree = "<group>"; };
+		6C9BF1AD7BB6F498FB4BF302 /* NPPPluginDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginDictionary.h; sourceTree = "<group>"; };
+		6CC13D4DF8B33B2BE49FFB05 /* NPPConnector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPConnector.m; sourceTree = "<group>"; };
+		6CE361B5D04A7C081FB66754 /* NPPRegEx.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPRegEx.m; sourceTree = "<group>"; };
+		6D4A2548C84607107A6BADD2 /* NPPModelAddressVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelAddressVO.m; sourceTree = "<group>"; };
+		6DE086166533EAA840711B1A /* NPPModelGeoregionVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelGeoregionVO.m; sourceTree = "<group>"; };
+		6FD781D787075B2CE70A240C /* NPPActionSelector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionSelector.m; sourceTree = "<group>"; };
+		71F4D2445422E43A48DEE633 /* NPPConnector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPConnector.h; sourceTree = "<group>"; };
+		73297901759BCBF71A7B7A47 /* NPPActionGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionGroup.h; sourceTree = "<group>"; };
+		7527249F5894C37140576EDC /* NPPGeohash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPGeohash.m; sourceTree = "<group>"; };
+		7573A6F29A98B8BEB15E1354 /* Pods-ios-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ios-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7591281EB0B62C17F2BA836D /* NPPKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPKeyboardToolbar.h; sourceTree = "<group>"; };
+		7671A4DB6A9D2FD6820958EE /* NPPModelPlaceVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelPlaceVO.h; sourceTree = "<group>"; };
+		79660F4752B05A33646A5E29 /* NPPPluginDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginDictionary.m; sourceTree = "<group>"; };
+		79F7B05D407E2AAE4F77AA89 /* NPPGeoserverApple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeoserverApple.h; sourceTree = "<group>"; };
+		7FC94E6A9A04DA1AA43C5E73 /* Pods-ios-Nippur-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ios-Nippur-dummy.m"; sourceTree = "<group>"; };
+		80053233B084A8C89BB7FB12 /* NPPActionMove.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPActionMove.m; sourceTree = "<group>"; };
+		8143EECA68425954175260A2 /* NPPTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTextField.m; sourceTree = "<group>"; };
+		81EBCB29A204941FF4D0EFAE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		8288DB48C66804473FF68054 /* NPPTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTimer.h; sourceTree = "<group>"; };
+		85DF36709B88D4603CD5CA62 /* NPPModelGeoregionVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPModelGeoregionVO.h; sourceTree = "<group>"; };
+		88E077EA13C956A0990EB0FE /* NPPGeolocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeolocationManager.h; sourceTree = "<group>"; };
+		8B08B534D5396A6CE9995338 /* NPPActionMove.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionMove.h; sourceTree = "<group>"; };
+		8FEAC2B4E0001EFE45F21A2C /* NPPPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPickerView.m; sourceTree = "<group>"; };
+		90F67199F31B6BCD27E4EF43 /* NPPLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPLogger.m; sourceTree = "<group>"; };
+		91A5AB85B75A76DE40A4FD66 /* NPPAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPAction.h; sourceTree = "<group>"; };
+		921B18ED11C5BFCB903891D5 /* NPPGeohash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeohash.h; sourceTree = "<group>"; };
+		946FC13CF737DE694824E140 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95ED0BE3F598BA56010D84A6 /* NPPButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPButton.h; sourceTree = "<group>"; };
+		96A519ABBBBD2C6D7A088D1F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		974B5DB6A49AC95D64C0CFD3 /* NPPPluginImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginImage.h; sourceTree = "<group>"; };
+		993FA61795B201A0364EFB7E /* NPPPluginNotificationCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginNotificationCenter.h; sourceTree = "<group>"; };
+		997407502E3D7EF82FD08B06 /* NPPStatusBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPStatusBar.m; sourceTree = "<group>"; };
+		999B57E8D78C304D9A4CEB0F /* NPPWindowKeyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPWindowKeyboard.m; sourceTree = "<group>"; };
+		9D1FC703EEBD36ED40A21157 /* NPPTextFieldManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTextFieldManager.h; sourceTree = "<group>"; };
+		9DD4E8D20B520B0FE3093E5C /* NPPTableViewSection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTableViewSection.m; sourceTree = "<group>"; };
+		9E29FEDC3AA1378D003B4EF6 /* NPPModelVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelVO.m; sourceTree = "<group>"; };
+		9F7B86762F03A7AC152EF066 /* NPPCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPCamera.h; sourceTree = "<group>"; };
+		A0A6D12CC94E454CD014FA65 /* NPPPluginArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginArray.m; sourceTree = "<group>"; };
+		A4866D5980F1A60FF19E6F80 /* NPPGeoserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPGeoserver.h; sourceTree = "<group>"; };
+		A58E7834F5EF507BB510CF7E /* NPPBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPBadgeView.h; sourceTree = "<group>"; };
+		A76816438F119A611C3DDB73 /* NPPPluginImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginImageView.h; sourceTree = "<group>"; };
+		A77DD4D00D842BCCF9A44F6F /* Pods-ios-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ios-resources.sh"; sourceTree = "<group>"; };
+		A81008DC58600244CA671FDC /* NPPLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPLabel.h; sourceTree = "<group>"; };
+		AFAFF2CF649E00968769195A /* NPPPluginColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPluginColor.h; sourceTree = "<group>"; };
+		B12ADEB257365C9DB2C5B6AC /* NippurInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurInterface.h; sourceTree = "<group>"; };
+		B1D744E53C94F4C277560A16 /* NPPWindowOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPWindowOverlay.m; sourceTree = "<group>"; };
+		B27FC08601A3038181952E3C /* NPPModelPlaceVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelPlaceVO.m; sourceTree = "<group>"; };
+		B4D3FFAA5897AC092745E222 /* NPPStatusBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPStatusBar.h; sourceTree = "<group>"; };
+		B57AE56B7AD06F41EB7E44BC /* NPPModelRouteNodeVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelRouteNodeVO.m; sourceTree = "<group>"; };
+		B840506FFC374F87D08CA929 /* NPPScrollLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPScrollLabel.m; sourceTree = "<group>"; };
+		BABC4BBE98C338583718016F /* NippurCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurCore.h; sourceTree = "<group>"; };
+		BBDC4E57EC5967D97BC80820 /* NPPRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPRuntime.h; sourceTree = "<group>"; };
+		BE213DD4CD51694E5FC7E9F0 /* NPPTextFieldManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPTextFieldManager.m; sourceTree = "<group>"; };
+		C1078FEEF50452177B06DEDD /* NPPButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPButton.m; sourceTree = "<group>"; };
+		C5CA946FA0A993E5B3895460 /* NPPClockManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPClockManager.m; sourceTree = "<group>"; };
+		C69A5EDC403FEE36A9BDFE9A /* NPPCipher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPCipher.m; sourceTree = "<group>"; };
+		C6CD6192699BFC0183014CD4 /* NPPActionSequence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionSequence.h; sourceTree = "<group>"; };
+		C8584798D3197E50BFBED1D9 /* NPPAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPAlertView.m; sourceTree = "<group>"; };
+		C89FEE4C19E6E245D9219B7E /* libPods-ios-Nippur.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-Nippur.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA7DA6350C4B2C25AFE9FB98 /* NPPWindowOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPWindowOverlay.h; sourceTree = "<group>"; };
+		CC946EC99D82F3CE7BA58E98 /* NPPPluginString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginString.m; sourceTree = "<group>"; };
+		CF3A61B83B8E9F3089F5893B /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF8D5A328CC9488001A903AA /* NPPLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPLogger.h; sourceTree = "<group>"; };
+		D1765E45D1507249A1D3EC78 /* NPPNotificationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPNotificationView.m; sourceTree = "<group>"; };
+		D4FD94CC674E594F9A2E8C47 /* NPPRefreshControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPRefreshControl.h; sourceTree = "<group>"; };
+		D5C17F6A9CE8828CA690010B /* Pods-ios-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ios-acknowledgements.plist"; sourceTree = "<group>"; };
+		D5F89D2BF50A87DD8DC488A9 /* NPPNavigator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPNavigator.h; sourceTree = "<group>"; };
+		D5FCFEF35B8E19388654F89A /* NPPActionSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPActionSheet.h; sourceTree = "<group>"; };
+		D7E502CF132555DD008E8B8C /* NPPClockManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPClockManager.h; sourceTree = "<group>"; };
+		D9DC84E66E41EA2F491413BE /* NPPPluginImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginImage.m; sourceTree = "<group>"; };
+		DB8D089CA0797EFF49D42E84 /* NPPPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPPickerView.h; sourceTree = "<group>"; };
+		DFD76CCE5D3E35229353A860 /* NPPPluginNotificationCenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPPluginNotificationCenter.m; sourceTree = "<group>"; };
+		E45650AE25ECA493540A4854 /* NPPJSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPJSON.m; sourceTree = "<group>"; };
+		E5A3111468DC1C4294761FE4 /* NPPThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPThread.h; sourceTree = "<group>"; };
+		E60984DD0605B5A58902566B /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		F3114750289E7F49951BB522 /* NippurGeolocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurGeolocation.h; sourceTree = "<group>"; };
+		F6B3F3EF7D95CB5044042AC6 /* NPPCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPCamera.m; sourceTree = "<group>"; };
+		F7457C32D214F82D5C9BB6C6 /* NPPTableViewSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPTableViewSection.h; sourceTree = "<group>"; };
+		FBE377417BC33DCD7D692136 /* NPPRegEx.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NPPRegEx.h; sourceTree = "<group>"; };
+		FC89D721D1D4CDDE8B4108BB /* NippurAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NippurAnimation.h; sourceTree = "<group>"; };
+		FD8159C498B83B2A7FE7EA67 /* NPPModelGeolocationVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NPPModelGeolocationVO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7C0BD2E708C8110D14C72200 /* Frameworks */ = {
+		258AB5D778148376F75370DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F010DC951ECAE69AD99EA6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CFAF7A3C7154536AED66979 /* Frameworks */ = {
+		8D02DCB6029271FE6AF868CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2B6AC4DE50754E528F4040 /* AVFoundation.framework in Frameworks */,
-				22A6D9F0F2F400D70852D35D /* AudioToolbox.framework in Frameworks */,
-				EB9492E741C6829FBC7A6143 /* CoreGraphics.framework in Frameworks */,
-				968C0206AE40A10C98133530 /* CoreLocation.framework in Frameworks */,
-				CD4AA30F96A4DEE300F9EA16 /* CoreMedia.framework in Frameworks */,
-				6A4EC3C86180EA2CEFAA196B /* CoreVideo.framework in Frameworks */,
-				AA48290D9D1E2B88AD2D4DB5 /* Foundation.framework in Frameworks */,
-				CB2087F75F0F29260E1EBBE9 /* QuartzCore.framework in Frameworks */,
-				7FB07CFA5A193D85BB04E7F7 /* UIKit.framework in Frameworks */,
+				00F1197E4473DBCB1EFE98E2 /* AVFoundation.framework in Frameworks */,
+				E720C3D165475782E773DC0F /* AudioToolbox.framework in Frameworks */,
+				52A98A2B315DD8EE90EDC191 /* CoreGraphics.framework in Frameworks */,
+				C445EDB76B304F4EBC81E194 /* CoreLocation.framework in Frameworks */,
+				2B9C8310873867C9DCACF7C1 /* CoreMedia.framework in Frameworks */,
+				5E9D27ECFD32247860A16EE5 /* CoreVideo.framework in Frameworks */,
+				8551ABBF3EE905DBE48AE0BD /* Foundation.framework in Frameworks */,
+				6C929691741E3767D6FF4D8A /* QuartzCore.framework in Frameworks */,
+				7375675D2F27007143A0C0BE /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE4D5665A818D5960BF8FA24 /* Frameworks */ = {
+		EF22E6E2A8120678EB82A902 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819445BBBC0A067C5C7E6DC7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02780C977D599A25A57A6874 /* Media */ = {
+		03563E4A74D4EA35FC5D8DC6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8A0B25E711D89C885D211111 /* Nippur */,
-			);
-			name = Media;
-			sourceTree = "<group>";
-		};
-		0D0E06090BAA4BEDEAE6ED92 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				1106193BD5F78DB207BA9AC0 /* AVFoundation.framework */,
-				5AC1A25685EC306E8800C324 /* AudioToolbox.framework */,
-				8C803FB9233D7ACEC26F4657 /* CoreGraphics.framework */,
-				66AAA034BE25158F5A14FD09 /* CoreLocation.framework */,
-				42046982DD3DC791EE862E18 /* CoreMedia.framework */,
-				A33F00CAA88B34ED83A43E4F /* CoreVideo.framework */,
-				546204B3D722DCB05843BC05 /* Foundation.framework */,
-				C1DE3430A33D1F6D5FAFAB86 /* QuartzCore.framework */,
-				51C4FA0112C54C757B33E85A /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		102697A7C6468F3E9AE9FC3F /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				ECABC4A5D2620A646F6060FA /* Nippur */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		1EB9AA6C1F93235D645B9B93 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				ABB07770B3606559D5F94D05 /* Media */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		23EE1E4875B745F1D20065EB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0D0E06090BAA4BEDEAE6ED92 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		284C7AFE81909D701F037312 /* Nippur */ = {
-			isa = PBXGroup;
-			children = (
-				CC2898C679388F69A356D84E /* Source */,
-			);
-			path = Nippur;
-			sourceTree = "<group>";
-		};
-		300ECDBB4A614610FC2292D8 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				532FEA0202A106742625733A /* Nippur */,
-			);
-			name = Animation;
-			sourceTree = "<group>";
-		};
-		30A6338DB7BB5BC1646685B1 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				30CB7FA481932C2AC3F4EA3D /* NPPCipher.h */,
-				50A3E64A80D7AA42E8039A2E /* NPPCipher.m */,
-				BF8F3D1D9B656CDDA9A537A8 /* NPPClockManager.h */,
-				02ECE5A2E4AFBC8AA624BBAF /* NPPClockManager.m */,
-				68419E504A9B539275BD6503 /* NPPConnector.h */,
-				CA014BD1DDAD1FEFE6B4C0F3 /* NPPConnector.m */,
-				528D3D43CCB4BD39F4DDF18D /* NPPDataManager.h */,
-				177452FD26143470E8F78374 /* NPPDataManager.m */,
-				5153F3F59E9C4668ED723F00 /* NPPFunctions.h */,
-				3B2B7640DF3F664D04F9013A /* NPPFunctions.m */,
-				79E5DEE5755A7F62F6A84A53 /* NPPJSON.h */,
-				F40C360DBCCBE31A10A5AAF1 /* NPPJSON.m */,
-				784DA13E78D648288C5186CF /* NPPLogger.h */,
-				C5E63A573D7862AA5BCB1472 /* NPPLogger.m */,
-				46C903E18DA3C230BFE94DFC /* NPPModelVO.h */,
-				D0B0604BC90DC7832DEB79A9 /* NPPModelVO.m */,
-				0DBB448C663FF6BD042417C3 /* NPPNumber.h */,
-				E830C545FB4BB516AC3D5897 /* NPPNumber.m */,
-				EAE57FDC3339537B3ADFED27 /* NPPPluginArray.h */,
-				3B8879294261CCDE88E94686 /* NPPPluginArray.m */,
-				1AE29DB001B0B088E7D0BB0F /* NPPPluginDate.h */,
-				B3E5FAA0D7660EADF469C51B /* NPPPluginDate.m */,
-				59A2F9B93280C3A8565D394C /* NPPPluginDictionary.h */,
-				13C4DA0A80B44ED9D6F6F86B /* NPPPluginDictionary.m */,
-				35B7374276E6DE5CDB3E8F13 /* NPPPluginNotificationCenter.h */,
-				27BE605527E8FFD0CA03D1C5 /* NPPPluginNotificationCenter.m */,
-				2406D240AB99DD963FD74259 /* NPPPluginString.h */,
-				B75383A80712D0623D4A0C1E /* NPPPluginString.m */,
-				7B0A7491AD6B40618E157A32 /* NPPRegEx.h */,
-				AC4F1316C65C90C85042A0EF /* NPPRegEx.m */,
-				C14F6C8C56415F79D857CAEE /* NPPRuntime.h */,
-				CC88876D0E0B4FB4498599EB /* NPPTester.h */,
-				F02D8E664F5CBB39CD748650 /* NPPTester.m */,
-				652C908989F856F7C7C204E4 /* NPPThread.h */,
-				8D5E8BC69B8E1621909B63E7 /* NPPThread.m */,
-				7DB86D1C3931BE1B7809E997 /* NPPTimer.h */,
-				E3B5FBAD5532A006DDBF565B /* NPPTimer.m */,
-				E7E15BC6D7E298B639FE2200 /* NippurCore.h */,
+				180E0FAC06C263EE5743CE48 /* NPPCipher.h */,
+				C69A5EDC403FEE36A9BDFE9A /* NPPCipher.m */,
+				D7E502CF132555DD008E8B8C /* NPPClockManager.h */,
+				C5CA946FA0A993E5B3895460 /* NPPClockManager.m */,
+				71F4D2445422E43A48DEE633 /* NPPConnector.h */,
+				6CC13D4DF8B33B2BE49FFB05 /* NPPConnector.m */,
+				01C045E32B8B42C2B10E0DAA /* NPPDataManager.h */,
+				572305F6391CC21D710EFEA1 /* NPPDataManager.m */,
+				1BC367510983C01259FE7623 /* NPPFunctions.h */,
+				41E6C291CB42242F09224580 /* NPPFunctions.m */,
+				5130B09B2ABDFE406A63129B /* NPPJSON.h */,
+				E45650AE25ECA493540A4854 /* NPPJSON.m */,
+				CF8D5A328CC9488001A903AA /* NPPLogger.h */,
+				90F67199F31B6BCD27E4EF43 /* NPPLogger.m */,
+				09DA1E68529B7735EF31C06F /* NPPModelVO.h */,
+				9E29FEDC3AA1378D003B4EF6 /* NPPModelVO.m */,
+				30680A7E4890F849FC7B59C0 /* NPPNumber.h */,
+				3E080070CC62C2B1A45B48A1 /* NPPNumber.m */,
+				38FCF86DE89227253E56062C /* NPPPluginArray.h */,
+				A0A6D12CC94E454CD014FA65 /* NPPPluginArray.m */,
+				22E670C8EA369B69AE568BF7 /* NPPPluginDate.h */,
+				539C11DF330C559E09C37121 /* NPPPluginDate.m */,
+				6C9BF1AD7BB6F498FB4BF302 /* NPPPluginDictionary.h */,
+				79660F4752B05A33646A5E29 /* NPPPluginDictionary.m */,
+				993FA61795B201A0364EFB7E /* NPPPluginNotificationCenter.h */,
+				DFD76CCE5D3E35229353A860 /* NPPPluginNotificationCenter.m */,
+				65E809615D8052DE0DDFC7FC /* NPPPluginString.h */,
+				CC946EC99D82F3CE7BA58E98 /* NPPPluginString.m */,
+				FBE377417BC33DCD7D692136 /* NPPRegEx.h */,
+				6CE361B5D04A7C081FB66754 /* NPPRegEx.m */,
+				BBDC4E57EC5967D97BC80820 /* NPPRuntime.h */,
+				1735EAFFB062E13AF7AF6D37 /* NPPTester.h */,
+				6690495A54A2C6254AA85103 /* NPPTester.m */,
+				E5A3111468DC1C4294761FE4 /* NPPThread.h */,
+				52440A38C6CB0ED538E54804 /* NPPThread.m */,
+				8288DB48C66804473FF68054 /* NPPTimer.h */,
+				1D75D658FE576D1583172D97 /* NPPTimer.m */,
+				BABC4BBE98C338583718016F /* NippurCore.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		396B447578A7F48E533CF1F5 /* Animation */ = {
+		0F1BD3C3721ABA6964D06D71 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F1F6E530322FB1EF43F36DD1 /* NPPAction.h */,
-				16E44B65CADAC3848F621985 /* NPPAction.m */,
-				06BF0DE3829704C6138B376C /* NPPActionBlock.h */,
-				68B5FF9F1950BFC73882EE58 /* NPPActionBlock.m */,
-				3FD3D6CE589E08F456BF7208 /* NPPActionGroup.h */,
-				46D30E4A5977AF1F88A8DC53 /* NPPActionGroup.m */,
-				67B9C8D6E59D879B3436B6CD /* NPPActionMove.h */,
-				FD0760ACFDE4481585C37F02 /* NPPActionMove.m */,
-				3512229F205C4B1198CA2DB3 /* NPPActionRepeat.h */,
-				C6E8B41320F72BF9DD243773 /* NPPActionRepeat.m */,
-				917B596B30FDA1E838D4A1C2 /* NPPActionSelector.h */,
-				4DFC21093452CFBD19639507 /* NPPActionSelector.m */,
-				4C31C08C94E7C6C0FD5381CC /* NPPActionSequence.h */,
-				529F21D42FA0E1CA0B54C9FF /* NPPActionSequence.m */,
-				97FE455B08197B5F2D1D2C21 /* NippurAnimation.h */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
-		532FEA0202A106742625733A /* Nippur */ = {
-			isa = PBXGroup;
-			children = (
-				55C81B0BE547F68AAE6F89C4 /* Source */,
-			);
-			path = Nippur;
-			sourceTree = "<group>";
-		};
-		54B1CDDDE94CCD881F5B9DEE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				840B1039A50867CBC521E90E /* Pods-ios-Nippur.xcconfig */,
-				8AF2F6CBABFB0F1DCD0EAFC6 /* Pods-ios-Nippur-Private.xcconfig */,
-				FD4FEEFD09A8A92C233D1BC4 /* Pods-ios-Nippur-dummy.m */,
-				BF13EE27CB7309FF4B067EE2 /* Pods-ios-Nippur-prefix.pch */,
+				4039EDEE66B992A6C4D84B38 /* Pods-ios-Nippur.xcconfig */,
+				410B47D03D0B1E62AB34B19D /* Pods-ios-Nippur-Private.xcconfig */,
+				7FC94E6A9A04DA1AA43C5E73 /* Pods-ios-Nippur-dummy.m */,
+				19CF281E3AADBE09384A9C01 /* Pods-ios-Nippur-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "Tests/Pods/Target Support Files/Pods-ios-Nippur";
 			sourceTree = "<group>";
 		};
-		55C81B0BE547F68AAE6F89C4 /* Source */ = {
+		0F8489957BE096EE07A3BE2D /* Nippur */ = {
 			isa = PBXGroup;
 			children = (
-				396B447578A7F48E533CF1F5 /* Animation */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		59E6A7F8FCA92A4BB833B147 /* Nippur */ = {
-			isa = PBXGroup;
-			children = (
-				D8E8337EB9BD1AE20A6F08B2 /* Resource */,
+				910CC992D788892E43FCBA25 /* Source */,
 			);
 			path = Nippur;
 			sourceTree = "<group>";
 		};
-		65A345535EA515652EDA654C /* Nippur */ = {
+		157E7175E60A090389BE1EFC /* Nippur */ = {
 			isa = PBXGroup;
 			children = (
-				AC6AC0A69BB6045DD7B3D9F8 /* Source */,
-			);
-			path = Nippur;
-			sourceTree = "<group>";
-		};
-		86C91BAE573D819134CC6BE4 /* Geolocation */ = {
-			isa = PBXGroup;
-			children = (
-				77A980466D2AC5432565B9E4 /* NPPGeohash.h */,
-				CE1059DC8377E60ADFE91623 /* NPPGeohash.m */,
-				B4D41B36B28D46C9F0A45C02 /* NPPGeolocationManager.h */,
-				AA7457630F6E2CFF2362B569 /* NPPGeolocationManager.m */,
-				46F30249C197FF84F83D3686 /* NPPGeoserver.h */,
-				3A1837D6D0264DF61EB0B2EB /* NPPGeoserverApple.h */,
-				931C7A482892CAE8407B49F2 /* NPPGeoserverApple.m */,
-				E4E95B70ED05AE2ED3FB19F6 /* NPPModelAddressVO.h */,
-				00BB9DEF7DC9CB57A5E5C9BC /* NPPModelAddressVO.m */,
-				8467091746E64E8EA1846FB6 /* NPPModelCountryVO.h */,
-				7DC722FEA07ADED2ACC1714D /* NPPModelCountryVO.m */,
-				1F9C08CF677A4D5B88CBBBD8 /* NPPModelGeolocationVO.h */,
-				0E1E9525B250DFEE1D183EEA /* NPPModelGeolocationVO.m */,
-				C8D2972167083FDEAF8877F1 /* NPPModelGeoregionVO.h */,
-				CDAF69E5EA5FA3F4F3548FEB /* NPPModelGeoregionVO.m */,
-				BA54BF74AFAB476002281A96 /* NPPModelPlaceVO.h */,
-				65FB72553400825C8290C720 /* NPPModelPlaceVO.m */,
-				A122AE6F9EBFF09336399F9E /* NPPModelRouteNodeVO.h */,
-				219386ADB9E0DF80AC4F129C /* NPPModelRouteNodeVO.m */,
-				7A00A3C6E47EE787E2041822 /* NippurGeolocation.h */,
-			);
-			path = Geolocation;
-			sourceTree = "<group>";
-		};
-		88C1D9D8392EF08389B39890 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				284C7AFE81909D701F037312 /* Nippur */,
-				A671CDF8BA8ACE2110325D04 /* Resources */,
-			);
-			name = Interface;
-			sourceTree = "<group>";
-		};
-		8A0B25E711D89C885D211111 /* Nippur */ = {
-			isa = PBXGroup;
-			children = (
-				1EB9AA6C1F93235D645B9B93 /* Source */,
-			);
-			path = Nippur;
-			sourceTree = "<group>";
-		};
-		955FE7E342EE5A35BD2C768C /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				30A6338DB7BB5BC1646685B1 /* Core */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		9A07AF640C40D880DFD2F5B9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4DDFAFEEF45B4E4542254E01 /* Nippur.bundle */,
-				C0ABE89BE61F2A4A369C62CB /* libPods-ios.a */,
-				5394E2F34B28C102969B3ACF /* libPods-ios-Nippur.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9B5CFA0300C7616ED4F3A8B5 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C38B80D6CEE0B9E08F4C43CB /* Nippur */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		A671CDF8BA8ACE2110325D04 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				59E6A7F8FCA92A4BB833B147 /* Nippur */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		ABB07770B3606559D5F94D05 /* Media */ = {
-			isa = PBXGroup;
-			children = (
-				55630759FEA3C5EB08BAD5CB /* NPPAudio.h */,
-				22EC6E49F87C18021D14288F /* NPPAudio.m */,
-				94630E9222832F4A7F6D0FCF /* NPPCamera.h */,
-				0E86F42D17519D7288DF4E3B /* NPPCamera.m */,
-				24816072CB243994A74851B9 /* NPPVideo.h */,
-				24D720CE6CB55EBACD1651C3 /* NPPVideo.m */,
-				03ED84F0C3F49BEFBE92660B /* NippurMedia.h */,
-			);
-			path = Media;
-			sourceTree = "<group>";
-		};
-		AC6AC0A69BB6045DD7B3D9F8 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				86C91BAE573D819134CC6BE4 /* Geolocation */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		C262E06F94159017C1138BD5 /* Pods-ios */ = {
-			isa = PBXGroup;
-			children = (
-				8C52BBB5820218965661EFF2 /* Pods-ios-acknowledgements.markdown */,
-				1C452F7BA02579118346C478 /* Pods-ios-acknowledgements.plist */,
-				0CD2583BE040A46950E0D003 /* Pods-ios-dummy.m */,
-				8B5119DA8B10FCDA0CE9B3B4 /* Pods-ios-environment.h */,
-				FF3FD8BCFFA2A387AE9F9289 /* Pods-ios-resources.sh */,
-				657040C3BC118C3C1A46C3F6 /* Pods-ios.debug.xcconfig */,
-				15BE8DCCCD92B0F25B932C3A /* Pods-ios.release.xcconfig */,
-			);
-			name = "Pods-ios";
-			path = "Target Support Files/Pods-ios";
-			sourceTree = "<group>";
-		};
-		C38B80D6CEE0B9E08F4C43CB /* Nippur */ = {
-			isa = PBXGroup;
-			children = (
-				300ECDBB4A614610FC2292D8 /* Animation */,
-				102697A7C6468F3E9AE9FC3F /* Core */,
-				E3C6355CD8D0AF1144D1E3A2 /* Geolocation */,
-				88C1D9D8392EF08389B39890 /* Interface */,
-				02780C977D599A25A57A6874 /* Media */,
-				54B1CDDDE94CCD881F5B9DEE /* Support Files */,
+				848DD9E8BBE3DC91E5E23A44 /* Animation */,
+				A915B281691DF2E1183770D6 /* Core */,
+				93F7AD698FE111CAE0EE8C77 /* Geolocation */,
+				240F1772EA0BB0ADFA8C195D /* Interface */,
+				D1DAE518FFC8C4E223F51C01 /* Media */,
+				0F1BD3C3721ABA6964D06D71 /* Support Files */,
 			);
 			name = Nippur;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		CC2898C679388F69A356D84E /* Source */ = {
+		1C85C41FB03BC022B20BA245 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA62F09866212EF719C265BC /* Interface */,
+				21660038EB956F2B243CFF58 /* Nippur.bundle */,
+				CF3A61B83B8E9F3089F5893B /* libPods-ios.a */,
+				C89FEE4C19E6E245D9219B7E /* libPods-ios-Nippur.a */,
 			);
-			path = Source;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		D2428EE26A5D21DA0DC10E36 = {
+		2137ABEBD0EF38007B72E69F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D80278D281A889E85ED61D62 /* Podfile */,
-				9B5CFA0300C7616ED4F3A8B5 /* Development Pods */,
-				23EE1E4875B745F1D20065EB /* Frameworks */,
-				9A07AF640C40D880DFD2F5B9 /* Products */,
-				F1652CD87ADEA152D43BBEA6 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		D8E8337EB9BD1AE20A6F08B2 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				94E813E52A7C883C360A0D44 /* Nippur.bundle */,
+				24408DFFDECF116CFBFD0586 /* Nippur.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		DA62F09866212EF719C265BC /* Interface */ = {
+		240F1772EA0BB0ADFA8C195D /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				05C01E76AC627C55E08D6432 /* NPPActionSheet.h */,
-				25C567062EE8475E652B5A21 /* NPPActionSheet.m */,
-				11DD40A5BDAE30C7716E7643 /* NPPAlertView.h */,
-				AC81521670187C676D4ECA71 /* NPPAlertView.m */,
-				F1829F28F314565D42B2A805 /* NPPBadgeView.h */,
-				4CEC4DB080A3120A2BFF76FE /* NPPBadgeView.m */,
-				65EC2CFEF7F4BB7CAA12F5EB /* NPPButton.h */,
-				3023A4FD6D4D01B7680004E0 /* NPPButton.m */,
-				A8FFE74522118A16C3430429 /* NPPEffects.h */,
-				20A4A9B46D100480FF5C1989 /* NPPEffects.m */,
-				A9D1D1D188812D3CFE0CC82F /* NPPInterfaceFunctions.h */,
-				2F41D4EBB74CBEE45F95C4D2 /* NPPInterfaceFunctions.m */,
-				93043E970E6DC9D235238FE9 /* NPPKeyboardToolbar.h */,
-				D2D613BDE2F26BA29F5E7ABA /* NPPKeyboardToolbar.m */,
-				A83744BEA6C45A73893427D0 /* NPPLabel.h */,
-				1875C8D1EB3D5E49B8F95D54 /* NPPLabel.m */,
-				B91CDA66C149F81E90FF9BFA /* NPPNavigator.h */,
-				88111B627BF7744187704E61 /* NPPNavigator.m */,
-				2189CA4EB2A66C59DF746B1F /* NPPNotificationView.h */,
-				43E308C6D98690007E7A288C /* NPPNotificationView.m */,
-				C432760CF672015B910E48F2 /* NPPPickerView.h */,
-				F9DFF115DDCFEBD9AB63E7A2 /* NPPPickerView.m */,
-				BFD52C4C73F7855AF50B237F /* NPPPluginColor.h */,
-				A213437A3E0F8666EF34F9C3 /* NPPPluginColor.m */,
-				11F22C99505AB47698473F98 /* NPPPluginFont.h */,
-				CA2A346F20132EC11EC77B9A /* NPPPluginFont.m */,
-				1BBF4ED482380FEEBDD440C4 /* NPPPluginImage.h */,
-				E2B2CE914E46475A4F2AF21B /* NPPPluginImage.m */,
-				D295011F98F03688DAEC1B98 /* NPPPluginImageView.h */,
-				DDA8D05744E8207C2DF55F3B /* NPPPluginImageView.m */,
-				7DD662F95DD26A1679185013 /* NPPPluginView.h */,
-				F431B8A0ACE0391F099A4D3C /* NPPPluginView.m */,
-				FFD03394A304343440FF3974 /* NPPRefreshControl.h */,
-				7011AD05BE1E01027D3DE0C0 /* NPPRefreshControl.m */,
-				2FDA56508D61624C98AC0830 /* NPPScrollLabel.h */,
-				BA35A719941240AC1ABAEBF0 /* NPPScrollLabel.m */,
-				110BAF6DDDBB6B2FCBE59BAE /* NPPStatusBar.h */,
-				1F3621452EC2F89DACA54D3C /* NPPStatusBar.m */,
-				595E9B3493493DDEBC20ED3E /* NPPTableViewCell.h */,
-				430B8B009C3797D0D5115FDD /* NPPTableViewCell.m */,
-				72D48D04C4F02FD5FE54DCC5 /* NPPTableViewController.h */,
-				A6B46BBC5E8BA613F7C30908 /* NPPTableViewController.m */,
-				82846F613525F943D2C8091B /* NPPTableViewSection.h */,
-				47C244C695D948301E0952EC /* NPPTableViewSection.m */,
-				E6B76825CBCE63372FDE4BBF /* NPPTextField.h */,
-				9B469FFD0BFDC19ACC54D932 /* NPPTextField.m */,
-				AFA3CB372E2832A1AB8BDC29 /* NPPTextFieldManager.h */,
-				563CA54CA19A04D73AA9DFE3 /* NPPTextFieldManager.m */,
-				C2F48B6A9DCFAB20868440BF /* NPPWindow.h */,
-				98A6544AE97361B36F1879AA /* NPPWindow.m */,
-				9A0DC9251D928C2E6C807E23 /* NPPWindowKeyboard.h */,
-				A39637956100BB662F7B514D /* NPPWindowKeyboard.m */,
-				05E894A0C70462EEBAA76AC5 /* NPPWindowOverlay.h */,
-				AD8C3A65EE6D81175B9BA2CF /* NPPWindowOverlay.m */,
-				32139C6EC0293DFE59A1E5BF /* NippurInterface.h */,
+				8D327B10C6EED785B2DD67C4 /* Nippur */,
+				D417C3B0C8218828E64C58D0 /* Resources */,
 			);
-			path = Interface;
+			name = Interface;
 			sourceTree = "<group>";
 		};
-		E3C6355CD8D0AF1144D1E3A2 /* Geolocation */ = {
+		37C51221B72B2394A96B27BD /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				65A345535EA515652EDA654C /* Nippur */,
+				F388DD4A73F3FD386DD115CD /* Pods-ios */,
 			);
-			name = Geolocation;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		ECABC4A5D2620A646F6060FA /* Nippur */ = {
+		3D9C6BA9A2F9388BF040EA78 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				955FE7E342EE5A35BD2C768C /* Source */,
+				63E33FD3356281DD0C0A7EE0 /* AVFoundation.framework */,
+				68BF94ED0C874A27F2290679 /* AudioToolbox.framework */,
+				362D0AA51775D43A106035EE /* CoreGraphics.framework */,
+				345A2237B2FCBC16DDC60C81 /* CoreLocation.framework */,
+				481816041D0FB6F4B1424440 /* CoreMedia.framework */,
+				96A519ABBBBD2C6D7A088D1F /* CoreVideo.framework */,
+				66393672B5564F99288CE1D8 /* Foundation.framework */,
+				81EBCB29A204941FF4D0EFAE /* QuartzCore.framework */,
+				4F960515FFC5D9784178D41D /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4B6828D1708FB0C4144D8D6A /* Nippur */ = {
+			isa = PBXGroup;
+			children = (
+				2137ABEBD0EF38007B72E69F /* Resource */,
 			);
 			path = Nippur;
 			sourceTree = "<group>";
 		};
-		F1652CD87ADEA152D43BBEA6 /* Targets Support Files */ = {
+		6D5D3BE891B2730959964A69 /* Nippur */ = {
 			isa = PBXGroup;
 			children = (
-				C262E06F94159017C1138BD5 /* Pods-ios */,
+				7158D3418B8F0A89CD9E3843 /* Source */,
 			);
-			name = "Targets Support Files";
+			path = Nippur;
+			sourceTree = "<group>";
+		};
+		6E956C1C2391ACD469B08A02 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE86224D66327963C936B1 /* Media */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7158D3418B8F0A89CD9E3843 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D70C8E6E99DE74A8D1D9030C /* Animation */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		73F5A7BA49949E8CC9DB034A /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D5FCFEF35B8E19388654F89A /* NPPActionSheet.h */,
+				0A727535D60FC6E7224790EC /* NPPActionSheet.m */,
+				500AD5321CDA406BE12588D5 /* NPPAlertView.h */,
+				C8584798D3197E50BFBED1D9 /* NPPAlertView.m */,
+				A58E7834F5EF507BB510CF7E /* NPPBadgeView.h */,
+				1CD5BD66F2239D30F92B852D /* NPPBadgeView.m */,
+				95ED0BE3F598BA56010D84A6 /* NPPButton.h */,
+				C1078FEEF50452177B06DEDD /* NPPButton.m */,
+				1F82C1D68B800AF6204B0D56 /* NPPEffects.h */,
+				55AD8D4960378A626AEC6D37 /* NPPEffects.m */,
+				668517DA4016312FF05C13DB /* NPPInterfaceFunctions.h */,
+				367796719B841577FCA44376 /* NPPInterfaceFunctions.m */,
+				7591281EB0B62C17F2BA836D /* NPPKeyboardToolbar.h */,
+				41BC13B08380A56CD0C5194A /* NPPKeyboardToolbar.m */,
+				A81008DC58600244CA671FDC /* NPPLabel.h */,
+				177D0FA92BF8E1E22B445D0F /* NPPLabel.m */,
+				D5F89D2BF50A87DD8DC488A9 /* NPPNavigator.h */,
+				6B77F077A66459B0BDFF84C7 /* NPPNavigator.m */,
+				209843EB4CC7B93A31D6A76E /* NPPNotificationView.h */,
+				D1765E45D1507249A1D3EC78 /* NPPNotificationView.m */,
+				DB8D089CA0797EFF49D42E84 /* NPPPickerView.h */,
+				8FEAC2B4E0001EFE45F21A2C /* NPPPickerView.m */,
+				AFAFF2CF649E00968769195A /* NPPPluginColor.h */,
+				19780599311AEF6E7008A0B9 /* NPPPluginColor.m */,
+				418F88A12B687EDC1FACF35C /* NPPPluginFont.h */,
+				3A5246AABDA1426725EDC7D9 /* NPPPluginFont.m */,
+				974B5DB6A49AC95D64C0CFD3 /* NPPPluginImage.h */,
+				D9DC84E66E41EA2F491413BE /* NPPPluginImage.m */,
+				A76816438F119A611C3DDB73 /* NPPPluginImageView.h */,
+				291A35479AAD8669736EC66E /* NPPPluginImageView.m */,
+				665B3074A6A9935F1DA19564 /* NPPPluginView.h */,
+				55C8615A60764307DB44A284 /* NPPPluginView.m */,
+				D4FD94CC674E594F9A2E8C47 /* NPPRefreshControl.h */,
+				566358A4C6DC9142181151BB /* NPPRefreshControl.m */,
+				4DA5695465F4B5FD77DF0473 /* NPPScrollLabel.h */,
+				B840506FFC374F87D08CA929 /* NPPScrollLabel.m */,
+				B4D3FFAA5897AC092745E222 /* NPPStatusBar.h */,
+				997407502E3D7EF82FD08B06 /* NPPStatusBar.m */,
+				1FCC37EF87C4FB613335FC94 /* NPPTableViewCell.h */,
+				3E82081E8186B0E2486BA902 /* NPPTableViewCell.m */,
+				1202FEA12FEC9571555FE288 /* NPPTableViewController.h */,
+				3DEAC932109B46B70C4056C6 /* NPPTableViewController.m */,
+				F7457C32D214F82D5C9BB6C6 /* NPPTableViewSection.h */,
+				9DD4E8D20B520B0FE3093E5C /* NPPTableViewSection.m */,
+				5478FE81D79A331DBA60E9DA /* NPPTextField.h */,
+				8143EECA68425954175260A2 /* NPPTextField.m */,
+				9D1FC703EEBD36ED40A21157 /* NPPTextFieldManager.h */,
+				BE213DD4CD51694E5FC7E9F0 /* NPPTextFieldManager.m */,
+				487205806C6C344B67974AB4 /* NPPWindow.h */,
+				3D188CF3413CB35C77306C04 /* NPPWindow.m */,
+				3D43604CF5A220283988D256 /* NPPWindowKeyboard.h */,
+				999B57E8D78C304D9A4CEB0F /* NPPWindowKeyboard.m */,
+				CA7DA6350C4B2C25AFE9FB98 /* NPPWindowOverlay.h */,
+				B1D744E53C94F4C277560A16 /* NPPWindowOverlay.m */,
+				B12ADEB257365C9DB2C5B6AC /* NippurInterface.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		75143A4A086152600CE005E8 /* Nippur */ = {
+			isa = PBXGroup;
+			children = (
+				8014DC12A637BDFBFB4239BE /* Source */,
+			);
+			path = Nippur;
+			sourceTree = "<group>";
+		};
+		8014DC12A637BDFBFB4239BE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A169FBFA994F9DC03A3DF9AD /* Geolocation */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		848DD9E8BBE3DC91E5E23A44 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				6D5D3BE891B2730959964A69 /* Nippur */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		8D327B10C6EED785B2DD67C4 /* Nippur */ = {
+			isa = PBXGroup;
+			children = (
+				99A5FB84066123291B5BCFC8 /* Source */,
+			);
+			path = Nippur;
+			sourceTree = "<group>";
+		};
+		910CC992D788892E43FCBA25 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				03563E4A74D4EA35FC5D8DC6 /* Core */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		93F7AD698FE111CAE0EE8C77 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				75143A4A086152600CE005E8 /* Nippur */,
+			);
+			name = Geolocation;
+			sourceTree = "<group>";
+		};
+		99A5FB84066123291B5BCFC8 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				73F5A7BA49949E8CC9DB034A /* Interface */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A169FBFA994F9DC03A3DF9AD /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				921B18ED11C5BFCB903891D5 /* NPPGeohash.h */,
+				7527249F5894C37140576EDC /* NPPGeohash.m */,
+				88E077EA13C956A0990EB0FE /* NPPGeolocationManager.h */,
+				2802F2D00E14E09B4E53B16E /* NPPGeolocationManager.m */,
+				A4866D5980F1A60FF19E6F80 /* NPPGeoserver.h */,
+				79F7B05D407E2AAE4F77AA89 /* NPPGeoserverApple.h */,
+				5CBE88F3F2A29F5D80D95643 /* NPPGeoserverApple.m */,
+				0345E3C3738C2520F5FA1E15 /* NPPModelAddressVO.h */,
+				6D4A2548C84607107A6BADD2 /* NPPModelAddressVO.m */,
+				5B60E09BFD6AFD0B405B09CA /* NPPModelCountryVO.h */,
+				0F25D8CC4A51E720D84D0F7B /* NPPModelCountryVO.m */,
+				59E89CD9C8E83004E82675EE /* NPPModelGeolocationVO.h */,
+				FD8159C498B83B2A7FE7EA67 /* NPPModelGeolocationVO.m */,
+				85DF36709B88D4603CD5CA62 /* NPPModelGeoregionVO.h */,
+				6DE086166533EAA840711B1A /* NPPModelGeoregionVO.m */,
+				7671A4DB6A9D2FD6820958EE /* NPPModelPlaceVO.h */,
+				B27FC08601A3038181952E3C /* NPPModelPlaceVO.m */,
+				2296F18177A4EC5EA75CBBF5 /* NPPModelRouteNodeVO.h */,
+				B57AE56B7AD06F41EB7E44BC /* NPPModelRouteNodeVO.m */,
+				F3114750289E7F49951BB522 /* NippurGeolocation.h */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		A915B281691DF2E1183770D6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0F8489957BE096EE07A3BE2D /* Nippur */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B3DE86224D66327963C936B1 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				60686D894A2C9396B55BB45D /* NPPAudio.h */,
+				2E26DC979D4AC78D8BCA4806 /* NPPAudio.m */,
+				9F7B86762F03A7AC152EF066 /* NPPCamera.h */,
+				F6B3F3EF7D95CB5044042AC6 /* NPPCamera.m */,
+				54DF0197BE06A651DA1943E8 /* NPPVideo.h */,
+				30D995AB7A862EF9BFE49726 /* NPPVideo.m */,
+				28A9838F7412CD594A4FE27D /* NippurMedia.h */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		C5C262A5F7C36CDFA5BB207C = {
+			isa = PBXGroup;
+			children = (
+				946FC13CF737DE694824E140 /* Podfile */,
+				C952851D77A5171F4DC97F70 /* Development Pods */,
+				D2687BCA6A278CF5A8ADD8D0 /* Frameworks */,
+				1C85C41FB03BC022B20BA245 /* Products */,
+				37C51221B72B2394A96B27BD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		C952851D77A5171F4DC97F70 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				157E7175E60A090389BE1EFC /* Nippur */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D1DAE518FFC8C4E223F51C01 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				DDFCC8917B8F600648C3823B /* Nippur */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		D2687BCA6A278CF5A8ADD8D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D9C6BA9A2F9388BF040EA78 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D417C3B0C8218828E64C58D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B6828D1708FB0C4144D8D6A /* Nippur */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D70C8E6E99DE74A8D1D9030C /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				91A5AB85B75A76DE40A4FD66 /* NPPAction.h */,
+				054717929E495ED7CDBDDBE7 /* NPPAction.m */,
+				193D09AD6681433272D666B2 /* NPPActionBlock.h */,
+				66BEBA7B19F27DA6475E16A9 /* NPPActionBlock.m */,
+				73297901759BCBF71A7B7A47 /* NPPActionGroup.h */,
+				0AB3129AD6E369EA5E2C49C6 /* NPPActionGroup.m */,
+				8B08B534D5396A6CE9995338 /* NPPActionMove.h */,
+				80053233B084A8C89BB7FB12 /* NPPActionMove.m */,
+				3020511FBCE7EA0D3CCEA801 /* NPPActionRepeat.h */,
+				28A4F5EAFBA20E128F02B6C4 /* NPPActionRepeat.m */,
+				22125E2BB2A834EE4849EA5E /* NPPActionSelector.h */,
+				6FD781D787075B2CE70A240C /* NPPActionSelector.m */,
+				C6CD6192699BFC0183014CD4 /* NPPActionSequence.h */,
+				67EE878B74DA6324AC83EA88 /* NPPActionSequence.m */,
+				FC89D721D1D4CDDE8B4108BB /* NippurAnimation.h */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		DDFCC8917B8F600648C3823B /* Nippur */ = {
+			isa = PBXGroup;
+			children = (
+				6E956C1C2391ACD469B08A02 /* Source */,
+			);
+			path = Nippur;
+			sourceTree = "<group>";
+		};
+		F388DD4A73F3FD386DD115CD /* Pods-ios */ = {
+			isa = PBXGroup;
+			children = (
+				7573A6F29A98B8BEB15E1354 /* Pods-ios-acknowledgements.markdown */,
+				D5C17F6A9CE8828CA690010B /* Pods-ios-acknowledgements.plist */,
+				693D1878F4355208685A9C17 /* Pods-ios-dummy.m */,
+				43C866E355182B5D7EC2FACF /* Pods-ios-environment.h */,
+				A77DD4D00D842BCCF9A44F6F /* Pods-ios-resources.sh */,
+				58B5307F0A4DC39A8FB79F11 /* Pods-ios.debug.xcconfig */,
+				E60984DD0605B5A58902566B /* Pods-ios.release.xcconfig */,
+			);
+			name = "Pods-ios";
+			path = "Target Support Files/Pods-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D2AEED29A8C81AE758826401 /* Headers */ = {
+		A6405534D4A2D781EC73E89D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5AADD6AD6A7384350EEA2DE /* NPPAction.h in Headers */,
-				F2914F572586A7102043D2AD /* NPPActionBlock.h in Headers */,
-				8F513D9F8F30E246F2FFBD2C /* NPPActionGroup.h in Headers */,
-				E9BC8BC45133DC73E8CE78DF /* NPPActionMove.h in Headers */,
-				EFDA33A3FFDFF0BA2386A1E3 /* NPPActionRepeat.h in Headers */,
-				DB35E79A1991A97190F4E528 /* NPPActionSelector.h in Headers */,
-				1AFBB43C770827340A58C423 /* NPPActionSequence.h in Headers */,
-				4DDEEA1C78EEE6E8D04DB137 /* NPPActionSheet.h in Headers */,
-				3591E9F1BCFD82336F65789D /* NPPAlertView.h in Headers */,
-				EC6CA5EAA5E58DB6CF3C931A /* NPPAudio.h in Headers */,
-				D2648A85E3754685C1177008 /* NPPBadgeView.h in Headers */,
-				E14D1C34772E289093737513 /* NPPButton.h in Headers */,
-				84CA3A1A27D4E56FDA81A45D /* NPPCamera.h in Headers */,
-				688E9CA33B445E1566C2DB12 /* NPPCipher.h in Headers */,
-				EFC4578CEADD0418A0729A58 /* NPPClockManager.h in Headers */,
-				476858743B45B095B088A1BE /* NPPConnector.h in Headers */,
-				0D4F5E813B131A20C0251577 /* NPPDataManager.h in Headers */,
-				9F00D704A58DBF5BE0FAA7A8 /* NPPEffects.h in Headers */,
-				B1867D609C738F8734E133D5 /* NPPFunctions.h in Headers */,
-				02025607D2FFAD80C0520705 /* NPPGeohash.h in Headers */,
-				E926960AA987410C73F417D0 /* NPPGeolocationManager.h in Headers */,
-				6B80B0C9465A05A409AEFB78 /* NPPGeoserver.h in Headers */,
-				48430BF6336F8E7287BBD58A /* NPPGeoserverApple.h in Headers */,
-				B67CBC06936CACC66D2A1B41 /* NPPInterfaceFunctions.h in Headers */,
-				CF963C304E89240655D039DF /* NPPJSON.h in Headers */,
-				ABE86F75F4868A7E4205505A /* NPPKeyboardToolbar.h in Headers */,
-				2BDDCA0EE70879DAAD0B962F /* NPPLabel.h in Headers */,
-				93C1A7924D5C39EF48B723E9 /* NPPLogger.h in Headers */,
-				966E778B9B7C2673A0CD38B6 /* NPPModelAddressVO.h in Headers */,
-				E22D0884BB4BA0DED6ABAD3D /* NPPModelCountryVO.h in Headers */,
-				0514C0EB88776B3E8B22EF0C /* NPPModelGeolocationVO.h in Headers */,
-				2C81A77E17091D5E24DFB424 /* NPPModelGeoregionVO.h in Headers */,
-				0835E11B01EF20972D34F4B9 /* NPPModelPlaceVO.h in Headers */,
-				0BC7AFD86F682DB841325A83 /* NPPModelRouteNodeVO.h in Headers */,
-				79A0D941BEE985D4589F8A0A /* NPPModelVO.h in Headers */,
-				A34F832CC397E00F862BBDB1 /* NPPNavigator.h in Headers */,
-				0937A341501DF3A117248097 /* NPPNotificationView.h in Headers */,
-				8824104012775A7A4026093E /* NPPNumber.h in Headers */,
-				3F68CEAF889DC0D87F3C9DD6 /* NPPPickerView.h in Headers */,
-				828AC5FA68322668923A1133 /* NPPPluginArray.h in Headers */,
-				2CEC7E2F83ED43FDEE16B20C /* NPPPluginColor.h in Headers */,
-				ED650B41D069A83116F364E1 /* NPPPluginDate.h in Headers */,
-				89058D7DAABEF1ED71B1EFEC /* NPPPluginDictionary.h in Headers */,
-				7362A8D234304DE7BFEDD97E /* NPPPluginFont.h in Headers */,
-				D3DA491F238AF8B450794E16 /* NPPPluginImage.h in Headers */,
-				BCA41045BCC6C00E9849AF29 /* NPPPluginImageView.h in Headers */,
-				6A25078BAB19F110F2EFDFF4 /* NPPPluginNotificationCenter.h in Headers */,
-				06187A2B142BE33B5B499DDD /* NPPPluginString.h in Headers */,
-				AAEDB827E0BEAF4DEDE4F7BA /* NPPPluginView.h in Headers */,
-				CA534076CF1114B57992DAD4 /* NPPRefreshControl.h in Headers */,
-				B108A020BDF783DAB6C0971B /* NPPRegEx.h in Headers */,
-				122FBDECB69F4DF678B7D748 /* NPPRuntime.h in Headers */,
-				B58A3E2D5BDB431B02E1A36E /* NPPScrollLabel.h in Headers */,
-				1F2E2278C7025063DB093A33 /* NPPStatusBar.h in Headers */,
-				1E113220215209288A3FF337 /* NPPTableViewCell.h in Headers */,
-				4A65F608FC6194B94040DFEE /* NPPTableViewController.h in Headers */,
-				F966E33BF985ADA8883A63A1 /* NPPTableViewSection.h in Headers */,
-				99FFCBC53DE6523FF09C0231 /* NPPTester.h in Headers */,
-				32D7EB4EB5D901E4A8A9C479 /* NPPTextField.h in Headers */,
-				AFD7B9B825F464DDAD2E6538 /* NPPTextFieldManager.h in Headers */,
-				36C1D7030E9D751D51A07170 /* NPPThread.h in Headers */,
-				F1263160D23B16E138264B9C /* NPPTimer.h in Headers */,
-				28E4DD777BFB2510A5BB94AC /* NPPVideo.h in Headers */,
-				3351ACB5F9DBAA97721542C5 /* NPPWindow.h in Headers */,
-				D3743B6298CC6614CA4392D9 /* NPPWindowKeyboard.h in Headers */,
-				1B33F4E73EB6B971F4C82A78 /* NPPWindowOverlay.h in Headers */,
-				2C725E1966E752F60925B717 /* NippurAnimation.h in Headers */,
-				191A88BA061080181AC7AEC4 /* NippurCore.h in Headers */,
-				BEC53A74A5AD76FA7B7D55CA /* NippurGeolocation.h in Headers */,
-				4E46EE4A70F1B721B4B0DA26 /* NippurInterface.h in Headers */,
-				AC60AA511ECAAE2F639B3523 /* NippurMedia.h in Headers */,
+				AA5D1A39F35C95A6AF6F5F4D /* NPPAction.h in Headers */,
+				77BE29980D27E6B294AE0693 /* NPPActionBlock.h in Headers */,
+				E1C9EB47E5D099952D7F13B5 /* NPPActionGroup.h in Headers */,
+				A63ED61E956C82DEAA71A67D /* NPPActionMove.h in Headers */,
+				981B65B6C08266CE87A24DCF /* NPPActionRepeat.h in Headers */,
+				6C87E8F5318F15B907117A8E /* NPPActionSelector.h in Headers */,
+				3148DB1708C710339C80BEFD /* NPPActionSequence.h in Headers */,
+				694B0450AA90BF3609F54F93 /* NPPActionSheet.h in Headers */,
+				288EBC7BFF14A0B700009645 /* NPPAlertView.h in Headers */,
+				7C1ABAC56F40EC3B931CBFB4 /* NPPAudio.h in Headers */,
+				1E110FEC80A4E01A428CD57D /* NPPBadgeView.h in Headers */,
+				8DF2F484DEE81D389BBCBEB2 /* NPPButton.h in Headers */,
+				E106B69D624847C56B7E31C9 /* NPPCamera.h in Headers */,
+				38AF91534B986072D7411501 /* NPPCipher.h in Headers */,
+				82EC720F725C734940AB8B51 /* NPPClockManager.h in Headers */,
+				D93846B4DF4B68029B31260F /* NPPConnector.h in Headers */,
+				62207C10C93AB2A354FAC255 /* NPPDataManager.h in Headers */,
+				17126B5465AC201DCA64A7BE /* NPPEffects.h in Headers */,
+				8E4B68BC81AF40B9DB532F8B /* NPPFunctions.h in Headers */,
+				8D447D71DF167C2FE066C9CB /* NPPGeohash.h in Headers */,
+				9CE8883A39681A2F886FEC9E /* NPPGeolocationManager.h in Headers */,
+				613BFE756204B3B8B026D90F /* NPPGeoserver.h in Headers */,
+				10506F8F00205097560E50A3 /* NPPGeoserverApple.h in Headers */,
+				76A57351955AC49E9D562A9B /* NPPInterfaceFunctions.h in Headers */,
+				61FC756828D8C5E65A780210 /* NPPJSON.h in Headers */,
+				BD5821FB1898B3B1723AFA73 /* NPPKeyboardToolbar.h in Headers */,
+				EB66DCF84051E32F5B77F037 /* NPPLabel.h in Headers */,
+				7E39BDFB8A3B895D848BF3C8 /* NPPLogger.h in Headers */,
+				5802045E6A3E521CB9B0DCAB /* NPPModelAddressVO.h in Headers */,
+				4228587B3ED13FF441BEA35F /* NPPModelCountryVO.h in Headers */,
+				77BAE5917C8D60D7816A6612 /* NPPModelGeolocationVO.h in Headers */,
+				4F3AC836A6A5D3FBE8341D73 /* NPPModelGeoregionVO.h in Headers */,
+				AEE324195A47F6D27B4AE6C1 /* NPPModelPlaceVO.h in Headers */,
+				39294A280DE05B0ADE8E6FF5 /* NPPModelRouteNodeVO.h in Headers */,
+				E8DF9C9380C21C1264A8A44C /* NPPModelVO.h in Headers */,
+				E1E932E1665703076D0F0BF3 /* NPPNavigator.h in Headers */,
+				89AF49E684EEEAEDED1C7A46 /* NPPNotificationView.h in Headers */,
+				18FB8BFBE9BF428A8B1A7767 /* NPPNumber.h in Headers */,
+				052150AF7A9E728F2D26F580 /* NPPPickerView.h in Headers */,
+				35285C97C50DA4956F4FB398 /* NPPPluginArray.h in Headers */,
+				B1ECB81631FE285EF46B3DCE /* NPPPluginColor.h in Headers */,
+				EB36AC9E066F8056C10C824F /* NPPPluginDate.h in Headers */,
+				FF5EBF762E9ED5148E687AB2 /* NPPPluginDictionary.h in Headers */,
+				052E41152E5DA97DB9406FA9 /* NPPPluginFont.h in Headers */,
+				FCCD6E4FAF355DDB2DDA8C8A /* NPPPluginImage.h in Headers */,
+				162C072AF66B27CDE3E7DC69 /* NPPPluginImageView.h in Headers */,
+				3E83C5C9BBA94CC562FCCC05 /* NPPPluginNotificationCenter.h in Headers */,
+				D2FC40E500369FAEBBB85200 /* NPPPluginString.h in Headers */,
+				EB34F6CA28D456E592EDB386 /* NPPPluginView.h in Headers */,
+				4464789997E6E6A067CE5452 /* NPPRefreshControl.h in Headers */,
+				92E38D7080265763296A466F /* NPPRegEx.h in Headers */,
+				28C063830FF377D465D2F23B /* NPPRuntime.h in Headers */,
+				1B6C43158C9ABCE5770ACFBC /* NPPScrollLabel.h in Headers */,
+				0CFAB983F6981B9641A98C38 /* NPPStatusBar.h in Headers */,
+				6C1383C1D9ADFB9C61D19D7B /* NPPTableViewCell.h in Headers */,
+				BACF41E592BF27BD3F258F96 /* NPPTableViewController.h in Headers */,
+				9B96B1D0F0D28B415BE1EFB0 /* NPPTableViewSection.h in Headers */,
+				9FCFF22AE1807A57EA68CF2D /* NPPTester.h in Headers */,
+				554BB1E5EF332F34C1616AEF /* NPPTextField.h in Headers */,
+				5357993A3F874E619BAEC69F /* NPPTextFieldManager.h in Headers */,
+				023473DEF4823DFCED86FE3C /* NPPThread.h in Headers */,
+				7CBA4E0E93DCC245EA811A70 /* NPPTimer.h in Headers */,
+				49B9FAD0EC16DCA6CC34C58B /* NPPVideo.h in Headers */,
+				E8C4D920221073059D27193E /* NPPWindow.h in Headers */,
+				AF4E52CC15874F9B3062997D /* NPPWindowKeyboard.h in Headers */,
+				6B986B045FBDCC3E2D2DEE2C /* NPPWindowOverlay.h in Headers */,
+				320EE6D3F7644AD288FF2880 /* NippurAnimation.h in Headers */,
+				62A009595060038DBA20B70D /* NippurCore.h in Headers */,
+				7388DBD5F59F5353305BB7D4 /* NippurGeolocation.h in Headers */,
+				27D6F6D9B72B791D763CCE0C /* NippurInterface.h in Headers */,
+				4F4D4ED3D00D035F3DD4DA09 /* NippurMedia.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0CF91E5B1665E85246BD363B /* Pods-ios */ = {
+		9AD48CC9079F6903F15A114E /* Pods-ios-Nippur */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21B858EBF65DE88269E5A3E4 /* Build configuration list for PBXNativeTarget "Pods-ios" */;
+			buildConfigurationList = F3F4F66F99FDAC2615822E97 /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur" */;
 			buildPhases = (
-				F1F1302A7D8B568C514D94D6 /* Sources */,
-				7C0BD2E708C8110D14C72200 /* Frameworks */,
+				F46D8E884783B22E54C5BDB9 /* Sources */,
+				8D02DCB6029271FE6AF868CE /* Frameworks */,
+				A6405534D4A2D781EC73E89D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				31460361A84ED131CBE5AD31 /* PBXTargetDependency */,
+				77FE261501C95B451C49CEA4 /* PBXTargetDependency */,
 			);
-			name = "Pods-ios";
-			productName = "Pods-ios";
-			productReference = C0ABE89BE61F2A4A369C62CB /* libPods-ios.a */;
+			name = "Pods-ios-Nippur";
+			productName = "Pods-ios-Nippur";
+			productReference = C89FEE4C19E6E245D9219B7E /* libPods-ios-Nippur.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3AD73EE4F0AD70CCDA30CCF3 /* Pods-ios-Nippur-Nippur */ = {
+		E4C653F745CD030432EB9B1A /* Pods-ios-Nippur-Nippur */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D291C1B99AEE0558E86D6576 /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur-Nippur" */;
+			buildConfigurationList = E4C1CA2514DE924DDFA7EA1F /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur-Nippur" */;
 			buildPhases = (
-				FA1A95945ED548680EB942F1 /* Sources */,
-				FE4D5665A818D5960BF8FA24 /* Frameworks */,
-				20F630E404D76E3EA032C7C8 /* Resources */,
+				975EE48A26337B40CAA1E2B2 /* Sources */,
+				258AB5D778148376F75370DD /* Frameworks */,
+				C0E4B02FFD86B393609A9A43 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -904,222 +905,198 @@
 			);
 			name = "Pods-ios-Nippur-Nippur";
 			productName = "Pods-ios-Nippur-Nippur";
-			productReference = 4DDFAFEEF45B4E4542254E01 /* Nippur.bundle */;
+			productReference = 21660038EB956F2B243CFF58 /* Nippur.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		C105AAEE67FC5D975B3BD3CB /* Pods-ios-Nippur */ = {
+		F8B16CCABB8016EA224FB36B /* Pods-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05BC6C3A204BCE62AB4B934E /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur" */;
+			buildConfigurationList = 0E88E94A84872D148BF756CB /* Build configuration list for PBXNativeTarget "Pods-ios" */;
 			buildPhases = (
-				F7B0FB565B05D9455A1AA3D6 /* Sources */,
-				9CFAF7A3C7154536AED66979 /* Frameworks */,
-				D2AEED29A8C81AE758826401 /* Headers */,
+				D38757AB191F798009FFE2D0 /* Sources */,
+				EF22E6E2A8120678EB82A902 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EADD75DE5353A388F0B06D7B /* PBXTargetDependency */,
+				5C6E6372A76FDFF14127A6D8 /* PBXTargetDependency */,
 			);
-			name = "Pods-ios-Nippur";
-			productName = "Pods-ios-Nippur";
-			productReference = 5394E2F34B28C102969B3ACF /* libPods-ios-Nippur.a */;
+			name = "Pods-ios";
+			productName = "Pods-ios";
+			productReference = CF3A61B83B8E9F3089F5893B /* libPods-ios.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F2153D46000E4B01D5A98EBE /* Project object */ = {
+		975EDF4B9F54DD31833ED7B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 137149F6F962C63712EF7104 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = C701341CC0C2F4B622170CF0 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D2428EE26A5D21DA0DC10E36;
-			productRefGroup = 9A07AF640C40D880DFD2F5B9 /* Products */;
+			mainGroup = C5C262A5F7C36CDFA5BB207C;
+			productRefGroup = 1C85C41FB03BC022B20BA245 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0CF91E5B1665E85246BD363B /* Pods-ios */,
-				C105AAEE67FC5D975B3BD3CB /* Pods-ios-Nippur */,
-				3AD73EE4F0AD70CCDA30CCF3 /* Pods-ios-Nippur-Nippur */,
+				F8B16CCABB8016EA224FB36B /* Pods-ios */,
+				9AD48CC9079F6903F15A114E /* Pods-ios-Nippur */,
+				E4C653F745CD030432EB9B1A /* Pods-ios-Nippur-Nippur */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		20F630E404D76E3EA032C7C8 /* Resources */ = {
+		C0E4B02FFD86B393609A9A43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D1F0AFF38F1126383840CC7 /* Nippur.bundle in Resources */,
+				904C73F35AC8935C42C4CB47 /* Nippur.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F1F1302A7D8B568C514D94D6 /* Sources */ = {
+		975EE48A26337B40CAA1E2B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30FBCCCFF3D17BCC603FB6D2 /* Pods-ios-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7B0FB565B05D9455A1AA3D6 /* Sources */ = {
+		D38757AB191F798009FFE2D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E0FC0ADF4467E0F9E53622 /* NPPAction.m in Sources */,
-				0407FA2417842DBC30AE5437 /* NPPActionBlock.m in Sources */,
-				F5E9E6ECA2697CB20B03FEC7 /* NPPActionGroup.m in Sources */,
-				7538FE1B40EC7DDE2B1911D2 /* NPPActionMove.m in Sources */,
-				AAC593B55CB23F8A5B4F1777 /* NPPActionRepeat.m in Sources */,
-				153BA47218537BE88F20C835 /* NPPActionSelector.m in Sources */,
-				D10077CA087F9AD1D3F1408A /* NPPActionSequence.m in Sources */,
-				6E5B81195AD8B4AFE6447566 /* NPPActionSheet.m in Sources */,
-				F710AAAD3004BAED33F89B5B /* NPPAlertView.m in Sources */,
-				FCF810FE397F77D929AF0A1C /* NPPAudio.m in Sources */,
-				F0A87E45ABEC98456E432EAB /* NPPBadgeView.m in Sources */,
-				DC80364A564736D3344468D5 /* NPPButton.m in Sources */,
-				CC81DE9F6BA109FA4EB022FD /* NPPCamera.m in Sources */,
-				60626ACF07A26340213176B3 /* NPPCipher.m in Sources */,
-				CF2DC635FE2CCAE0ABA91A38 /* NPPClockManager.m in Sources */,
-				A1E4EAECD126745B058C588A /* NPPConnector.m in Sources */,
-				C0728742E7FF58241797457E /* NPPDataManager.m in Sources */,
-				06E069B48C3452324835C5BF /* NPPEffects.m in Sources */,
-				7615AF3C0F5B3699C6762AD1 /* NPPFunctions.m in Sources */,
-				D780B410F2D6E7891F9E073A /* NPPGeohash.m in Sources */,
-				B665E758700375E30072A628 /* NPPGeolocationManager.m in Sources */,
-				7A9647C139015520DEE343D0 /* NPPGeoserverApple.m in Sources */,
-				968415ECA13500D1470D4B97 /* NPPInterfaceFunctions.m in Sources */,
-				203249EAF09BBE8DFF9BBF01 /* NPPJSON.m in Sources */,
-				EEAF5E8F247DA46AF6477AD3 /* NPPKeyboardToolbar.m in Sources */,
-				F9C846061A24FBCE1231AFC1 /* NPPLabel.m in Sources */,
-				65FBBDDD6ED03903F650F652 /* NPPLogger.m in Sources */,
-				40781F9114C1CEEFDA929132 /* NPPModelAddressVO.m in Sources */,
-				9AE82BE80332C7AEA8848696 /* NPPModelCountryVO.m in Sources */,
-				9094D659FAB2F2BC60D3256A /* NPPModelGeolocationVO.m in Sources */,
-				2953AB64978FCF4354143B62 /* NPPModelGeoregionVO.m in Sources */,
-				CCF67A78818FC3029F2716A8 /* NPPModelPlaceVO.m in Sources */,
-				3122CB2B67CE2C4A789A4995 /* NPPModelRouteNodeVO.m in Sources */,
-				5B8D7932F097AAD66F2B2E6D /* NPPModelVO.m in Sources */,
-				C9DEAEA2D27E70FE3C2F100C /* NPPNavigator.m in Sources */,
-				75AF55593AB33FC4CE465CF2 /* NPPNotificationView.m in Sources */,
-				332FAC057276990E3BF61FBA /* NPPNumber.m in Sources */,
-				2E32CA6E4D9A6F8F43791D8F /* NPPPickerView.m in Sources */,
-				C6797CD3469C437817658A6A /* NPPPluginArray.m in Sources */,
-				0C9D5260ACD7600C31E8F1B6 /* NPPPluginColor.m in Sources */,
-				CE550D3FD26B6E6D1D8ABAE5 /* NPPPluginDate.m in Sources */,
-				DF2527881F885AF6E1D55D58 /* NPPPluginDictionary.m in Sources */,
-				502B24AB4025C0D3D350F1C4 /* NPPPluginFont.m in Sources */,
-				DFAFEE3A4C0C0C33F18B38A0 /* NPPPluginImage.m in Sources */,
-				362A251F355DAE50795FC04B /* NPPPluginImageView.m in Sources */,
-				670B7FCCA56C6AF296E75207 /* NPPPluginNotificationCenter.m in Sources */,
-				59AF7A3C7120A120363FCCEA /* NPPPluginString.m in Sources */,
-				32043070981F6F8A0FAFBF6C /* NPPPluginView.m in Sources */,
-				ECC72C761E588EA3E38E3A3E /* NPPRefreshControl.m in Sources */,
-				FA81E9C4402F4F85CE27BF88 /* NPPRegEx.m in Sources */,
-				ED36A51D7CAC4D391C84810A /* NPPScrollLabel.m in Sources */,
-				2422C8C3C84A041D63C6C525 /* NPPStatusBar.m in Sources */,
-				E73063087B1D56E4C2C1512A /* NPPTableViewCell.m in Sources */,
-				34F14C0BE28E5846F38820AF /* NPPTableViewController.m in Sources */,
-				304C457E89DF6FF7BA508263 /* NPPTableViewSection.m in Sources */,
-				596048D930136E675363F9B8 /* NPPTester.m in Sources */,
-				8CD23A4A1935E2B913DDE85E /* NPPTextField.m in Sources */,
-				2492A9D4D99B9183259F9961 /* NPPTextFieldManager.m in Sources */,
-				633FC69F692FEDE51EA5F4D7 /* NPPThread.m in Sources */,
-				45FECD655FB6850E2640B54B /* NPPTimer.m in Sources */,
-				6C023E29A1FE5F6A6AF29F0E /* NPPVideo.m in Sources */,
-				6B05666821913C940CEF85D1 /* NPPWindow.m in Sources */,
-				9D621554A2F4D753520D8A37 /* NPPWindowKeyboard.m in Sources */,
-				03CFEB6BFFEDA23128DDD4AB /* NPPWindowOverlay.m in Sources */,
-				91C9C59A995DB3990F4CD238 /* Pods-ios-Nippur-dummy.m in Sources */,
+				7782B84535E10136D483DDB2 /* Pods-ios-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA1A95945ED548680EB942F1 /* Sources */ = {
+		F46D8E884783B22E54C5BDB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE832E662E36D9777C54421 /* NPPAction.m in Sources */,
+				84A10B5901EFE0408CDC96B1 /* NPPActionBlock.m in Sources */,
+				455559A248B2925B6E58AD45 /* NPPActionGroup.m in Sources */,
+				8F45FA15AEAD544E8CD0C5AA /* NPPActionMove.m in Sources */,
+				FE3AC7B7D599F64634CAEF9D /* NPPActionRepeat.m in Sources */,
+				0A2E4786EA08DD7BA5D99247 /* NPPActionSelector.m in Sources */,
+				17B1490BE76D4A4D54C02B13 /* NPPActionSequence.m in Sources */,
+				AC84CB6EE3B261815B4C7946 /* NPPActionSheet.m in Sources */,
+				7D2A739924E87B3B2431D6F1 /* NPPAlertView.m in Sources */,
+				BF6F430B53EE88E413D590E1 /* NPPAudio.m in Sources */,
+				CD3A53F6C57029F67229A7A5 /* NPPBadgeView.m in Sources */,
+				93739F0057E32FBCD323AA3E /* NPPButton.m in Sources */,
+				1F322B31EC18D902014A2162 /* NPPCamera.m in Sources */,
+				482A79D8B7E3E34F2F6DFFDA /* NPPCipher.m in Sources */,
+				C089155D00BD921A76713EDE /* NPPClockManager.m in Sources */,
+				5899BFEE77EEF156A472C260 /* NPPConnector.m in Sources */,
+				6865CE1B1E4376D149C3671F /* NPPDataManager.m in Sources */,
+				3DA4E8CE6CEA7E973402B445 /* NPPEffects.m in Sources */,
+				1C403E9D3CCE0CD9A5B2B6A7 /* NPPFunctions.m in Sources */,
+				21C59D69BBB21D2BED57DB31 /* NPPGeohash.m in Sources */,
+				1C93D5244AE9305DD8854D72 /* NPPGeolocationManager.m in Sources */,
+				E1F53D17379CD829D6AFDBFD /* NPPGeoserverApple.m in Sources */,
+				B8E8F322FF6FE7B232D5EE22 /* NPPInterfaceFunctions.m in Sources */,
+				4533275D9ECB81BFCFE53D77 /* NPPJSON.m in Sources */,
+				BAAAAA09F08F048FE687684D /* NPPKeyboardToolbar.m in Sources */,
+				AE905F061BA7E66EA98688A7 /* NPPLabel.m in Sources */,
+				4CF991D50774E54B598FD4A8 /* NPPLogger.m in Sources */,
+				91F77F56A9422092C6DFFE37 /* NPPModelAddressVO.m in Sources */,
+				314858ECDF4C98F28D0717DC /* NPPModelCountryVO.m in Sources */,
+				8F4E0EC515CD7EB497C1AC0E /* NPPModelGeolocationVO.m in Sources */,
+				FACEBD0123C0538115AEA54D /* NPPModelGeoregionVO.m in Sources */,
+				80AC796065764D9B45E33A1A /* NPPModelPlaceVO.m in Sources */,
+				6C851671EC130766AEE81668 /* NPPModelRouteNodeVO.m in Sources */,
+				8A96026A4C7ECB07B9B23A38 /* NPPModelVO.m in Sources */,
+				D6E56FD99B46752189FD98DB /* NPPNavigator.m in Sources */,
+				7B3E19C42E3498AF6F0CD9E6 /* NPPNotificationView.m in Sources */,
+				4328DD8558B11480D0287A3E /* NPPNumber.m in Sources */,
+				3FE9985BF51D10D45D6064F3 /* NPPPickerView.m in Sources */,
+				085619CC12B2AE40CC71C447 /* NPPPluginArray.m in Sources */,
+				0DFC3EEA31C6C889219118EC /* NPPPluginColor.m in Sources */,
+				07DEBB5702B73C9D27B9E4BD /* NPPPluginDate.m in Sources */,
+				511D2D9795E4FBE595122B89 /* NPPPluginDictionary.m in Sources */,
+				EC889AE3BE76A5208A291CC0 /* NPPPluginFont.m in Sources */,
+				C45977625337A2A9DA66B09D /* NPPPluginImage.m in Sources */,
+				00FDACB9C4861787CB233527 /* NPPPluginImageView.m in Sources */,
+				39CE99D2F9B0D3BD60179E54 /* NPPPluginNotificationCenter.m in Sources */,
+				2E8F451B817F7804DB896160 /* NPPPluginString.m in Sources */,
+				F81EF715BE1C409A91A59B92 /* NPPPluginView.m in Sources */,
+				939511AAEA3F802569A76BA8 /* NPPRefreshControl.m in Sources */,
+				41E4130C0D68C476AC4409CF /* NPPRegEx.m in Sources */,
+				6830E58EDF42A00269C01043 /* NPPScrollLabel.m in Sources */,
+				D429D580219623D6918ADCF2 /* NPPStatusBar.m in Sources */,
+				57D3D2900C7B50970F6C4304 /* NPPTableViewCell.m in Sources */,
+				AA4AA7265495378D52A1E51F /* NPPTableViewController.m in Sources */,
+				D190FB4FBC59C80FDA25F8EF /* NPPTableViewSection.m in Sources */,
+				F3EB6DD118CCF1F960442C8B /* NPPTester.m in Sources */,
+				701EA87D841759EE51D30E2C /* NPPTextField.m in Sources */,
+				44ADB9178B2C1F0BD75F9085 /* NPPTextFieldManager.m in Sources */,
+				788F628BDE596A758FDF071F /* NPPThread.m in Sources */,
+				58441A1574DBD0038BE62522 /* NPPTimer.m in Sources */,
+				EF36D6C750AFC70BDC4C81E8 /* NPPVideo.m in Sources */,
+				6A50E64CC5E6A67F51ABE0FD /* NPPWindow.m in Sources */,
+				31871519B7B84E24435C231A /* NPPWindowKeyboard.m in Sources */,
+				18BA288DE71CBBD29E8D52AC /* NPPWindowOverlay.m in Sources */,
+				6C059A463958A5A1777B95C4 /* Pods-ios-Nippur-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		31460361A84ED131CBE5AD31 /* PBXTargetDependency */ = {
+		5C6E6372A76FDFF14127A6D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ios-Nippur";
-			target = C105AAEE67FC5D975B3BD3CB /* Pods-ios-Nippur */;
-			targetProxy = BE142F3B9F890C2EFA5ABB8B /* PBXContainerItemProxy */;
+			target = 9AD48CC9079F6903F15A114E /* Pods-ios-Nippur */;
+			targetProxy = 4550D21EBC3B54B609D87DB7 /* PBXContainerItemProxy */;
 		};
-		EADD75DE5353A388F0B06D7B /* PBXTargetDependency */ = {
+		77FE261501C95B451C49CEA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ios-Nippur-Nippur";
-			target = 3AD73EE4F0AD70CCDA30CCF3 /* Pods-ios-Nippur-Nippur */;
-			targetProxy = 0514BB77726944808A6163A9 /* PBXContainerItemProxy */;
+			target = E4C653F745CD030432EB9B1A /* Pods-ios-Nippur-Nippur */;
+			targetProxy = A70A3832C0771DEC19837A97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		14BFC513ADD18E4FCB983402 /* Debug */ = {
+		013D516D1B53B5C94E71578B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AF2F6CBABFB0F1DCD0EAFC6 /* Pods-ios-Nippur-Private.xcconfig */;
+			baseConfigurationReference = 58B5307F0A4DC39A8FB79F11 /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-ios-Nippur/Pods-ios-Nippur-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		323E4BD1F7C04A8AD47BCFD3 /* Release */ = {
+		25508B42D17F67B2B31ACA7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Nippur;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
-		6B6FB9006AA8DD35E9606D4F /* Debug */ = {
+		4ACD8EDA540CAB27C963A4D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1158,13 +1135,13 @@
 			};
 			name = Debug;
 		};
-		8019B00211E423D98F05AE14 /* Debug */ = {
+		5FF2236644B3CA22F1651750 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 657040C3BC118C3C1A46C3F6 /* Pods-ios.debug.xcconfig */;
+			baseConfigurationReference = E60984DD0605B5A58902566B /* Pods-ios.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1172,9 +1149,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		B365523C51003135E8B69929 /* Release */ = {
+		73B341C7C4FA1AC2B719F2C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1185,9 +1162,59 @@
 			};
 			name = Release;
 		};
-		CD7BD7D10C9096D2736205CB /* Release */ = {
+		8A3BA727DC6B277DA44A6A03 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AF2F6CBABFB0F1DCD0EAFC6 /* Pods-ios-Nippur-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9080AD586737FD89A48F1221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 410B47D03D0B1E62AB34B19D /* Pods-ios-Nippur-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-ios-Nippur/Pods-ios-Nippur-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BDAC500F29A155CC4496686D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 410B47D03D0B1E62AB34B19D /* Pods-ios-Nippur-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-ios-Nippur/Pods-ios-Nippur-prefix.pch";
@@ -1201,73 +1228,46 @@
 			};
 			name = Release;
 		};
-		E87838F641004C30941D9200 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Nippur;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		F2C727CF643C7825D7E881F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15BE8DCCCD92B0F25B932C3A /* Pods-ios.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05BC6C3A204BCE62AB4B934E /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur" */ = {
+		0E88E94A84872D148BF756CB /* Build configuration list for PBXNativeTarget "Pods-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14BFC513ADD18E4FCB983402 /* Debug */,
-				CD7BD7D10C9096D2736205CB /* Release */,
+				013D516D1B53B5C94E71578B /* Debug */,
+				5FF2236644B3CA22F1651750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		137149F6F962C63712EF7104 /* Build configuration list for PBXProject "Pods" */ = {
+		C701341CC0C2F4B622170CF0 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B6FB9006AA8DD35E9606D4F /* Debug */,
-				323E4BD1F7C04A8AD47BCFD3 /* Release */,
+				4ACD8EDA540CAB27C963A4D5 /* Debug */,
+				8A3BA727DC6B277DA44A6A03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21B858EBF65DE88269E5A3E4 /* Build configuration list for PBXNativeTarget "Pods-ios" */ = {
+		E4C1CA2514DE924DDFA7EA1F /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur-Nippur" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8019B00211E423D98F05AE14 /* Debug */,
-				F2C727CF643C7825D7E881F4 /* Release */,
+				25508B42D17F67B2B31ACA7A /* Debug */,
+				73B341C7C4FA1AC2B719F2C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D291C1B99AEE0558E86D6576 /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur-Nippur" */ = {
+		F3F4F66F99FDAC2615822E97 /* Build configuration list for PBXNativeTarget "Pods-ios-Nippur" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E87838F641004C30941D9200 /* Debug */,
-				B365523C51003135E8B69929 /* Release */,
+				9080AD586737FD89A48F1221 /* Debug */,
+				BDAC500F29A155CC4496686D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F2153D46000E4B01D5A98EBE /* Project object */;
+	rootObject = 975EDF4B9F54DD31833ED7B7 /* Project object */;
 }

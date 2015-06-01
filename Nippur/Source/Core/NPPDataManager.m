@@ -296,7 +296,6 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 
 + (id) loadFile:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
-	CFTimeInterval startTime = nppAbsoluteTime();
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
 	id data = nil;
 	
@@ -322,14 +321,11 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 		data = [NSDictionary dictionaryWithContentsOfFile:localPath];
 	}
 	
-	nppLog(@"\"%@\" loaded in:%f", name, (float)(nppAbsoluteTime() - startTime));
-	
 	return data;
 }
 
 + (void) saveFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
-	CFTimeInterval startTime = nppAbsoluteTime();
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
 	
 	// Archiving data.
@@ -351,14 +347,10 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	{
 		[data writeToFile:localPath atomically:YES];
 	}
-	
-	nppLog(@"\"%@\" saved in:%f", name, (float)(nppAbsoluteTime() - startTime));
 }
 
 + (void) appendFile:(id)data name:(NSString *)name type:(NPPDataType)type folder:(NPPDataFolder)folder
 {
-	CFTimeInterval startTime = nppAbsoluteTime();
-	
 	NSString *localPath = [nppDataManagerPath(folder) stringByAppendingPathComponent:name];
 	NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:localPath];
 	[fileHandle seekToEndOfFile];
@@ -387,8 +379,6 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	}
 	
 	[fileHandle closeFile];
-	
-	nppLog(@"\"%@\" appended in:%f", name, (float)(nppAbsoluteTime() - startTime));
 }
 
 + (NSString *) pathForFolder:(NPPDataFolder)folder

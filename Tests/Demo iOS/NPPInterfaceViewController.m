@@ -1,5 +1,5 @@
 /*
- *	NPPPluginNotificationCenter.m
+ *	NPPInterfaceViewController.m
  *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,7 +21,7 @@
  *	THE SOFTWARE.
  */
 
-#import "NPPPluginNotificationCenter.h"
+#import "NPPInterfaceViewController.h"
 
 #pragma mark -
 #pragma mark Constants
@@ -59,6 +59,12 @@
 //	Private Category
 //**************************************************
 
+@interface NPPInterfaceViewController() <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, NPP_RETAIN) NSArray *imageURLs;
+
+@end
+
 #pragma mark -
 #pragma mark Public Interface
 #pragma mark -
@@ -68,46 +74,7 @@
 //
 //**********************************************************************************************************
 
-#pragma mark -
-#pragma mark Properties
-//**************************************************
-//	Properties
-//**************************************************
-
-#pragma mark -
-#pragma mark Constructors
-//**************************************************
-//	Constructors
-//**************************************************
-
-#pragma mark -
-#pragma mark Private Methods
-//**************************************************
-//	Private Methods
-//**************************************************
-
-#pragma mark -
-#pragma mark Self Public Methods
-//**************************************************
-//	Self Public Methods
-//**************************************************
-
-#pragma mark -
-#pragma mark Override Public Methods
-//**************************************************
-//	Override Public Methods
-//**************************************************
-
-#pragma mark -
-#pragma mark NPPNotificationCenter
-#pragma mark -
-//**********************************************************************************************************
-//
-//	NPPNotificationCenter
-//
-//**********************************************************************************************************
-
-@implementation NSNotificationCenter (NPPNotificationCenter)
+@implementation NPPInterfaceViewController
 
 #pragma mark -
 #pragma mark Properties
@@ -127,42 +94,54 @@
 //	Private Methods
 //**************************************************
 
-#pragma mark -
-#pragma mark Self Public Methods
-//**************************************************
-//	Self Public Methods
-//**************************************************
-
-- (void) postMainNotification:(NSString *)name object:(id)obj userInfo:(NSDictionary *)info
+- (NSArray *) imageURLs
 {
-	if (![NSThread isMainThread])
+	if (!_imageURLs)
 	{
-		NPPBlockVoid block = ^(void)
-		{
-			[self postNotificationName:name object:obj userInfo:info];
-		};
+		NSMutableArray *imageURLs = [NSMutableArray array];
 		
-		nppBlockMain(block);
+		for (NSInteger index = 0; index < 100; ++index)
+		{
+			[imageURLs addObject:[NSString stringWithFormat:
+								  @"http://dummyimage.com/88/%06X/%06X&text=%li",
+								  arc4random() % 0xFFFFFF,
+								  arc4random() % 0xFFFFFF,
+								  index + 1]];
+		}
+		
+		_imageURLs = imageURLs;
 	}
-	else
-	{
-		[self postNotificationName:name object:obj userInfo:info];
-	}
+	
+	return _imageURLs;
 }
 
-+ (void) defaultCenterPostMainNotification:(NSString *)name
+#pragma mark -
+#pragma mark Self Public Methods
+//**************************************************
+//	Self Public Methods
+//**************************************************
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	[[NSNotificationCenter defaultCenter] postMainNotification:name object:nil userInfo:nil];
+	return 1;
 }
 
-+ (void) defaultCenterPostMainNotification:(NSString *)name object:(id)obj
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	[[NSNotificationCenter defaultCenter] postMainNotification:name object:obj userInfo:nil];
+	return [self.imageURLs count];
 }
 
-+ (void) defaultCenterPostMainNotification:(NSString *)name object:(id)obj userInfo:(NSDictionary *)info
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[[NSNotificationCenter defaultCenter] postMainNotification:name object:obj userInfo:info];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"
+															forIndexPath:indexPath];
+	
+	cell.imageView.image = [UIImage imageNamed:@"placeholder"];
+	
+	[cell.imageView loadURL:self.imageURLs[indexPath.row]];
+	
+	return cell;
 }
 
 #pragma mark -
@@ -170,5 +149,26 @@
 //**************************************************
 //	Override Public Methods
 //**************************************************
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	
+	[UIImageView definePlaceholder:@"npp_placeholder.png"];
+	
+	UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+	tableView.dataSource = self;
+	tableView.delegate = self;
+	
+	[tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TableViewCell"];
+	
+	[[self view] addSubview:tableView];
+}
+
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
+}
 
 @end

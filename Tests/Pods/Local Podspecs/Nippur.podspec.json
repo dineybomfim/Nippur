@@ -2,7 +2,7 @@
   "name": "Nippur",
   "version": "1.0.3",
   "summary": "Nippur is a framework for daily work. To make it easier and reliable.",
-  "description": "                       Nippur is a framework made with several years of daily work, reusing the most common and most complexes part of the code.\n                       It is separated in parts (similar to packages) that allows you to import only the necessary parts to your project,\n                       since there are codes for many situations inside it.\n",
+  "description": "                       Nippur was forged on several years of daily work, reusing the most common and most complexes part of the code.\n                       It is separated in parts (similar to packages) that allows you to import only the necessary code to your project.\n",
   "homepage": "http://db-in.com/nippur/",
   "documentation_url": "http://db-in.com/nippur/docs/",
   "screenshots": [

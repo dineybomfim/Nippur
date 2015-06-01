@@ -151,7 +151,6 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	
 	[NPPConnector cancelConnector:cancelConn];
 	
-	
 	[self waitForExpectationsWithTimeout:15.0 handler:nil];
 }
 

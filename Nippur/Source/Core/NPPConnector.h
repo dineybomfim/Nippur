@@ -111,11 +111,6 @@ NPP_API NSString *const kNPPKeyConnectorDidResponse;
  */
 NPP_API NSString *const kNPPKeyConnectorDidFinish;
 
-/*!
- *					Notification about a connection failed (NPPConnectorState{Failed,Cancelled}).
- */
-NPP_API NSString *const kNPPConnectorErrorDomain;
-
 @class NPPConnector;
 
 /*!

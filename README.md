@@ -3,8 +3,9 @@
 [![Version](https://img.shields.io/cocoapods/v/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![License](https://img.shields.io/cocoapods/l/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
 [![Platform](https://img.shields.io/cocoapods/p/Nippur.svg?style=flat)](http://cocoapods.org/pods/Nippur)
+[![Releases](https://img.shields.io/github/downloads/dineybomfim/Nippur/latest/total.svg?style=flat)](https://github.com/dineybomfim/Nippur/releases/latest)
 [![CI Status](https://img.shields.io/travis/dineybomfim/Nippur.svg?style=flat)](https://travis-ci.org/dineybomfim/Nippur)
-[![Coverage Status](https://img.shields.io/coveralls/dineybomfim/Nippur.svg?style=flat)](https://coveralls.io/r/dineybomfim/Nippur)
+[![Coverage](https://img.shields.io/coveralls/dineybomfim/Nippur.svg?style=flat)](https://coveralls.io/r/dineybomfim/Nippur)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Installation
@@ -21,7 +22,11 @@ pod "Nippur"
 ```
 
 ```objc
-#import "Nippur.h"
+#import "NippurCore.h"
+#import "NippurAnimation.h"
+#import "NippurInterface.h"
+#import "NippurGeolocation.h"
+#import "NippurMedia.h"
 ```
 
 Nippur is made by 5 packages (modules), which you can import and use individually.
@@ -32,7 +37,7 @@ Nippur is made by 5 packages (modules), which you can import and use individuall
 <img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"></img>
 
-You can pick one or more using the subspecs, use the following lines on your Podfile and Prefix Header (.pch):
+You can also leave extra code outside your binary file by using the subspecs, use the following lines on your Podfile:
 
 ```ruby
 pod "Nippur/Core"
@@ -40,14 +45,6 @@ pod "Nippur/Animation"
 pod "Nippur/Interface"
 pod "Nippur/Geolocation"
 pod "Nippur/Media"
-```
-
-```objc
-#import "NippurCore.h"
-#import "NippurAnimation.h"
-#import "NippurInterface.h"
-#import "NippurGeolocation.h"
-#import "NippurMedia.h"
 ```
 
 ## Core

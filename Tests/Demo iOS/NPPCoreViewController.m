@@ -1,5 +1,5 @@
 /*
- *	NPPPluginNotificationCenter.m
+ *	NPPCoreViewController.m
  *	Copyright (c) 2011-2015 db-in. More information at: http://db-in.com/nippur
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,7 +21,7 @@
  *	THE SOFTWARE.
  */
 
-#import "NPPPluginNotificationCenter.h"
+#import "NPPCoreViewController.h"
 
 #pragma mark -
 #pragma mark Constants
@@ -59,6 +59,10 @@
 //	Private Category
 //**************************************************
 
+@interface NPPCoreViewController ()
+
+@end
+
 #pragma mark -
 #pragma mark Public Interface
 #pragma mark -
@@ -68,6 +72,8 @@
 //
 //**********************************************************************************************************
 
+@implementation NPPCoreViewController
+
 #pragma mark -
 #pragma mark Properties
 //**************************************************
@@ -98,77 +104,14 @@
 //	Override Public Methods
 //**************************************************
 
-#pragma mark -
-#pragma mark NPPNotificationCenter
-#pragma mark -
-//**********************************************************************************************************
-//
-//	NPPNotificationCenter
-//
-//**********************************************************************************************************
-
-@implementation NSNotificationCenter (NPPNotificationCenter)
-
-#pragma mark -
-#pragma mark Properties
-//**************************************************
-//	Properties
-//**************************************************
-
-#pragma mark -
-#pragma mark Constructors
-//**************************************************
-//	Constructors
-//**************************************************
-
-#pragma mark -
-#pragma mark Private Methods
-//**************************************************
-//	Private Methods
-//**************************************************
-
-#pragma mark -
-#pragma mark Self Public Methods
-//**************************************************
-//	Self Public Methods
-//**************************************************
-
-- (void) postMainNotification:(NSString *)name object:(id)obj userInfo:(NSDictionary *)info
-{
-	if (![NSThread isMainThread])
-	{
-		NPPBlockVoid block = ^(void)
-		{
-			[self postNotificationName:name object:obj userInfo:info];
-		};
-		
-		nppBlockMain(block);
-	}
-	else
-	{
-		[self postNotificationName:name object:obj userInfo:info];
-	}
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
 }
 
-+ (void) defaultCenterPostMainNotification:(NSString *)name
-{
-	[[NSNotificationCenter defaultCenter] postMainNotification:name object:nil userInfo:nil];
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
-
-+ (void) defaultCenterPostMainNotification:(NSString *)name object:(id)obj
-{
-	[[NSNotificationCenter defaultCenter] postMainNotification:name object:obj userInfo:nil];
-}
-
-+ (void) defaultCenterPostMainNotification:(NSString *)name object:(id)obj userInfo:(NSDictionary *)info
-{
-	[[NSNotificationCenter defaultCenter] postMainNotification:name object:obj userInfo:info];
-}
-
-#pragma mark -
-#pragma mark Override Public Methods
-//**************************************************
-//	Override Public Methods
-//**************************************************
 
 @end
