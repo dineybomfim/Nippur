@@ -90,7 +90,8 @@ static NSString *nppImageKey(NSURLRequest *request)
 			break;
 		default:
 			// Best performance with Base64 routine.
-			key = [[[request URL] absoluteString] encodeBase64];
+			//key = [[[request URL] absoluteString] encodeBase64];
+			key = [[request URL] absoluteString];
 			break;
 	}
 	
@@ -108,7 +109,6 @@ static UIImage *nppImageLoadCache(NSString *imageKey)
 static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 {
 	NSCache *cache = nppImageViewCache();
-	
 	[cache setObject:image forKey:imageKey];
 }
 /*/
@@ -209,7 +209,7 @@ NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_AS
 - (void) loadURL:(NSString *)url
 {
 	NSMutableDictionary *info = nppImageViewProperties();
-	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] override:NO];
+	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] override:YES];
 }
 
 - (void) loadURL:(NSString *)url placeholder:(UIImage *)image override:(BOOL)overriding
@@ -266,10 +266,8 @@ NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_AS
 	}
 }
 
-+ (void) definePlaceholder:(NSString *)fileNamed
++ (void) definePlaceholder:(NPP_IMAGE *)image
 {
-	UIImage *image = nppImageFromFile(fileNamed);
-	
 	if (image != nil)
 	{
 		NSMutableDictionary *info = nppImageViewProperties();
