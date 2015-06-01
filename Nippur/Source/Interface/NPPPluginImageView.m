@@ -96,7 +96,7 @@ static NSString *nppImageKey(NSURLRequest *request)
 	
 	return key;
 }
-
+//*
 static UIImage *nppImageLoadCache(NSString *imageKey)
 {
 	NSCache *cache = nppImageViewCache();
@@ -111,7 +111,19 @@ static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 	
 	[cache setObject:image forKey:imageKey];
 }
+/*/
+static UIImage *nppImageLoadCache(NSString *imageKey)
+{
+	UIImage *image = [NPPDataManager loadFile:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+	
+	return image;
+}
 
+static void nppImageSaveCache(NSString *imageKey, UIImage *image)
+{
+	[NPPDataManager saveFile:image name:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+}
+//*/
 #pragma mark -
 #pragma mark Private Category
 //**************************************************
@@ -174,7 +186,7 @@ static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 //	Properties
 //**************************************************
 
-NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_RETAIN);
+NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_ASSIGN);
 
 #pragma mark -
 #pragma mark Constructors
@@ -197,7 +209,7 @@ NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_RE
 - (void) loadURL:(NSString *)url
 {
 	NSMutableDictionary *info = nppImageViewProperties();
-	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] override:YES];
+	[self loadURL:url placeholder:[info objectForKey:NPP_IV_PLACEHOLDER] override:NO];
 }
 
 - (void) loadURL:(NSString *)url placeholder:(UIImage *)image override:(BOOL)overriding
@@ -234,12 +246,13 @@ NPP_CATEGORY_PROPERTY(NPPConnector, connector, setConnector, OBJC_ASSOCIATION_RE
 				{
 					nppImageSaveCache(key, newImage);
 					
-					//TODO Prevents older loadings to override new loadings.
-					self.image = newImage;
+					// Prevents older loadings from overriding the new ones, the last has higher priority.
+					if ([self connector] == connector)
+					{
+						self.image = newImage;
+					}
 				}
-				
-				[self setConnector:nil];
-			 }];
+			}];
 			
 			[self setConnector:conn];
 		}

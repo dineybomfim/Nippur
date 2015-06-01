@@ -103,7 +103,8 @@
 		for (NSInteger index = 0; index < 100; ++index)
 		{
 			[imageURLs addObject:[NSString stringWithFormat:
-								  @"http://dummyimage.com/88/%06X/%06X&text=%li",
+								  @"http://dummyimage.com/%i/%06X/%06X&text=%li",
+								  (arc4random() % 900) + 88,
 								  arc4random() % 0xFFFFFF,
 								  arc4random() % 0xFFFFFF,
 								  index + 1]];
