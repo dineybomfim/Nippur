@@ -10,15 +10,17 @@
 ## Installation
 
 Nippur is compatible with iOS 6 or later.
-
-<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></img>
-
 Nippur is available through [CocoaPods](http://cocoapods.org/pods/Nippur). To install
 it, simply add the following line to your Podfile:
+
+<img src="http://db-in.com/nippur/images/logo_small.png" width="100" height="100"></img>
 
 ```ruby
 pod "Nippur"
 ```
+
+Nippur is made by 5 packages (modules), which you can import and use individually.
+You can also leave extra code outside your binary file by using the subspecs, use the following lines on your Podfile:
 
 <img src="http://db-in.com/nippur/images/logo_core_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_animation_small.png" width="100" height="100"></img>
@@ -26,8 +28,6 @@ pod "Nippur"
 <img src="http://db-in.com/nippur/images/logo_geolocation_small.png" width="100" height="100"></img>
 <img src="http://db-in.com/nippur/images/logo_media_small.png" width="100" height="100"></img>
 
-Nippur is made by 5 packages (modules), which you can import and use individually.
-You can also leave extra code outside your binary file by using the subspecs, use the following lines on your Podfile:
 
 ```ruby
 pod "Nippur/Core"
@@ -37,7 +37,7 @@ pod "Nippur/Geolocation"
 pod "Nippur/Media"
 ```
 
-Now just add to your Prefix Header (.pch)
+Now just add to your Prefix Header (.pch):
 
 ```objc
 #import "NippurCore.h"
