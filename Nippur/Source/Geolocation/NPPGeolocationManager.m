@@ -82,7 +82,7 @@ static int _defaultMode = NPPGeolocationModeGPS;
 // Initializes a new instance.
 - (void) initializing;
 
-- (void) addListenerWithBlock:(NPPBlockGeolocation)block;
+- (void) addListenerWithBlock:(nppBlockGeolocation)block;
 
 - (void) startMonitoring;
 - (void) stopMonitoring;
@@ -138,7 +138,7 @@ static int _defaultMode = NPPGeolocationModeGPS;
 	_currentRetry = 0;
 }
 
-- (void) addListenerWithBlock:(NPPBlockGeolocation)block
+- (void) addListenerWithBlock:(nppBlockGeolocation)block
 {
 	// Avoids invalid blocks.
 	if (block == nil)
@@ -203,7 +203,7 @@ static int _defaultMode = NPPGeolocationModeGPS;
 	  didUpdateLocations:(NSArray *)locations
 {
 	BOOL continuous = NO;
-	NPPBlockGeolocation callback = nil;
+	nppBlockGeolocation callback = nil;
 	NSArray *blocks = nil;
 	NSArray *array = nil;
 	CLLocation *lastLocation = [locations lastObject];
@@ -299,7 +299,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 	return _defaultLocationManager.lastGeolocation;
 }
 
-+ (void) geolocationWithBlock:(NPPBlockGeolocation)block
++ (void) geolocationWithBlock:(nppBlockGeolocation)block
 {
 	[_defaultLocationManager addListenerWithBlock:block];
 }

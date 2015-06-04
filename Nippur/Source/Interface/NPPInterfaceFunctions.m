@@ -37,7 +37,7 @@
 #define NPP_STR_PHONE				@"iphone"
 #define NPP_STR_POD					@"ipod"
 #define NPP_STR_SIMULATOR			@"simulator"
-
+#define NPP_STR_NIB					@".nib"
 #define NPP_STR_USER_AGENT			@"navigator.userAgent"
 #define NPP_BUNDLE_BACKGROUND		@"UIBackgroundModes"
 
@@ -172,6 +172,29 @@ BOOL nppDeviceSupportsBlur(void)
 				  });
 	
 	return _default;
+}
+
+id nppItemFromXIB(NSString *name)
+{
+	id object = nil;
+	Class classObject = NSClassFromString(name);
+	
+	if (nppFileExists([name stringByAppendingString:NPP_STR_NIB]))
+	{
+		NSArray *array = [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil];
+		id item = nil;
+		
+		for (item in array)
+		{
+			if ([item isKindOfClass:classObject])
+			{
+				object = nppRetain(item);
+				break;
+			}
+		}
+	}
+	
+	return nppAutorelease(object);
 }
 
 CGRect nppDeviceScreenRectOriented(BOOL oriented)

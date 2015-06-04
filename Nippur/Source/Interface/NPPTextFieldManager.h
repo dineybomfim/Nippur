@@ -24,6 +24,8 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
+#import "NPPInterfaceFunctions.h"
+
 // Predefined formats:
 //	# = Number
 //	@ = Upper Case Letter

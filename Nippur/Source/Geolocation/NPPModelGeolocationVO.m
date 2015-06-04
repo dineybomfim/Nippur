@@ -33,18 +33,18 @@
 //**********************************************************************************************************
 
 // At the Equator Line, 0.00001 degress is ~1.019m.
-#define kNPP_GEO_METER				0.00001
-#define kNPP_GEO_30METER			0.00030
-#define kNPP_GEO_60METER			0.00059
-#define kNPP_GEO_100METER			0.00098
-#define kNPP_GEO_1KILOMETER			0.00981
-#define kNPP_GEO_2KILOMETER			0.01963
-#define kNPP_GEO_3KILOMETER			0.02944
-#define kNPP_SPACE_METER_UNIT		1.01900
-#define kNPP_SPACE_METER_FACTOR		100000
-#define kNPP_SPACE_METER_DELTA		100000.01900
-#define NPPMetersToGeoDegress(x)	((x) / kNPP_SPACE_METER_DELTA)
-#define NPPGeoDegressToMeters(x)	((x) * kNPP_SPACE_METER_DELTA)
+#define NPP_GEO_METER				0.00001
+#define NPP_GEO_30METER			0.00030
+#define NPP_GEO_60METER			0.00059
+#define NPP_GEO_100METER			0.00098
+#define NPP_GEO_1KILOMETER			0.00981
+#define NPP_GEO_2KILOMETER			0.01963
+#define NPP_GEO_3KILOMETER			0.02944
+#define NPP_SPACE_METER_UNIT		1.01900
+#define NPP_SPACE_METER_FACTOR		100000
+#define NPP_SPACE_METER_DELTA		100000.01900
+#define NPPMetersToGeoDegress(x)	((x) / NPP_SPACE_METER_DELTA)
+#define NPPGeoDegressToMeters(x)	((x) * NPP_SPACE_METER_DELTA)
 
 #pragma mark -
 #pragma mark Private Interface

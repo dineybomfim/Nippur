@@ -106,7 +106,7 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
 	__block int count = 0;
 	
-	NPPBlockConnector block = ^(NPPConnector *__unsafe_unretained connector)
+	nppBlockConnector block = ^(NPPConnector *__unsafe_unretained connector)
 	{
 		NSString *link = connector.request.URL.absoluteString;
 		nppLog(@"%@ - Received Bytes:%lli", link, connector.receivedData.length);

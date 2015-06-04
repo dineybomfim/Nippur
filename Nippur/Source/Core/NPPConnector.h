@@ -116,7 +116,7 @@ NPP_API NSString *const kNPPKeyConnectorDidFinish;
 /*!
  *					Defines the connector block.
  */
-typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
+typedef void (^nppBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 
 /*!
  *					The connector is an asynchronously connection to any online service, endpoint
@@ -208,7 +208,7 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
  *	@param			block
  *					The finish block. It'll be called when the connection ends (successfully or not).
  */
-+ (id) connectorWithRequest:(NSURLRequest *)request completion:(NPPBlockConnector)block;
++ (id) connectorWithRequest:(NSURLRequest *)request completion:(nppBlockConnector)block;
 
 /*!
  *					Starts a connection immediately based on the imput parameters.
@@ -233,7 +233,7 @@ typedef void (^NPPBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 				 method:(NPPHTTPMethod)method
 				headers:(NSDictionary *)headers
 				   body:(id)body
-			 completion:(NPPBlockConnector)block;
+			 completion:(nppBlockConnector)block;
 
 /*!
  *					Cancels one or more connections with the matching URL pattern and returns a BOOL

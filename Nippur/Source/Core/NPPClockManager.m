@@ -112,7 +112,7 @@
 {
 	NSTimeInterval time = nppApplicationTime() - _startTime;
 	float percentage = (_totalTime > 0.0f) ? time / _totalTime : 1.0f;
-	_percentage = NPPClamp(percentage, 0.0f, 1.0f);
+	_percentage = nppClamp(percentage, 0.0f, 1.0f);
 	
 	if (time >= _totalTime)
 	{
@@ -151,7 +151,7 @@
 - (void) setCurrentPercentage:(float)value
 {
 	value = (_reverse) ? 1.0f - value : value;
-	_percentage = NPPClamp(value, 0.0f, 1.0f);
+	_percentage = nppClamp(value, 0.0f, 1.0f);
 	_startTime = nppApplicationTime() - (_totalTime * _percentage);
 	[self timerCallBack];
 }

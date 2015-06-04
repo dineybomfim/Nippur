@@ -146,22 +146,22 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 @private
 	NSURLConnection				*_conn;
 	NSURLRequest				*_request;
-	NPPBlockConnector			_block;
+	nppBlockConnector			_block;
 	NSMutableString				*_log;
 }
 
 @property (nonatomic, NPP_RETAIN) NSURLRequest *request;
-@property (nonatomic, NPP_COPY) NPPBlockConnector block;
+@property (nonatomic, NPP_COPY) nppBlockConnector block;
 
 // Initializes a new instance.
 - (void) initializing;
 
-- (id) initWithRequest:(NSURLRequest *)request completion:(NPPBlockConnector)block;
+- (id) initWithRequest:(NSURLRequest *)request completion:(nppBlockConnector)block;
 - (id) initWithURL:(NSString *)url
 			method:(NPPHTTPMethod)method
 		   headers:(NSDictionary *)headers
 			  body:(id)body
-		completion:(NPPBlockConnector)block;
+		completion:(nppBlockConnector)block;
 
 
 - (void) startConnection;
@@ -212,7 +212,7 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 //	Constructors
 //**************************************************
 
-- (id) initWithRequest:(NSURLRequest *)request completion:(NPPBlockConnector)block
+- (id) initWithRequest:(NSURLRequest *)request completion:(nppBlockConnector)block
 {
 	if ((self = [self init]))
 	{
@@ -230,7 +230,7 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 			method:(NPPHTTPMethod)method
 		   headers:(NSDictionary *)headers
 			  body:(id)body
-		completion:(NPPBlockConnector)block
+		completion:(nppBlockConnector)block
 {
 	if ((self = [self init]))
 	{
@@ -325,7 +325,7 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	return self;
 }
 
-+ (id) connectorWithRequest:(NSURLRequest *)request completion:(NPPBlockConnector)block
++ (id) connectorWithRequest:(NSURLRequest *)request completion:(nppBlockConnector)block
 {
 	NPPConnector *conn = [[self alloc] initWithRequest:request completion:block];
 	[conn startConnection];
@@ -337,7 +337,7 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 				 method:(NPPHTTPMethod)method
 				headers:(NSDictionary *)headers
 				   body:(id)body
-			 completion:(NPPBlockConnector)block
+			 completion:(nppBlockConnector)block
 {
 	NPPConnector *conn = nil;
 	conn = [[self alloc] initWithURL:url method:method headers:headers body:body completion:block];

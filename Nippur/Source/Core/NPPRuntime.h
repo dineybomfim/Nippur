@@ -27,7 +27,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
-#import <UIKit/UIKit.h>
  
 #pragma mark -
 #pragma mark Basic Definitions
@@ -220,23 +219,17 @@
 #define NPP_ARC4RANDOM_MAX			0x100000000
 
 // Geometry.
-#define kNPP_PI						3.141592f // PI
-#define kNPP_2PI					6.283184f // 2 * PI
-#define kNPP_PI2					1.570796f // PI / 2
-#define kNPP_PI180					0.017453f // PI / 180
-#define kNPP_180PI					57.295780f // 180 / PI
-#define NPPDegreesToRadians(x)		((x) * kNPP_PI180)
-#define NPPRadiansToDegrees(x)		((x) * kNPP_180PI)
+#define NPP_PI						3.141592f // PI
+#define NPP_2PI						6.283184f // 2 * PI
+#define NPP_PI2						1.570796f // PI / 2
+#define NPP_PI180					0.017453f // PI / 180
+#define NPP_180PI					57.295780f // 180 / PI
 
-#define NPPCirclePerimeter(r)		(2.0f * kNPP_PI * (r))
-#define NPPElipsePerimeter(rl,rs)	(2.0f * kNPP_PI * sqrtf((rl) * (rl) * 0.5f + (rs) * (rs) * 0.5f))
-
-#define NPPClamp(x,min,max)			((x) < (min) ? (min) : ((x) > (max) ? (max) : (x)))
-#define NPPClampFull(x,cA,cB)		(NPPClamp(x, MIN(cA, cB), MAX(cA, cB)))
-
-// Times.
-#define kNPPAnimTime				0.3f
-#define kNPPAnimTimeX2				0.6f
+#define nppDegreesToRadians(x)		((x) * NPP_PI180)
+#define nppRadiansToDegrees(x)		((x) * NPP_180PI)
+#define nppCirclePerimeter(r)		(2.0f * NPP_PI * (r))
+#define nppElipsePerimeter(rl,rs)	(2.0f * NPP_PI * sqrtf((rl) * (rl) * 0.5f + (rs) * (rs) * 0.5f))
+#define nppClamp(x,min,max)			((x) < (min) ? (min) : ((x) > (max) ? (max) : (x)))
 
 #pragma mark -
 #pragma mark Functions Definitions
@@ -357,13 +350,6 @@
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){ (block)(__VA_ARGS__); }); \
 } })
 //dispatch_get_current_queue
-
-/*!
- *					This is a simple function that returns the current absolute time of the system.
- *					It is given in seconds (32 bits float data type) and its related to the number of
- *					clock cycles since the start of the system.
- */
-#define nppAbsoluteTime()			(CACurrentMediaTime())
 
 /*!
  *					This is a simple macro that defines the a singleton interface.

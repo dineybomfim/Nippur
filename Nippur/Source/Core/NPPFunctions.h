@@ -120,7 +120,6 @@ NPP_API NSString *nppGetFileName(NSString *named);
 NPP_API NSString *nppGetPath(NSString *named);
 NPP_API NSString *nppMakePath(NSString *named);
 NPP_API BOOL nppFileExists(NSString *named);
-NPP_API id nppItemFromXIB(NSString *name); // XIB file must has the same name/class as the item.
 
 //*************************
 //	Bundle Functions
@@ -156,6 +155,13 @@ NPP_API NSString *nppGetLanguage(void);
 //*************************
 //	Utils Functions
 //*************************
+
+/*!
+ *					This is a simple function that returns the current absolute time of the system.
+ *					It is given in seconds (32 bits float data type) and its related to the number of
+ *					clock cycles since the start of the system.
+ */
+NPP_API	double nppAbsoluteTime(void);
 
 /*!
  *					This function performs an action on a target safely.

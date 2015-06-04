@@ -22,6 +22,7 @@
  */
 
 #import "NPPRuntime.h"
+#import "NPPFunctions.h"
 
 /*!
  *					Returns the time that the application is running given in seconds.

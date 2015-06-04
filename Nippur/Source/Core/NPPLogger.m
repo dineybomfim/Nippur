@@ -286,7 +286,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 	// {"logs":{"users":[],"devices":[]}}
 	// "*" is valid and means ALL the users and devices.
 	
-	NPPBlockConnector callBack = ^(NPPConnector *connector)
+	nppBlockConnector callBack = ^(NPPConnector *connector)
 	{
 		id json = [NPPJSON objectWithData:connector.receivedData];
 		BOOL sendLog = NO;
@@ -336,7 +336,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 								  [localLog encodeHTMLFull], @"log",
 								  nil];
 			
-			NPPBlockConnector sentBlock = ^(NPPConnector *connector)
+			nppBlockConnector sentBlock = ^(NPPConnector *connector)
 			{
 				if (connector.statusCode == 200)
 				{
@@ -370,7 +370,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 						  device, @"device",
 						  nil];
 	
-	NPPBlockConnector sentBlock = ^(NPPConnector *connector)
+	nppBlockConnector sentBlock = ^(NPPConnector *connector)
 	{
 		//id receivedData = [NPPJSON objectWithData:connector.receivedData];
 		//[[receivedData objectForKey:@"status"] intValue] == 200
@@ -392,7 +392,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 
 + (void) logRemoteDecode:(NSString *)remoteId completion:(NPPBlockArray)block
 {
-	NPPBlockConnector callBlock = ^(NPPConnector *connector)
+	nppBlockConnector callBlock = ^(NPPConnector *connector)
 	{
 		NSString *log = [NSString stringWithData:connector.receivedData encoding:NSUTF8StringEncoding];
 		nppBlock(block, nppGetLogFromString(log));

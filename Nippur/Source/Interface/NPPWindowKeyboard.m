@@ -226,23 +226,23 @@ NPP_SINGLETON_IMPLEMENTATION(NPPWindowKeyboard);
 	{
 		case UIInterfaceOrientationPortraitUpsideDown:
 			_validFrame.size.width = screen.size.width;
-			transform = CGAffineTransformMakeRotation(NPPDegreesToRadians(180));
+			transform = CGAffineTransformMakeRotation(nppDegreesToRadians(180));
 			frame = CGRectMake(0.0f, 0.0f, screen.size.width, holderHeight);
 			break;
 		case UIInterfaceOrientationLandscapeLeft:
 			_validFrame.size.width = screen.size.height;
-			transform = CGAffineTransformMakeRotation(-NPPDegreesToRadians(90));
+			transform = CGAffineTransformMakeRotation(-nppDegreesToRadians(90));
 			frame = CGRectMake(screen.size.width - holderHeight, 0.0f, holderHeight, screen.size.height);
 			break;
 		case UIInterfaceOrientationLandscapeRight:
 			_validFrame.size.width = screen.size.height;
-			transform = CGAffineTransformMakeRotation(NPPDegreesToRadians(90));
+			transform = CGAffineTransformMakeRotation(nppDegreesToRadians(90));
 			frame = CGRectMake(0.0f, 0.0f, holderHeight, screen.size.height);
 			break;
 		case UIInterfaceOrientationPortrait:
 		default:
 			_validFrame.size.width = screen.size.width;
-			transform = CGAffineTransformMakeRotation(NPPDegreesToRadians(0));
+			transform = CGAffineTransformMakeRotation(nppDegreesToRadians(0));
 			frame = CGRectMake(0.0f, screen.size.height - holderHeight, screen.size.width, holderHeight);
 			break;
 	}

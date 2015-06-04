@@ -153,12 +153,12 @@ static NPPModelAddressVO *nppAddressFromPlacemark(CLPlacemark *placemark)
 // NPPGeolocation
 //*************************
 
-+ (void) placeWithRegion:(NPPModelGeoregionVO *)region completion:(NPPBlockGeoserver)block
++ (void) placeWithRegion:(NPPModelGeoregionVO *)region completion:(nppBlockGeoserver)block
 {
 	//TODO
 }
 
-+ (void) addressWithRegion:(NPPModelGeoregionVO *)region completion:(NPPBlockGeoserver)block
++ (void) addressWithRegion:(NPPModelGeoregionVO *)region completion:(nppBlockGeoserver)block
 {
 	id clRegion = nil;
 	NSString *address = region.name;
@@ -203,7 +203,7 @@ static NPPModelAddressVO *nppAddressFromPlacemark(CLPlacemark *placemark)
 	nppRelease(clRegion);
 }
 
-+ (void) addressWithGeolocation:(NPPModelGeolocationVO *)geolocation completion:(NPPBlockGeoserver)block
++ (void) addressWithGeolocation:(NPPModelGeolocationVO *)geolocation completion:(nppBlockGeoserver)block
 {
 	CLGeocoder *geocoder = nppGetCLGeocoder();
 	[geocoder reverseGeocodeLocation:geolocation.CLLocation
@@ -223,7 +223,7 @@ static NPPModelAddressVO *nppAddressFromPlacemark(CLPlacemark *placemark)
 
 + (void) routeFrom:(NPPModelGeolocationVO *)from
 				to:(NPPModelGeolocationVO *)to
-		completion:(NPPBlockGeoserver)block
+		completion:(nppBlockGeoserver)block
 {
 	//TODO
 	

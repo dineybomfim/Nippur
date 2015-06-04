@@ -159,7 +159,7 @@ static float nppEaseElasticOut(float begin, float change, float time, float dura
 		return begin + change;
 	}
 	
-	return x * powf(2.0f, -10.0f * time) * sinf((time * duration - z) * kNPP_2PI / y) + change + begin;
+	return x * powf(2.0f, -10.0f * time) * sinf((time * duration - z) * NPP_2PI / y) + change + begin;
 }
 
 static float nppEaseElasticIn(float begin, float change, float time, float duration)
@@ -176,7 +176,7 @@ static float nppEaseElasticIn(float begin, float change, float time, float durat
 	}
 	
 	--time;
-	return -x * powf(2.0f, 10.0f * time) * sinf((time * duration - z) * kNPP_2PI / y) + begin;
+	return -x * powf(2.0f, 10.0f * time) * sinf((time * duration - z) * NPP_2PI / y) + begin;
 }
 
 static float nppEaseElasticInOut(float begin, float change, float time, float duration)
@@ -195,11 +195,11 @@ static float nppEaseElasticInOut(float begin, float change, float time, float du
 	if (time < 1.0)
 	{
 		powTime = powf(2.0f, 10.0f * --time);
-		return -0.5f * x * powTime * sinf((time * duration - z ) * kNPP_2PI / y) + begin;
+		return -0.5f * x * powTime * sinf((time * duration - z ) * NPP_2PI / y) + begin;
 	}
 	
 	powTime = powf(2.0f, -10.0f * --time);
-	return 0.5f * x * powTime * sinf((time * duration - z) * kNPP_2PI / y) + change + begin;
+	return 0.5f * x * powTime * sinf((time * duration - z) * NPP_2PI / y) + change + begin;
 }
 
 //*************************

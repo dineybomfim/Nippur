@@ -24,6 +24,8 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
+#import <UIKit/UIKit.h>
+
 // OS Versions
 // These constants are to be used in runtime with the function nppDeviceOSVersion().
 
@@ -158,6 +160,7 @@ NPP_API BOOL nppDeviceOrientationIsLandscape(void);
 NPP_API float nppDeviceOSVersion(void);
 NPP_API BOOL nppDeviceSupportsBlur(void);
 
+NPP_API id nppItemFromXIB(NSString *name); // XIB file must has the same name/class as the item.
 NPP_API CGRect nppDeviceScreenRectOriented(BOOL oriented);
 
 NPP_API NSString *nppApplicationWebUserAgent(void);

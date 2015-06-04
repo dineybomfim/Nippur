@@ -155,7 +155,7 @@
 {
 	[super viewDidLoad];
 	
-	[UIImageView definePlaceholder:@"npp_placeholder.png"];
+	[UIImageView definePlaceholder:nppImageFromFile(@"npp_placeholder.png")];
 	
 	UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
 	tableView.dataSource = self;

@@ -100,8 +100,8 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 	// Animating the arc.
 	CGRect bounds = [view bounds];
 	CGPoint center = CGPointMake(bounds.size.width * 0.5f, bounds.size.height * 0.5f);
-	CGFloat startAngle = NPPDegreesToRadians(angle);
-	CGFloat endAngle = NPPDegreesToRadians(angle + (360.0f * percentage));
+	CGFloat startAngle = nppDegreesToRadians(angle);
+	CGFloat endAngle = nppDegreesToRadians(angle + (360.0f * percentage));
 	
 	UIBezierPath *path = [UIBezierPath bezierPath];
 	[path addArcWithCenter:center radius:center.x startAngle:startAngle endAngle:endAngle clockwise:YES];
@@ -286,10 +286,10 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 	self.bounds = bounds;
 }
 
-- (float) rotation { CGAffineTransform t = self.transform; return NPPRadiansToDegrees(atan2f(t.b, t.a)); }
+- (float) rotation { CGAffineTransform t = self.transform; return nppRadiansToDegrees(atan2f(t.b, t.a)); }
 - (void) setRotation:(float)value
 {
-	float angle = NPPDegreesToRadians(value);
+	float angle = nppDegreesToRadians(value);
 	CGAffineTransform transform = self.transform;
 	transform.a = cosf(angle);
 	transform.b = sinf(angle);
@@ -397,31 +397,31 @@ void nppClockMaskLayer(UIView *view, float percentage, NPPDirection starting)
 
 - (float) rotateX
 {
-	return NPPRadiansToDegrees([[self.layer valueForKeyPath:@"transform.rotation.x"] floatValue]);
+	return nppRadiansToDegrees([[self.layer valueForKeyPath:@"transform.rotation.x"] floatValue]);
 }
 - (void) setRotateX:(float)value
 {
-	[self.layer setValue:[NSNumber numberWithFloat:NPPDegreesToRadians(value)]
+	[self.layer setValue:[NSNumber numberWithFloat:nppDegreesToRadians(value)]
 			  forKeyPath:@"transform.rotation.x"];
 }
 
 - (float) rotateY
 {
-	return NPPRadiansToDegrees([[self.layer valueForKeyPath:@"transform.rotation.y"] floatValue]);
+	return nppRadiansToDegrees([[self.layer valueForKeyPath:@"transform.rotation.y"] floatValue]);
 }
 - (void) setRotateY:(float)value
 {
-	[self.layer setValue:[NSNumber numberWithFloat:NPPDegreesToRadians(value)]
+	[self.layer setValue:[NSNumber numberWithFloat:nppDegreesToRadians(value)]
 			  forKeyPath:@"transform.rotation.y"];
 }
 
 - (float) rotateZ
 {
-	return NPPRadiansToDegrees([[self.layer valueForKeyPath:@"transform.rotation.z"] floatValue]);
+	return nppRadiansToDegrees([[self.layer valueForKeyPath:@"transform.rotation.z"] floatValue]);
 }
 - (void) setRotateZ:(float)value
 {
-	[self.layer setValue:[NSNumber numberWithFloat:NPPDegreesToRadians(value)]
+	[self.layer setValue:[NSNumber numberWithFloat:nppDegreesToRadians(value)]
 			  forKeyPath:@"transform.rotation.z"];
 }
 

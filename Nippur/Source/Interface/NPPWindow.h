@@ -24,6 +24,8 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
+#import "NPPPluginView.h"
+
 @interface NPPWindow : UIWindow
 {
 @private

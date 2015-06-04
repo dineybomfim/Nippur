@@ -591,7 +591,7 @@ shouldChangeTextInRange:(NSRange)range
 	
 	// The last tag keeps tracking the last valid tag.
 	_lastTag = (_editingTag != _lastTag) ? _editingTag : _lastTag;
-	tag = NPPClamp(tag, 0, (unsigned int)[_items count]);
+	tag = nppClamp(tag, 0, (unsigned int)[_items count]);
 	
 	// Updating the new tags.
 	BOOL isIn = (_editingTag == 0);

@@ -26,8 +26,6 @@
 
 #import "NPPInterfaceFunctions.h"
 
-#import <UIKit/UIKit.h>
-
 //TODO
 #if NPP_IOS
 	#define NPP_COLOR				UIColor

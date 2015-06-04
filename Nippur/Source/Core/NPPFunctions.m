@@ -36,7 +36,6 @@
 #define NPP_STR_BETA				@"beta"
 
 // Bundle stuff.
-#define NPP_STR_NIB					@".nib"
 #define NPP_STR_BUNDLE				@"bundle"
 #define NPP_LOCALIZED				@"Localizable"
 #define NPP_BUNDLE_VERSION			@"CFBundleShortVersionString"
@@ -225,29 +224,6 @@ NSString *nppMakePath(NSString *named)
 	return path;
 }
 
-id nppItemFromXIB(NSString *name)
-{
-	id object = nil;
-	Class classObject = NSClassFromString(name);
-	
-	if (nppFileExists([name stringByAppendingString:NPP_STR_NIB]))
-	{
-		NSArray *array = [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil];
-		id item = nil;
-		
-		for (item in array)
-		{
-			if ([item isKindOfClass:classObject])
-			{
-				object = nppRetain(item);
-				break;
-			}
-		}
-	}
-	
-	return nppAutorelease(object);
-}
-
 BOOL nppFileExists(NSString *named)
 {
 	return [[NSFileManager defaultManager] fileExistsAtPath:nppMakePath(named)];
@@ -341,6 +317,11 @@ NSString *nppGetLanguage(void)
 //*************************
 //	Utils Functions
 //*************************
+
+double nppAbsoluteTime(void)
+{
+	return CACurrentMediaTime();
+}
 
 void nppPerformAction(id target, SEL action)
 {

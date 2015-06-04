@@ -66,6 +66,16 @@ typedef NS_OPTIONS(NSUInteger, NPPActionEase)
 };
 
 /*!
+ *					The usual time for animations.
+ */
+static const float kNPPAnimTime = 0.3f;
+
+/*!
+ *					The double of the usual time for animations.
+ */
+static const float kNPPAnimTimeX2 = 0.6f;
+
+/*!
  *					This block is called by the Action API over time, accordingly to the ease function.
  *
  *	@param			currentTarget

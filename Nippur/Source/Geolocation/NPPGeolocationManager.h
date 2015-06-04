@@ -43,7 +43,7 @@ typedef NS_OPTIONS(NSUInteger, NPPGeolocationMode)
 // When using the update methods it will return only one item in the "locations" array.
 // The continuous indicates if the process should run again.
 // The continuous does not work for geolocation routines.
-typedef void (^NPPBlockGeolocation)(NPP_ARC_UNSAFE NSArray *items, BOOL *continuous, NSError *error);
+typedef void (^nppBlockGeolocation)(NPP_ARC_UNSAFE NSArray *items, BOOL *continuous, NSError *error);
 
 @interface NPPGeolocationManager : NSObject
 
@@ -53,7 +53,7 @@ typedef void (^NPPBlockGeolocation)(NPP_ARC_UNSAFE NSArray *items, BOOL *continu
 + (NPPModelGeolocationVO *) lastGeolocation;
 
 // Current location. Returns NPPModelGeolocationVO as array items.
-+ (void) geolocationWithBlock:(NPPBlockGeolocation)block;
++ (void) geolocationWithBlock:(nppBlockGeolocation)block;
 
 // Cancel any scheduled or on going GPS routine.
 + (void) cancelScheduledGeolocations;

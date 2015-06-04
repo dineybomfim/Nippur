@@ -198,7 +198,7 @@
 	}
 	
 	percentage = delta / _refreshHeight;
-	percentage = NPPClamp(percentage, 0.0f, 100.0f);
+	percentage = nppClamp(percentage, 0.0f, 100.0f);
 	
 	switch (state)
 	{

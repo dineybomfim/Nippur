@@ -24,6 +24,8 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
+#import "NPPPluginView.h"
+
 // Table Keys.
 #define kNPPTableBackground			@"background"
 #define kNPPTableBounces			@"bounces"

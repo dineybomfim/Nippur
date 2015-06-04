@@ -899,10 +899,10 @@ UIImageView *nppImageViewFromFile(NSString *namePattern)
 	unsigned long long total;
 	
 	// Clamps the rect to bounds.
-	rect.origin.x = NPPClamp(rect.origin.x, 0, _nppSize.width);
-	rect.origin.y = NPPClamp(rect.origin.y, 0, _nppSize.height);
-	rect.size.width = NPPClamp(rect.size.width, 0, _nppSize.width - rect.origin.x);
-	rect.size.height = NPPClamp(rect.size.height, 0, _nppSize.height - rect.origin.y);
+	rect.origin.x = nppClamp(rect.origin.x, 0, _nppSize.width);
+	rect.origin.y = nppClamp(rect.origin.y, 0, _nppSize.height);
+	rect.size.width = nppClamp(rect.size.width, 0, _nppSize.width - rect.origin.x);
+	rect.size.height = nppClamp(rect.size.height, 0, _nppSize.height - rect.origin.y);
 	
 	// Initial settings.
 	y = rect.origin.y;
@@ -956,10 +956,10 @@ UIImageView *nppImageViewFromFile(NSString *namePattern)
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
 	// Clamps the rect to bounds.
-	rect.origin.x = NPPClamp(rect.origin.x, 0, _nppSize.width);
-	rect.origin.y = NPPClamp(rect.origin.y, 0, _nppSize.height);
-	rect.size.width = NPPClamp(rect.size.width, 0, _nppSize.width - rect.origin.x);
-	rect.size.height = NPPClamp(rect.size.height, 0, _nppSize.height - rect.origin.y);
+	rect.origin.x = nppClamp(rect.origin.x, 0, _nppSize.width);
+	rect.origin.y = nppClamp(rect.origin.y, 0, _nppSize.height);
+	rect.size.width = nppClamp(rect.size.width, 0, _nppSize.width - rect.origin.x);
+	rect.size.height = nppClamp(rect.size.height, 0, _nppSize.height - rect.origin.y);
 	
 	// Initial settings.
 	y = rect.origin.y;
@@ -1208,7 +1208,7 @@ UIImageView *nppImageViewFromFile(NSString *namePattern)
 		
 		// Rotating the image by its central position.
 		CGContextTranslateCTM(context, size.width * 0.5f, size.height * 0.5f);
-		CGContextRotateCTM(context, NPPDegreesToRadians(degrees));
+		CGContextRotateCTM(context, nppDegreesToRadians(degrees));
 		CGContextTranslateCTM(context, -size.width * 0.5f, -size.height * 0.5f);
 		
 		// Clears and Draws the image in the context to further use the pixel data inside it.

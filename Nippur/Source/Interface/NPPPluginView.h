@@ -27,8 +27,6 @@
 #import "NPPInterfaceFunctions.h"
 #import "NPPPluginImage.h"
 
-#import <UIKit/UIKit.h>
-
 //TODO
 #if NPP_IOS
 	#define NPP_VIEW				UIView
