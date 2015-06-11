@@ -28,6 +28,10 @@
 #import "NPPPluginFont.h"
 #import "NPPLabel.h"
 
+/*!
+ *					The badge view is a concrete view that can easily show badges in iOS style (red circle)
+ *					with a white number).
+ */
 @interface NPPBadgeView : UIView
 {
 @private
@@ -35,11 +39,36 @@
 	NPPLabel				*_labelNumber;
 }
 
+/*!
+ *					The number that appears inside the circle.
+ */
 @property (nonatomic) int number;
 
+/*!
+ *					Initializes a new instance with a number in it.
+ *
+ *	@param			value
+ *					The value inside the circle.
+ *
+ *	@result			A new instance.
+ */
 - (id) initWithNumber:(int)value;
 
+/*!
+ *					Returns an autoreleased new instance with a number in it.
+ *
+ *	@param			value
+ *					The value inside the circle.
+ *
+ *	@result			An autoreleased instance.
+ */
 + (id) badgeWithNumber:(int)value;
+
+/*!
+ *					Returns an autoreleased new instance with the Application Badge Number in it.
+ *
+ *	@result			An autoreleased instance.
+ */
 + (id) badgeWithApplicationBadgeNumber;
 
 @end
