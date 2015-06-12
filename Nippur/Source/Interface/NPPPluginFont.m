@@ -267,3 +267,70 @@ NPP_STATIC_READONLY(NSMutableDictionary, getFontDict);
 }
 //*/
 @end
+
+#pragma mark -
+#pragma mark Categories
+#pragma mark -
+//**********************************************************************************************************
+//
+//	Categories
+//
+//**********************************************************************************************************
+
+@implementation NSString(NPPFont)
+
+#pragma mark -
+#pragma mark Private Methods
+//**************************************************
+//	Private Methods
+//**************************************************
+
+#pragma mark -
+#pragma mark Self Public Methods
+//**************************************************
+//	Self Public Methods
+//**************************************************
+
+- (CGSize) sizeWithFont:(UIFont *)font
+			constrained:(CGSize)constrained
+			  lineBreak:(NSLineBreakMode)lineBreak
+{
+	CGSize size = CGSizeZero;
+	/*
+	 size = [self boundingRectWithSize:constrained
+	 options:NSStringDrawingUsesLineFragmentOrigin
+	 attributes:@{NSFontAttributeName:font}
+	 context:nil].size;
+	 
+	 size = CGSizeMake(ceilf(size.width), ceilf(size.height));
+	 /*/
+	size = [self sizeWithFont:font constrainedToSize:constrained lineBreakMode:lineBreak];
+	//*/
+	return size;
+}
+
+- (CGSize) sizeWithFont:(UIFont *)font
+				minSize:(CGFloat)minSize
+			   forWidth:(CGFloat)width
+			  lineBreak:(NSLineBreakMode)lineBreak
+{
+	CGSize size = CGSizeZero;
+	/*
+	 
+	 /*/
+	size = [self sizeWithFont:font
+				  minFontSize:minSize
+			   actualFontSize:nil
+					 forWidth:width
+				lineBreakMode:lineBreak];
+	//*/
+	return size;
+}
+
+#pragma mark -
+#pragma mark Override Public Methods
+//**************************************************
+//	Override Public Methods
+//**************************************************
+
+@end

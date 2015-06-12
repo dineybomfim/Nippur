@@ -24,6 +24,7 @@
 #import "NippurCore.h"
 #import "NippurAnimation.h"
 
+#import "NPPPluginFont.h"
 #import "NPPPluginView.h"
 #import "NPPEffects.h"
 

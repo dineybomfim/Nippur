@@ -57,7 +57,7 @@ Pod::Spec.new do |s|
 
     ss.public_header_files = 'Nippur/Source/Media/*.h'
     ss.source_files = 'Nippur/Source/Media/*.{h,m}'
-    ss.ios.frameworks = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'CoreVideo'
+    ss.ios.frameworks = 'UIKit', 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'CoreVideo'
   end
 
 end

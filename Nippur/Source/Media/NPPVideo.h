@@ -23,6 +23,7 @@
 
 #import "NippurCore.h"
 
+#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
 @class NPPVideo;

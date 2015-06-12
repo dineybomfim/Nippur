@@ -32,6 +32,8 @@
 //
 //**********************************************************************************************************
 
+#define NPP_GEO_IDENTIFIER			@"NPPIdentifier"
+
 #pragma mark -
 #pragma mark Private Interface
 #pragma mark -
@@ -173,14 +175,14 @@ static NPPModelAddressVO *nppAddressFromPlacemark(CLPlacemark *placemark)
 		{
 			clRegion = [[regionClass alloc] initWithCenter:location.coordinate
 													radius:radius
-												identifier:nil];
+												identifier:NPP_GEO_IDENTIFIER];
 		}
 		else
 		{
 			regionClass = NSClassFromString(@"CLRegion");
 			clRegion = [[regionClass alloc] initCircularRegionWithCenter:location.coordinate
 																  radius:radius
-															  identifier:nil];
+															  identifier:NPP_GEO_IDENTIFIER];
 		}
 	}
 	

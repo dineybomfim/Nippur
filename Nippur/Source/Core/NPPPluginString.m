@@ -110,42 +110,6 @@
 	return [self stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:locale];
 }
 
-- (CGSize) sizeWithFont:(UIFont *)font
-			constrained:(CGSize)constrained
-			  lineBreak:(NSLineBreakMode)lineBreak
-{
-	CGSize size = CGSizeZero;
-	/*
-	size = [self boundingRectWithSize:constrained
-							  options:NSStringDrawingUsesLineFragmentOrigin
-						   attributes:@{NSFontAttributeName:font}
-							  context:nil].size;
-	
-	size = CGSizeMake(ceilf(size.width), ceilf(size.height));
-	/*/
-	size = [self sizeWithFont:font constrainedToSize:constrained lineBreakMode:lineBreak];
-	//*/
-	return size;
-}
-
-- (CGSize) sizeWithFont:(UIFont *)font
-				minSize:(CGFloat)minSize
-			   forWidth:(CGFloat)width
-			  lineBreak:(NSLineBreakMode)lineBreak
-{
-	CGSize size = CGSizeZero;
-	/*
-	
-	/*/
-	size = [self sizeWithFont:font
-				  minFontSize:minSize
-			   actualFontSize:nil
-					 forWidth:width
-				lineBreakMode:lineBreak];
-	//*/
-	return size;
-}
-
 + (NSString *) stringWithData:(NSData *)data encoding:(NSStringEncoding)encoding
 {
 	NSString *string = [[NSString alloc] initWithData:data encoding:encoding];
