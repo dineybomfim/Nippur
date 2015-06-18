@@ -46,6 +46,8 @@
  *
  *	@param			url
  *					A string with the final URL.
+ *
+ *	@see			loadURL:placeholder:override:
  */
 - (void) loadURL:(NSString *)url;
 

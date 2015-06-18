@@ -67,11 +67,11 @@
 //	Constructors
 //**************************************************
 
-- (id) init
+- (id) initWithFrame:(CGRect)frame
 {
-	if ((self = [super init]))
+	if ((self = [super initWithFrame:frame]))
 	{
-		// Initialization code here.
+		// Custom initialization
 	}
 	
 	return self;
