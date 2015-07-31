@@ -73,7 +73,7 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 
 @implementation NippurCoreTests
 
-- (void) testMacros
+- (void) testBlockMacros_With4Blocks_ShouldSucceed
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
 	__block int count = 0;
@@ -101,7 +101,7 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	[self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
-- (void) testConnector
+- (void) testConnector_WithHTTPMethods_ShouldSucceed
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
 	__block int count = 0;
@@ -141,20 +141,28 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	[NPPConnector defineRetries:2 forURL:@"*"];
 	[NPPConnector defineLogging:NO forURL:@"*"];
 	
+	[self waitForExpectationsWithTimeout:15.0 handler:nil];
+}
+
+- (void) testConnector_WithCancellation_ShouldSucceed
+{
+	NSString *url = nil;
+	NSString *const kNPPHTTPBin	= @"https://httpbin.org";
+	
 	NPPConnector *cancelConn = nil;
 	url = [kNPPHTTPBin stringByAppendingString:@"/delay/15"];
 	cancelConn = [NPPConnector connectorWithURL:url
 										 method:NPPHTTPMethodGET
 										headers:nil
 										   body:nil
-									 completion:block];
+									 completion:nil];
 	
 	[NPPConnector cancelConnector:cancelConn];
 	
-	[self waitForExpectationsWithTimeout:15.0 handler:nil];
+	XCTAssert(cancelConn.state == NPPConnectorStateCancelled, "This connection was not cancelled");
 }
 
-- (void) testJSON
+- (void) testJSON_WithStringObjectAndData_ShouldSucceed
 {
 	NSString *jsonString = @"{ \"paramA\":\"value A\", \"paramB\":45, \"paramC\":true }";
 	id object = nil;
@@ -172,27 +180,29 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	nppLog(@"%@", object);
 }
 
-- (void) testDataManager
+- (void) testDataManager_WithStringAsArchive_ShouldSucceed
 {
 	NSString *jsonString = @"A string to save";
 	[NPPDataManager saveFile:jsonString name:@"Test" type:NPPDataTypeArchive folder:NPPDataFolderApp];
 	
 	NSString *string = [NPPDataManager loadFile:@"Test" type:NPPDataTypeArchive folder:NPPDataFolderApp];
-	XCTAssertNotNil(string, @"NPPDataManager loadFile");
 	
-	nppLog(@"%@", string);
+	XCTAssertNotNil(string, @"NPPDataManager loadFile");
+	XCTAssertEqualObjects(string, jsonString, @"The loaded content is not the same as the original");
 }
 
-- (void) testClock
+- (void) testClock_WithStartStopAndReset_ShouldSucceed
 {
 	NPPClockManager *clock = [[NPPClockManager alloc] initWithTotalTime:1.0];
 	
 	[clock start];
 	[clock stop];
 	[clock reset];
+	
+	XCTAssert(clock.currentTime == 0.0, "The current time should be now 0 (zero)");
 }
 
-- (void) testTester
+- (void) testTester_WithStressTest_shouldOutputTheResults
 {
 	NPPBlockVoid block = ^(void)
 	{

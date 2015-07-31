@@ -32,7 +32,7 @@
 
 @implementation NippurAnimationTests
 
-- (void) testActions
+- (void) testActions_WithGroupsSequencesAndBlocks_ShouldSucess
 {
 	XCTestExpectation *expectation = [self expectationWithDescription:NSStringFromSelector(_cmd)];
 	
