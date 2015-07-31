@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6052433B1B0B05D300B6EA97"
-               BuildableName = "TDD iOS.xctest"
-               BlueprintName = "TDD iOS"
+               BuildableName = "Tests iOS.xctest"
+               BlueprintName = "Tests iOS"
                ReferencedContainer = "container:Nippur Tests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6052433B1B0B05D300B6EA97"
-               BuildableName = "TDD iOS.xctest"
-               BlueprintName = "TDD iOS"
+               BuildableName = "Tests iOS.xctest"
+               BlueprintName = "Tests iOS"
                ReferencedContainer = "container:Nippur Tests.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6052433B1B0B05D300B6EA97"
-            BuildableName = "TDD iOS.xctest"
-            BlueprintName = "TDD iOS"
+            BuildableName = "Tests iOS.xctest"
+            BlueprintName = "Tests iOS"
             ReferencedContainer = "container:Nippur Tests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6052433B1B0B05D300B6EA97"
-            BuildableName = "TDD iOS.xctest"
-            BlueprintName = "TDD iOS"
+            BuildableName = "Tests iOS.xctest"
+            BlueprintName = "Tests iOS"
             ReferencedContainer = "container:Nippur Tests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6052433B1B0B05D300B6EA97"
-            BuildableName = "TDD iOS.xctest"
-            BlueprintName = "TDD iOS"
+            BuildableName = "Tests iOS.xctest"
+            BlueprintName = "Tests iOS"
             ReferencedContainer = "container:Nippur Tests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -1,6 +1,6 @@
 [
   "-workspace", "Nippur.xcworkspace",
-  "-scheme", "TDD iOS",
+  "-scheme", "Tests iOS",
   "-configuration", "Debug",
   "-sdk", "iphonesimulator",
   "-arch", "i386"

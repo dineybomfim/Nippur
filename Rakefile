@@ -3,7 +3,7 @@ include FileUtils::Verbose
 namespace :test do
 
   task :ios do
-    run_tests('TDD iOS', 'iphonesimulator')
+    run_tests('Tests iOS', 'iphonesimulator')
     puts_failed('iOS failed') unless $?.success?
   end
 
@@ -24,7 +24,7 @@ end
 #task :default => 'test'
 
 #  "-workspace", "Nippur.xcworkspace",
-#  "-scheme", "TDD iOS",
+#  "-scheme", "Tests iOS",
 #  "-sdk", "iphonesimulator",
 #  "-configuration", "Debug",
 #  "-arch", "i386"

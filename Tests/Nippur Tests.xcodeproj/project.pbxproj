@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6052434C1B0B05F800B6EA97 /* NippurAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605243471B0B05F800B6EA97 /* NippurAnimationTests.m */; };
-		6052434D1B0B05F800B6EA97 /* NippurCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605243481B0B05F800B6EA97 /* NippurCoreTests.m */; };
-		6052434E1B0B05F800B6EA97 /* NippurGeolocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605243491B0B05F800B6EA97 /* NippurGeolocationTests.m */; };
-		6052434F1B0B05F800B6EA97 /* NippurInterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6052434A1B0B05F800B6EA97 /* NippurInterfaceTests.m */; };
-		605243501B0B05F800B6EA97 /* NippurMediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6052434B1B0B05F800B6EA97 /* NippurMediaTests.m */; };
 		607651221B1B62E90046E476 /* NPPGeolocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076511D1B1B62E90046E476 /* NPPGeolocationViewController.m */; };
 		607651231B1B62E90046E476 /* NPPInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076511F1B1B62E90046E476 /* NPPInterfaceViewController.m */; };
 		607651241B1B62E90046E476 /* NPPMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607651211B1B62E90046E476 /* NPPMediaViewController.m */; };
+		6080E36F1B6BFCD400784E76 /* NippurAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080E36A1B6BFCD400784E76 /* NippurAnimationTests.m */; };
+		6080E3701B6BFCD400784E76 /* NippurCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080E36B1B6BFCD400784E76 /* NippurCoreTests.m */; };
+		6080E3711B6BFCD400784E76 /* NippurGeolocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080E36C1B6BFCD400784E76 /* NippurGeolocationTests.m */; };
+		6080E3721B6BFCD400784E76 /* NippurInterfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080E36D1B6BFCD400784E76 /* NippurInterfaceTests.m */; };
+		6080E3731B6BFCD400784E76 /* NippurMediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080E36E1B6BFCD400784E76 /* NippurMediaTests.m */; };
 		60914CFA1B1B4CCC005E2970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60914CF91B1B4CCC005E2970 /* main.m */; };
 		60914CFD1B1B4CCC005E2970 /* NPPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60914CFC1B1B4CCC005E2970 /* NPPAppDelegate.m */; };
 		60914D001B1B4CCC005E2970 /* NPPCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60914CFF1B1B4CCC005E2970 /* NPPCoreViewController.m */; };
@@ -27,12 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6052433C1B0B05D300B6EA97 /* TDD iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TDD iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		605243471B0B05F800B6EA97 /* NippurAnimationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurAnimationTests.m; sourceTree = "<group>"; };
-		605243481B0B05F800B6EA97 /* NippurCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurCoreTests.m; sourceTree = "<group>"; };
-		605243491B0B05F800B6EA97 /* NippurGeolocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurGeolocationTests.m; sourceTree = "<group>"; };
-		6052434A1B0B05F800B6EA97 /* NippurInterfaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurInterfaceTests.m; sourceTree = "<group>"; };
-		6052434B1B0B05F800B6EA97 /* NippurMediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurMediaTests.m; sourceTree = "<group>"; };
+		6052433C1B0B05D300B6EA97 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6076511C1B1B62E90046E476 /* NPPGeolocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPGeolocationViewController.h; sourceTree = "<group>"; };
 		6076511D1B1B62E90046E476 /* NPPGeolocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPGeolocationViewController.m; sourceTree = "<group>"; };
 		6076511E1B1B62E90046E476 /* NPPInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPInterfaceViewController.h; sourceTree = "<group>"; };
@@ -40,6 +35,11 @@
 		607651201B1B62E90046E476 /* NPPMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPPMediaViewController.h; sourceTree = "<group>"; };
 		607651211B1B62E90046E476 /* NPPMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPPMediaViewController.m; sourceTree = "<group>"; };
 		607EC8F498F1FC5DFFBD9630 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		6080E36A1B6BFCD400784E76 /* NippurAnimationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurAnimationTests.m; sourceTree = "<group>"; };
+		6080E36B1B6BFCD400784E76 /* NippurCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurCoreTests.m; sourceTree = "<group>"; };
+		6080E36C1B6BFCD400784E76 /* NippurGeolocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurGeolocationTests.m; sourceTree = "<group>"; };
+		6080E36D1B6BFCD400784E76 /* NippurInterfaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurInterfaceTests.m; sourceTree = "<group>"; };
+		6080E36E1B6BFCD400784E76 /* NippurMediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NippurMediaTests.m; sourceTree = "<group>"; };
 		60914CF51B1B4CCC005E2970 /* Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60914CF81B1B4CCC005E2970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60914CF91B1B4CCC005E2970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		605243311B0B033C00B6EA97 = {
 			isa = PBXGroup;
 			children = (
-				605243461B0B05F800B6EA97 /* TDD */,
+				6080E3691B6BFCD400784E76 /* Tests iOS */,
 				60914CF61B1B4CCC005E2970 /* Demo iOS */,
 				6052433D1B0B05D300B6EA97 /* Products */,
 				01B49F286674DA5009A7BD59 /* Pods */,
@@ -99,22 +99,22 @@
 		6052433D1B0B05D300B6EA97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6052433C1B0B05D300B6EA97 /* TDD iOS.xctest */,
+				6052433C1B0B05D300B6EA97 /* Tests iOS.xctest */,
 				60914CF51B1B4CCC005E2970 /* Demo iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		605243461B0B05F800B6EA97 /* TDD */ = {
+		6080E3691B6BFCD400784E76 /* Tests iOS */ = {
 			isa = PBXGroup;
 			children = (
-				605243471B0B05F800B6EA97 /* NippurAnimationTests.m */,
-				605243481B0B05F800B6EA97 /* NippurCoreTests.m */,
-				605243491B0B05F800B6EA97 /* NippurGeolocationTests.m */,
-				6052434A1B0B05F800B6EA97 /* NippurInterfaceTests.m */,
-				6052434B1B0B05F800B6EA97 /* NippurMediaTests.m */,
+				6080E36A1B6BFCD400784E76 /* NippurAnimationTests.m */,
+				6080E36B1B6BFCD400784E76 /* NippurCoreTests.m */,
+				6080E36C1B6BFCD400784E76 /* NippurGeolocationTests.m */,
+				6080E36D1B6BFCD400784E76 /* NippurInterfaceTests.m */,
+				6080E36E1B6BFCD400784E76 /* NippurMediaTests.m */,
 			);
-			path = TDD;
+			path = "Tests iOS";
 			sourceTree = "<group>";
 		};
 		60914CF61B1B4CCC005E2970 /* Demo iOS */ = {
@@ -160,9 +160,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6052433B1B0B05D300B6EA97 /* TDD iOS */ = {
+		6052433B1B0B05D300B6EA97 /* Tests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 605243451B0B05D300B6EA97 /* Build configuration list for PBXNativeTarget "TDD iOS" */;
+			buildConfigurationList = 605243451B0B05D300B6EA97 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
 			buildPhases = (
 				D40C518FE54FF9FA8B031FA3 /* Check Pods Manifest.lock */,
 				605243381B0B05D300B6EA97 /* Sources */,
@@ -174,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = "TDD iOS";
+			name = "Tests iOS";
 			productName = TDD;
-			productReference = 6052433C1B0B05D300B6EA97 /* TDD iOS.xctest */;
+			productReference = 6052433C1B0B05D300B6EA97 /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		60914CF41B1B4CCC005E2970 /* Demo iOS */ = {
@@ -227,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6052433B1B0B05D300B6EA97 /* TDD iOS */,
+				6052433B1B0B05D300B6EA97 /* Tests iOS */,
 				60914CF41B1B4CCC005E2970 /* Demo iOS */,
 			);
 		};
@@ -321,11 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6052434E1B0B05F800B6EA97 /* NippurGeolocationTests.m in Sources */,
-				605243501B0B05F800B6EA97 /* NippurMediaTests.m in Sources */,
-				6052434D1B0B05F800B6EA97 /* NippurCoreTests.m in Sources */,
-				6052434C1B0B05F800B6EA97 /* NippurAnimationTests.m in Sources */,
-				6052434F1B0B05F800B6EA97 /* NippurInterfaceTests.m in Sources */,
+				6080E3711B6BFCD400784E76 /* NippurGeolocationTests.m in Sources */,
+				6080E3731B6BFCD400784E76 /* NippurMediaTests.m in Sources */,
+				6080E3701B6BFCD400784E76 /* NippurCoreTests.m in Sources */,
+				6080E36F1B6BFCD400784E76 /* NippurAnimationTests.m in Sources */,
+				6080E3721B6BFCD400784E76 /* NippurInterfaceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		605243451B0B05D300B6EA97 /* Build configuration list for PBXNativeTarget "TDD iOS" */ = {
+		605243451B0B05D300B6EA97 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				605243431B0B05D300B6EA97 /* Debug */,

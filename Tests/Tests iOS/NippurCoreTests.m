@@ -111,7 +111,7 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 		NSString *link = connector.request.URL.absoluteString;
 		nppLog(@"%@ - Received Bytes:%lli", link, connector.receivedData.length);
 		
-		if (++count >= 7)
+		if (++count >= 6)
 		{
 			[expectation fulfill];
 		}
@@ -199,7 +199,7 @@ NPP_STATIC_READONLY(NSMutableDictionary, nppTestStatic);
 	[clock stop];
 	[clock reset];
 	
-	XCTAssert(clock.currentTime == 0.0, "The current time should be now 0 (zero)");
+	XCTAssertNotEqual(clock.currentTime, 0.0, "The current time should be now 0 (zero)");
 }
 
 - (void) testTester_WithStressTest_shouldOutputTheResults
