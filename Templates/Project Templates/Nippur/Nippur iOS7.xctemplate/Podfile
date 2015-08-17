@@ -1,0 +1,13 @@
+source 'https://hub.jazz.net/git/applecoc/pods'
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+use_frameworks!
+platform :ios, '8.0'
+link_with '___PACKAGENAME___', '___VARIABLE_tierMain___Tests', '___VARIABLE_tierCore___Tests'
+
+___FWK_CORE___
+___FWK_ANIMATION___
+___FWK_INTERFACE___
+___FWK_GEOLOCATION___
+___FWK_MEDIA___

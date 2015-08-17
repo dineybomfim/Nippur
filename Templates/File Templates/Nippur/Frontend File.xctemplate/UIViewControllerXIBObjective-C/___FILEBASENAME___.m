@@ -55,8 +55,6 @@
 
 @implementation ___FILEBASENAMEASIDENTIFIER___
 
-NPP_SINGLETON_IMPLEMENTATION(___FILEBASENAMEASIDENTIFIER___);
-
 #pragma mark -
 #pragma mark Properties
 //**************************************************
@@ -87,5 +85,8 @@ NPP_SINGLETON_IMPLEMENTATION(___FILEBASENAMEASIDENTIFIER___);
 //	Override Public Methods
 //**************************************************
 
+- (void) viewDidLoad {
+	[super viewDidLoad];
+}
 
 @end

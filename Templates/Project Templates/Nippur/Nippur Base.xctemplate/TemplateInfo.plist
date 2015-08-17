@@ -2,28 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	
-	<!------------------------------
-				Header
-	------------------------------->
-	
+
+	<!-- Header -->
+
+	<key>Ancestors</key>
+	<array>
+		<string>com.nippur.Framework</string>
+	</array>
+
 	<key>Identifier</key>
-	<string>com.db-in.Base</string>
-	
+	<string>com.nippur.Base</string>
+
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
-	
+
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>
 	</array>
-	
-	<!------------------------------
-			  User Options
-	------------------------------->
-	
+
+	<!-- User Options -->
+
 	<key>Options</key>
 	<array>
+
 		<dict>
 			<key>Identifier</key>
 			<string>productName</string>
@@ -40,7 +42,20 @@
 			<key>Type</key>
 			<string>text</string>
 		</dict>
-		
+
+		<dict>
+				<key>Identifier</key>
+				<string>organizationName</string>
+				<key>Name</key>
+				<string>Organization Name:</string>
+				<key>Description</key>
+				<string>Your company&apos;s name</string>
+				<key>Type</key>
+				<string>text</string>
+				<key>Default</key>
+				<string>Nippur</string>
+		</dict>
+
 		<dict>
 			<key>Identifier</key>
 			<string>bundleIdentifierPrefix</string>
@@ -49,13 +64,13 @@
 			<key>EmptyReplacement</key>
 			<string>com.yourcompany</string>
 			<key>Name</key>
-			<string>Company Identifier</string>
+			<string>Organization Identifier</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
 			<string>text</string>
 		</dict>
-		
+
 		<dict>
 			<key>Identifier</key>
 			<string>bundleIdentifier</string>
@@ -68,7 +83,33 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
-		
+
+		<dict>
+			<key>Identifier</key>
+			<string>tierCore</string>
+			<key>Default</key>
+			<string>Core</string>
+			<key>Description</key>
+			<string>The name of the Logic + Data layer.</string>
+			<key>Name</key>
+			<string>Logic + Data Layer</string>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+
+		<dict>
+			<key>Identifier</key>
+			<string>tierMain</string>
+			<key>Default</key>
+			<string>Presentation</string>
+			<key>Description</key>
+			<string>The name of the Presentation layer.</string>
+			<key>Name</key>
+			<string>Presentation Layer</string>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+
 		<dict>
 			<key>Identifier</key>
 			<string>classPrefix</string>
@@ -81,7 +122,7 @@
 			<key>Placeholder</key>
 			<string>XYZ</string>
 		</dict>
-		
+
 		<dict>
 			<key>Identifier</key>
 			<string>universalDeviceFamily</string>
@@ -132,13 +173,11 @@
 				</dict>
 			</dict>
 		</dict>
-		
+
 	</array>
-	
-	<!------------------------------
-			Project Settings
-	------------------------------->
-	
+
+	<!-- Project Settings -->
+
 	<key>Project</key>
 	<dict>
 		<key>Configurations</key>
@@ -151,14 +190,18 @@
 				<string>DEBUG</string>
 				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
 				<string>NO</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
 			</dict>
 			<key>Release</key>
 			<dict>
 				<key>OTHER_CFLAGS</key>
 				<string>-DNS_BLOCK_ASSERTIONS=1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>NO</string>
 			</dict>
 		</dict>
-		
+
 		<key>SharedSettings</key>
 		<dict>
 			<key>GCC_THUMB_SUPPORT</key>
@@ -169,8 +212,6 @@
 			<string>YES</string>
 			<key>GCC_WARN_UNUSED_VARIABLE</key>
 			<string>YES</string>
-			<key>ARCHS</key>
-			<string>$(ARCHS_STANDARD_32_BIT)</string>
 			<key>GCC_VERSION</key>
 			<string>com.apple.compilers.llvm.clang.1_0</string>
 			<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -178,17 +219,28 @@
 			<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
 			<string>iPhone Developer</string>
 		</dict>
-		
+
 		<key>SDK</key>
 		<string>iphoneos</string>
 	</dict>
-	
-	<!------------------------------
-			  Adding Files
-	------------------------------->
-	
+
+	<!-- Adding Files -->
+
 	<key>Definitions</key>
 	<dict>
+
+		<!-- Groups -->
+
+		<!-- Files -->
+
+		<key>../.gitignore</key>
+		<dict>
+			<key>Path</key>
+			<string>.gitignore</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+
 		<key>Resources/Supporting Files/Info.plist</key>
 		<dict>
 			<key>Group</key>
@@ -201,30 +253,6 @@
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		
-		<key>Resources/Supporting Files/Prefix.pch</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Supporting Files</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Supporting Files/Prefix.pch</string>
-			<key>TargetIndices</key>
-			<array/>
-		</dict>
-		
-		<key>Resources/Supporting Files/main.m</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Supporting Files</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Supporting Files/main.m</string>
-		</dict>
 
 		<key>Resources/Supporting Files/Settings.bundle</key>
 		<dict>
@@ -235,239 +263,27 @@
 			</array>
 			<key>Path</key>
 			<string>Resources/Supporting Files/Settings.bundle</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>0</string>
+			</array>
 		</dict>
-				
-		<key>Resources/Icons/Icon-29.png</key>
+
+		<key>Resources/Interfaces/Main.storyboard</key>
 		<dict>
 			<key>Group</key>
 			<array>
 				<string>Resources</string>
-				<string>Icons</string>
+				<string>Interfaces</string>
 			</array>
 			<key>Path</key>
-			<string>Resources/Icons/Icon-29.png</string>
+			<string>Resources/Interfaces/Main.storyboard</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>0</string>
+			</array>
 		</dict>
-		<key>Resources/Icons/Icon-29@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-29@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/Icon-40.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-40.png</string>
-		</dict>
-		<key>Resources/Icons/Icon-40@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-40@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/Icon-50.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-50.png</string>
-		</dict>
-		<key>Resources/Icons/Icon-50@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-50@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/Icon-57.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-57.png</string>
-		</dict>
-		<key>Resources/Icons/Icon-57@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-57@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/Icon-60.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-60.png</string>
-		</dict>
-		<key>Resources/Icons/Icon-60@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-60@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/Icon-72.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-72.png</string>
-		</dict>
-		<key>Resources/Icons/Icon-72@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-72@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/Icon-76.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-76.png</string>
-		</dict>
-		<key>Resources/Icons/Icon-76@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/Icon-76@2x.png</string>
-		</dict>		
-		<key>Resources/Icons/iTunesArtwork.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/iTunesArtwork.png</string>
-		</dict>
-		<key>Resources/Icons/iTunesArtwork@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Icons</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Icons/iTunesArtwork@2x.png</string>
-		</dict>
-		
-		<key>Resources/Images/Default.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default.png</string>
-		</dict>
-		<key>Resources/Images/Default@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default@2x.png</string>
-		</dict>
-		<key>Resources/Images/Default-568h@2x.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default-568h@2x.png</string>
-		</dict>
-		<key>Resources/Images/Default-landscape~ipad.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default-landscape~ipad.png</string>
-		</dict>
-		<key>Resources/Images/Default-portrait~ipad.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default-portrait~ipad.png</string>
-		</dict>
-		<key>Resources/Images/Default-landscape@2x~ipad.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default-landscape@2x~ipad.png</string>
-		</dict>
-		<key>Resources/Images/Default-portrait@2x~ipad.png</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-				<string>Images</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Images/Default-portrait@2x~ipad.png</string>
-		</dict>
+
 		<key>Resources/Language/en.lproj/Localizable.strings</key>
 		<dict>
 			<key>Group</key>
@@ -477,6 +293,10 @@
 			</array>
 			<key>Path</key>
 			<string>Resources/Language/en.lproj/Localizable.strings</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>0</string>
+			</array>
 		</dict>
 		<key>Resources/Language/pt.lproj/Localizable.strings</key>
 		<dict>
@@ -487,113 +307,149 @@
 			</array>
 			<key>Path</key>
 			<string>Resources/Language/pt.lproj/Localizable.strings</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>0</string>
+			</array>
 		</dict>
-		<key>Resources/Fonts/</key>
+
+		<key>Resources/Fonts/Empty</key>
 		<dict>
 			<key>Group</key>
 			<array>
 				<string>Resources</string>
+				<string>Fonts</string>
 			</array>
 			<key>Path</key>
-			<string>Resources/Fonts/</string>
+			<string>Resources/Fonts/Empty</string>
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		<key>Resources/Media/</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Resources</string>
-			</array>
-			<key>Path</key>
-			<string>Resources/Media/</string>
-			<key>TargetIndices</key>
-			<array/>
-		</dict>
-		
-		<key>Sources/Models/</key>
+
+		<key>Sources/___VARIABLE_tierCore___/Logic/Services/Empty</key>
 		<dict>
 			<key>Group</key>
 			<array>
 				<string>Sources</string>
+				<string>Core</string>
+				<string>Logic</string>
+				<string>Services</string>
 			</array>
 			<key>Path</key>
-			<string>Sources/Models/</string>
+			<string>Sources/Core/Logic/Services/Empty</string>
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		<key>Sources/Views/</key>
+		<key>Sources/___VARIABLE_tierCore___/Helpers/Empty</key>
 		<dict>
 			<key>Group</key>
 			<array>
 				<string>Sources</string>
+				<string>Core</string>
+				<string>Helpers</string>
 			</array>
 			<key>Path</key>
-			<string>Sources/Views/</string>
+			<string>Sources/Core/Helpers/Empty</string>
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
-		<key>Sources/Controllers/</key>
+		<key>Sources/___VARIABLE_tierCore___/Data/Models/Empty</key>
 		<dict>
 			<key>Group</key>
 			<array>
 				<string>Sources</string>
+				<string>Core</string>
+				<string>Data</string>
+				<string>Models</string>
 			</array>
 			<key>Path</key>
-			<string>Sources/Controllers/</string>
+			<string>Sources/Core/Data/Models/Empty</string>
 			<key>TargetIndices</key>
 			<array/>
 		</dict>
+
+		<key>Sources/___VARIABLE_tierMain___/Interface/___VARIABLE_classPrefix:identifier___AppDelegate.swift</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Sources</string>
+				<string>Presentation</string>
+				<string>Interface</string>
+			</array>
+			<key>Path</key>
+			<string>Sources/Presentation/Interface/AppDelegate.swift</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>0</string>
+			</array>
+		</dict>
+		<key>Sources/___VARIABLE_tierMain___/Interface/Controllers/___VARIABLE_classPrefix:identifier___FirstViewController.swift</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Sources</string>
+				<string>Presentation</string>
+				<string>Interface</string>
+				<string>Controllers</string>
+			</array>
+			<key>Path</key>
+			<string>Sources/Presentation/Interface/Controllers/FirstViewController.swift</string>
+			<key>TargetIndices</key>
+			<array>
+				<string>0</string>
+			</array>
+		</dict>
+		<key>Sources/___VARIABLE_tierMain___/Interface/Views/Empty</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Sources</string>
+				<string>Presentation</string>
+				<string>Interface</string>
+				<string>Views</string>
+			</array>
+			<key>Path</key>
+			<string>Sources/Presentation/Interface/Views/Empty</string>
+			<key>TargetIndices</key>
+			<array/>
+		</dict>
+
 	</dict>
-	
+
 	<key>Nodes</key>
 	<array>
-		<string>Resources/Fonts/</string>
-		<string>Resources/Icons/Icon-29.png</string>
-		<string>Resources/Icons/Icon-29@2x.png</string>
-		<string>Resources/Icons/Icon-40.png</string>
-		<string>Resources/Icons/Icon-40@2x.png</string>
-		<string>Resources/Icons/Icon-50.png</string>
-		<string>Resources/Icons/Icon-50@2x.png</string>
-		<string>Resources/Icons/Icon-57.png</string>
-		<string>Resources/Icons/Icon-57@2x.png</string>
-		<string>Resources/Icons/Icon-60.png</string>
-		<string>Resources/Icons/Icon-60@2x.png</string>
-		<string>Resources/Icons/Icon-72.png</string>
-		<string>Resources/Icons/Icon-72@2x.png</string>
-		<string>Resources/Icons/Icon-76.png</string>
-		<string>Resources/Icons/Icon-76@2x.png</string>
-		<string>Resources/Icons/iTunesArtwork.png</string>
-		<string>Resources/Icons/iTunesArtwork@2x.png</string>
-		<string>Resources/Images/Default.png</string>
-		<string>Resources/Images/Default@2x.png</string>
-		<string>Resources/Images/Default-568h@2x.png</string>
-		<string>Resources/Images/Default-landscape~ipad.png</string>
-		<string>Resources/Images/Default-portrait~ipad.png</string>
-		<string>Resources/Images/Default-landscape@2x~ipad.png</string>
-		<string>Resources/Images/Default-portrait@2x~ipad.png</string>
+		<string>../.gitignore</string>
+
+		<string>Resources/Interfaces/Main.storyboard</string>
 		<string>Resources/Language/en.lproj/Localizable.strings</string>
 		<string>Resources/Language/pt.lproj/Localizable.strings</string>
-		<string>Resources/Media/</string>
 		<string>Resources/Supporting Files/Info.plist</string>
-		<string>Resources/Supporting Files/Prefix.pch</string>
-		<string>Resources/Supporting Files/main.m</string>
 		<string>Resources/Supporting Files/Settings.bundle</string>
-		<string>Sources/Controllers/</string>
-		<string>Sources/Models/</string>
-		<string>Sources/Views/</string>
+		<string>Resources/Fonts/Empty</string>
+
+		<string>Sources/___VARIABLE_tierCore___/Logic/Services/Empty</string>
+		<string>Sources/___VARIABLE_tierCore___/Helpers/Empty</string>
+		<string>Sources/___VARIABLE_tierCore___/Data/Models/Empty</string>
+
+		<string>Sources/___VARIABLE_tierMain___/Interface/___VARIABLE_classPrefix:identifier___AppDelegate.swift</string>
+		<string>Sources/___VARIABLE_tierMain___/Interface/Controllers/___VARIABLE_classPrefix:identifier___FirstViewController.swift</string>
+		<string>Sources/___VARIABLE_tierMain___/Interface/Views/Empty</string>
 	</array>
-	
-	<!------------------------------
-		 Targets and Frameworks
-	------------------------------->
-	
+
+
+	<!-- Targets and Frameworks -->
+
 	<key>Targets</key>
 	<array>
 		<dict>
+			<key>ProductType</key>
+			<string>com.apple.product-type.application</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+
 			<key>Name</key>
 			<string>___PACKAGENAME___</string>
-			
+
 			<key>BuildPhases</key>
 			<array>
 				<dict>
@@ -609,7 +465,7 @@
 					<string>Resources</string>
 				</dict>
 			</array>
-			
+
 			<key>Configurations</key>
 			<dict>
 				<key>Debug</key>
@@ -627,40 +483,45 @@
 					<string>YES</string>
 				</dict>
 			</dict>
-			
-			<key>ProductType</key>
-			<string>com.apple.product-type.application</string>
-			
+
 			<key>SharedSettings</key>
 			<dict>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
-				<key>OTHER_LDFLAGS</key>
-				<string>-ObjC -all_load</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>___PACKAGENAME___/Resources/Supporting Files/Prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
-				<string>___PACKAGENAME___/Resources/Supporting Files/Info.plist</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
+				<string>$(PROJECT)/Resources/Supporting Files/Info.plist</string>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
 			</dict>
-			
+
 			<key>Frameworks</key>
 			<array>
 				<string>UIKit</string>
-				<string>Foundation</string>
-				<string>CoreGraphics</string>
-				<string>QuartzCore</string>
-				<string>AudioToolbox</string>
-				<string>AVFoundation</string>
-				<string>CoreLocation</string>
-				<string>CoreMedia</string>
-				<string>CoreVideo</string>
-				<string>../../../../../../../../Library/Developer/Xcode/Templates/Project Templates/Nippur/Nippur Base.xctemplate/Frameworks/Nippur</string>
 			</array>
+
 		</dict>
 	</array>
+
+	<!-- Components -->
+
+	<key>Components</key>
+	<array>
+			<dict>
+					<key>Identifier</key>
+					<string>com.apple.dt.unit.cocoaTouchApplicationUnitTestBundle</string>
+					<key>Name</key>
+					<string>___VARIABLE_tierMain___Tests</string>
+			</dict>
+
+			<dict>
+					<key>Identifier</key>
+					<string>com.apple.dt.unit.cocoaTouchApplicationUnitTestBundle</string>
+					<key>Name</key>
+					<string>___VARIABLE_tierCore___Tests</string>
+			</dict>
+	</array>
+
 </dict>
 </plist>

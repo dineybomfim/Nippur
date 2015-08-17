@@ -12,7 +12,7 @@
 	<string>A Cocoa Touch class</string>
 
   <key>SortOrder</key>
-  <string>1</string>
+  <string>10</string>
 
 	<key>DefaultCompletionName</key>
 	<string>MyClass</string>

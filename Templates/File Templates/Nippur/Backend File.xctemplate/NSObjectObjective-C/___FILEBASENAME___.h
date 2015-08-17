@@ -6,11 +6,9 @@
  *	Copyright ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
  */
 
-@interface ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___ {
-@private
+ @interface ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___ {
+ @private
 
-}
+ }
 
-NPP_SINGLETON_INTERFACE(___FILEBASENAMEASIDENTIFIER___);
-
-@end
+ @end

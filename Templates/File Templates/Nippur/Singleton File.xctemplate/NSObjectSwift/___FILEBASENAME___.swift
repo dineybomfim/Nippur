@@ -26,8 +26,7 @@ import UIKit
 //
 //**********************************************************************************************************
 
-class ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___
-{
+class ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___ {
 
 //**************************************************
 // MARK: - Properties
@@ -38,7 +37,7 @@ class ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___
 //**************************************************
 // MARK: - Constructors
 //**************************************************
-	
+
 	override private init() { }
 
 //**************************************************

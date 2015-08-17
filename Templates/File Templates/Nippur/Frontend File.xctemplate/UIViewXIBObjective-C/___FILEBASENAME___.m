@@ -55,8 +55,6 @@
 
 @implementation ___FILEBASENAMEASIDENTIFIER___
 
-NPP_SINGLETON_IMPLEMENTATION(___FILEBASENAMEASIDENTIFIER___);
-
 #pragma mark -
 #pragma mark Properties
 //**************************************************
@@ -68,6 +66,14 @@ NPP_SINGLETON_IMPLEMENTATION(___FILEBASENAMEASIDENTIFIER___);
 //**************************************************
 //	Constructors
 //**************************************************
+
+- (id) initWithFrame:(CGRect)frame {
+	if ((self = [super initWithFrame:frame])) {
+		// Custom initialization
+	}
+
+	return self;
+}
 
 #pragma mark -
 #pragma mark Private Methods
@@ -86,6 +92,5 @@ NPP_SINGLETON_IMPLEMENTATION(___FILEBASENAMEASIDENTIFIER___);
 //**************************************************
 //	Override Public Methods
 //**************************************************
-
 
 @end

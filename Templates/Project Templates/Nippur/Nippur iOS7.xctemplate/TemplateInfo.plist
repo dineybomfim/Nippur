@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+
+		<!-- Header -->
+
+		<key>Ancestors</key>
+		<array>
+			<string>com.nippur.Base</string>
+		</array>
+
+		<key>Identifier</key>
+		<string>com.nippur.Single-Project</string>
+
+		<key>Kind</key>
+		<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+
+		<key>Concrete</key>
+		<true/>
+
+		<key>SortOrder</key>
+	  <string>9</string>
+
+		<key>Description</key>
+		<string>This template provides a starting point for Nippur application with a single project (compatible with iOS 7).</string>
+
+		<!-- User Options -->
+
+		<!-- Adding Files -->
+
+		<key>Definitions</key>
+		<dict>
+
+			<key>../Podfile</key>
+			<dict>
+				<key>Path</key>
+				<string>Podfile</string>
+				<key>TargetIndices</key>
+				<array/>
+			</dict>
+
+			<key>Resources/Interfaces/LaunchScreen.xib</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>Interfaces</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/Interfaces/LaunchScreen.xib</string>
+				<key>TargetIndices</key>
+				<array>
+					<string>0</string>
+				</array>
+			</dict>
+
+			<key>Resources/Assets.xcassets</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/Assets.xcassets</string>
+				<key>TargetIndices</key>
+				<array>
+					<string>0</string>
+				</array>
+			</dict>
+
+		</dict>
+
+		<key>Nodes</key>
+		<array>
+			<string>../Podfile</string>
+			<string>Resources/Interfaces/LaunchScreen.xib</string>
+			<string>Resources/Assets.xcassets</string>
+		</array>
+
+		<!-- Settings -->
+
+		<key>Project</key>
+		<dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+			</dict>
+		</dict>
+
+		<key>Targets</key>
+		<array>
+			<dict>
+
+				<key>Name</key>
+				<string>___PACKAGENAME___</string>
+
+				<key>SharedSettings</key>
+				<dict>
+					<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+					<string>LaunchImage</string>
+				</dict>
+
+			</dict>
+		</array>
+
+	</dict>
+</plist>

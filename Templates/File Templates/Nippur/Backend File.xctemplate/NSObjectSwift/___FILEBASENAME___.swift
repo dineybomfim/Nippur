@@ -6,86 +6,46 @@
  *	Copyright ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
  */
 
-#import "___FILEBASENAME___.h"
+import UIKit
 
-#pragma mark -
-#pragma mark Constants
-#pragma mark -
 //**********************************************************************************************************
 //
-//	Constants
+// MARK: - Constants -
 //
 //**********************************************************************************************************
 
-#pragma mark -
-#pragma mark Private Interface
-#pragma mark -
 //**********************************************************************************************************
 //
-//	Private Interface
+// MARK: - Definitions -
 //
 //**********************************************************************************************************
 
-#pragma mark -
-#pragma mark Private Definitions
-//**************************************************
-//	Private Definitions
-//**************************************************
-
-#pragma mark -
-#pragma mark Private Functions
-//**************************************************
-//	Private Functions
-//**************************************************
-
-#pragma mark -
-#pragma mark Private Category
-//**************************************************
-//	Private Category
-//**************************************************
-
-#pragma mark -
-#pragma mark Public Interface
-#pragma mark -
 //**********************************************************************************************************
 //
-//	Public Interface
+// MARK: - Class -
 //
 //**********************************************************************************************************
 
-@implementation ___FILEBASENAMEASIDENTIFIER___
+public class ___FILEBASENAMEASIDENTIFIER___ : ___VARIABLE_cocoaTouchSubclass___ {
 
-NPP_SINGLETON_IMPLEMENTATION(___FILEBASENAMEASIDENTIFIER___);
-
-#pragma mark -
-#pragma mark Properties
 //**************************************************
-//	Properties
+// MARK: - Properties
 //**************************************************
 
-#pragma mark -
-#pragma mark Constructors
 //**************************************************
-//	Constructors
+// MARK: - Constructors
 //**************************************************
 
-#pragma mark -
-#pragma mark Private Methods
 //**************************************************
-//	Private Methods
+// MARK: - Private Methods
 //**************************************************
 
-#pragma mark -
-#pragma mark Self Public Methods
 //**************************************************
-//	Self Public Methods
+// MARK: - Self Public Methods
 //**************************************************
 
-#pragma mark -
-#pragma mark Override Public Methods
 //**************************************************
-//	Override Public Methods
+// MARK: - Override Public Methods
 //**************************************************
 
-
-@end
+}

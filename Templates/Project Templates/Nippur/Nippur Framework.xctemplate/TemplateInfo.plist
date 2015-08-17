@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+	<!-- Header -->
+
+	<key>Identifier</key>
+	<string>com.nippur.Framework</string>
+
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+
+	<!-- User Options -->
+
+	<key>Macros</key>
+	<dict>
+		<key>FWK_CORE</key>
+		<string></string>
+		<key>FWK_ANIMATION</key>
+		<string></string>
+		<key>FWK_INTERFACE</key>
+		<string></string>
+		<key>FWK_GEOLOCATION</key>
+		<string></string>
+		<key>FWK_MEDIA</key>
+		<string></string>
+	</dict>
+
+	<key>Options</key>
+	<array>
+
+		<dict>
+			<key>Identifier</key>
+			<string>nippur-core</string>
+			<key>Default</key>
+			<string>true</string>
+			<key>Description</key>
+			<string>Imports the Nippur Framework/Core</string>
+			<key>Name</key>
+			<string>Nippur Framework/Core</string>
+			<key>SortOrder</key>
+			<integer>2</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Macros</key>
+					<dict>
+						<key>FWK_CORE</key>
+						<string>pod 'Nippur/Core'</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>nippur-animation</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Description</key>
+			<string>Imports the Nippur Framework/Animation</string>
+			<key>Name</key>
+			<string>Nippur Framework/Animation</string>
+			<key>SortOrder</key>
+			<integer>2</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>nippur-core</key>
+				<array>
+					<string>true</string>
+				</array>
+			</dict>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Macros</key>
+					<dict>
+						<key>FWK_ANIMATION</key>
+						<string>pod 'Nippur/Animation'</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>nippur-interface</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Description</key>
+			<string>Imports the Nippur Framework/Interface</string>
+			<key>Name</key>
+			<string>Nippur Framework/Interface</string>
+			<key>SortOrder</key>
+			<integer>2</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>nippur-core</key>
+				<array>
+					<string>true</string>
+				</array>
+			</dict>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Macros</key>
+					<dict>
+						<key>FWK_INTERFACE</key>
+						<string>pod 'Nippur/Interface'</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>nippur-geolocation</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Description</key>
+			<string>Imports the Nippur Framework/Geolocation</string>
+			<key>Name</key>
+			<string>Nippur Framework/Geolocation</string>
+			<key>SortOrder</key>
+			<integer>2</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>nippur-core</key>
+				<array>
+					<string>true</string>
+				</array>
+			</dict>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Macros</key>
+					<dict>
+						<key>FWK_GEOLOCATION</key>
+						<string>pod 'Nippur/Geolocation'</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<!--
+		<dict>
+			<key>Identifier</key>
+			<string>nippur-media</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Description</key>
+			<string>Imports the Nippur Framework/Media</string>
+			<key>Name</key>
+			<string>Nippur Framework/Media</string>
+			<key>SortOrder</key>
+			<integer>2</integer>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>nippur-core</key>
+				<array>
+					<string>true</string>
+				</array>
+			</dict>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<dict>
+					<key>Macros</key>
+					<dict>
+						<key>FWK_MEDIA</key>
+						<string>pod 'Nippur/Media'</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		-->
+	</array>
+</dict>
+</plist>
