@@ -213,7 +213,7 @@ static int _defaultMode = NPPGeolocationModeGPS;
 	{
 		self.bestLocation = lastLocation;
 		self.lastGeolocation = lastLocation.NPPGeolocation;
-		[_lastGeolocation saveToFile:NPP_GEO_FILE folder:NPPDataFolderNippur];
+		[_lastGeolocation saveToFile:NPP_GEO_FILE folder:NPPDataFolderFramework];
 	}
 	
 	// If the required accuracy was not reached yet, give it another try.
@@ -352,7 +352,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 		_defaultLocationManager = [[NPPGeolocationManager alloc] init];
 		_defaultLocationManager.lastGeolocation = [NPPDataManager loadFile:NPP_GEO_FILE
 																	   type:NPPDataTypeArchive
-																	 folder:NPPDataFolderNippur];
+																	 folder:NPPDataFolderFramework];
 	}
 }
 

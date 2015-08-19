@@ -114,14 +114,14 @@ static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 /*/
 static UIImage *nppImageLoadCache(NSString *imageKey)
 {
-	UIImage *image = [NPPDataManager loadFile:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+	UIImage *image = [NPPDataManager loadFile:imageKey type:NPPDataTypeArchive folder:NPPDataFolderFramework];
 	
 	return image;
 }
 
 static void nppImageSaveCache(NSString *imageKey, UIImage *image)
 {
-	[NPPDataManager saveFile:image name:imageKey type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+	[NPPDataManager saveFile:image name:imageKey type:NPPDataTypeArchive folder:NPPDataFolderFramework];
 }
 //*/
 #pragma mark -

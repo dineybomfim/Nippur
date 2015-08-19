@@ -224,14 +224,14 @@ static NPPActionEase _defaultEase = NPPActionEaseLinear;
 
 - (void) saveToFile:(NSString *)fileName
 {
-	[NPPDataManager saveFile:self name:fileName type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+	[NPPDataManager saveFile:self name:fileName type:NPPDataTypeArchive folder:NPPDataFolderFramework];
 }
 
 + (NPPAction *) actionFromFile:(NSString *)fileName
 {
 	NPPAction *action = nil;
 	
-	id object = [NPPDataManager loadFile:fileName type:NPPDataTypeArchive folder:NPPDataFolderNippur];
+	id object = [NPPDataManager loadFile:fileName type:NPPDataTypeArchive folder:NPPDataFolderFramework];
 	
 	if ([object isKindOfClass:self])
 	{

@@ -254,18 +254,18 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 - (void) saveLogFile
 {
 	// Dealing with log size limit.
-	NSDictionary *attributes = [NPPDataManager attributesOfFile:NPP_FILE_LOG folder:NPPDataFolderNippur];
+	NSDictionary *attributes = [NPPDataManager attributesOfFile:NPP_FILE_LOG folder:NPPDataFolderFramework];
 	
 	if ([[attributes objectForKey:NSFileSize] doubleValue] >= _defaultMaxSize)
 	{
-		[NPPDataManager deleteFileNamed:NPP_FILE_LOG folder:NPPDataFolderNippur];
+		[NPPDataManager deleteFileNamed:NPP_FILE_LOG folder:NPPDataFolderFramework];
 	}
 	
 	// Encrypting the string.
 	NSString *log = [NSString stringWithFormat:@"{##%@##}", [_string encodeDoubleColumnar]];
 	
 	// Saves the encrypted log string.
-	[NPPDataManager appendFile:log name:NPP_FILE_LOG type:NPPDataTypeString folder:NPPDataFolderNippur];
+	[NPPDataManager appendFile:log name:NPP_FILE_LOG type:NPPDataTypeString folder:NPPDataFolderFramework];
 	
 	// Resets the string for safety.
 	[_string setString:@""];
@@ -327,7 +327,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 		{
 			NSString *localLog = [NPPDataManager loadFile:NPP_FILE_LOG
 													  type:NPPDataTypeString
-													folder:NPPDataFolderNippur];
+													folder:NPPDataFolderFramework];
 			
 			NSString *url = [NSString stringWithFormat:@"%@%@", _defaultURL, kNPPLogSend];
 			NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -340,7 +340,7 @@ void nppLogFull(const char *function, const char *file, NSString *format, ...)
 			{
 				if (connector.statusCode == 200)
 				{
-					[NPPDataManager deleteFileNamed:NPP_FILE_LOG folder:NPPDataFolderNippur];
+					[NPPDataManager deleteFileNamed:NPP_FILE_LOG folder:NPPDataFolderFramework];
 				}
 				
 				nppBlock(block);

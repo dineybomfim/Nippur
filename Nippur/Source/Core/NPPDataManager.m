@@ -181,7 +181,7 @@ static NSString *nppDataManagerPath(NPPDataFolder folder)
 		case NPPDataFolderDocuments:
 			// Just use the path as it is.
 			break;
-		case NPPDataFolderNippur:
+		case NPPDataFolderFramework:
 			path = [path stringByAppendingPathComponent:NPP_NAME];
 			break;
 		case NPPDataFolderBundle:
@@ -515,7 +515,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	[NPPDataManager saveFile:info
 						 name:NPPDataManagerFile
 						 type:NPPDataTypeArchive
-					   folder:NPPDataFolderNippur];
+					   folder:NPPDataFolderFramework];
 	
 }
 
@@ -538,7 +538,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 	[NPPDataManager saveFile:info
 						 name:NPPDataManagerFile
 						 type:NPPDataTypeArchive
-					   folder:NPPDataFolderNippur];
+					   folder:NPPDataFolderFramework];
 }
 
 + (void) defineAppVersion:(NSString *)version build:(NSString *)build
@@ -566,7 +566,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 		[NPPDataManager saveFile:info
 							 name:NPPDataManagerFile
 							 type:NPPDataTypeArchive
-						   folder:NPPDataFolderNippur];
+						   folder:NPPDataFolderFramework];
 	}
 }
 
@@ -584,7 +584,7 @@ static NSString *nppDataManagerFilePath(NSString *fileName)
 		NSMutableDictionary *info = getDataManager();
 		NSDictionary *localInfo = [NPPDataManager loadFile:NPPDataManagerFile
 													   type:NPPDataTypeArchive
-													 folder:NPPDataFolderNippur];
+													 folder:NPPDataFolderFramework];
 		
 		[info setDictionary:localInfo];
 	}

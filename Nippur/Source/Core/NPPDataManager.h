@@ -53,7 +53,7 @@ typedef NS_OPTIONS(NSUInteger, NPPDataType)
  *	@var			NPPDataFolderApp
  *					The defined app folder.
  *
- *	@var			NPPDataFolderNippur
+ *	@var			NPPDataFolderFramework
  *					Folder used by the framework.
  *
  *	@var			NPPDataFolderDocuments
@@ -69,7 +69,7 @@ typedef NS_OPTIONS(NSUInteger, NPPDataFolder)
 {
 	NPPDataFolderUser,
 	NPPDataFolderApp,
-	NPPDataFolderNippur,
+	NPPDataFolderFramework,
 	NPPDataFolderDocuments,
 	NPPDataFolderLibrary,
 	NPPDataFolderBundle,
