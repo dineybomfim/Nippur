@@ -203,8 +203,8 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 
 @synthesize request = _request, block = _block;
 @synthesize state = _state, statusCode = _statusCode, contentLength = _contentLength,
-			receivedHeader = _receivedHeader, receivedData = _receivedData, error = _error,
-			retries = _retries, logging = _logging;
+			receivedHeader = _receivedHeader, receivedResponse = _receivedResponse,
+			receivedData = _receivedData, error = _error, retries = _retries, logging = _logging;
 
 #pragma mark -
 #pragma mark Constructors
@@ -548,6 +548,9 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	}
 	
 	_contentLength = [response expectedContentLength];
+	
+	nppRelease(_receivedResponse);
+	_receivedResponse = (NSHTTPURLResponse *)nppRetain(response);
 }
 
 #pragma mark -
@@ -684,6 +687,7 @@ static id nppConnectorReadPattern(NSDictionary *dict, NSString *url)
 	nppRelease(_log);
 	
 	nppRelease(_receivedHeader);
+	nppRelease(_receivedResponse);
 	nppRelease(_receivedData);
 	nppRelease(_error);
 	

@@ -167,6 +167,11 @@ typedef void (^nppBlockConnector)(NPP_ARC_UNSAFE NPPConnector *connector);
 @property (nonatomic, readonly) NSDictionary *receivedHeader;
 
 /*!
+ *					The returned HTTP response. The default value is nil.
+ */
+@property (nonatomic, readonly) NSHTTPURLResponse *receivedResponse;
+
+/*!
  *					The returned HTTP data. The default value is nil.
  */
 @property (nonatomic, readonly) NSData *receivedData;
