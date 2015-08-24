@@ -249,7 +249,7 @@ BOOL nppGeohashesContainsHash(NSArray *geohashes, NSString *hash)
 //	Override Public Methods
 //**************************************************
 
-- (void) updateWithData:(id)data
+- (void) decodeJSONObject:(id)data
 {
 	// Avoids invalid data formats.
 	if (![self checkCompatibility:&data checkClass:[NSDictionary class]])
@@ -271,7 +271,7 @@ BOOL nppGeohashesContainsHash(NSArray *geohashes, NSString *hash)
 	_timestamp = [[data objectForKey:@"timestamp"] doubleValue];
 }
 
-- (id) dataForJSON
+- (id) encodeJSONObject
 {
 	// Better go with string, because it does not loose precision with floating points.
 	NSString *latitude = (_latitude != 0.0) ? [NSString stringWithFormat:@"%.16g", _latitude] : nil;

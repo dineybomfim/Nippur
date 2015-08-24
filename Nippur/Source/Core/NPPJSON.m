@@ -659,9 +659,9 @@ static BOOL _isSkipping = NO;
 			[json appendString:[fragment stringValue]];
 		}
 	}
-	else if ([fragment respondsToSelector:@selector(dataForJSON)])
+	else if ([fragment respondsToSelector:@selector(encodeJSONObject)])
 	{
-		[self appendValue:[fragment dataForJSON] into:json];
+		[self appendValue:[fragment encodeJSONObject] into:json];
 	}
 	else if ([fragment isKindOfClass:[NSNull class]])
 	{
@@ -886,9 +886,9 @@ static BOOL _isSkipping = NO;
 	{
 		json = [parser stringWithFragment:value];
 	}
-	else if ([value respondsToSelector:@selector(dataForJSON)])
+	else if ([value respondsToSelector:@selector(encodeJSONObject)])
 	{
-		json = [parser stringWithFragment:[value dataForJSON]];
+		json = [parser stringWithFragment:[value encodeJSONObject]];
 	}
 	else
 	{

@@ -76,19 +76,19 @@
 //	Constructors
 //**************************************************
 
-- (id) initWithData:(id)data
+- (id) initWithJSONObject:(id)data
 {
 	if ((self = [super init]))
 	{
-		[self updateWithData:data];
+		[self decodeJSONObject:data];
 	}
 	
 	return self;
 }
 
-+ (id) modelWithData:(id)data
++ (id) modelWithJSONObject:(id)data
 {
-	NPPModelVO *modelVO = [[self alloc] initWithData:data];
+	NPPModelVO *modelVO = [[self alloc] initWithJSONObject:data];
 	
 	return nppAutorelease(modelVO);
 }
@@ -120,17 +120,6 @@
 //**************************************************
 
 #pragma mark -
-#pragma mark NPPJSONSource
-//*************************
-//	NPPJSONSource
-//*************************
-
-- (id) dataForJSON
-{
-	return nil;
-}
-
-#pragma mark -
 #pragma mark NSCoding
 //*************************
 //	NSCoding
@@ -140,7 +129,7 @@
 {
 	if ((self = [super init]))
 	{
-		[self updateWithData:[NPPJSON objectWithData:[aDecoder decodeDataObject]]];
+		[self decodeJSONObject:[NPPJSON objectWithData:[aDecoder decodeDataObject]]];
 	}
 	
 	return self;
@@ -148,7 +137,7 @@
 
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-	[aCoder encodeDataObject:[NPPJSON dataWithObject:[self dataForJSON]]];
+	[aCoder encodeDataObject:[NPPJSON dataWithObject:[self encodeJSONObject]]];
 }
 
 #pragma mark -
@@ -162,14 +151,26 @@
 	NPPModelVO *copy = [[[self class] allocWithZone:zone] init];
 	
 	// Copying properties.
-	/*
-	[copy updateWithData:[self dataForJSON]];
-	/*/
-	NSString *json = [NPPJSON stringWithObject:[self dataForJSON]];
-	[copy updateWithData:[NPPJSON objectWithString:json]];
-	//*/
+	NSString *json = [NPPJSON stringWithObject:[self encodeJSONObject]];
+	[copy decodeJSONObject:[NPPJSON objectWithString:json]];
 	
 	return copy;
+}
+
+#pragma mark -
+#pragma mark IBMJSONSource
+//*************************
+//	IBMJSONSource
+//*************************
+
+- (void) decodeJSONObject:(id)data
+{
+	// Does nothing here, just to override.
+}
+
+- (id) encodeJSONObject
+{
+	return nil;
 }
 
 #pragma mark -
@@ -178,20 +179,15 @@
 //	Self
 //*************************
 
-- (void) updateWithData:(id)data
-{
-	// Does nothing here, just to override.
-}
-
 - (BOOL) checkCompatibility:(id *)dataPointer checkClass:(Class)aClass
 {
 	BOOL result = YES;
 	
 	if (![*dataPointer isKindOfClass:aClass])
 	{
-		if ([*dataPointer respondsToSelector:@selector(dataForJSON)])
+		if ([*dataPointer respondsToSelector:@selector(encodeJSONObject)])
 		{
-			*dataPointer = [*dataPointer dataForJSON];
+			*dataPointer = [*dataPointer encodeJSONObject];
 		}
 		else
 		{
@@ -214,7 +210,7 @@
 	// Updating the model from the loaded file, if it's valid.
 	if ([object isKindOfClass:[self class]])
 	{
-		[self updateWithData:[NPPJSON objectWithString:[object description]]];
+		[self decodeJSONObject:[NPPJSON objectWithString:[object description]]];
 	}
 }
 
@@ -226,7 +222,7 @@
 
 - (NSString *) description
 {
-	return [NPPJSON stringWithObject:[self dataForJSON]];
+	return [NPPJSON stringWithObject:[self encodeJSONObject]];
 }
 
 + (BOOL) accessInstanceVariablesDirectly

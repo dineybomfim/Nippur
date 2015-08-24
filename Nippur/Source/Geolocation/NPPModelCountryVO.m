@@ -139,7 +139,7 @@ static NSArray *nppCountryGet(NSString *isoCode)
 		// Exclude invalid codes.
 		if ([countryCode isKindOfClass:stringClass] && [countryCode length] > 0)
 		{
-			[countriesCheck addObject:[NPPModelCountryVO modelWithData:country]];
+			[countriesCheck addObject:[NPPModelCountryVO modelWithJSONObject:country]];
 		}
 	}
 	
@@ -313,7 +313,7 @@ static void nppCountryFillCodes(NPPModelCountryVO *countryVO)
 //	Override Public Methods
 //**************************************************
 
-- (void) updateWithData:(id)data
+- (void) decodeJSONObject:(id)data
 {
 	// Avoids invalid data formats.
 	if (![self checkCompatibility:&data checkClass:[NSDictionary class]])
@@ -331,13 +331,13 @@ static void nppCountryFillCodes(NPPModelCountryVO *countryVO)
 	self.languageCode = [data objectForKey:@"lang"];
 	self.currencyCode = [data objectForKey:@"c_code"];
 	self.currencySymbol = [data objectForKey:@"c_symbol"];
-	self.geolocation = [NPPModelGeolocationVO modelWithData:[data objectForKey:@"geolocation"]];
+	self.geolocation = [NPPModelGeolocationVO modelWithJSONObject:[data objectForKey:@"geolocation"]];
 	self.groupingSeparator = [data objectForKey:@"thousand_separator"];
 	self.decimalSeparator = [data objectForKey:@"decimal_separator"];
 	self.decimal = [[data objectForKey:@"decimal"] boolValue];
 }
 
-- (id) dataForJSON
+- (id) encodeJSONObject
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	

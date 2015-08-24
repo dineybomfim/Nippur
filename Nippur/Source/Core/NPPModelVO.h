@@ -35,30 +35,30 @@
 @interface NPPModelVO : NSObject <NPPJSONSource, NSCoding, NSCopying>
 
 /*!
- *					Creates a new model using the same format as dataForJSON. This method will
- *					make a call to #updateWithData:#
+ *					Creates a new model using the same format from #encodeJSONObject#. This method will
+ *					make a call to #decodeJSONObject:#
  *
  *	@param			data
  *					The data in a format that is acceptable by this model.
  *
  *	@result			An instance of this model.
  *
- *	@see			updateWithData:
+ *	@see			decodeJSONObject:
  */
-- (id) initWithData:(id)data;
+- (id) initWithJSONObject:(id)data;
 
 /*!
- *					Creates a new model using the same format as dataForJSON. This method will
- *					make a call to #updateWithData:#
+ *					Creates a new model using the same format from #encodeJSONObject#. This method will
+ *					make a call to #decodeJSONObject:#
  *
  *	@param			data
  *					The data in a format that is acceptable by this model.
  *
  *	@result			An autoreleased instance of this model.
  *
- *	@see			updateWithData:
+ *	@see			decodeJSONObject:
  */
-+ (id) modelWithData:(id)data;
++ (id) modelWithJSONObject:(id)data;
 
 /*!
  *					Creates a new model using a local file priviously saved using the
@@ -71,24 +71,9 @@
 + (id) modelFromFile:(NSString *)fileName folder:(NPPDataFolder)folder;
 
 /*!
- *					Updates this object using the same data structure used for JSON. It must be in the same
- *					format as the output of #dataForJSON#.
- *
- *					Passing nil as parameter to this method will resets this object to its initial state.
- *
- *					Each subclass must give its own implementation for this method.
- *
- *	@param			data
- *					It can be NSString, NSNumber, NSArray or NSDictionary.
- *
- *	@see			NPPJSONSource::dataForJSON
- */
-- (void) updateWithData:(id)data;
-
-/*!
- *					Checks for compatibility with data when using the #updateWithData:# method.
+ *					Checks for compatibility with data when using the #decodeJSONObject:# method.
  *					As best practice, always call this method right in front when overriding the
- *					#updateWithData:# method, passing a class to check compatibility.
+ *					#decodeJSONObject:# method, passing a class to check compatibility.
  *
  *					This method return the result for compatibility and changes the data pointer if
  *					it's necessary.
@@ -106,7 +91,7 @@
 /*!
  *					This method writes down this model to a local folder using a super fast binary
  *					encoding, the internal binary format follows the exactly same structure as define by
- *					#dataForJSON#, so the model must be already implementing it.
+ *					#encodeJSONObject#, so the model must be already implementing it.
  *
  *	@param			fileName
  *					The local file's name.

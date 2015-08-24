@@ -112,7 +112,7 @@
 //	Override Public Methods
 //**************************************************
 
-- (void) updateWithData:(id)data
+- (void) decodeJSONObject:(id)data
 {
 	// Avoids invalid data formats.
 	if (![self checkCompatibility:&data checkClass:[NSDictionary class]])
@@ -124,11 +124,11 @@
 	// {name:reference,center:<geolocation>,radius:123.456}
 	
 	self.name = [data objectForKey:@"name"];
-	self.center = [NPPModelGeolocationVO modelWithData:[data objectForKey:@"center"]];
+	self.center = [NPPModelGeolocationVO modelWithJSONObject:[data objectForKey:@"center"]];
 	self.radius = [[data objectForKey:@"radius"] doubleValue];
 }
 
-- (id) dataForJSON
+- (id) encodeJSONObject
 {
 	NSString *radius = (_radius != 0.0) ? [NSString stringWithFormat:@"%.16g", _radius] : nil;
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];

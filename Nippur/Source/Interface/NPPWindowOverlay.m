@@ -283,7 +283,7 @@ NPP_SINGLETON_IMPLEMENTATION(NPPWindowOverlay);
 	return YES;
 }
 
-- (UIInterfaceOrientationMask) supportedInterfaceOrientations
+- (NSUInteger) supportedInterfaceOrientations
 {
 	return UIInterfaceOrientationMaskAll;
 }

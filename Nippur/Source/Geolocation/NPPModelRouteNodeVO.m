@@ -314,9 +314,9 @@ static void nppRouteDecodePolyline(NSString *encodedString, NPPRoutePolyline *po
 	return self;
 }
 
-- (id) initWithData:(id)data
+- (id) initWithJSONObject:(id)data
 {
-	if ((self = [super initWithData:data]))
+	if ((self = [super initWithJSONObject:data]))
 	{
 		[self initializing];
 	}
@@ -372,7 +372,7 @@ static void nppRouteDecodePolyline(NSString *encodedString, NPPRoutePolyline *po
 //	Override Public Methods
 //**************************************************
 
-- (void) updateWithData:(id)data
+- (void) decodeJSONObject:(id)data
 {
 	// Avoids invalid data formats.
 	if (![self checkCompatibility:&data checkClass:[NSDictionary class]])
@@ -388,8 +388,8 @@ static void nppRouteDecodePolyline(NSString *encodedString, NPPRoutePolyline *po
 	self.distance = [[data objectForKey:@"distance"] intValue];
 	self.duration = [[data objectForKey:@"duration"] intValue];
 	self.encodedPolyline = [data objectForKey:@"polyline"];
-	self.starting = [NPPModelGeolocationVO modelWithData:[data objectForKey:@"starting"]];
-	self.ending = [NPPModelGeolocationVO modelWithData:[data objectForKey:@"ending"]];
+	self.starting = [NPPModelGeolocationVO modelWithJSONObject:[data objectForKey:@"starting"]];
+	self.ending = [NPPModelGeolocationVO modelWithJSONObject:[data objectForKey:@"ending"]];
 	
 	//*************************
 	//	Sub-nodes
@@ -401,14 +401,14 @@ static void nppRouteDecodePolyline(NSString *encodedString, NPPRoutePolyline *po
 	
 	for (routeData in nodesData)
 	{
-		[nodes addObject:[NPPModelRouteNodeVO modelWithData:routeData]];
+		[nodes addObject:[NPPModelRouteNodeVO modelWithJSONObject:routeData]];
 	}
 	
 	self.nodes = nodes;
 	nppRelease(nodes);
 }
 
-- (id) dataForJSON
+- (id) encodeJSONObject
 {
 	NPPModelGeolocationVO *starting = self.starting;
 	NPPModelGeolocationVO *ending = self.ending;

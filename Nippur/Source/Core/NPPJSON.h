@@ -30,12 +30,29 @@
 @required
 
 /*!
+ *					Updates this object using the same data structure used for JSON. It must be in the same
+ *					format as the output of #encodeJSONObject#.
+ *
+ *					Passing nil as parameter to this method will resets this object to its initial state.
+ *
+ *					Each subclass must give its own implementation for this method.
+ *
+ *	@param			data
+ *					It can be NSString, NSNumber, NSArray or NSDictionary.
+ *
+ *	@see			encodeJSONObject
+ */
+- (void) decodeJSONObject:(id)data;
+
+/*!
  *					Returns the JSON data for this object. The data must be one of the basic Obj-C objects:
  *					NSString, NSNumber, NSArray or NSDictionary.
  *
  *	@result			One of the Obj-C basic objects representing the data of this model.
+ *
+ *	@see			decodeJSONObject:
  */
-- (id) dataForJSON;
+- (id) encodeJSONObject;
 
 @end
 

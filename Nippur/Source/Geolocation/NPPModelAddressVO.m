@@ -330,7 +330,7 @@ static NSString *_defaultPoliticalFormat = nil;
 //	Override Public Methods
 //**************************************************
 
-- (void) updateWithData:(id)data
+- (void) decodeJSONObject:(id)data
 {
 	// Avoids invalid data formats.
 	if (![self checkCompatibility:&data checkClass:[NSDictionary class]])
@@ -353,11 +353,11 @@ static NSString *_defaultPoliticalFormat = nil;
 	self.neighborhood = [data objectForKey:@"neighborhood"];
 	self.city = [data objectForKey:@"city"];
 	self.state = [data objectForKey:@"state"];
-	self.country = [NPPModelCountryVO modelWithData:[data objectForKey:@"country"]];
-	self.geolocation = [NPPModelGeolocationVO modelWithData:[data objectForKey:@"geolocation"]];
+	self.country = [NPPModelCountryVO modelWithJSONObject:[data objectForKey:@"country"]];
+	self.geolocation = [NPPModelGeolocationVO modelWithJSONObject:[data objectForKey:@"geolocation"]];
 }
 
-- (id) dataForJSON
+- (id) encodeJSONObject
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
