@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Nippur"
-  s.version          = "1.0.3"
+  s.version          = "1.0.5"
   s.summary          = "Nippur is a framework for daily work. To make it easier and reliable."
   s.description      = <<-DESC
                        Nippur was forged on several years of daily work, reusing the most common and most complexes part of the code.
